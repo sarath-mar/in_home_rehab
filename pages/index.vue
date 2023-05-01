@@ -3,7 +3,7 @@
     <div class="header-content">
       <header-component />
     </div>
-    <div class="mt-4 px-10">
+    <div class="mt-n10 mt-md-4 px-10">
       <carousel />
     </div>
     <div class="mt-15">

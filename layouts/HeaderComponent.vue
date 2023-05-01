@@ -19,7 +19,7 @@
         <v-col justify-center>
           <p class="text-center sample">Professionals</p>
         </v-col>
-        <v-col>
+        <v-col v-if=" mdAndUp">
           <div>
             <p class="text-end">contact us on</p>
             <p class="text-end">8714443989</p>
@@ -31,7 +31,14 @@
   </v-layout>
 </template>
 <script>
+import { useDisplay } from "vuetify";
 export default {
+  setup() {
+    // Destructure only the keys we want to use
+    const { xs, mdAndUp } = useDisplay();
+
+    return { xs, mdAndUp };
+  },
   data() {
     return {
       scrollHeight: "",
@@ -42,9 +49,9 @@ export default {
 <style>
 .app-bar {
   
-  height: 120px !important;
-  display: flex;
-  align-items: center;
+  height: 100px !important;
+  /* display: flex; */
+  /* align-items: center; */
   justify-content: center;
 }
 .sample {
