@@ -9,9 +9,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
-  nitro:{
-    preset:'firebase'
-},
   app: {
     head: {
       title: "In Home Rehab",
