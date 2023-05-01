@@ -1,7 +1,7 @@
 <template>
   <div class="mt-10 welcome-main">
     <v-row class="align-center">
-      <v-col cols="12" md="12">
+      <v-col cols="12" md="12"> 
         <v-row>
           <v-col cols="12" md="7">
             <div>
