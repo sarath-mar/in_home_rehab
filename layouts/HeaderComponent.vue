@@ -9,7 +9,7 @@
         <v-col>
           <!-- <v-app-bar-title>in home rehab</v-app-bar-title> -->
           <img
-            src="images/in_home_rehab.jpg"
+            src="/images/in_home_rehab.jpg"
             class="mt-6"
             width="110px"
             alt=""

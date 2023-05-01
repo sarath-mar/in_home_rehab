@@ -16,7 +16,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="5">
-            <v-img cover class="welcome-img" src="images/doc.jpg"></v-img>
+            <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img>
           </v-col>
         </v-row>
       </v-col>
