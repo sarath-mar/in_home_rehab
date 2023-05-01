@@ -83,6 +83,7 @@ export default {
   background-color: white;
 }
 .right-bread {
+    height: 100%;
   background-color: var(--secondary-text-color);
 }
 .bread-text {
@@ -91,6 +92,7 @@ export default {
   font-weight: 900;
   letter-spacing: 0.1rem;
   margin-top: 0;
+  height: 100%;
   color: var(--primary-text-color);
 }
 .bread-text-contact {

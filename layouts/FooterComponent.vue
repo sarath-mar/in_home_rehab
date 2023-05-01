@@ -9,7 +9,7 @@
           :icon="icon"
           variant="text"
         > -->
-        <span v-for="icon in socialMedia" :key="icon" class="mx-9 footer-icon">
+        <span v-for="icon in socialMedia" :key="icon" class="mx-5 footer-icon">
           <Icon :name="icon.icon" />
         </span>
         <!-- </v-btn> -->

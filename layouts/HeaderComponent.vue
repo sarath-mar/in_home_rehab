@@ -5,7 +5,7 @@
       :flat="false"
       scroll-target="#scrolling-techniques-6"
     >
-      <v-row class="px-10 py-5 app-bar-row align-center">
+      <v-row class="px-10  py-5 app-bar-row align-center">
         <v-col>
           <!-- <v-app-bar-title>in home rehab</v-app-bar-title> -->
           <img
@@ -41,7 +41,10 @@ export default {
 </script>
 <style>
 .app-bar {
-  height: 100px !important;
+  
+  height: 120px !important;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 .sample {
