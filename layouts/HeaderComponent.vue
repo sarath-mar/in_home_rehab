@@ -5,7 +5,7 @@
       :flat="false"
       scroll-target="#scrolling-techniques-6"
     >
-      <v-row class="px-10  py-5 app-bar-row align-center">
+      <v-row class="px-10 py-5 app-bar-row align-center">
         <v-col>
           <!-- <v-app-bar-title>in home rehab</v-app-bar-title> -->
           <img
@@ -17,13 +17,26 @@
           <!-- ../../../public/images -->
         </v-col>
         <v-col justify-center>
-          <p class="text-center sample">Professionals</p>
+          <p class="text-center carrier-text">Carriers</p>
+          <!-- <div class="text-center">
+            <v-btn  variant="text"  color="primary ">Carriers</v-btn>
+
+          </div> -->
         </v-col>
-        <v-col v-if=" mdAndUp">
+        <v-col v-if="mdAndUp">
           <div>
-            <p class="text-end">contact us on</p>
-            <p class="text-end">8714443989</p>
-            <p class="text-end">8714443989</p>
+            <!-- <p class="text-end">contact us on</p> -->
+            <div class="text-end">
+              <Icon class="header-icon-1 " name="uil:phone" />
+              <span class="ml-2 phone-text">9876543210 / 9874561230</span>
+            </div>
+            <div class="text-end ">
+              <Icon class="header-icon " name="uil:fast-mail" />
+              <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
+            </div>
+           
+            <!-- <p class="text-end">8714443989</p>
+            <p class="text-end">8714443989</p> -->
           </div>
         </v-col>
       </v-row>
@@ -48,12 +61,30 @@ export default {
 </script>
 <style>
 .app-bar {
-  
-  height: 100px !important;
+  /* height: 100px !important; */
   /* display: flex; */
   /* align-items: center; */
   justify-content: center;
 }
-.sample {
+.header-icon {
+  color: var(--primary-text-color);
+  font-size: 30px;
+}
+.header-icon-1 {
+  color: var(--primary-text-color);
+  font-size: 23px;
+}
+.phone-text {
+  color: var(--secondary-text-color);
+  font-size: 17px;
+}
+.mail-text{
+  font-size: 18px;
+}
+.carrier-text{
+  text-decoration: underline;
+  color: var(--primary-text-color);
+  font-size: 22px;
+  cursor: pointer;
 }
 </style>
