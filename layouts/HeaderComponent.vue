@@ -7,37 +7,18 @@
     >
       <v-row class="px-10 py-5 app-bar-row align-center">
         <v-col>
-          <!-- <v-app-bar-title>in home rehab</v-app-bar-title> -->
-          <img
-            src="/images/in_home_rehab.jpg"
-            class="mt-6"
-            width="170px"
-            alt=""
-          />
-          <!-- ../../../public/images -->
-        </v-col>
-        <v-col justify-center>
-          <p class="text-center carrier-text">Carriers</p>
-          <!-- <div class="text-center">
-            <v-btn  variant="text"  color="primary ">Carriers</v-btn>
-
-          </div> -->
+          <img src="/images/yem_logo.png" class="my-6" width="170px" alt="" />
         </v-col>
         <v-col v-if="mdAndUp">
           <div>
-            <!-- <p class="text-end">contact us on</p> -->
             <div class="text-end">
-              <Icon class="header-icon-1 " name="uil:phone" />
+              <Icon class="header-icon-1" name="uil:phone" />
               <span class="ml-2 phone-text">9876543210 / 9874561230</span>
             </div>
-            <div class="text-end ">
-              <Icon class="header-icon " name="uil:fast-mail" />
+            <div class="text-end">
+              <Icon class="header-icon" name="uil:fast-mail" />
               <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
             </div>
-            <!-- <span class="material-icons">face</span> -->
-           
-            <!-- <p class="text-end">8714443989</p>
-            <p class="text-end">8714443989</p> -->
           </div>
         </v-col>
       </v-row>
@@ -81,10 +62,10 @@ export default {
   color: var(--secondary-text-color);
   font-size: 17px;
 }
-.mail-text{
+.mail-text {
   font-size: 18px;
 }
-.carrier-text{
+.carrier-text {
   text-decoration: underline;
   color: var(--primary-text-color);
   font-size: 22px;
