@@ -5,18 +5,41 @@
       :class="!mdAndUp ? 'margin-height flex-column-reverse' : ''"
     >
       <v-col cols="12" md="6">
-        <div>
+        <!-- <div>
           <h2 class="banner-header">
             {{ mainContent.title }}
           </h2>
           <p class="banner-subtitle mt-2 mt-md-5">
             {{ mainContent.subtitle }}
           </p>
-          <welcome-form/>
-          <!-- <v-btn append-icon="mdi-add" class="mt-3 mt-md-5 banner-btn">
-            Connect With Us
-          </v-btn> -->
-        </div>
+        </div> -->
+        <v-carousel
+          cycle
+          class="carousel"
+          hide-delimiter-background
+          :show-arrows="false"
+          hide-delimiters
+        >
+          <v-carousel-item
+            v-for="(slide, i) in imageLinks"
+            :key="i"
+            cover
+            
+          >
+            <!-- <div class="d-flex fill-height align-center mx-16">
+              <div class="mx-md-10"> -->
+            <div class="main-conntent">
+              <h2 class="banner-header">
+                {{ slide.title }}
+              </h2>
+              <p class="banner-subtitle mt-2 mt-md-5">
+                {{ slide.subtitle }}
+              </p>
+            </div>
+            <!-- </div>
+            </div> -->
+          </v-carousel-item>
+        </v-carousel>
       </v-col>
       <v-col cols="12" md="6">
         <v-carousel
@@ -32,32 +55,25 @@
             cover
             class="carousel-item"
           >
-            <!-- <v-sheet :color="colors[i]" height="100%"> -->
             <div class="d-flex fill-height align-center mx-16">
-              <div class="mx-md-10">
-                <!-- <h2 class="banner-header"> {{ slide.title }}</h2>
-         <p class="banner-subtitle mt-2 mt-md-5"> {{ slide.subtitle }}</p> -->
-              </div>
+              <div class="mx-md-10"></div>
             </div>
-            <!-- </v-sheet> -->
           </v-carousel-item>
         </v-carousel>
         <div v-if="!mdAndUp">
           <ul class="social-media mt-3 social-media-small">
             <li v-for="media in socialMedia" :key="media.name">
               <Icon :name="media.icon" />
-              <!-- <span class="material-icons icon-color">{{ media.icon }}</span> -->
             </li>
           </ul>
         </div>
       </v-col>
     </v-row>
-    <div v-if="mdAndUp">
+    <div v-if="mdAndUp" class="mt-n10">
       <ul class="social-media">
         <li v-for="media in socialMedia" :key="media.name">
           {{ media.name }}
           <Icon :name="media.icon" />
-          <!-- <span class="material-icons icon-color">{{ media.icon }}</span> -->
         </li>
       </ul>
     </div>
@@ -65,7 +81,7 @@
 </template>
 <script>
 import { useDisplay } from "vuetify";
-import WelcomeForm from './WelcomeForm.vue';
+import WelcomeForm from "./WelcomeForm.vue";
 export default {
   components: { WelcomeForm },
   setup() {
@@ -103,14 +119,14 @@ export default {
         },
         {
           src: "https://wallpaperaccess.com/full/970880.jpg",
-          title: "One",
-          subtitle: "one subtitle",
+          title: "Two",
+          subtitle: "two subtitle",
           buttonDetail: "test",
         },
         {
           src: "https://wallpaperaccess.com/full/1964833.jpg",
-          title: "One",
-          subtitle: "one subtitle",
+          title: "Three",
+          subtitle: "three subtitle",
           buttonDetail: "test",
         },
       ],
@@ -138,15 +154,23 @@ export default {
 .social-media li:hover {
   color: var(--secondary-text-color);
 }
-.social-media-small{
- justify-content: end;
+.social-media-small {
+  justify-content: end;
 }
 .icon-color {
   color: var(--primary-text-color);
 }
 .carousel {
-  /* height: 100vh ; */
+  /* height: 10vh ; */
   /* height: calc(100vh - 100px) !important ; */
+}
+.main-conntent{
+  /* background-color: red ; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
 .main-carousel {
   min-height: 95vh;

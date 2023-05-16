@@ -11,7 +11,7 @@
           <img
             src="/images/in_home_rehab.jpg"
             class="mt-6"
-            width="110px"
+            width="170px"
             alt=""
           />
           <!-- ../../../public/images -->
@@ -34,6 +34,7 @@
               <Icon class="header-icon " name="uil:fast-mail" />
               <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
             </div>
+            <!-- <span class="material-icons">face</span> -->
            
             <!-- <p class="text-end">8714443989</p>
             <p class="text-end">8714443989</p> -->
@@ -61,7 +62,9 @@ export default {
 </script>
 <style>
 .app-bar {
-  /* height: 100px !important; */
+  height: 90px !important;
+  padding: 5px !important;
+  /* background-color: rgb(160, 157, 154) !important; */
   /* display: flex; */
   /* align-items: center; */
   justify-content: center;

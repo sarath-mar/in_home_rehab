@@ -20,24 +20,6 @@
           </v-col>
         </v-row>
       </v-col>
-      <!-- <v-col cols="12" md="4">
-        <div class="ml-md-5">
-          <ul class="welcome-ul">
-            <li v-for="item in welcomeItems" :key="item.title">
-              <div class="welcome-li-div">
-                <div>
-                  <Icon class="icon-welcome" name="uil:check" />
-                </div>
-
-                <div>
-                  <h4>{{ item.title }}</h4>
-                  <h6>{{ item.description }}</h6>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </v-col> -->
     </v-row>
   </div>
 </template>
