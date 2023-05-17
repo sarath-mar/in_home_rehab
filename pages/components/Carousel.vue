@@ -2,51 +2,15 @@
   <div>
     <v-row
       class="align-center main-carousel"
-      :class="!mdAndUp ? 'margin-height flex-column-reverse' : ''"
+      :class="!mdAndUp ? 'mt-10 flex-column-reverse' : 'margin-height'"
     >
-      <v-col cols="12" md="6">
-        <!-- <div>
-          <h2 class="banner-header">
-            {{ mainContent.title }}
-          </h2>
-          <p class="banner-subtitle mt-2 mt-md-5">
-            {{ mainContent.subtitle }}
-          </p>
-        </div> -->
-        <v-carousel
-          cycle
-          class="carousel"
-          hide-delimiter-background
-          :show-arrows="false"
-          hide-delimiters
-        >
-          <v-carousel-item
-            v-for="(slide, i) in imageLinks"
-            :key="i"
-            cover
-            
-          >
-            <!-- <div class="d-flex fill-height align-center mx-16">
-              <div class="mx-md-10"> -->
-            <div class="main-conntent">
-              <h2 class="banner-header">
-                {{ slide.title }}
-              </h2>
-              <p class="banner-subtitle mt-2 mt-md-5">
-                {{ slide.subtitle }}
-              </p>
-            </div>
-            <!-- </div>
-            </div> -->
-          </v-carousel-item>
-        </v-carousel>
-      </v-col>
-      <v-col cols="12" md="6">
+      <v-col cols="12">
         <v-carousel
           cycle
           class="carousel"
           hide-delimiter-background
           show-arrows="hover"
+          height="80vh"
         >
           <v-carousel-item
             v-for="(slide, i) in imageLinks"
@@ -60,8 +24,8 @@
             </div>
           </v-carousel-item>
         </v-carousel>
-        <div v-if="!mdAndUp">
-          <ul class="social-media mt-3 social-media-small">
+        <div v-if="!mdAndUp" class="px-10">
+          <ul class="social-media mt-3 primary-text  social-media-small">
             <li v-for="media in socialMedia" :key="media.name">
               <Icon :name="media.icon" />
             </li>
@@ -69,8 +33,8 @@
         </div>
       </v-col>
     </v-row>
-    <div v-if="mdAndUp" class="mt-n10">
-      <ul class="social-media">
+    <div v-if="mdAndUp" class="mt-n10 px-10">
+      <ul class="social-media primary-text">
         <li v-for="media in socialMedia" :key="media.name">
           {{ media.name }}
           <Icon :name="media.icon" />
@@ -105,26 +69,26 @@ export default {
       },
       imageLinks: [
         {
-          src: "http://yesofcorsa.com/wp-content/uploads/2018/05/Therapist-Wallpaper-High-Definition.jpg",
+          src: "https://wallpapercave.com/wp/wp5435737.jpg",
           title: "Are Your a Therapist",
           subtitle:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ea fugiat corrupti odit,",
           buttonDetail: "test",
         },
         {
-          src: "https://wallpapercave.com/wp/wp4750435.jpg",
+          src: "https://images6.alphacoders.com/440/440796.jpg",
           title: "One",
           subtitle: "one subtitle",
           buttonDetail: "test",
         },
         {
-          src: "https://wallpaperaccess.com/full/970880.jpg",
+          src: "http://wallpapercave.com/wp/DIkTH3a.jpg",
           title: "Two",
           subtitle: "two subtitle",
           buttonDetail: "test",
         },
         {
-          src: "https://wallpaperaccess.com/full/1964833.jpg",
+          src: "https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Download-Fruit-Wallpaper.jpg",
           title: "Three",
           subtitle: "three subtitle",
           buttonDetail: "test",
@@ -136,7 +100,7 @@ export default {
 </script>
 <style>
 .margin-height {
-  margin-top: 150px;
+  margin-top: 30px;
 }
 .social-media {
   display: flex;
@@ -148,17 +112,17 @@ export default {
   line-height: 1.333;
   font-weight: 500;
   letter-spacing: 0.1rem;
-  color: var(--primary-text-color);
+  /* color: var(--primary-text-color); */
   cursor: pointer;
 }
 .social-media li:hover {
-  color: var(--secondary-text-color);
+  /* color: var(--secondary-text-color); */
 }
 .social-media-small {
   justify-content: end;
 }
 .icon-color {
-  color: var(--primary-text-color);
+  /* color: var(--primary-text-color); */
 }
 .carousel {
   /* height: 10vh ; */
@@ -177,7 +141,7 @@ export default {
 }
 .carousel-item {
   /* background-color: red; */
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 .banner-header {
   /* font-size: 4.5em; */

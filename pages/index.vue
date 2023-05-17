@@ -3,10 +3,10 @@
     <div class="header-content">
       <header-component />
     </div>
-    <div class="mt-n10 mt-md-10 px-10">
+    <div class="">
       <carousel />
     </div>
-    <div class="mt-15">
+    <!-- <div class="mt-15">
       <div class="bread px-10">
         <bread-component />
       </div>
@@ -18,7 +18,7 @@
       <div class="px-10">
         <service-provided/>
       </div>
-    </div>
+    </div> -->
     <footer-component />
   </div>
 </template>
@@ -55,8 +55,8 @@ export default {
 
 <style>
 :root {
-  --primary-text-color: #89c303;
-  --secondary-text-color: #12595d;
+  --primary-text-color: #f2f5ec;
+  --secondary-text-color: #f0fdf4;
 }
 
 html {

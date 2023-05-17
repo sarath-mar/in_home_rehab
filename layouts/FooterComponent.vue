@@ -15,7 +15,7 @@
         <!-- </v-btn> -->
       </div>
 
-      <div class="mt-10">
+      <div class="mt-10 primary-text--text">
         Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
         Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
         accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a
@@ -29,7 +29,7 @@
       <v-divider></v-divider>
 
       <div class="mt-10 date-footer">
-        {{ new Date().getFullYear() }} — <strong>In Home Rehab</strong>
+        {{ new Date().getFullYear() }} — <strong>Yem Yem Impex</strong>
       </div>
     </v-footer>
   </v-layout>
@@ -49,18 +49,18 @@ export default {
 <style>
 .footer-main {
   background-color: var(--secondary-text-color);
-  color: white;
+  /* color: white; */
   /* height: 30vh; */
 }
 .date-footer {
-  color: var(--primary-text-color);
+  /* color: black; */
 }
 .footer-icon {
-  color: var(--primary-text-color);
+  /* color: black; */
   font-size: 27px;
   cursor: pointer;
 }
 .footer-icon :hover {
-  color: white;
+  color: red;
 }
 </style>
