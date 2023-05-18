@@ -12,24 +12,58 @@
         <span v-for="icon in socialMedia" :key="icon" class="mx-5 footer-icon">
           <Icon :name="icon.icon" />
         </span>
+
         <!-- </v-btn> -->
       </div>
-
-      <div class="mt-10">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-        Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-        accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a
-        sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
-        lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus
-        iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor
-        vel ut orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      </div>
+      <v-row>
+        <v-col cols="12">
+          <div class="mt-10">
+            Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
+            Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
+            accumsan id ultrices nunc. Sed at orci sed massa consectetur
+            dignissim a sit amet dui. Duis commodo vitae velit et faucibus.
+            Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum
+            ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel
+            diam elementum tempor vel ut orci. Orci varius natoque penatibus et
+            magnis dis parturient montes, nascetur ridiculus mus.
+          </div>
+        </v-col>
+        <v-col cols="12">
+          <div>
+            <h4>Contact Us</h4>
+            <div class="d-flex justify-center mt-3">
+              <div>
+                <Icon class="header-icon-1" name="uil:phone" />
+              </div>
+              <div>
+                <div>
+                  <span class="ml-2">9876543210/9874561230</span>
+                </div>
+                <!-- <div>
+                  <span class="ml-2">9874561230</span>
+                </div> -->
+              </div>
+            </div>
+            <div>
+              <Icon class="header-icon" name="uil:fast-mail" />
+              <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
 
       <v-divider></v-divider>
 
       <div class="mt-10 date-footer">
         {{ new Date().getFullYear() }} — <strong>In Home Rehab</strong>
+      </div>
+      <div>
+        <img
+          src="/images/in_home_rehab.jpg"
+          class="mt-6 footer-img"
+          width="70px"
+          alt=""
+        />
       </div>
     </v-footer>
   </v-layout>
@@ -39,9 +73,9 @@ export default {
   data: () => ({
     socialMedia: [
       { name: "Facebook", icon: "uil:facebook" },
-      { name: "Twitter", icon: "uil:twitter" },
+      // { name: "Twitter", icon: "mdi-indeed" },
       { name: "Instagram", icon: "uil:instagram" },
-      { name: "Youtube", icon: "uil:youtube" },
+      { name: "Linkedin", icon: "uil:linkedin" },
     ],
   }),
 };
@@ -62,5 +96,8 @@ export default {
 }
 .footer-icon :hover {
   color: white;
+}
+.footer-img {
+  background-blend-mode: lighten;
 }
 </style>

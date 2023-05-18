@@ -6,17 +6,17 @@
     <div class="mt-n10 mt-md-10 px-10">
       <carousel />
     </div>
-    <div class="mt-15">
-      <div class="bread px-10">
+    <div class="mt-5">
+      <!-- <div class="bread px-10">
         <bread-component />
-      </div>
-      <div class="welcome-div px-10">
-        <div class="welcome-component pb-15">
-          <welcome />
-        </div>
+      </div> -->
+      <div class="welcome-div px-10 pb-15">
+        <!-- <div class="welcome-component "> -->
+        <welcome />
+        <!-- </div> -->
       </div>
       <div class="px-10">
-        <service-provided/>
+        <service-provided />
       </div>
     </div>
     <footer-component />
@@ -34,7 +34,7 @@ import FooterComponent from "../layouts/FooterComponent.vue";
 import Carousel from "./components/Carousel.vue";
 import Welcome from "./components/Welcome.vue";
 import BreadComponent from "./components/BreadComponent.vue";
-import ServiceProvided from './components/ServiceProvided.vue';
+import ServiceProvided from "./components/ServiceProvided.vue";
 export default {
   components: {
     HeaderComponent,
@@ -57,6 +57,7 @@ export default {
 :root {
   --primary-text-color: #89c303;
   --secondary-text-color: #12595d;
+  --primary-background: #f2f4f5;
 }
 
 html {
@@ -71,24 +72,26 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
 } */
-.welcome-div-main {
+/* .welcome-div-main {
   min-height: 80vh;
   display: flex;
   align-items: center;
-}
+} */
 .welcome-div {
   /* background-image: url(../public/images/bg_image.png); */
-
-  background-color: #f2f4f5;
-  min-height: 100vh;
-  margin-top: -160px;
+  /* padding: 60px 0px 90px 0px; */
+  padding: 10px;
+  
+  background-color: var(--primary-background);
+  /* min-height: 100vh; */
+  /* margin-top: -160px; */
 }
 .welcome-component {
-  padding-top: 220px;
+  padding: 100px 0px;
 }
 .bread {
   /* margin-top:230px ; */
-  z-index: 122;
+  /* z-index: 122; */
 }
 .header-content {
   /* margin-top: 100px; */

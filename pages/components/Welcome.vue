@@ -2,7 +2,7 @@
   <div class="mt-10 welcome-main">
     <v-row class="align-center">
       <v-col cols="12" md="12"> 
-        <v-row>
+        <v-row class="align-center">
           <v-col cols="12" md="7">
             <div>
               <h4 class="welcome-who">Who We Are</h4>
@@ -15,8 +15,9 @@
               </p>
             </div>
           </v-col>
-          <v-col cols="12" md="5">
-            <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img>
+          <v-col cols="12" md="5"> 
+            <!-- <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img> -->
+            <welcome-form/>
           </v-col>
         </v-row>
       </v-col>

@@ -14,7 +14,7 @@
               :key="content.title"
               cols="6"
               md="4"
-              lg="3"
+              lg="2"
             >
               <service-card />
             </v-col>
@@ -41,6 +41,8 @@ export default {
             { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },
+            { title: "Test", description: "Description", image: "" },
+            { title: "Test", description: "Description", image: "" },
           ],
         },
         {
@@ -48,6 +50,8 @@ export default {
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
           content: [
+            { title: "Test", description: "Description", image: "" },
+            { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },

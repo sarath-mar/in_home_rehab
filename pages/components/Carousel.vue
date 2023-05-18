@@ -94,9 +94,9 @@ export default {
     return {
       socialMedia: [
         { name: "Facebook", icon: "uil:facebook" },
-        { name: "Twitter", icon: "uil:twitter" },
+        // { name: "Twitter", icon: "uil:twitter" },
         { name: "Instagram", icon: "uil:instagram" },
-        { name: "Youtube", icon: "uil:youtube" },
+        { name: "Linkedin", icon: "uil:linkedin" },
       ],
       mainContent: {
         title: "Why Home Theraphy",
