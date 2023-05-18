@@ -48,7 +48,7 @@ export default {
 </script>
 <style>
 .footer-main {
-  background-color: var(--secondary-text-color);
+  background-color: var(--primary);
   /* color: white; */
   /* height: 30vh; */
 }

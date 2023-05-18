@@ -1,23 +1,33 @@
 <template>
-  <div class="mt-10 welcome-main">
+  <div class="welcome-main">
     <v-row class="align-center">
-      <v-col cols="12" md="12"> 
+      <v-col cols="12" md="12">
         <v-row>
-          <v-col cols="12" md="7">
-            <div>
+          <v-col cols="12">
+            <div class="text-center">
               <h4 class="welcome-who">Who We Are</h4>
-              <h2 class="welcome-main-text">Welcome to Home Rehab</h2>
+              <h2 class="welcome-main-text">Welcome to Yem Yem Impex</h2>
               <p class="welcome-secondary mt-5">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
                 ea illum deleniti maiores velit eaque assumenda! Accusantium,
                 dolor. Voluptate sunt quod veniam nisi officia maxime quaerat
-                aut consequatur ipsum iusto!
+                aut consequatur ipsum iusto! Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Corrupti, a quos. Recusandae
+                eveniet voluptatibus ad in, quisquam facere quia doloremque
+                dolor magnam necessitatibus, nisi amet quis. Maiores, placeat
+                enim. Fugiat.
+              </p>
+              <p class="welcome-secondary mt-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatem ex neque, in blanditiis delectus aliquam perspiciatis
+                cupiditate voluptates veniam eveniet, iure ullam quos quae
+                recusandae earum beatae illo sint corrupti.
               </p>
             </div>
           </v-col>
-          <v-col cols="12" md="5">
+          <!-- <v-col cols="12" md="5">
             <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img>
-          </v-col>
+          </v-col> -->
         </v-row>
       </v-col>
     </v-row>
@@ -74,7 +84,7 @@ export default {
   font-weight: 900;
 }
 .welcome-li-div h6 {
-  font-size: clamp(.5em, 4vw, 1em);
+  font-size: clamp(0.5em, 4vw, 1em);
   line-height: 1.333;
   font-weight: 900;
 }

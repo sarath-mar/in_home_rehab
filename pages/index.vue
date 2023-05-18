@@ -6,10 +6,10 @@
     <div class="">
       <carousel />
     </div>
-    <!-- <div class="mt-15">
-      <div class="bread px-10">
+    <div class="mt-5">
+      <!-- <div class="bread px-10">
         <bread-component />
-      </div>
+      </div> -->
       <div class="welcome-div px-10">
         <div class="welcome-component pb-15">
           <welcome />
@@ -18,7 +18,7 @@
       <div class="px-10">
         <service-provided/>
       </div>
-    </div> -->
+    </div>
     <footer-component />
   </div>
 </template>
@@ -55,8 +55,10 @@ export default {
 
 <style>
 :root {
-  --primary-text-color: #f2f5ec;
-  --secondary-text-color: #f0fdf4;
+  --primary-text-color: #acd525;
+  --primary: #f2f5ec;
+  --secondary-text-color: #000000;
+  --secondary: #f0fdf4;
 }
 
 html {

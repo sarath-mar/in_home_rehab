@@ -24,8 +24,8 @@
     </v-navigation-drawer>
     <v-app-bar
       class="app-bar"
-      :flat="false"
-      color="primary"
+      :flat="isScroll ? false : true"
+      :color="isScroll ? 'white' : 'transparent'"
       scroll-target="#scrolling-techniques-6"
     >
       <v-row class="px-10 py-5 app-bar-row align-center">
@@ -64,6 +64,7 @@ export default {
   },
   data() {
     return {
+      isScroll:false,
       scrollHeight: "",
       drawer:false ,
       items: [
@@ -89,6 +90,23 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    window.onscroll = () => {
+      this.changeColor();
+    };
+  },
+  methods: {
+    changeColor() {
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        this.isScroll = true;
+      } else {
+        this.isScroll = false;
+      }
+    },
   },
 };
 </script>

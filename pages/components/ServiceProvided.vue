@@ -1,24 +1,31 @@
 <template>
-  <div class="my-10">
-    <h2 class="service-text">Service We Provide</h2>
-    <div v-for="service in servicesProvided" :key="service.title">
-      <div class="mt-8">
-        <h2 class="service-sub">
+  <div class="my-10 text-center">
+    <h2 class="service-text">Our Products</h2>
+    <div>
+      <div>
+        <!-- <h2 class="service-sub">
           <Icon name="uil:label" /> {{ service.title }}
-        </h2>
-        <h4 class="mt-3 service-content">{{ service.description }}</h4>
+        </h2> -->
+        <h4 class="mt-3 service-content">Fresh from our farms</h4>
         <div class="mt-3">
-          <v-row>
-            <v-col
+          <div class="product-list py-3">
+            <!-- <v-col
               v-for="content in service.content"
               :key="content.title"
               cols="6"
               md="4"
               lg="3"
+            > -->
+            <div
+              class="product-card"
+              v-for="product in ourProducts"
+              :key="product.title"
             >
               <service-card />
-            </v-col>
-          </v-row>
+            </div>
+
+            <!-- </v-col> -->
+          </div>
         </div>
       </div>
     </div>
@@ -31,28 +38,54 @@ export default {
   components: { ServiceCard },
   data() {
     return {
-      servicesProvided: [
+      ourProducts: [
         {
-          title: "Speech Theraphy",
+          name: "Apple",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          content: [
-            { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
-          ],
+          img: "",
         },
         {
-          title: "Occupational Therapy",
+          name: "Orange",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          content: [
-            { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
-          ],
+          img: "",
+        },
+        {
+          name: "Watermelon",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Bannana",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Grapes",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Grapes",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Grapes",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Grapes",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
         },
       ],
     };
@@ -68,6 +101,34 @@ export default {
   letter-spacing: 0.1rem;
   margin-top: 0;
   color: var(--primary-text-color);
+}
+.product-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  /* animation: slide 15s linear infinite; */
+}
+.product-list::-webkit-scrollbar{
+  display: none;
+  width: 0;
+}
+.example {
+
+}
+.product-card {
+  /* width: 300px !important; */
+}
+@keyframes slide{
+  0%{
+    transform: translate3d(0,0,0);
+  }
+  100%{
+    transform: translate3d(-100vw,0,0);
+  }
 }
 .service-sub {
   font-size: clamp(1em, 4vw, 2em);

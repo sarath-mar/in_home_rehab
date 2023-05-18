@@ -1,40 +1,50 @@
 <template>
   <div>
-    <v-row
+    <!-- <v-row
       class="align-center main-carousel"
-      :class="!mdAndUp ? 'mt-10 flex-column-reverse' : 'margin-height'"
+      :class="!mdAndUp ? ' flex-column-reverse' : 'margin-height'"
     >
-      <v-col cols="12">
-        <v-carousel
-          cycle
-          class="carousel"
-          hide-delimiter-background
-          show-arrows="hover"
-          height="80vh"
+      <v-col cols="12"> -->
+    <div class="main-carousel">
+      <v-carousel
+        cycle
+        class="carousel"
+        hide-delimiter-background
+        :hide-delimiters="mdAndUp ? false : true"
+        show-arrows="hover"
+        height="100vh"
+      >
+        <v-carousel-item
+          v-for="(slide, i) in imageLinks"
+          :key="i"
+          :src="slide.src"
+          cover
+          class="carousel-item"
         >
-          <v-carousel-item
-            v-for="(slide, i) in imageLinks"
-            :key="i"
-            :src="slide.src"
-            cover
-            class="carousel-item"
-          >
-            <div class="d-flex fill-height align-center mx-16">
-              <div class="mx-md-10"></div>
-            </div>
-          </v-carousel-item>
-        </v-carousel>
-        <div v-if="!mdAndUp" class="px-10">
-          <ul class="social-media mt-3 primary-text  social-media-small">
-            <li v-for="media in socialMedia" :key="media.name">
-              <Icon :name="media.icon" />
-            </li>
-          </ul>
-        </div>
-      </v-col>
-    </v-row>
+          <div class="d-flex fill-height align-center mx-16">
+            <div class="mx-md-10"></div>
+          </div>
+        </v-carousel-item>
+      </v-carousel>
+    </div>
+    <!-- <div v-if="!mdAndUp" class="px-10">
+      <ul class="social-media mt-3 primary-text social-media-small">
+        <li v-for="media in socialMedia" :key="media.name">
+          <Icon :name="media.icon" />
+        </li>
+      </ul>
+    </div> -->
+    <div v-if="!mdAndUp" class="px-10 mt-n15">
+      <ul class="social-media mt-3 secondary-text social-media-small">
+        <li v-for="media in socialMedia" :key="media.name">
+          <Icon :name="media.icon" />
+        </li>
+      </ul>
+    </div>
+    <!-- </v-col>
+    </v-row> -->
     <div v-if="mdAndUp" class="mt-n10 px-10">
-      <ul class="social-media primary-text">
+      <ul class="social-media">
         <li v-for="media in socialMedia" :key="media.name">
           {{ media.name }}
           <Icon :name="media.icon" />
@@ -100,7 +110,7 @@ export default {
 </script>
 <style>
 .margin-height {
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 .social-media {
   display: flex;
@@ -108,15 +118,16 @@ export default {
   list-style: none;
 }
 .social-media li {
+  z-index: 10;
   font-size: 1.3em;
   line-height: 1.333;
   font-weight: 500;
   letter-spacing: 0.1rem;
-  /* color: var(--primary-text-color); */
+  color: var(--secondary-text-color);
   cursor: pointer;
 }
 .social-media li:hover {
-  /* color: var(--secondary-text-color); */
+  color: var(--primary-text-color);
 }
 .social-media-small {
   justify-content: end;
@@ -124,20 +135,15 @@ export default {
 .icon-color {
   /* color: var(--primary-text-color); */
 }
-.carousel {
-  /* height: 10vh ; */
-  /* height: calc(100vh - 100px) !important ; */
-}
-.main-conntent{
+.main-conntent {
   /* background-color: red ; */
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 .main-carousel {
-  min-height: 95vh;
+  min-height: 100vh;
 }
 .carousel-item {
   /* background-color: red; */
