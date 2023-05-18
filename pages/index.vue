@@ -10,13 +10,13 @@
       <!-- <div class="bread px-10">
         <bread-component />
       </div> -->
-      <div class="welcome-div px-10">
+      <div class="welcome-div" :class="mdAndUp ? 'px-10' : 'px-5'">
         <div class="welcome-component pb-15">
           <welcome />
         </div>
       </div>
-      <div class="px-10">
-        <service-provided/>
+      <div :class="mdAndUp ? 'px-10' : 'px-5'">
+        <service-provided />
       </div>
     </div>
     <footer-component />
@@ -34,7 +34,7 @@ import FooterComponent from "../layouts/FooterComponent.vue";
 import Carousel from "./components/Carousel.vue";
 import Welcome from "./components/Welcome.vue";
 import BreadComponent from "./components/BreadComponent.vue";
-import ServiceProvided from './components/ServiceProvided.vue';
+import ServiceProvided from "./components/ServiceProvided.vue";
 export default {
   components: {
     HeaderComponent,
