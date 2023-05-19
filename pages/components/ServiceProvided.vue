@@ -38,7 +38,6 @@ export default {
   components: { ServiceCard },
   data() {
     return {
-
       ourProducts: [
         {
           name: "Pomogranate",
@@ -47,28 +46,28 @@ export default {
           img: "/images/products/Pomogranate.jpg",
         },
         {
-          name: "Grapes",
+          name: "Capsicum",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
+          img: "/images/products/Capsicum.jpg",
         },
         {
           name: "Mango",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
+          img: "/images/products/Mango.jpg",
         },
         {
           name: "Orange",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
+          img: "/images/products/Orange.jpg",
         },
         {
           name: "Banana",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
+          img: "/images/products/Banana.jpg",
         },
         {
           name: "Apple",
@@ -125,28 +124,27 @@ export default {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  
+
   scroll-behavior: smooth;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   /* animation: slide 15s linear infinite; */
 }
-.product-list::-webkit-scrollbar{
+.product-list::-webkit-scrollbar {
   display: none;
   width: 0;
 }
 .example {
-
 }
 .product-card {
   /* width: 300px !important; */
 }
-@keyframes slide{
-  0%{
-    transform: translate3d(0,0,0);
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
   }
-  100%{
-    transform: translate3d(-100vw,0,0);
+  100% {
+    transform: translate3d(-100vw, 0, 0);
   }
 }
 .service-sub {

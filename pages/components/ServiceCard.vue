@@ -3,8 +3,8 @@
     <!-- max-width="344" -->
     <v-img
       :src="product.img ? product.img : 'https://images.pexels.com/photos/15477567/pexels-photo-15477567.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'"
-      height="200px"
-      cover
+      :height="200"
+  cover
     ></v-img>
 
     <v-card-title class="service-title"> {{ product.name }} </v-card-title>

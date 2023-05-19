@@ -6,7 +6,7 @@
     <div class="">
       <carousel />
     </div>
-    <div class="mt-5">
+    <div class="mt-0">
       <!-- <div class="bread px-10">
         <bread-component />
       </div> -->
@@ -83,10 +83,10 @@ html {
 
   background-color: #f2f4f5;
   min-height: 100vh;
-  margin-top: -160px;
+  /* margin-top: -160px; */
 }
 .welcome-component {
-  padding-top: 220px;
+  padding-top: 70px;
 }
 .bread {
   /* margin-top:230px ; */
