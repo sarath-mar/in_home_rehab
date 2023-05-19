@@ -21,7 +21,7 @@
               v-for="product in ourProducts"
               :key="product.title"
             >
-              <service-card />
+              <service-card :product="product" />
             </div>
 
             <!-- </v-col> -->
@@ -38,9 +38,22 @@ export default {
   components: { ServiceCard },
   data() {
     return {
+
       ourProducts: [
         {
-          name: "Apple",
+          name: "Pomogranate",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "/images/products/Pomogranate.jpg",
+        },
+        {
+          name: "Grapes",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Mango",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
           img: "",
@@ -52,37 +65,43 @@ export default {
           img: "",
         },
         {
+          name: "Banana",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Apple",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "/images/products/Apple.jpg",
+        },
+        {
+          name: "Pineapple",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Avocado",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
+          name: "Pappaya",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "",
+        },
+        {
           name: "Watermelon",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
           img: "",
         },
         {
-          name: "Bannana",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Grapes",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Grapes",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Grapes",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Grapes",
+          name: "Muskmelon",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
           img: "",
