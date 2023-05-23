@@ -123,12 +123,12 @@ export default {
 .product-list {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
+  overflow-x: hidden;
 
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  /* animation: slide 15s linear infinite; */
+  animation: slide 15s linear infinite;
 }
 .product-list::-webkit-scrollbar {
   display: none;
@@ -141,10 +141,12 @@ export default {
 }
 @keyframes slide {
   0% {
-    transform: translate3d(0, 0, 0);
+    /* transform: translate3d(0, 0, 0); */
+    /* margin-left: 0; */
   }
   100% {
-    transform: translate3d(-100vw, 0, 0);
+    /* transform: translate3d(-100%, 0, 0); */
+    /* margin-left: -160%; */
   }
 }
 .service-sub {

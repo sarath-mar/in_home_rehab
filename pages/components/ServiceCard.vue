@@ -1,13 +1,31 @@
 <template>
-  <v-card width="300">
+  <v-card width="350">
     <!-- max-width="344" -->
-    <v-img
-      :src="product.img ? product.img : 'https://images.pexels.com/photos/15477567/pexels-photo-15477567.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'"
+    <!-- <v-img
+      :src="
+        product.img
+          ? product.img
+          : 'https://images.pexels.com/photos/15477567/pexels-photo-15477567.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
+      "
       :height="200"
-  cover
+      cover
     ></v-img>
 
-    <v-card-title class="service-title"> {{ product.name }} </v-card-title>
+    <v-card-title class="service-title"> {{ product.name }} </v-card-title> -->
+    <!-- <v-card> -->
+    <v-img
+      :src="
+        product.img
+          ? product.img
+          : 'https://images.pexels.com/photos/15477567/pexels-photo-15477567.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
+      "
+      class="align-end"
+      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+      height="400px"
+      cover
+    >
+      <v-card-title class="text-white">{{ product.name }}</v-card-title>
+    </v-img>
 
     <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
 

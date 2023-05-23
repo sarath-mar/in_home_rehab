@@ -1,37 +1,40 @@
 <template>
-  <div class="welcome-main">
-    <v-row class="align-center">
-      <v-col cols="12" md="12">
-        <v-row>
-          <v-col cols="12">
-            <div class="text-center">
-              <h4 class="welcome-who">Who We Are</h4>
-              <h2 class="welcome-main-text">Welcome to Yem Yem Impex</h2>
-              <p class="welcome-secondary mt-5">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-                ea illum deleniti maiores velit eaque assumenda! Accusantium,
-                dolor. Voluptate sunt quod veniam nisi officia maxime quaerat
-                aut consequatur ipsum iusto! Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Corrupti, a quos. Recusandae
-                eveniet voluptatibus ad in, quisquam facere quia doloremque
-                dolor magnam necessitatibus, nisi amet quis. Maiores, placeat
-                enim. Fugiat.
-              </p>
-              <p class="welcome-secondary mt-10">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  
+    <div class="welcome-main">
+      <v-row class="align-center">
+        <v-col cols="12" md="12">
+          <v-row>
+            <v-col cols="12">
+              <div class="text-center">
+                <!-- <h4 class="welcome-who">Who We Are</h4> -->
+                <h2 class="welcome-main-text">Welcome to Yem Yem Impex</h2>
+                <p class="welcome-secondary mt-5">
+                  Equipped with the state-of-art facilities and prerequisites,
+                  the Kerala based YEM YEM IMPEX is on its way to make a mark in
+                  the International Fresh produce industry. Unparalleled
+                  professionalism and utmost commitment have earned YEM YEM
+                  IMPEX the reputation for reliability and credibility with in a
+                  short span of its launch. By establishing a strong supply
+                  chain comprising numerous farm producers, YEM YEM IMPEX as
+                  become one of the South East Asia’s leading producers and
+                  exporters of high-quality fresh fruits, vegetables, coconut
+                  and egg
+                </p>
+                <p class="welcome-secondary mt-10">
+                  <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptatem ex neque, in blanditiis delectus aliquam perspiciatis
                 cupiditate voluptates veniam eveniet, iure ullam quos quae
-                recusandae earum beatae illo sint corrupti.
-              </p>
-            </div>
-          </v-col>
-          <!-- <v-col cols="12" md="5">
+                recusandae earum beatae illo sint corrupti. -->
+                </p>
+              </div>
+            </v-col>
+            <!-- <v-col cols="12" md="5">
             <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img>
           </v-col> -->
-        </v-row>
-      </v-col>
-    </v-row>
-  </div>
+          </v-row>
+        </v-col>
+      </v-row>
+    </div>
 </template>
 
 <script>
@@ -64,7 +67,7 @@ export default {
 
 <style scoped>
 .welcome-main-text {
-  font-size: clamp(3.5em, 4vw, 4.5em);
+  font-size: clamp(2.5em, 4vw, 3.5em);
   line-height: 1.333;
   font-weight: 900;
   letter-spacing: 0.1rem;
@@ -101,9 +104,9 @@ export default {
   border-radius: 20px;
 }
 .welcome-secondary {
-  font-size: clamp(1em, 4vw, 2em);
+  font-size: clamp(0.8em, 4vw, 1.3em);
   /* line-height: 1.333; */
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.1rem;
   /* margin-top: 20px; */
   /* color: var(--primary-text-color); */

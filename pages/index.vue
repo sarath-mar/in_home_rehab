@@ -11,7 +11,7 @@
         <bread-component />
       </div> -->
       <div class="welcome-div" :class="mdAndUp ? 'px-10' : 'px-5'">
-        <div class="welcome-component pb-15">
+        <div class="welcome-component pb-5">
           <welcome />
         </div>
       </div>
@@ -46,9 +46,7 @@ export default {
   },
   data: () => ({ value: 0 }),
   methods: {
-    scrolling() {
-      console.log("hey");
-    },
+  
   },
 };
 </script>
@@ -82,17 +80,17 @@ html {
   /* background-image: url(../public/images/bg_image.png); */
 
   background-color: #f2f4f5;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* margin-top: -160px; */
 }
 .welcome-component {
-  padding-top: 70px;
+  padding-top: 30px;
 }
 .bread {
   /* margin-top:230px ; */
   z-index: 122;
 }
 .header-content {
-  /* margin-top: 100px; */
+  margin-bottom: 90px;
 }
 </style>

@@ -12,8 +12,9 @@
         hide-delimiter-background
         :hide-delimiters="mdAndUp ? false : true"
         show-arrows="hover"
-        height="100vh"
+        :height="mdAndUp ? '70vh':'40vh'"
       >
+      <!-- :height="mdAndUp ? '100vh':'40vh'" -->
         <v-carousel-item
           v-for="(slide, i) in imageLinks"
           :key="i"
@@ -34,23 +35,31 @@
         </li>
       </ul>
     </div> -->
-    <div v-if="!mdAndUp" class="px-10 mt-n15">
+    <!-- <div v-if="!mdAndUp" class="px-10">
       <ul class="social-media mt-3 secondary-text social-media-small">
         <li v-for="media in socialMedia" :key="media.name">
           <Icon :name="media.icon" />
         </li>
       </ul>
     </div>
-    <!-- </v-col>
-    </v-row> -->
-    <div v-if="mdAndUp" class="mt-n10 px-10">
+    <div v-if="mdAndUp" class="px-10">
       <ul class="social-media">
         <li v-for="media in socialMedia" :key="media.name">
           {{ media.name }}
           <Icon :name="media.icon" />
         </li>
       </ul>
-    </div>
+    </div> -->
+    <!-- </v-col>
+    </v-row> -->
+    <!-- <div v-if="mdAndUp" class="mt-n10 px-10">
+      <ul class="social-media">
+        <li v-for="media in socialMedia" :key="media.name">
+          {{ media.name }}
+          <Icon :name="media.icon" />
+        </li>
+      </ul>
+    </div> -->
   </div>
 </template>
 <script>
@@ -143,7 +152,7 @@ export default {
   justify-content: center;
 }
 .main-carousel {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 .carousel-item {
   /* background-color: red; */

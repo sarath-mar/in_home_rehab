@@ -24,10 +24,12 @@
     </v-navigation-drawer>
     <v-app-bar
       class="app-bar"
-      :flat="isScroll ? false : true"
-      :color="isScroll ? 'white' : 'transparent'"
+      
+      color="white"
       scroll-target="#scrolling-techniques-6"
     >
+    <!-- :flat="isScroll ? false : true"
+      :color="isScroll ? 'white' : 'transparent'" -->
       <v-row class="px-10 py-5 app-bar-row align-center">
         <v-col cols="8">
           <img src="/images/yem_logo.png" class="my-6" width="170px" alt="" />
