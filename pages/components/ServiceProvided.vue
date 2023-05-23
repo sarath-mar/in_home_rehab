@@ -123,12 +123,12 @@ export default {
 .product-list {
   display: flex;
   gap: 20px;
-  overflow-x: hidden;
+  overflow-x: auto;
 
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  animation: slide 15s linear infinite;
+  /* animation: slide 15s linear infinite; */
 }
 .product-list::-webkit-scrollbar {
   display: none;
