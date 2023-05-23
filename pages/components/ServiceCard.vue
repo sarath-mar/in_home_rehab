@@ -29,21 +29,13 @@
 
     <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
 
-    <v-card-actions>
+    <!-- <v-card-actions>
       <v-btn class="service-btn" @click="show = !show" variant="text">
         {{ show ? "View Less" : "View More" }}</v-btn
       >
 
       <v-spacer></v-spacer>
-
-      <!-- <v-btn
-        v-if="show"
-        variant="text"
-        :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-        @click="show = !show"
-        >View Less</v-btn
-      > -->
-    </v-card-actions>
+    </v-card-actions> -->
 
     <v-expand-transition>
       <div v-show="show">

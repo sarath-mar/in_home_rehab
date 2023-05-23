@@ -9,13 +9,6 @@
         <h4 class="mt-3 service-content">Fresh from our farms</h4>
         <div class="mt-3">
           <div class="product-list py-3">
-            <!-- <v-col
-              v-for="content in service.content"
-              :key="content.title"
-              cols="6"
-              md="4"
-              lg="3"
-            > -->
             <div
               class="product-card"
               v-for="product in ourProducts"
@@ -23,10 +16,9 @@
             >
               <service-card :product="product" />
             </div>
-
-            <!-- </v-col> -->
           </div>
         </div>
+        <div class="mt-5"></div>
       </div>
     </div>
   </div>
@@ -107,6 +99,18 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    getCaroselData() {
+      let data = this.ourProducts;
+      let newArray = [];
+      let key = 0;
+      let length = 4;
+    //  for (const key in data) {
+    //   if(key)
+   
+    //  }
+    },
   },
 };
 </script>

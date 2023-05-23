@@ -18,6 +18,9 @@
       <div :class="mdAndUp ? 'px-10' : 'px-5'">
         <service-provided />
       </div>
+      <div >
+        <contact-us/>
+      </div>
     </div>
     <footer-component />
   </div>
@@ -35,6 +38,7 @@ import Carousel from "./components/Carousel.vue";
 import Welcome from "./components/Welcome.vue";
 import BreadComponent from "./components/BreadComponent.vue";
 import ServiceProvided from "./components/ServiceProvided.vue";
+import ContactUs from "./components/ContactUs.vue";
 export default {
   components: {
     HeaderComponent,
@@ -43,7 +47,8 @@ export default {
     FooterComponent,
     BreadComponent,
     ServiceProvided,
-  },
+    ContactUs
+},
   data: () => ({ value: 0 }),
   methods: {
   
