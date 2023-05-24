@@ -14,7 +14,7 @@
               v-for="product in ourProducts"
               :key="product.title"
             >
-              <service-card :product="product" />
+              <service-card class="service-card-product" :product="product" />
             </div>
           </div>
         </div>
@@ -190,10 +190,13 @@ export default {
 
 
 @keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-300%))}
+	0% {  transform: translateX(0px); }
+	100% {  transform: translateX(-300%)}
 }
+.service-card-product{
+  animation:scroll 40s linear infinite
 
+}
 /* slider finish */
 .service-text {
   font-size: clamp(3em, 4vw, 4em);
@@ -209,13 +212,14 @@ export default {
   /* overflow-x: auto; */
   /* margin: auto; */
 	/* overflow:hidden; */
-	position: relative;
+	/* position: relative; */
+  overflow-x: auto;
 
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   /* animation: slide 15s linear infinite; */
-  animation:scroll 50s linear infinite
+  /* animation:scroll 50s linear infinite */
 }
 .product-list::-webkit-scrollbar {
   display: none;
