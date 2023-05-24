@@ -1,10 +1,10 @@
 <template>
   <div class="contact-main">
-    <v-parallax
+    <!-- <v-parallax
       class="contact"
       src="https://cdn.wallpapersafari.com/37/34/t8w4sf.jpg"
-    >
-      <div class="my-15">
+    > -->
+      <div class="mt-15">
         <h1 class="text-h4 text-white text-center mb-4">Contact Us</h1>
         <div class="contact-method mt-15 text-red">
           <div class="methods">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-    </v-parallax>
+    <!-- </v-parallax> -->
     <!-- <div class="text-red contact-content">
       <h1 class="text-h4 font-weight-thin mb-4">Contact Us</h1>
     </div> -->

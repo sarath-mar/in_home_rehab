@@ -7,7 +7,7 @@
             <v-col cols="12">
               <div class="text-center">
                 <!-- <h4 class="welcome-who">Who We Are</h4> -->
-                <h2 class="welcome-main-text">Welcome to Yem Yem Impex</h2>
+                <h2 class="welcome-main-text   ">Welcome to Yem Yem Impex</h2>
                 <p class="welcome-secondary mt-5">
                   Equipped with the state-of-art facilities and prerequisites,
                   the Kerala based YEM YEM IMPEX is on its way to make a mark in
@@ -72,7 +72,7 @@ export default {
   font-weight: 900;
   letter-spacing: 0.1rem;
   /* margin-top: 20px; */
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
 }
 .welcome-li-div {
   display: flex;
