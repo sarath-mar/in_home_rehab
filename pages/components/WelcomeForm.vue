@@ -1,70 +1,74 @@
 <template>
-  <!-- <v-dialog transition="dialog-bottom-transition" width="auto"> -->
-  <!-- <template v-slot:activator="{ props }">
-      <v-btn
-        append-icon="mdi-add"
-        v-bind="props"
-        class="mt-3 mt-md-5 banner-btn"
-      >
-        Connect With Us
-      </v-btn>
-    </template> -->
-  <!-- <template v-slot:default="{ isActive }"> -->
-  <v-sheet elevation="2" class="pa-10 bg-primary-background">
+  <v-sheet elevation="2" class="pa-10 bg-primary-background" rounded="xl">
     <h2 class="mb-5 text-center">Connect With Us</h2>
-    <v-form fast-fail @submit.prevent>
-      <v-text-field
-        v-model="firstName"
-        label="First name"
-        variant="outlined"
-       
-        :rules="firstNameRules"
-      ></v-text-field>
-
-      <v-text-field
-        v-model="lastName"
-        label="Last name"
-        variant="outlined"
-       
-        :rules="lastNameRules"
-      ></v-text-field>
-      <v-text-field
-        v-model="lastName"
-        label="email"
-        variant="outlined"
-       
-        :rules="lastNameRules"
-      ></v-text-field>
-      <v-textarea label="description" variant="outlined" rows="3"></v-textarea>
-      <!--   density="compact" -->
-      <div class="form-user-btn mt-5">
-        <v-btn class="mx-auto" type="submit">Submit</v-btn>
-        <!-- <v-btn variant="text" class="ml-5" @click="isActive.value = false">Close</v-btn> -->
-      </div>
+    <v-form fast-fail @submit.prevent v-model="valid" ref="form">
+      <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf4bXFNLjy8PCXdeyiGiL7V2SCBRZW_MJjCcvTZbHVliuTFhg/formResponse"
+        method="post"
+        v-on:submit.prevent="formSubmit"
+      >
+        <v-text-field
+          v-model="name"
+          label="Name"
+          variant="outlined"
+          :rules="nameRules"
+          name="entry.1702660706"
+        ></v-text-field>
+        <v-text-field
+          v-model="phoneNo"
+          label="Phone No"
+          variant="outlined"
+          type="number"
+          name="entry.549054387"
+        ></v-text-field>
+        <v-textarea
+          label="description"
+          v-model="description"
+          variant="outlined"
+          name="entry.1036763654"
+          rows="3"
+        ></v-textarea>
+        <div class="form-user-btn mt-5">
+          <v-btn class="mx-auto" :disabled="!valid" type="submit">Submit</v-btn>
+        </div>
+      </form>
     </v-form>
+    <thankyou />
   </v-sheet>
-  <!-- </template> -->
-  <!-- </v-dialog> -->
 </template>
 <script>
 import { useDisplay } from "vuetify";
+import Thankyou from "./Thankyou.vue";
 export default {
+  components: { Thankyou },
   setup() {
     // Destructure only the keys we want to use
     const { xs, mdAndUp } = useDisplay();
 
     return { xs, mdAndUp };
   },
+  methods: {
+    formSubmit(e) {
+      console.log("submit");
+      this.$refs.form.reset();
+    },
+  },
   data: () => ({
-    firstName: "",
-    firstNameRules: [
+    name: "",
+    nameRules: [
       (value) => {
         if (value?.length > 3) return true;
-
-        return "First name must be at least 3 characters.";
+        return "Name must be at least 3 characters.";
       },
     ],
-    lastName: "",
+    // phoneRules: [
+    //   (value) => {
+    //     if (value?.length > 3) return true;
+    //     return "First name must be at least 3 characters.";
+    //   },
+    // ],
+    description: "",
+    phoneNo: "",
     lastNameRules: [
       (value) => {
         if (/[^0-9]/.test(value)) return true;
@@ -72,6 +76,7 @@ export default {
         return "Last name can not contain digits.";
       },
     ],
+    valid: false,
   }),
 };
 </script>

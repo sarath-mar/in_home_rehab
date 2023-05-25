@@ -9,9 +9,9 @@
         <v-col>
           <!-- <v-app-bar-title>in home rehab</v-app-bar-title> -->
           <img
-            src="/images/in_home_rehab.jpg"
-            class="mt-6"
-            width="170px"
+            src="/images/logo.png"
+            class="mt-2"
+            width="160px"
             alt=""
           />
           <!-- ../../../public/images -->

@@ -2,17 +2,9 @@
   <div>
     <v-row
       class="align-center main-carousel"
-      :class="!mdAndUp ? 'margin-height flex-column-reverse' : ''"
+      :class="!mdAndUp ? 'margin-height flex-column-reverse' : 'mt-5'"
     >
       <v-col cols="12" md="6">
-        <!-- <div>
-          <h2 class="banner-header">
-            {{ mainContent.title }}
-          </h2>
-          <p class="banner-subtitle mt-2 mt-md-5">
-            {{ mainContent.subtitle }}
-          </p>
-        </div> -->
         <v-carousel
           cycle
           class="carousel"
@@ -26,8 +18,6 @@
             cover
             
           >
-            <!-- <div class="d-flex fill-height align-center mx-16">
-              <div class="mx-md-10"> -->
             <div class="main-conntent">
               <h2 class="banner-header">
                 {{ slide.title }}
@@ -36,8 +26,6 @@
                 {{ slide.subtitle }}
               </p>
             </div>
-            <!-- </div>
-            </div> -->
           </v-carousel-item>
         </v-carousel>
       </v-col>
@@ -47,6 +35,7 @@
           class="carousel"
           hide-delimiter-background
           show-arrows="hover"
+          height="75vh"
         >
           <v-carousel-item
             v-for="(slide, i) in imageLinks"
@@ -178,6 +167,7 @@ export default {
 .carousel-item {
   /* background-color: red; */
   border-radius: 20px;
+  /* height: 90vh;  */
 }
 .banner-header {
   /* font-size: 4.5em; */
