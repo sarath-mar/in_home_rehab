@@ -8,7 +8,8 @@
     </div>
     <div class="mt-0">
       <div class="welcome-div" :class="mdAndUp ? 'px-10' : 'px-5'">
-        <div class="welcome-component pb-5">
+        <div class="welcome-component">
+          <!--  pb-5 --> 
           <welcome />
         </div>
       </div>
@@ -92,7 +93,7 @@ font-family: 'Roboto', sans-serif;
   /* margin-top: -160px; */
 }
 .welcome-component {
-  padding-top: 30px;
+  /* padding-top: 30px; */
 }
 .bread {
   /* margin-top:230px ; */

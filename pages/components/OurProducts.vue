@@ -11,7 +11,7 @@
           <div class="product-list py-3">
             <div
               class="product-card"
-              v-for="product in ourProducts"
+              v-for="product in getCaroselData"
               :key="product.title"
             >
               <product-card class="service-card-product" :product="product" />
@@ -99,85 +99,83 @@ export default {
         },
 
 
-        {
-          name: "Pomogranate",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Pomogranate.jpg",
-        },
-        {
-          name: "Capsicum",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Capsicum.jpg",
-        },
-        {
-          name: "Mango",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Mango.jpg",
-        },
-        {
-          name: "Orange",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Orange.jpg",
-        },
-        {
-          name: "Banana",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Banana.jpg",
-        },
-        {
-          name: "Apple",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Apple.jpg",
-        },
-        {
-          name: "Pineapple",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Avocado",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Pappaya",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Watermelon",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Muskmelon",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
+        // {
+        //   name: "Pomogranate",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Pomogranate.jpg",
+        // },
+        // {
+        //   name: "Capsicum",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Capsicum.jpg",
+        // },
+        // {
+        //   name: "Mango",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Mango.jpg",
+        // },
+        // {
+        //   name: "Orange",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Orange.jpg",
+        // },
+        // {
+        //   name: "Banana",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Banana.jpg",
+        // },
+        // {
+        //   name: "Apple",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Apple.jpg",
+        // },
+        // {
+        //   name: "Pineapple",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "",
+        // },
+        // {
+        //   name: "Avocado",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "",
+        // },
+        // {
+        //   name: "Pappaya",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "",
+        // },
+        // {
+        //   name: "Watermelon",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "",
+        // },
+        // {
+        //   name: "Muskmelon",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "",
+        // },
       ],
     };
   },
   computed: {
     getCaroselData() {
-      let data = this.ourProducts;
-      let newArray = [];
-      let key = 0;
-      let length = 4;
-      //  for (const key in data) {
-      //   if(key)
-
-      //  }
+      // let data = this.ourProducts;
+     let data=[]
+     if(this.ourProducts.length){
+      data=[...this.ourProducts,...this.ourProducts]
+     }
+     return data
     },
   },
 };
@@ -191,7 +189,7 @@ export default {
 
 @keyframes scroll {
 	0% {  transform: translateX(0px); }
-	100% {  transform: translateX(-300%)}
+	100% {  transform: translateX(-1000%)}
 }
 .service-card-product{
   animation:scroll 40s linear infinite

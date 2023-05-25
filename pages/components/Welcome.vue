@@ -1,13 +1,13 @@
 <template>
-  
-    <div class="welcome-main">
-      <v-row class="align-center">
+  <div class="welcome-main">
+    <transition name="toast">
+      <v-row class="align-center pt-8" v-if="showToast">
         <v-col cols="12" md="12">
           <v-row>
             <v-col cols="12">
               <div class="text-center">
                 <!-- <h4 class="welcome-who">Who We Are</h4> -->
-                <h2 class="welcome-main-text   ">Welcome to Yem Yem Impex</h2>
+                <h2 class="welcome-main-text">Welcome to Yem Yem Impex</h2>
                 <p class="welcome-secondary mt-5">
                   Equipped with the state-of-art facilities and prerequisites,
                   the Kerala based YEM YEM IMPEX is on its way to make a mark in
@@ -34,13 +34,28 @@
           </v-row>
         </v-col>
       </v-row>
-    </div>
+    </transition>
+  </div>
 </template>
 
 <script>
+import { ref } from "vue";
 import WelcomeForm from "./WelcomeForm.vue";
 export default {
   components: { WelcomeForm },
+  setup() {
+    const showToast = ref(false);
+
+    const triggerToast = () => {
+      showToast.value = true;
+      // setTimeout(() => (showToast.value = true), 3000);
+    };
+
+    return { showToast, triggerToast };
+  },
+  mounted() {
+    this.triggerToast();
+  },
   data() {
     return {
       welcomeItems: [
@@ -115,4 +130,32 @@ export default {
   font-size: clamp(0.8em, 4vw, 1.5em);
   color: var(--primary-text-color);
 }
+
+/* animation */
+
+ /* enter transitions */
+ .toast-enter-active {
+    animation: wobble 0.5s ease;
+    /* opacity: 1;
+    transform: translateX(-100px); */
+  }
+  /* leave transitions */
+  .toast-leave-to {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  .toast-leave-active {
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+
+  @keyframes wobble {
+    0% { transform: translateY(-100px); opacity: 0 }
+    /* 50% { transform: translateY(0px); opacity: 1 }
+    60% { transform: translateX(8px); opacity: 1 }
+    70% { transform: translateX(-8px); opacity: 1 }
+    80% { transform: translateX(4px); opacity: 1 }
+    90% { transform: translateX(-4px); opacity: 1 } */
+    100% { transform: translateX(0px); opacity: 1 }
+  }
 </style>
