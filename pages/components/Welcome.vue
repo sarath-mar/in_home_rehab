@@ -85,7 +85,7 @@ export default {
   font-size: clamp(2.5em, 4vw, 3.5em);
   line-height: 1.333;
   font-weight: 900;
-  letter-spacing: 0.1rem;
+  /* letter-spacing: 0.1rem; */
   /* margin-top: 20px; */
   color: var(--primary-text-color);
 }
