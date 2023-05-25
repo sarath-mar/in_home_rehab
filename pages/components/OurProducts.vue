@@ -259,7 +259,7 @@ export default {
 @media screen and (max-width: 980px) {
   @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-1000%))}
+	100% { transform: translateX(calc(-700%))}
 }
 }
 </style>

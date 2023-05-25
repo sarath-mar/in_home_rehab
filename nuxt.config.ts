@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     enabled: true,
     consent: 1,
   },
-  modules: ['nuxt-icon'],
+  modules: ["nuxt-icon"],
   css: ["vuetify/styles/main.sass"],
   build: {
     transpile: ["vuetify"],
@@ -19,12 +19,19 @@ export default defineNuxtConfig({
           rel: "stylesheet",
         },
         {
-          href:"https://fonts.googleapis.com/icon?family=Material+Icons",
-          rel:"stylesheet"
+          href: "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@1,700&family=Lato&family=Montserrat&family=Roboto&display=swap",
+          rel: "stylesheet",
+        },
+        {
+          href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+          rel: "stylesheet",
         },
       ],
       // href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap",
       //     rel="stylesheet"
+      //       <link rel="preconnect" href="https://fonts.googleapis.com">
+      // <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      // <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@1,700&family=Lato&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
     },
   },
 });

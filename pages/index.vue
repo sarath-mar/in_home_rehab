@@ -63,7 +63,12 @@ export default {
 }
 
 html {
-  font-family: "League Spartan", sans-serif;
+  /* font-family: "League Spartan", sans-serif; */
+
+  /* font-family: 'Courier Prime', monospace; */
+/* font-family: 'Lato', sans-serif; */
+/* font-family: 'Montserrat', sans-serif; */
+font-family: 'Roboto', sans-serif;
   /* main-text-color:var() */
 }
 .welcome-test {
