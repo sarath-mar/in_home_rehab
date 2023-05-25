@@ -7,9 +7,6 @@
       <carousel />
     </div>
     <div class="mt-0">
-      <!-- <div class="bread px-10">
-        <bread-component />
-      </div> -->
       <div class="welcome-div" :class="mdAndUp ? 'px-10' : 'px-5'">
         <div class="welcome-component pb-5">
           <welcome />
@@ -18,8 +15,11 @@
       <div :class="mdAndUp ? 'px-10' : 'px-5'">
         <service-provided />
       </div>
-      <div >
-        <contact-us/>
+      <div class="bread mb-n16" :class="mdAndUp ? 'px-10' : 'px-5'">
+        <bread-component />
+      </div>
+      <div>
+        <contact-us />
       </div>
     </div>
     <footer-component />
@@ -37,7 +37,7 @@ import FooterComponent from "../layouts/FooterComponent.vue";
 import Carousel from "./components/Carousel.vue";
 import Welcome from "./components/Welcome.vue";
 import BreadComponent from "./components/BreadComponent.vue";
-import ServiceProvided from "./components/ServiceProvided.vue";
+import ServiceProvided from "./components/OurProducts.vue";
 import ContactUs from "./components/ContactUs.vue";
 export default {
   components: {
@@ -47,12 +47,10 @@ export default {
     FooterComponent,
     BreadComponent,
     ServiceProvided,
-    ContactUs
-},
-  data: () => ({ value: 0 }),
-  methods: {
-  
+    ContactUs,
   },
+  data: () => ({ value: 0 }),
+  methods: {},
 };
 </script>
 

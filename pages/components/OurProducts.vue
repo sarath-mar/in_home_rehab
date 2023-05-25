@@ -14,7 +14,7 @@
               v-for="product in ourProducts"
               :key="product.title"
             >
-              <service-card class="service-card-product" :product="product" />
+              <product-card class="service-card-product" :product="product" />
             </div>
           </div>
         </div>
@@ -25,9 +25,9 @@
 </template>
 
 <script>
-import ServiceCard from "./ServiceCard.vue";
+import ProductCard from "./ProductCard.vue";
 export default {
-  components: { ServiceCard },
+  components: { ProductCard },
   data() {
     return {
       ourProducts: [

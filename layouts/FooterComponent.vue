@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-footer class="footer-main text-center d-flex flex-column">
+    <v-footer elevation="4" class="footer-main text-center d-flex flex-column">
       <div class="mt-12">
         <!-- <v-btn
           v-for="icon in socialMedia"
