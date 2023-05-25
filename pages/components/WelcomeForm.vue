@@ -1,37 +1,37 @@
 <template>
   <v-sheet elevation="2" class="pa-10 bg-primary-background" rounded="xl">
     <h2 class="mb-5 text-center">Connect With Us</h2>
-    <v-form fast-fail @submit.prevent v-model="valid" ref="form">
-      <form
+    <v-form v-model="valid" ref="form" @submit.prevent="formSubmit">
+      <!-- <form
         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf4bXFNLjy8PCXdeyiGiL7V2SCBRZW_MJjCcvTZbHVliuTFhg/formResponse"
         method="post"
-        v-on:submit.prevent="formSubmit"
-      >
-        <v-text-field
-          v-model="name"
-          label="Name"
-          variant="outlined"
-          :rules="nameRules"
-          name="entry.1702660706"
-        ></v-text-field>
-        <v-text-field
-          v-model="phoneNo"
-          label="Phone No"
-          variant="outlined"
-          type="number"
-          name="entry.549054387"
-        ></v-text-field>
-        <v-textarea
-          label="description"
-          v-model="description"
-          variant="outlined"
-          name="entry.1036763654"
-          rows="3"
-        ></v-textarea>
-        <div class="form-user-btn mt-5">
-          <v-btn class="mx-auto" :disabled="!valid" type="submit">Submit</v-btn>
-        </div>
-      </form>
+        
+      > -->
+      <v-text-field
+        v-model="name"
+        label="Name"
+        variant="outlined"
+        :rules="nameRules"
+        name="entry.1702660706"
+      ></v-text-field>
+      <v-text-field
+        v-model="phoneNo"
+        label="Phone No"
+        variant="outlined"
+        type="number"
+        name="entry.549054387"
+      ></v-text-field>
+      <v-textarea
+        label="description"
+        v-model="description"
+        variant="outlined"
+        name="entry.1036763654"
+        rows="3"
+      ></v-textarea>
+      <div class="form-user-btn mt-5">
+        <v-btn class="mx-auto" :disabled="!valid" type="submit">Submit</v-btn>
+      </div>
+      <!-- </form> -->
     </v-form>
     <thankyou />
   </v-sheet>
@@ -50,11 +50,48 @@ export default {
   methods: {
     formSubmit(e) {
       console.log("submit");
-      this.$refs.form.reset();
+      let data = `${this.nameId}=${this.name}& ${this.phoneNoId}=${this.phoneNo}&${this.descriptionId}=${this.description}`;
+      console.log(data);
+      fetch(
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf4bXFNLjy8PCXdeyiGiL7V2SCBRZW_MJjCcvTZbHVliuTFhg/formResponse",
+        {
+          mode: 'no-cors',
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+
+          },
+          
+          method: "post",
+          body: data,
+        }
+      )
+        .then((data) => {
+          console.log("success",data);
+        })
+        .catch((e) => {
+          console.log("error",e);
+        });
+
+      // $.ajax({
+      //         url:"https://docs.google.com/forms/u/0/d/e/1FAIpQLSfjMwmjJMroEt0oepDlg68Wo-DjF_mzAahsQHVDqmNQLOae4A/formResponse",
+      //         data:$("#submit-form").serialize(),
+      //         method:"post",
+      //         success:function (response){
+
+      //             window.location.reload()
+      //             //window.location.href="https://google.com"
+      //         },
+      //         error:function (err){
+      //             window.location.reload()
+
+      //         }
+      //     })
+      // this.$refs.form.reset();
     },
   },
   data: () => ({
     name: "",
+
     nameRules: [
       (value) => {
         if (value?.length > 3) return true;
@@ -69,6 +106,10 @@ export default {
     // ],
     description: "",
     phoneNo: "",
+    nameId: "entry.1702660706",
+    phoneNoId: "entry.549054387",
+    descriptionId: "entry.1036763654",
+
     lastNameRules: [
       (value) => {
         if (/[^0-9]/.test(value)) return true;
