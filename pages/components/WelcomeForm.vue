@@ -2,38 +2,38 @@
   <v-sheet elevation="2" class="pa-10 bg-primary-background" rounded="xl">
     <h2 class="mb-5 text-center">Connect With Us</h2>
     <v-form v-model="valid" ref="form" @submit.prevent="formSubmit">
-      <!-- <form
-        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf4bXFNLjy8PCXdeyiGiL7V2SCBRZW_MJjCcvTZbHVliuTFhg/formResponse"
-        method="post"
-        
-      > -->
       <v-text-field
         v-model="name"
         label="Name"
         variant="outlined"
         :rules="nameRules"
-        name="entry.1702660706"
+        name="entry.1686296719"
       ></v-text-field>
       <v-text-field
         v-model="phoneNo"
         label="Phone No"
         variant="outlined"
         type="number"
-        name="entry.549054387"
+        name="entry.1717555786"
       ></v-text-field>
       <v-textarea
         label="description"
         v-model="description"
         variant="outlined"
-        name="entry.1036763654"
+        name="entry.1347844840"
         rows="3"
       ></v-textarea>
       <div class="form-user-btn mt-5">
-        <v-btn class="mx-auto" :disabled="!valid" type="submit">Submit</v-btn>
+        <v-btn
+          class="mx-auto"
+          :loading="btnLoading"
+          :disabled="!valid"
+          type="submit"
+          >Submit</v-btn
+        >
       </div>
-      <!-- </form> -->
     </v-form>
-    <thankyou />
+    <thankyou :dialog-control="dialogControl" />
   </v-sheet>
 </template>
 <script>
@@ -48,28 +48,37 @@ export default {
     return { xs, mdAndUp };
   },
   methods: {
-    formSubmit(e) {
+    formSubmit() {
+      this.btnLoading = true;
       console.log("submit");
-      let data = `${this.nameId}=${this.name}& ${this.phoneNoId}=${this.phoneNo}&${this.descriptionId}=${this.description}`;
-      console.log(data);
+      const form = this.$refs.form.$el;
+      // let data = `${this.nameId}=${this.name}& ${this.phoneNoId}=${this.phoneNo}&${this.descriptionId}=${this.description}`;
+      // console.log(data);
+
       fetch(
-        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf4bXFNLjy8PCXdeyiGiL7V2SCBRZW_MJjCcvTZbHVliuTFhg/formResponse",
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdNRY8rdXBtA1CIdVW-pgW9zwv32smWr8S7gqyKPpz6zkfyNA/formResponse",
         {
-          mode: 'no-cors',
+          mode: "no-cors",
           headers: {
             "Access-Control-Allow-Origin": "*",
-
           },
-          
+
           method: "post",
-          body: data,
+          body: new FormData(form),
         }
       )
         .then((data) => {
-          console.log("success",data);
+          console.log("success", data);
+          this.dialogControl = true;
+          setTimeout(() => {
+            this.dialogControl = false;
+          }, 2500);
+          this.$refs.form.reset();
+          this.btnLoading = false;
         })
         .catch((e) => {
-          console.log("error",e);
+          console.log("error", e);
+          this.btnLoading = false;
         });
 
       // $.ajax({
@@ -86,12 +95,12 @@ export default {
 
       //         }
       //     })
-      // this.$refs.form.reset();
     },
   },
   data: () => ({
+    dialogControl: false,
     name: "",
-
+    btnLoading: false,
     nameRules: [
       (value) => {
         if (value?.length > 3) return true;
@@ -106,9 +115,9 @@ export default {
     // ],
     description: "",
     phoneNo: "",
-    nameId: "entry.1702660706",
-    phoneNoId: "entry.549054387",
-    descriptionId: "entry.1036763654",
+    // nameId: "entry.1702660706",
+    // phoneNoId: "entry.549054387",
+    // descriptionId: "entry.1036763654",
 
     lastNameRules: [
       (value) => {

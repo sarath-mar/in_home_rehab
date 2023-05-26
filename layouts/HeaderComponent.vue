@@ -17,7 +17,8 @@
           <!-- ../../../public/images -->
         </v-col>
         <v-col justify-center>
-          <p class="text-center carrier-text">Carriers</p>
+          <p @click="carrierPop=true" class="text-center carrier-text">Carriers</p>
+          <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon"/>
           <!-- <div class="text-center">
             <v-btn  variant="text"  color="primary ">Carriers</v-btn>
 
@@ -46,18 +47,25 @@
 </template>
 <script>
 import { useDisplay } from "vuetify";
+import CarriersForm from "~/pages/components/CarriersForm.vue";
 export default {
-  setup() {
-    // Destructure only the keys we want to use
-    const { xs, mdAndUp } = useDisplay();
-
-    return { xs, mdAndUp };
-  },
-  data() {
-    return {
-      scrollHeight: "",
-    };
-  },
+    setup() {
+        // Destructure only the keys we want to use
+        const { xs, mdAndUp } = useDisplay();
+        return { xs, mdAndUp };
+    },
+    data() {
+        return {
+            scrollHeight: "",
+            carrierPop:false,
+        };
+    },
+    methods:{
+      closeIcon(){
+        this.carrierPop=false
+      }
+    },
+    components: { CarriersForm }
 };
 </script>
 <style>
