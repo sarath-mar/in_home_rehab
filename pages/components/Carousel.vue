@@ -27,7 +27,7 @@
             </v-carousel-item>
           </v-carousel>
         </div>
-        <div class="mb-n16" v-else>
+        <div class="" v-else>
           <h1 class="heading-text">Restoring your health, Right wher you are</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
