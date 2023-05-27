@@ -2,9 +2,10 @@
   <div>
     <v-row
       class="align-center main-carousel"
-      :class="!mdAndUp ? 'margin-height flex-column-reverse' : 'mt-5'"
+      :class="!mdAndUp ? 'margin-height ' : 'mt-5'"
     >
-      <v-col cols="12" md="6">
+    <!-- flex-column-reverse -->
+      <v-col cols="12" md="6" v-if="mdAndUp">
         <v-carousel
           cycle
           class="carousel"
@@ -29,7 +30,7 @@
           </v-carousel-item>
         </v-carousel>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="6" >
         <v-carousel
           cycle
           class="carousel"
@@ -125,7 +126,7 @@ export default {
 </script>
 <style>
 .margin-height {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 .social-media {
   display: flex;
