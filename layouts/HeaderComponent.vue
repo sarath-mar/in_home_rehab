@@ -44,7 +44,7 @@
           </p>
           <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
           <div class="float-right mt-n5 mr-n5">
-            <v-menu open-on-hover>
+            <v-menu >
               <template v-slot:activator="{ props }">
                 <!-- <v-btn color="primary" > Dropdown </v-btn> -->
                 <Icon v-bind="props" class="header-icon-1" name="uil:phone" />
