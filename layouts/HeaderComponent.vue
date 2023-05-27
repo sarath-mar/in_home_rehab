@@ -44,7 +44,7 @@
           </p>
           <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
           <div class="float-right mt-n5 mr-n5">
-            <v-menu >
+            <v-menu>
               <template v-slot:activator="{ props }">
                 <!-- <v-btn color="primary" > Dropdown </v-btn> -->
                 <Icon v-bind="props" class="header-icon-1" name="uil:phone" />
@@ -65,7 +65,11 @@
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-title>
-                    <Icon class="header-icon" name="uil:fast-mail" />
+                    <Icon
+                      name="mdi-mail"
+                      class="header-icon"
+                    />
+                    <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
                     <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
                   </v-list-item-title>
                 </v-list-item>
