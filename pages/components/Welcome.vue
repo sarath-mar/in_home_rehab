@@ -6,7 +6,7 @@
           <v-col cols="12" md="7">
             <div>
               <h4 class="welcome-who">Who We Are</h4>
-              <h2 class="welcome-main-text">Welcome to Home Rehab</h2>
+              <h2 class="heading-text">Welcome to Home Rehab</h2>
               <p class="welcome-secondary mt-5">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
                 ea illum deleniti maiores velit eaque assumenda! Accusantium,
@@ -54,14 +54,6 @@ export default {
 </script>
 
 <style scoped>
-.welcome-main-text {
-  font-size: clamp(3.5em, 4vw, 4.5em);
-  line-height: 1.333;
-  font-weight: 900;
-  letter-spacing: 0.1rem;
-  /* margin-top: 20px; */
-  color: var(--secondary-text-color);
-}
 .welcome-li-div {
   display: flex;
 }

@@ -2,41 +2,48 @@
   <div>
     <v-row
       class="align-center main-carousel"
-      :class="!mdAndUp ? 'margin-height ' : 'mt-5'"
+      :class="!mdAndUp ? 'margin-height' : 'mt-5'"
     >
-    <!-- flex-column-reverse -->
-      <v-col cols="12" md="6" v-if="mdAndUp">
-        <v-carousel
-          cycle
-          class="carousel"
-          hide-delimiter-background
-          :show-arrows="false"
-          hide-delimiters
-        >
-          <v-carousel-item
-            v-for="(slide, i) in imageLinks"
-            :key="i"
-            cover
-            
+      <!-- flex-column-reverse -->
+      <v-col cols="12" md="6">
+        <!-- -->
+        <div v-if="mdAndUp">
+          <v-carousel
+            cycle
+            class="carousel"
+            hide-delimiter-background
+            :show-arrows="false"
+            hide-delimiters
           >
-            <div class="main-conntent">
-              <h2 class="banner-header">
-                {{ slide.title }}
-              </h2>
-              <p class="banner-subtitle mt-2 mt-md-5">
-                {{ slide.subtitle }}
-              </p>
-            </div>
-          </v-carousel-item>
-        </v-carousel>
+            <v-carousel-item v-for="(slide, i) in imageLinks" :key="i" cover>
+              <div class="main-conntent">
+                <h2 class="banner-header">
+                  {{ slide.title }}
+                </h2>
+                <p class="banner-subtitle mt-2 mt-md-5">
+                  {{ slide.subtitle }}
+                </p>
+              </div>
+            </v-carousel-item>
+          </v-carousel>
+        </div>
+        <div class="mb-n16" v-else>
+          <h1 class="heading-text">Restoring your health, Right wher you are</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+            quos vero vitae enim? Temporibus nisi nam cumque, atque quae
+            eligendi ut reiciendis velit saepe esse eum molestiae libero
+            expedita. Velit?
+          </p>
+        </div>
       </v-col>
-      <v-col cols="12" md="6" >
+      <v-col cols="12" md="6">
         <v-carousel
           cycle
           class="carousel"
           hide-delimiter-background
           show-arrows="hover"
-          height="75vh"
+          :height="mdAndUp? '75vh':'50vh'"
         >
           <v-carousel-item
             v-for="(slide, i) in imageLinks"
@@ -126,7 +133,7 @@ export default {
 </script>
 <style>
 .margin-height {
-  margin-top: 90px;
+  margin-top: 120px;
 }
 .social-media {
   display: flex;
@@ -154,13 +161,12 @@ export default {
   /* height: 10vh ; */
   /* height: calc(100vh - 100px) !important ; */
 }
-.main-conntent{
+.main-conntent {
   /* background-color: red ; */
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 .main-carousel {
   min-height: 95vh;

@@ -1,6 +1,6 @@
 <template>
   <div class="my-10">
-    <h2 class="service-text">Service We Provide</h2>
+    <h2 class="heading-text">Service We Provide</h2>
     <div v-for="service in servicesProvided" :key="service.title">
       <div class="mt-8">
         <h2 class="service-sub">
@@ -65,14 +65,7 @@ export default {
 </script>
 
 <style scoped>
-.service-text {
-  font-size: clamp(3em, 4vw, 4em);
-  line-height: 1.333;
-  font-weight: 900;
-  letter-spacing: 0.1rem;
-  margin-top: 0;
-  color: var(--primary-text-color);
-}
+
 .service-sub {
   font-size: clamp(1em, 4vw, 2em);
   line-height: 1.333;
