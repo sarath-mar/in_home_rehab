@@ -1,5 +1,18 @@
 <template>
   <v-layout>
+    <v-navigation-drawer v-model="drawer" location="right">
+      <div>
+        <Icon
+          name="mdi-close"
+          @click="drawer = !drawer"
+          class="icon-close text-primary-text float-right mr-5 mt-5"
+        />
+      </div>
+      <h2 class="text-primary ml-5 mt-5">In Home Rehab</h2>
+      <div class="mt-5">
+        <v-list :items="items"></v-list>
+      </div>
+    </v-navigation-drawer>
     <v-app-bar
       class="app-bar"
       :flat="false"
@@ -43,7 +56,7 @@
             Carriers
           </p>
           <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
-          <div class="float-right mt-n5 mr-n12">
+          <div class="float-right mt-n5 mr-n11">
             <v-menu>
               <template v-slot:activator="{ props }">
                 <!-- <v-btn color="primary" > Dropdown </v-btn> -->
@@ -65,10 +78,7 @@
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-title>
-                    <Icon
-                      name="mdi-mail"
-                      class="header-icon"
-                    />
+                    <Icon name="mdi-mail" class="header-icon" />
                     <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
                     <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
                   </v-list-item-title>
@@ -78,7 +88,8 @@
 
             <v-app-bar-nav-icon
               variant="text"
-              class="ml-4"
+              class="ml-4 bar-icon"
+              @click="drawer = !drawer"
             ></v-app-bar-nav-icon>
           </div>
         </v-col>
@@ -111,6 +122,21 @@ export default {
     return {
       scrollHeight: "",
       carrierPop: false,
+      drawer: false,
+      items: [
+        {
+          title: "InHome Rehab",
+          value: "foo",
+        },
+        {
+          title: "Service We Provide",
+          value: "bar",
+        },
+        {
+          title: "Why Home Therapy",
+          value: "fizz",
+        },
+      ],
     };
   },
   methods: {
@@ -129,6 +155,9 @@ export default {
   /* display: flex; */
   /* align-items: center; */
   justify-content: center;
+}
+.bar-icon {
+  background-color: greenyellow;
 }
 .header-icon {
   color: var(--primary-text-color);
