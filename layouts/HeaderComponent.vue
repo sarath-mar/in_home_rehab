@@ -103,7 +103,8 @@
                   <v-list-item-title>
                     <Icon name="mdi-mail" class="header-icon" />
                     <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
-                    <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
+                    <!-- <span class="ml-2 mail-text">inhomerehab@gmail.com</span> -->
+                 <a class="ml-2 phone-text" href = "mailto: inhomerehab@gmail.com">inhomerehab@gmail.com</a>
                   </v-list-item-title>
                 </v-list-item>
               </v-list>
