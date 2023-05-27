@@ -10,8 +10,27 @@
       </div>
       <h2 class="text-primary ml-5 mt-5">In Home Rehab</h2>
       <div class="mt-5">
-        <v-list :items="items"></v-list>
+        <!-- <v-list :items="items" @click="onClickNav"></v-list> -->
+        <v-list-item v-for="(item, i) in items" :key="i">
+          <!-- <template v-slot:prepend>
+            <v-icon :icon="item.icon"></v-icon>
+          </template> -->
+
+          <v-list-item-title
+            class="ml-5 list-item"
+            @click="onClickNav(item.value)"
+            >{{ item.title }}</v-list-item-title
+          >
+        </v-list-item>
       </div>
+      <!-- <div>
+        <div>
+          <v-btn class="header-btn"> Connect with Us</v-btn>
+        </div>
+        <div class="mt-5">
+          <v-btn class="header-btn"> carriers</v-btn>
+        </div>
+      </div> -->
     </v-navigation-drawer>
     <v-app-bar
       class="app-bar"
@@ -136,12 +155,31 @@ export default {
           title: "Why Home Therapy",
           value: "fizz",
         },
+        {
+          title: "Connect With Us",
+          value: "connect",
+        },
+        {
+          title: "Carriers",
+          value: "carrier",
+        },
       ],
     };
   },
   methods: {
     closeIcon() {
       this.carrierPop = false;
+    },
+    onClickNav(item) {
+      console.log("clikd nav", item);
+      if (!item) {
+        return;
+      }
+      this.drawer = false;
+      if (item === "carrier") {
+        this.carrierPop = true;
+        return;
+      }
     },
   },
   components: { CarriersForm },
@@ -155,6 +193,9 @@ export default {
   /* display: flex; */
   /* align-items: center; */
   justify-content: center;
+}
+.list-item {
+  cursor: pointer;
 }
 .bar-icon {
   background-color: greenyellow;
@@ -180,5 +221,8 @@ export default {
   color: var(--primary-text-color);
   font-size: 22px;
   cursor: pointer;
+}
+.header-btn {
+  text-transform: capitalize;
 }
 </style>

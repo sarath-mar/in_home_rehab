@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-row
-      class="align-center main-carousel"
-      :class="!mdAndUp ? 'margin-height' : 'mt-5'"
+      class=" "
+      :class="!mdAndUp ? 'margin-height' : 'mt-5 align-center main-carousel'"
     >
       <!-- flex-column-reverse -->
       <v-col cols="12" md="6">
@@ -43,7 +43,7 @@
           class="carousel"
           hide-delimiter-background
           show-arrows="hover"
-          :height="mdAndUp? '75vh':'30vh'"
+          :height="mdAndUp? '75vh':'35vh'"
         >
           <v-carousel-item
             v-for="(slide, i) in imageLinks"
@@ -133,7 +133,7 @@ export default {
 </script>
 <style>
 .margin-height {
-  margin-top: 150px;
+  margin-top: 130px;
 }
 .social-media {
   display: flex;

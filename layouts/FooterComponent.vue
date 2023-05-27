@@ -44,8 +44,8 @@
                 </div> -->
               </div>
             </div>
-            <div>
-              <Icon class="header-icon" name="uil:fast-mail" />
+            <div class="mt-3">
+              <Icon class="header-icon-1" name="mdi-mail" />
               <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
             </div>
           </div>
@@ -57,10 +57,10 @@
       <div class="mt-10 date-footer">
         {{ new Date().getFullYear() }} — <strong>In Home Rehab</strong>
       </div>
-      <div>
+      <div class="bg-white">
         <img
-          src="/images/in_home_rehab.jpg"
-          class="mt-6 footer-img"
+          src="/images/logo.png"
+          class="my-2 mt-4 mx-4 footer-img"
           width="70px"
           alt=""
         />
