@@ -2,20 +2,22 @@
   <v-dialog
     v-model="dialog"
     transition="dialog-bottom-transition"
-    width="auto"
+    :width="!mdAndUp ? '' : 'auto'"
     persistent
   >
     <v-sheet elevation="2" class="pa-10 bg-primary-background" rounded="xl">
       <Icon
         @click="closeIcon"
         name="mdi-close"
-        class="icon-close text-primary-text float-right"
+        class="icon-close float-right"
       />
-      <h2 class="text-center">Opportunities Across All Career Stages</h2>
+      <h2 class="text-center text-primary">
+        Opportunities Across All Career Stages
+      </h2>
 
       <!-- </div> -->
 
-      <div class="px-16">
+      <div class="px-16 mt-2">
         <hr />
       </div>
 
@@ -39,6 +41,7 @@
           variant="outlined"
           type="number"
           name="entry.1717555786"
+          :rules="phoneRules"
         ></v-text-field>
         <div>
           <p>Area of specialization</p>
@@ -76,7 +79,8 @@
           variant="outlined"
           v-model="location"
         ></v-autocomplete>
-        <div class="form-user-btn mt-5">
+        <p class="text-red">{{ errrorMsg }}</p>
+        <div class="form-user-btn mt-2">
           <v-btn
             class="mx-auto"
             :loading="btnLoading"
@@ -86,7 +90,7 @@
           >
         </div>
       </v-form>
-      <div class="mt-5">
+      <div class="mt-5" v-if="mdAndUp">
         <p class="text-center">
           Let us know more about you by contacting our talent Acquisition team
           in 876432345/ 234567865
@@ -130,11 +134,27 @@ export default {
       this.$emit("closeIcon");
     },
     formSubmit() {
-      this.btnLoading = true;
+      
       console.log("submit");
+      if (!this.specialization) {
+        this.errrorMsg = "Please select Area of specialization";
+        setTimeout(() => {
+          this.errrorMsg = "";
+        }, 2000);
+        return;
+      }
+      if (!this.location) {
+        this.errrorMsg = "Please select your location";
+        setTimeout(() => {
+          this.errrorMsg = "";
+        }, 2000);
+        return;
+      }
+      this.btnLoading = true;
       const form = this.$refs.form.$el;
+      if (form) return;
       fetch(
-        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdNRY8rdXBtA1CIdVW-pgW9zwv32smWr8S7gqyKPpz6zkfyNA/formResponse",
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSej3Q60MLIFP8l5_hLspgjgiQG9A5qsOAfSKxHyYUZCi7yMlA/formResponse",
         {
           mode: "no-cors",
           headers: {
@@ -176,7 +196,8 @@ export default {
     },
   },
   data: () => ({
-    dialog: false,
+    errrorMsg: "",
+    dialog: true,
     dialogControl: false,
     name: "",
     btnLoading: false,
@@ -184,6 +205,12 @@ export default {
       (value) => {
         if (value?.length > 3) return true;
         return "Name must be at least 3 characters.";
+      },
+    ],
+    phoneRules: [
+      (value) => {
+        if (/^([+]\d{2})?\d{10}$/.test(value)) return true;
+        return "Must be a valid phone no";
       },
     ],
     phoneNo: "",

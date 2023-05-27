@@ -1,6 +1,6 @@
 <template>
   <v-sheet elevation="2" class="pa-10 bg-primary-background" rounded="xl">
-    <h2 class="mb-5 text-center">Connect With Us</h2>
+    <h2 class="mb-5 text-center text-primary">Connect With Us</h2>
     <v-form v-model="valid" ref="form" @submit.prevent="formSubmit">
       <v-text-field
         v-model="name"

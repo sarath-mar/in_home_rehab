@@ -12,7 +12,7 @@
             <v-col
               v-for="content in service.content"
               :key="content.title"
-              cols="6"
+              cols="12"
               md="4"
               lg="2"
             >
