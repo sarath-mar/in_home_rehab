@@ -43,7 +43,7 @@
             Carriers
           </p>
           <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
-          <div class="float-right mt-n5 mr-n5">
+          <div class="float-right mt-n5 mr-n12">
             <v-menu>
               <template v-slot:activator="{ props }">
                 <!-- <v-btn color="primary" > Dropdown </v-btn> -->
@@ -78,7 +78,7 @@
 
             <v-app-bar-nav-icon
               variant="text"
-              class="ml-7"
+              class="ml-4"
             ></v-app-bar-nav-icon>
           </div>
         </v-col>
