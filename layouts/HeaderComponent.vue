@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-navigation-drawer v-model="drawer" location="right">
+    <v-navigation-drawer v-if="!mdAndUp" v-model="drawer" location="right">
       <div>
         <Icon
           name="mdi-close"
@@ -78,10 +78,6 @@
           />
         </v-col>
         <v-col>
-          <!-- <p @click="carrierPop = true" class="text-center carrier-text">
-            Carriers
-          </p>
-          <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
           <div class="float-right mt-n5 mr-n10">
             <v-menu>
               <template v-slot:activator="{ props }">
