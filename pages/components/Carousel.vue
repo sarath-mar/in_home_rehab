@@ -29,7 +29,7 @@
         </div>
         <div class="" v-else>
           <h1 class="heading-text">Restoring your health, Right wher you are</h1>
-          <p>
+          <p class="paragraph-text mt-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             quos vero vitae enim? Temporibus nisi nam cumque, atque quae
             eligendi ut reiciendis velit saepe esse eum molestiae libero

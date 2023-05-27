@@ -19,18 +19,25 @@
           <v-list-item-title
             class="ml-5 list-item"
             @click="onClickNav(item.value)"
-            >{{ item.title }}</v-list-item-title
+            > <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon>{{ item.title }}  </v-list-item-title
           >
         </v-list-item>
       </div>
       <!-- <div>
+        <v-sheet elevation="2" class="sheet" >Connect With Us</v-sheet>
+        <v-sheet elevation="2" >Carriers</v-sheet>
+      </div> -->
+      <div class="drawer-btn">
         <div>
-          <v-btn class="header-btn"> Connect with Us</v-btn>
+          <v-btn class="header-btn bg-secondary">
+            Connect with Us</v-btn
+          >
         </div>
         <div class="mt-5">
-          <v-btn class="header-btn"> carriers</v-btn>
+          <v-btn @click="carrierPop=!carrierPop;drawer=!drawer" class="header-btn  bg-secondary"> carriers</v-btn>
+          <!-- <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
         </div>
-      </div> -->
+      </div>
     </v-navigation-drawer>
     <v-app-bar
       class="app-bar"
@@ -155,14 +162,14 @@ export default {
           title: "Why Home Therapy",
           value: "fizz",
         },
-        {
-          title: "Connect With Us",
-          value: "connect",
-        },
-        {
-          title: "Carriers",
-          value: "carrier",
-        },
+        // {
+        //   title: "Connect With Us",
+        //   value: "connect",
+        // },
+        // {
+        //   title: "Carriers",
+        //   value: "carrier",
+        // },
       ],
     };
   },
@@ -186,6 +193,18 @@ export default {
 };
 </script>
 <style>
+.drawer-btn {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.drawer-btn .header-btn {
+  width: 140px;
+  /* padding: 20px; */
+  /* padding-bottom: 30px; */
+}
 .app-bar {
   height: 90px !important;
   padding: 5px !important;

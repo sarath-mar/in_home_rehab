@@ -15,7 +15,7 @@
         <welcome />
         <!-- </div> -->
       </div>
-      <div class="px-10">
+      <div class="px-10" id="service-provided">
         <service-provided />
       </div>
     </div>
@@ -74,6 +74,11 @@ html {
   letter-spacing: 0.1rem;
   /* margin-top: 20px; */
   color: var(--secondary-text-color);
+}
+.paragraph-text {
+  font-size: clamp(1em, 4vw, 2em);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
 }
 /* background-image: url(https://kitnew.moxcreative.com/kindera/wp-content/uploads/sites/35/2023/01/bg_img.png);
     background-position: center center;

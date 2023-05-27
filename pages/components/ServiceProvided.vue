@@ -6,7 +6,7 @@
         <h2 class="service-sub">
           <Icon name="uil:label" /> {{ service.title }}
         </h2>
-        <h4 class="mt-3 service-content">{{ service.description }}</h4>
+        <h4 class="mt-3 paragraph-text">{{ service.description }}</h4>
         <div class="mt-3">
           <v-row>
             <v-col
@@ -64,22 +64,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-.service-sub {
-  font-size: clamp(1em, 4vw, 2em);
-  line-height: 1.333;
-  font-weight: 900;
-  letter-spacing: 0.1rem;
-  margin-top: 0;
-  color: var(--secondary-text-color);
-}
-.service-content {
-  font-size: clamp(0.8em, 4vw, 1.2em);
-  line-height: 1.333;
-  font-weight: 900;
-  /* letter-spacing: 0.1rem; */
-  margin-top: 0;
-  /* color: var(--primary-text-color); */
-}
-</style>
+<style scoped></style>

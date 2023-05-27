@@ -7,7 +7,7 @@
             <div>
               <h4 class="welcome-who">Who We Are</h4>
               <h2 class="heading-text">Welcome to Home Rehab</h2>
-              <p class="welcome-secondary mt-5">
+              <p class="paragraph-text mt-5">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
                 ea illum deleniti maiores velit eaque assumenda! Accusantium,
                 dolor. Voluptate sunt quod veniam nisi officia maxime quaerat
@@ -83,14 +83,7 @@ export default {
   height: 100%;
   border-radius: 20px;
 }
-.welcome-secondary {
-  font-size: clamp(1em, 4vw, 2em);
-  /* line-height: 1.333; */
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  /* margin-top: 20px; */
-  /* color: var(--primary-text-color); */
-}
+
 .welcome-who {
   font-size: clamp(0.8em, 4vw, 1.5em);
   color: var(--primary-text-color);
