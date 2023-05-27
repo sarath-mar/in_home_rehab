@@ -43,7 +43,7 @@
           class="carousel"
           hide-delimiter-background
           show-arrows="hover"
-          :height="mdAndUp? '75vh':'50vh'"
+          :height="mdAndUp? '75vh':'30vh'"
         >
           <v-carousel-item
             v-for="(slide, i) in imageLinks"
@@ -133,7 +133,7 @@ export default {
 </script>
 <style>
 .margin-height {
-  margin-top: 120px;
+  margin-top: 150px;
 }
 .social-media {
   display: flex;

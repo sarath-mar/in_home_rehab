@@ -56,7 +56,7 @@
             Carriers
           </p>
           <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
-          <div class="float-right mt-n5 mr-n11">
+          <div class="float-right mt-n5 mr-n10">
             <v-menu>
               <template v-slot:activator="{ props }">
                 <!-- <v-btn color="primary" > Dropdown </v-btn> -->
