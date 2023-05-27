@@ -126,7 +126,7 @@ export default {
 </script>
 <style>
 .margin-height {
-  margin-top: 100px;
+  margin-top: 90px;
 }
 .social-media {
   display: flex;
