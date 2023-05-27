@@ -89,13 +89,14 @@
                 <v-list-item>
                   <v-list-item-title>
                     <Icon class="header-icon-1" name="uil:phone" />
-                    <span class="ml-2 phone-text">9876543210</span>
+                    <!-- <span class="ml-2 phone-text">+918891575227  (speech therapy)</span> -->
+                    <a class="ml-2 phone-text" href="tel:+91-8891575227">+918891575227  (speech therapy)</a>
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-title>
                     <Icon class="header-icon-1" name="uil:phone" />
-                    <span class="ml-2 phone-text">9874561230</span>
+                    <span class="ml-2 phone-text">+919961132071 (occupational therapy)</span>
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item>
@@ -227,6 +228,7 @@ export default {
 .phone-text {
   color: var(--secondary-text-color);
   font-size: 17px;
+  text-decoration: none;
 }
 .mail-text {
   font-size: 18px;
