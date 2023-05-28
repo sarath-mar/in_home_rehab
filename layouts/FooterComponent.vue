@@ -45,7 +45,7 @@
               </div>
             </div>
             <div class="mt-3">
-              <Icon class="header-icon-1" name="mdi-mail" />
+              <Icon class="header-icon-1" name="mdi-email" />
               <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
             </div>
           </div>
