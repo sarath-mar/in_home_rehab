@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-footer elevation="4" class="footer-main text-center d-flex flex-column">
+    <v-footer elevation="14" class="footer-main text-center d-flex flex-column">
       <div class="mt-12">
         <!-- <v-btn
           v-for="icon in socialMedia"
@@ -48,8 +48,8 @@ export default {
 </script>
 <style>
 .footer-main {
-  background-color: var(--primary);
-  /* color: white; */
+  background-color: var(--primary-text-color);
+  color: white;
   /* height: 30vh; */
 }
 .date-footer {

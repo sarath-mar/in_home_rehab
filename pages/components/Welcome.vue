@@ -1,14 +1,19 @@
 <template>
   <div class="welcome-main">
     <transition name="toast">
-      <v-row class="align-center pt-8" v-if="showToast">
+      <!--  v-if="showToast" -->
+      <v-row class="align-center pt-8">
         <v-col cols="12" md="12">
           <v-row>
             <v-col cols="12">
               <div class="text-center">
                 <!-- <h4 class="welcome-who">Who We Are</h4> -->
-                <h2 class="welcome-main-text">Welcome to Yem Yem Impex</h2>
-                <p class="welcome-secondary mt-5">
+                <h4 class="mt-3 subtitle-text">Featured products</h4>
+
+                <h2 class="heading-text">
+                  Welcome to <span class="company">Yem Yem Impex</span>
+                </h2>
+                <p class="paragraph-text mt-5">
                   Equipped with the state-of-art facilities and prerequisites,
                   the Kerala based YEM YEM IMPEX is on its way to make a mark in
                   the International Fresh produce industry. Unparalleled
@@ -48,7 +53,6 @@ export default {
 
     const triggerToast = () => {
       showToast.value = true;
-      // setTimeout(() => (showToast.value = true), 3000);
     };
 
     return { showToast, triggerToast };
@@ -81,13 +85,16 @@ export default {
 </script>
 
 <style scoped>
-.welcome-main-text {
+/* .welcome-main-text {
   font-size: clamp(2.5em, 4vw, 3.5em);
   line-height: 1.333;
   font-weight: 900;
   letter-spacing: 0.1rem;
-  /* margin-top: 20px; */
   color: var(--primary-text-color);
+} */
+.company {
+  color: var(--secondary-text-color);
+  font-size: clamp(1.2em, 4vw, 1em);
 }
 .welcome-li-div {
   display: flex;
@@ -133,29 +140,35 @@ export default {
 
 /* animation */
 
- /* enter transitions */
- .toast-enter-active {
-    animation: wobble 0.5s ease;
-    /* opacity: 1;
+/* enter transitions */
+.toast-enter-active {
+  animation: wobble 0.5s ease;
+  /* opacity: 1;
     transform: translateX(-100px); */
-  }
-  /* leave transitions */
-  .toast-leave-to {
-    opacity: 0;
-    transform: translateY(-60px);
-  }
-  .toast-leave-active {
-    transition: all 0.3s ease;
-    opacity: 1;
-  }
+}
+/* leave transitions */
+.toast-leave-to {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.toast-leave-active {
+  transition: all 0.3s ease;
+  opacity: 1;
+}
 
-  @keyframes wobble {
-    0% { transform: translateY(-100px); opacity: 0 }
-    /* 50% { transform: translateY(0px); opacity: 1 }
+@keyframes wobble {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  /* 50% { transform: translateY(0px); opacity: 1 }
     60% { transform: translateX(8px); opacity: 1 }
     70% { transform: translateX(-8px); opacity: 1 }
     80% { transform: translateX(4px); opacity: 1 }
     90% { transform: translateX(-4px); opacity: 1 } */
-    100% { transform: translateX(0px); opacity: 1 }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
   }
+}
 </style>

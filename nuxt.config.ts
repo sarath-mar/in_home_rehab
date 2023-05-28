@@ -19,7 +19,7 @@ export default defineNuxtConfig({
           rel: "stylesheet",
         },
         {
-          href: "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@1,700&family=Lato&family=Montserrat&family=Roboto&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@1,700&family=Kaushan+Script&family=Lato&family=Montserrat&family=Roboto&display=swap",
           rel: "stylesheet",
         },
         {

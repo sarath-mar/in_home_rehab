@@ -45,7 +45,7 @@
               </div>
               <div v-else>
                 <ul class="ul-items">
-                  <li v-for="item in items" :key="item">{{ item.title }}</li>
+                  <li v-for="item in items" :key="item" class="header-route">{{ item.title }}</li>
                 </ul>
               </div>
             </div>
@@ -120,6 +120,9 @@ export default {
   /* display: flex; */
   /* align-items: center; */
   justify-content: center;
+}
+.header-route{
+  color: var(--primary-text-color);
 }
 .header-icon {
   color: var(--primary-text-color);
