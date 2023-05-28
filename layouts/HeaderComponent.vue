@@ -69,9 +69,10 @@
               <Icon class="header-icon-1" name="uil:phone" />
               <span class="ml-2 phone-text">9876543210 / 9874561230</span>
             </div>
-            <div class="text-end">
-              <Icon class="header-icon" name="uil:fast-mail" />
-              <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
+            <div class="text-end mt-2">
+              <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
+              <Icon name="mdi-email" class="header-icon" />
+              <span class="ml-2  mail-text">inhomerehab@gmail.com</span>
             </div>
           </div>
         </v-col>
@@ -112,7 +113,7 @@
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-title>
-                    <Icon name="mdi-mail" class="header-icon" />
+                    <Icon name="mdi-email" class="header-icon" />
                    <a
                       class="ml-2 phone-text"
                       href="mailto: inhomerehab@gmail.com"
@@ -232,7 +233,7 @@ export default {
 }
 .header-icon {
   color: var(--primary-text-color);
-  font-size: 30px;
+  font-size: 26px;
 }
 .header-icon-1 {
   color: var(--primary-text-color);

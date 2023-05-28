@@ -15,6 +15,7 @@
         variant="outlined"
         type="number"
         name="entry.1717555786"
+        :rules="phoneRules"
       ></v-text-field>
       <v-textarea
         label="description"
@@ -115,9 +116,12 @@ export default {
     // ],
     description: "",
     phoneNo: "",
-    // nameId: "entry.1702660706",
-    // phoneNoId: "entry.549054387",
-    // descriptionId: "entry.1036763654",
+    phoneRules: [
+      (value) => {
+        if (/^([+]\d{2})?\d{10}$/.test(value)) return true;
+        return "Must be a valid phone no";
+      },
+    ],
 
     lastNameRules: [
       (value) => {
