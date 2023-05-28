@@ -13,8 +13,8 @@
               v-for="content in service.content"
               :key="content.title"
               cols="12"
-              md="4"
-              lg="2"
+              md="6"
+              lg="3"
             >
               <service-card />
             </v-col>
@@ -41,8 +41,8 @@ export default {
             { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
+            // { title: "Test", description: "Description", image: "" },
+            // { title: "Test", description: "Description", image: "" },
           ],
         },
         {
@@ -54,8 +54,8 @@ export default {
             { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },
             { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
-            { title: "Test", description: "Description", image: "" },
+            // { title: "Test", description: "Description", image: "" },
+            // { title: "Test", description: "Description", image: "" },
           ],
         },
       ],
