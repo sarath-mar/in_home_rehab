@@ -19,8 +19,10 @@
           <v-list-item-title
             class="ml-5 list-item"
             @click="onClickNav(item.value)"
-            > <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon>{{ item.title }}  </v-list-item-title
           >
+            <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon
+            >{{ item.title }}
+          </v-list-item-title>
         </v-list-item>
       </div>
       <!-- <div>
@@ -29,12 +31,18 @@
       </div> -->
       <div class="drawer-btn">
         <div>
-          <v-btn class="header-btn bg-secondary">
-            Connect with Us</v-btn
-          >
+          <v-btn class="header-btn bg-secondary"> Connect with Us</v-btn>
         </div>
         <div class="mt-5">
-          <v-btn @click="carrierPop=!carrierPop;drawer=!drawer" class="header-btn  bg-secondary"> carriers</v-btn>
+          <v-btn
+            @click="
+              carrierPop = !carrierPop;
+              drawer = !drawer;
+            "
+            class="header-btn bg-secondary"
+          >
+            carriers</v-btn
+          >
           <!-- <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
         </div>
       </div>
@@ -89,22 +97,27 @@
                 <v-list-item>
                   <v-list-item-title>
                     <Icon class="header-icon-1" name="uil:phone" />
-                    <!-- <span class="ml-2 phone-text">+918891575227  (speech therapy)</span> -->
-                    <a class="ml-2 phone-text" href="tel:+91-8891575227">+918891575227  (speech therapy)</a>
+                    <a class="ml-2 phone-text" href="tel:+91-8891575227"
+                      >+918891575227 (speech therapy)</a
+                    >
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-title>
                     <Icon class="header-icon-1" name="uil:phone" />
-                    <span class="ml-2 phone-text">+919961132071 (occupational therapy)</span>
+                    <a class="ml-2 phone-text" href="tel:+91-9961132071"
+                      >+919961132071 (occupational therapy)</a
+                    >
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-title>
                     <Icon name="mdi-mail" class="header-icon" />
-                    <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
-                    <!-- <span class="ml-2 mail-text">inhomerehab@gmail.com</span> -->
-                 <a class="ml-2 phone-text" href = "mailto: inhomerehab@gmail.com">inhomerehab@gmail.com</a>
+                   <a
+                      class="ml-2 phone-text"
+                      href="mailto: inhomerehab@gmail.com"
+                      >inhomerehab@gmail.com</a
+                    >
                   </v-list-item-title>
                 </v-list-item>
               </v-list>

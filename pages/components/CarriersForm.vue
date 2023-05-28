@@ -24,7 +24,7 @@
       <!-- <h5 class="text-center">Or</h5> -->
       <v-form
         v-model="valid"
-        ref="form"
+        ref="formSpeech"
         class="mt-5"
         @submit.prevent="formSubmit"
       >
@@ -33,14 +33,14 @@
           label="Name"
           variant="outlined"
           :rules="nameRules"
-          name="entry.1686296719"
+          name="entry.1672732300"
         ></v-text-field>
         <v-text-field
           v-model="phoneNo"
           label="Phone No"
           variant="outlined"
           type="number"
-          name="entry.1717555786"
+          name="entry.130358932"
           :rules="phoneRules"
         ></v-text-field>
         <div>
@@ -58,6 +58,12 @@
             </v-radio-group>
           </div>
         </div>
+        <v-text-field
+          v-show="false"
+          name="entry.914836473"
+          v-model="specialization"
+        >
+        </v-text-field>
         <v-autocomplete
           label="Location"
           :items="[
@@ -79,6 +85,89 @@
           variant="outlined"
           v-model="location"
         ></v-autocomplete>
+        <v-text-field
+          v-show="false"
+          name="entry.2062944125"
+          v-model="location"
+        ></v-text-field>
+        <p class="text-red">{{ errrorMsg }}</p>
+        <div class="form-user-btn mt-2">
+          <v-btn
+            class="mx-auto"
+            :loading="btnLoading"
+            :disabled="!valid"
+            type="submit"
+            >Submit</v-btn
+          >
+        </div>
+      </v-form>
+      <v-form
+        v-model="valid"
+        v-show="false"
+        ref="formOccupational"
+        class="mt-5"
+        @submit.prevent="formSubmit"
+      >
+        <v-text-field
+          v-model="name"
+          label="Name"
+          variant="outlined"
+          :rules="nameRules"
+          name="entry.343433382"
+        ></v-text-field>
+        <v-text-field
+          v-model="phoneNo"
+          label="Phone No"
+          variant="outlined"
+          type="number"
+          name="entry.986829468"
+          :rules="phoneRules"
+        ></v-text-field>
+        <div>
+          <p>Area of specialization</p>
+          <div>
+            <v-radio-group v-model="specialization" inline>
+              <v-radio
+                label="Speech Language Pathologist"
+                value="Speech Language Pathologist"
+              ></v-radio>
+              <v-radio
+                label="Occupational Therapist"
+                value="Occupational Therapist"
+              ></v-radio>
+            </v-radio-group>
+          </div>
+        </div>
+        <v-text-field
+          v-show="false"
+          name="entry.570858311"
+          v-model="specialization"
+        >
+        </v-text-field>
+
+        <v-autocomplete
+          label="Location"
+          :items="[
+            'Alappuzha',
+            'Ernakulam',
+            'Idukki',
+            'Kannur',
+            'Kasaragod',
+            'Kollam',
+            'Kottayam',
+            'Kozhikode',
+            'Malappuram',
+            'Palakkad',
+            'Pathanamthitta',
+            'Thiruvananthapuram',
+            'Thrissur',
+            'Wayanad',
+          ]"
+          variant="outlined"
+          v-model="location"
+        ></v-autocomplete>
+        <v-text-field v-show="false" name="entry.1235296561" v-model="location">
+        </v-text-field>
         <p class="text-red">{{ errrorMsg }}</p>
         <div class="form-user-btn mt-2">
           <v-btn
@@ -99,6 +188,7 @@
         <p class="mt-5 text-center">Emai Us on inhomerehab@gmail.com</p>
       </div>
       <thankyou :dialog-control="dialogControl" />
+      <!-- <thankyou :dialog-control="dialogControl" /> -->
     </v-sheet>
   </v-dialog>
 </template>
@@ -134,7 +224,6 @@ export default {
       this.$emit("closeIcon");
     },
     formSubmit() {
-      
       console.log("submit");
       if (!this.specialization) {
         this.errrorMsg = "Please select Area of specialization";
@@ -151,28 +240,55 @@ export default {
         return;
       }
       this.btnLoading = true;
-      const form = this.$refs.form.$el;
-      if (form) return;
-      fetch(
-        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSej3Q60MLIFP8l5_hLspgjgiQG9A5qsOAfSKxHyYUZCi7yMlA/formResponse",
-        {
-          mode: "no-cors",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
+      let occupationalUrl =
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf2h79X0f-TNiTjoIeroOp5poQiZZemDY7s5JMOeey4yUX-8w/formResponse";
+      let speechUrl =
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeN7Kt6anu-Oe6TCN3ZK8qG_6PB7d6g-VI5Iqy5PYkawX-5tQ/formResponse";
+      let url = "";
+      let OccupationalForm = this.$refs.formOccupational.$el;
+      let speechForm = this.$refs.formSpeech.$el;
+      let form = "";
+      if (this.specialization === "Speech Language Pathologist") {
+        form = speechForm;
+        url = speechUrl;
+      } else if (this.specialization === "Occupational Therapist") {
+        form = OccupationalForm;
+        url = occupationalUrl;
+      } else {
+        return;
+      }
+      let formData = new FormData(form);
+      // if (formData) {
+      //   console.log(url);
+      //   console.log("---------");
+      //   console.log(form);
+      //   console.log("----------");
+      //   console.log(formData);
+      //   return;
+      // }
+      fetch(url, {
+        mode: "no-cors",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
 
-          method: "post",
-          body: new FormData(form),
-        }
-      )
+        method: "post",
+        body: formData,
+      })
         .then((data) => {
           console.log("success", data);
           this.dialogControl = true;
           setTimeout(() => {
             this.dialogControl = false;
           }, 2500);
-          this.$refs.form.reset();
+
+          if (this.specialization === "Speech Language Pathologist") {
+            this.$refs.formSpeech.reset();
+          } else {
+            this.$refs.formOccupational.reset();
+          }
           this.btnLoading = false;
+          this.dialog = false;
         })
         .catch((e) => {
           console.log("error", e);
@@ -224,6 +340,22 @@ export default {
       },
     ],
     valid: false,
+    locations: [
+      { title: "Alappuzha", value: "Alappuzha" },
+      { title: "Ernakulam", value: "Ernakulam" },
+      { title: "Idukki", value: "Idukki" },
+      { title: "Kannur", value: "Kannur" },
+      { title: "Kasaragod", value: "Kasaragod" },
+      { title: "Kollam", value: "Kollam" },
+      { title: "Kottayam", value: "Kottayam" },
+      { title: "Kozhikode", value: "Kozhikode" },
+      { title: "Malappuram", value: "Malappuram" },
+      { title: "Palakkad", value: "Palakkad" },
+      { title: "Pathanamthitta", value: "Pathanamthitta" },
+      { title: "Thiruvananthapuram", value: "Thiruvananthapuram" },
+      { title: "Thrissur", value: "Thrissur" },
+      { title: "Wayanad", value: "Wayanad" },
+    ],
   }),
 };
 </script>
