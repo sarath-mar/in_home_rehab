@@ -1,5 +1,5 @@
 <template>
-  <v-card width="350" elevation="5">
+  <v-card width="350" elevation="5" >
     <!-- max-width="344" -->
     <!-- <v-img
       :src="

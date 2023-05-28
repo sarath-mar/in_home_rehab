@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="header-content">
-      <header-component />
     </div>
     <div class="">
       <carousel />
@@ -23,18 +22,10 @@
         <contact-us />
       </div>
     </div>
-    <footer-component />
   </div>
 </template>
 
 <script>
-// import Header from "../layouts/HeaderComponent.vue"
-// export default {};
-const scrolling = (e) => {
-  console.log("hyyy");
-};
-import HeaderComponent from "../layouts/HeaderComponent.vue";
-import FooterComponent from "../layouts/FooterComponent.vue";
 import Carousel from "./components/Carousel.vue";
 import Welcome from "./components/Welcome.vue";
 import BreadComponent from "./components/BreadComponent.vue";
@@ -42,10 +33,8 @@ import ServiceProvided from "./components/OurProducts.vue";
 import ContactUs from "./components/ContactUs.vue";
 export default {
   components: {
-    HeaderComponent,
     Carousel,
     Welcome,
-    FooterComponent,
     BreadComponent,
     ServiceProvided,
     ContactUs,
@@ -84,9 +73,10 @@ font-family: 'Montserrat', sans-serif;
   color: var(--primary-text-color)
 }
 .paragraph-text {
-  font-size: clamp(1em, 4vw, 1.5em);
+  font-size: clamp(1em, 4vw, 1.2em);
   font-weight: 500;
   font-style: italic;
+  text-align: justify;
   /* letter-spacing: 0.1rem; */
 }
 .subtitle-text {
@@ -96,6 +86,9 @@ font-family: 'Montserrat', sans-serif;
   font-family: 'Kaushan Script', cursive;
   color: var(--secondary-text-color);
   /* letter-spacing: 0.1rem; */
+}
+.normal-text{
+  font-style: italic;
 }
 .subtitle-text-normal{
   font-size: clamp(1em, 4vw, 1.5em);
