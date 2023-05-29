@@ -1,16 +1,23 @@
 <template>
-  <div class="header-content">
-    
-  </div>
+  <div class="header-content"></div>
   <div :class="mdAndUp ? 'px-10' : 'px-5'">
-    <about-us/>
+    <about-us />
+  </div>
+  <div class="welcome-div mt-5" :class="mdAndUp ? 'px-10' : 'px-5'">
+    <mission-and-vision />
+  </div>
+  <div class="mt-5" :class="mdAndUp ? 'px-10' : 'px-5'">
+    <division />
   </div>
 </template>
 
 <script>
-import aboutUs from './components/aboutUs.vue';
+import aboutUs from "./components/aboutUs.vue";
+import Division from "./components/division.vue";
+import MissionAndVision from "./components/missionAndVision.vue";
 export default {
-  components: { aboutUs },};
+  components: { aboutUs, MissionAndVision, Division },
+};
 </script>
 
 <style>

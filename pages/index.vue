@@ -66,7 +66,7 @@ font-family: 'Montserrat', sans-serif;
 }
 .heading-text {
   font-size: clamp(2.5em, 4vw, 3.5em);
- font-style: italic;
+ /* font-style: italic; */
   line-height: 1.333;
   font-weight: 900;
   letter-spacing: 0.1rem;
@@ -75,26 +75,26 @@ font-family: 'Montserrat', sans-serif;
 .paragraph-text {
   font-size: clamp(1em, 4vw, 1.2em);
   font-weight: 500;
-  font-style: italic;
+  /* font-style: italic; */
   text-align: justify;
   /* letter-spacing: 0.1rem; */
 }
 .subtitle-text {
   font-size: clamp(1em, 4vw, 1.5em);
   font-weight: 500;
-  font-style: italic;
+  /* font-style: italic; */
   font-family: 'Kaushan Script', cursive;
   color: var(--secondary-text-color);
   /* letter-spacing: 0.1rem; */
 }
 .normal-text{
-  font-style: italic;
+  /* font-style: italic; */
 }
 .subtitle-text-normal{
   font-size: clamp(1em, 4vw, 1.5em);
   font-weight: 700;
   /* text-decoration: underline ; */
-  font-style: italic;
+  /* font-style: italic; */
   color: var(--secondary-text-color);
 }
 .welcome-test {

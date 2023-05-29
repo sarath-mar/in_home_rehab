@@ -87,25 +87,25 @@ export default {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ea fugiat corrupti odit,",
       },
       imageLinks: [
+        // {
+        //   src: "/images/banner3.jpg",
+        //   title: "Are Your a Therapist",
+        //   subtitle:
+        //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ea fugiat corrupti odit,",
+        //   buttonDetail: "test",
+        // },
         {
           src: "/images/banner1.jpg",
-          title: "Are Your a Therapist",
-          subtitle:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ea fugiat corrupti odit,",
-          buttonDetail: "test",
-        },
-        {
-          src: "/images/banner2.jpg",
           title: "One",
           subtitle: "one subtitle",
           buttonDetail: "test",
         },
-        // {
-        //   src: "http://wallpapercave.com/wp/DIkTH3a.jpg",
-        //   title: "Two",
-        //   subtitle: "two subtitle",
-        //   buttonDetail: "test",
-        // },
+        {
+          src: "/images/banner2.jpg",
+          title: "Two",
+          subtitle: "two subtitle",
+          buttonDetail: "test",
+        },
         // {
         //   src: "https://www.pixelstalk.net/wp-content/uploads/2016/08/Free-Download-Fruit-Wallpaper.jpg",
         //   title: "Three",
