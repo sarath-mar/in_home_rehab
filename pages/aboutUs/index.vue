@@ -12,10 +12,19 @@
 </template>
 
 <script>
+
+import { useDisplay } from "vuetify";
+
 import aboutUs from "./components/aboutUs.vue";
 import Division from "./components/division.vue";
 import MissionAndVision from "./components/missionAndVision.vue";
 export default {
+  setup() {
+    // Destructure only the keys we want to use
+    const { xs, mdAndUp } = useDisplay();
+
+    return { xs, mdAndUp };
+  },
   components: { aboutUs, MissionAndVision, Division },
 };
 </script>

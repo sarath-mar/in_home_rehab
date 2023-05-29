@@ -17,8 +17,9 @@
           <!-- </v-sheet> -->
         </div>
       </v-col>
-      <v-col cols="12" md="7">
-        <div >
+      <v-col cols="12" md="7" >
+      
+        <div :class="mdAndUp ? 'ml-10': ''">
           <h2 class="subtitle-text-normal pt-5">Vision</h2>
           <p class="paragraph-text mt-5">
             As our name suggest, at YEM YEM IMPEX, our vision is to supply
@@ -33,7 +34,15 @@
 </template>
 
 <script>
-export default {};
+import { useDisplay } from "vuetify";
+export default {
+    setup() {
+    // Destructure only the keys we want to use
+    const { xs, mdAndUp } = useDisplay();
+
+    return { xs, mdAndUp };
+  },
+};
 </script>
 
 <style scoped></style>

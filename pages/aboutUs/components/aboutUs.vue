@@ -3,7 +3,7 @@
     <v-sheet>
       <h2 class="subtitle-text-normal pt-5">About Us</h2>
       <div class="mt-5">
-        <v-row >
+        <v-row>
           <v-col cols="12" md="7">
             <p class="paragraph-text">
               Equipped with the state-of-art facilities and prerequisites, the
@@ -26,7 +26,15 @@
             </p>
           </v-col>
           <v-col cols="12" md="5">
-            <img src="/images/common/about.png" width="80%" alt="" class="mt-n16 image-animation" />
+            <div class="image-animation" :class="mdAndUp ? 'mt-n10' : 'mt-2 image'">
+
+            </div>
+            <!-- <img
+              src="/images/common/about.png"
+              width="80%"
+              alt=""
+              :class="mdAndUp ? 'mt-n16' : ''"
+            /> -->
           </v-col>
         </v-row>
       </div>
@@ -35,19 +43,35 @@
 </template>
 
 <script>
-export default {};
+import { useDisplay } from "vuetify";
+
+export default {
+  setup() {
+    // Destructure only the keys we want to use
+    const { xs, mdAndUp } = useDisplay();
+
+    return { xs, mdAndUp };
+  },
+};
 </script>
 
 <style scoped>
-.image-animation{
- animation: rotation 5s infinite;
+.image-animation {
+  animation: rotation 5s infinite;
+  background-image: url("/images/common/about.png");
+  /* width: 100%; */
+  height: 100%;
+  background-size: contain;
+}
+.image{
+  height: 300px;
 }
 @keyframes rotation {
   0% {
-    transform: rotateX(-15deg)
+    transform: rotateX(-15deg);
   }
   100% {
-    transform: rotateX(15deg)
+    transform: rotateX(15deg);
   }
 }
 </style>

@@ -16,7 +16,7 @@
               v-for="(item, i) in items"
               :key="i"
               :value="item"
-              active-color="primary"
+              active-color="red"
               :to="item.to"
             >
               <template v-slot:prepend>
@@ -148,12 +148,12 @@ export default {
           icon: "mdi-archive",
           to: "/products",
         },
-        {
-          title: "Contact",
-          value: "Contact",
-          icon: "mdi-contact",
-          to: "/contact",
-        },
+        // {
+        //   title: "Contact",
+        //   value: "Contact",
+        //   icon: "mdi-contact",
+        //   to: "/contact",
+        // },
       ],
     };
   },

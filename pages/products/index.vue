@@ -1,12 +1,15 @@
 <template>
   <div class="header-content"></div>
-  <div>
-    <h1>Products</h1>
+  <div :class="mdAndUp ? 'px-10' : 'px-5 mb-5'">
+    <product-gallery />
   </div>
 </template>
 
 <script>
-export default {};
+import productGallery from "./components/productGallery.vue";
+export default {
+  components: { productGallery },
+};
 </script>
 
 <style>
