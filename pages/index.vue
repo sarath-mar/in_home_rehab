@@ -71,14 +71,16 @@ html {
   font-size: clamp(2.5em, 4vw, 4.5em);
   line-height: 1.333;
   font-weight: 900;
-  letter-spacing: 0.1rem;
+  /* letter-spacing: 0.1rem; */
   /* margin-top: 20px; */
   color: var(--secondary-text-color);
 }
 .paragraph-text {
-  font-size: clamp(1em, 4vw, 2em);
-  font-weight: 600;
-  letter-spacing: 0.1rem;
+  font-size: clamp(1em, 4vw, 1.5em);
+  /* font-weight: 600; */
+  /* letter-spacing: 0.1rem; */
+  text-align: justify;
+  color: var(--secondary-text-color);
 }
 /* background-image: url(https://kitnew.moxcreative.com/kindera/wp-content/uploads/sites/35/2023/01/bg_img.png);
     background-position: center center;

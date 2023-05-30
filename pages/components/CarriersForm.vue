@@ -33,14 +33,14 @@
           label="Name"
           variant="outlined"
           :rules="nameRules"
-          name="entry.1672732300"
+          name="entry.1954011657"
         ></v-text-field>
         <v-text-field
           v-model="phoneNo"
           label="Phone No"
           variant="outlined"
           type="number"
-          name="entry.130358932"
+          name="entry.1851117419"
           :rules="phoneRules"
         ></v-text-field>
         <div>
@@ -60,7 +60,7 @@
         </div>
         <v-text-field
           v-show="false"
-          name="entry.914836473"
+          name="entry.2106787915"
           v-model="specialization"
         >
         </v-text-field>
@@ -87,7 +87,7 @@
         ></v-autocomplete>
         <v-text-field
           v-show="false"
-          name="entry.2062944125"
+          name="entry.497627933"
           v-model="location"
         ></v-text-field>
         <p class="text-red">{{ errrorMsg }}</p>
@@ -243,7 +243,7 @@ export default {
       let occupationalUrl =
         "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf2h79X0f-TNiTjoIeroOp5poQiZZemDY7s5JMOeey4yUX-8w/formResponse";
       let speechUrl =
-        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeN7Kt6anu-Oe6TCN3ZK8qG_6PB7d6g-VI5Iqy5PYkawX-5tQ/formResponse";
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSe4RQUa3RlKfywU0ZRr6XOYf-tbF4qffG8R2zWEydtrXOVpRQ/formResponse";
       let url = "";
       let OccupationalForm = this.$refs.formOccupational.$el;
       let speechForm = this.$refs.formSpeech.$el;
@@ -266,6 +266,7 @@ export default {
       //   console.log(formData);
       //   return;
       // }
+      console.log(formData);
       fetch(url, {
         mode: "no-cors",
         headers: {
@@ -277,10 +278,6 @@ export default {
       })
         .then((data) => {
           console.log("success", data);
-          this.dialogControl = true;
-          setTimeout(() => {
-            this.dialogControl = false;
-          }, 2500);
 
           if (this.specialization === "Speech Language Pathologist") {
             this.$refs.formSpeech.reset();
@@ -289,6 +286,10 @@ export default {
           }
           this.btnLoading = false;
           this.dialog = false;
+          this.dialogControl = true;
+          setTimeout(() => {
+            this.dialogControl = false;
+          }, 3000);
         })
         .catch((e) => {
           console.log("error", e);

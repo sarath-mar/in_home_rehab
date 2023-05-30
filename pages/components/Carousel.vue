@@ -17,6 +17,7 @@
           >
             <v-carousel-item v-for="(slide, i) in imageLinks" :key="i" cover>
               <div class="main-conntent">
+                <h3 class="text-secondary mt-n5 mb-5">{{ mainContent.title }} ?</h3>
                 <h2 class="banner-header">
                   {{ slide.title }}
                 </h2>
@@ -28,7 +29,9 @@
           </v-carousel>
         </div>
         <div class="" v-else>
-          <h1 class="heading-text">Restoring your health, Right wher you are</h1>
+          <h1 class="heading-text">
+            Restoring your health, Right wher you are
+          </h1>
           <p class="paragraph-text mt-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             quos vero vitae enim? Temporibus nisi nam cumque, atque quae
@@ -43,7 +46,7 @@
           class="carousel"
           hide-delimiter-background
           show-arrows="hover"
-          :height="mdAndUp? '75vh':'35vh'"
+          :height="mdAndUp ? '75vh' : '35vh'"
         >
           <v-carousel-item
             v-for="(slide, i) in imageLinks"
@@ -103,27 +106,37 @@ export default {
       imageLinks: [
         {
           src: "http://yesofcorsa.com/wp-content/uploads/2018/05/Therapist-Wallpaper-High-Definition.jpg",
-          title: "Are Your a Therapist",
+          title: "Accessible to individuals with disabilities",
           subtitle:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ea fugiat corrupti odit,",
+            "Home therapy can be a more accessible option for individuals with disabilities who may face challenges traveling to and from therapy appointments.",
           buttonDetail: "test",
         },
         {
           src: "https://wallpapercave.com/wp/wp4750435.jpg",
-          title: "One",
-          subtitle: "one subtitle",
+          title: "More comfortable for children",
+          subtitle:
+            "For children who may feel anxious about going to a new place or meeting a new person, home therapy can be a more comfortable and familiar option.",
           buttonDetail: "test",
         },
         {
           src: "https://wallpaperaccess.com/full/970880.jpg",
-          title: "Two",
-          subtitle: "two subtitle",
+          title: "Time-saving",
+          subtitle:
+            "Home therapy eliminates the need to travel to appointments, saving time and energy. This can be especially important for busy individuals or those with a hectic schedule.",
           buttonDetail: "test",
         },
         {
           src: "https://wallpaperaccess.com/full/1964833.jpg",
-          title: "Three",
-          subtitle: "three subtitle",
+          title: "Comfort",
+          subtitle:
+            "Being in the comfort of your own home can be reassuring and comforting during therapy sessions. Being in a familiar environment can also help you feel more relaxed and open to discussing personal issues.",
+          buttonDetail: "test",
+        },
+        {
+          src: "https://wallpapercave.com/wp/wp4750435.jpg",
+          title: "Increased access",
+          subtitle:
+            " For individuals who live in rural or remote areas, home therapy can be a lifeline. It can provide access to mental health services that may not be available in their area, helping to bridge the gap in mental health care.",
           buttonDetail: "test",
         },
       ],
@@ -181,18 +194,19 @@ export default {
   font-size: clamp(3.5em, 4vw, 4.5em);
   line-height: 1.333;
   font-weight: 900;
-  letter-spacing: 0.1rem;
+  /* letter-spacing: 0.1rem; */
   margin-top: 0;
   color: var(--primary-text-color);
 }
 .banner-subtitle {
   /* font-size: 3em; */
-  font-size: clamp(2em, 4vw, 3em);
+  font-size: clamp(.5em, 4vw, 1.5em);
 
   line-height: 1.333;
   font-weight: 500;
-  letter-spacing: 0.1rem;
+  /* letter-spacing: 0.1rem; */
   color: var(--secondary-text-color);
+  text-align: justify;
   /* margin-top: 0; */
 }
 .banner-btn {

@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-footer class="footer-main text-center d-flex flex-column">
-      <div class="mt-12">
+      <div class="mt-5">
         <!-- <v-btn
           v-for="icon in socialMedia"
           :key="icon"
@@ -17,44 +17,55 @@
       </div>
       <v-row>
         <v-col cols="12">
-          <div class="mt-10">
-            Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-            Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-            accumsan id ultrices nunc. Sed at orci sed massa consectetur
-            dignissim a sit amet dui. Duis commodo vitae velit et faucibus.
-            Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum
-            ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel
-            diam elementum tempor vel ut orci. Orci varius natoque penatibus et
-            magnis dis parturient montes, nascetur ridiculus mus.
+          <div class="mt-5">
+            InHome Rehab offers home-based therapy programs to improve quality
+            of life for the patients recovering from the injuries or illness,
+            but often face challenges attending therapy sessions at the center.
+            A team of well qualified, registered group of health professionals
+            will help you to restore your health, right where you are.
           </div>
         </v-col>
         <v-col cols="12">
           <div>
-            <h4>Contact Us</h4>
-            <div class="d-flex justify-center mt-3">
-              <div>
-                <Icon class="header-icon-1" name="uil:phone" />
-              </div>
-              <div>
+            <!-- <h4 class="paragraph-text mt-5 text-primary text-center">
+              Contact Us
+            </h4> -->
+            <hr />
+            <v-row class="my-2 justify-center">
+              <v-col cols="12" md="4">
                 <div>
-                  <span class="ml-2">9876543210/9874561230</span>
+                  <Icon class="header-icon-1" name="uil:phone" />
                 </div>
-                <!-- <div>
-                  <span class="ml-2">9874561230</span>
-                </div> -->
-              </div>
-            </div>
-            <div class="mt-3">
-              <Icon class="header-icon-1" name="mdi-email" />
-              <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
-            </div>
+                <div class="mt-5">
+                  <h3 class="ml-2">+91 9876 543210</h3>
+                  <h3 class="ml-2">+91 9874 561230</h3>
+                </div>
+              </v-col>
+              <v-col cols="12" md="4">
+                <div>
+                  <Icon class="header-icon-1" name="mdi-email" />
+                </div>
+                <div class="mt-5">
+                  <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
+                </div>
+              </v-col>
+              <v-col cols="12" md="4">
+                <div>
+                  <Icon class="header-icon-1" name="mdi-location" />
+                </div>
+                <div class="mt-5">
+                  <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
+                </div>
+              </v-col>
+            </v-row>
+            <hr />
           </div>
         </v-col>
       </v-row>
 
       <v-divider></v-divider>
 
-      <div class="mt-10 date-footer">
+      <div class="mt-5 date-footer">
         {{ new Date().getFullYear() }} — <strong>In Home Rehab</strong>
       </div>
       <div class="bg-white">

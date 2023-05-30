@@ -7,7 +7,7 @@
       cover
     ></v-img>
 
-    <v-card-title class="service-title"> Articulation disorders </v-card-title>
+    <!-- <v-card-title class="service-title"> Articulation disorders </v-card-title> -->
 
     <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
 
@@ -23,11 +23,8 @@
       <div v-show="true">
         <v-divider></v-divider>
 
-        <v-card-text
-          >Children with articulation disorders are unable to produce certain
-          word sounds. For example, they may substitute one sound for another —
-          like saying “wed” instead of “red” or “thith” instead of “this.” Early
-          intervention speech therapy can help with articulation disorders
+        <v-card-text class="service-text"
+          >{{ content.description }}
         </v-card-text>
       </div>
     </v-expand-transition>
@@ -35,6 +32,11 @@
 </template>
 <script>
 export default {
+  props:{
+    content:{
+      required:true
+    }
+  },
   data: () => ({
     show: false,
   }),
@@ -46,5 +48,8 @@ export default {
 }
 .service-title {
   color: var(--secondary-text-color);
+}
+.service-text{
+  min-height: 250px;
 }
 </style>
