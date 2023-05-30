@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { useDisplay } from "vuetify";
 import Carousel from "./components/Carousel.vue";
 import Welcome from "./components/Welcome.vue";
 import BreadComponent from "./components/BreadComponent.vue";
@@ -41,6 +42,12 @@ export default {
   },
   data: () => ({ value: 0 }),
   methods: {},
+  setup() {
+    // Destructure only the keys we want to use
+    const { xs, mdAndUp } = useDisplay();
+
+    return { xs, mdAndUp };
+  },
 };
 </script>
 
@@ -65,7 +72,7 @@ font-family: 'Montserrat', sans-serif;
   /* main-text-color:var() */
 }
 .heading-text {
-  font-size: clamp(2.5em, 4vw, 3.5em);
+  font-size: clamp(2em, 4vw, 3em);
  /* font-style: italic; */
   line-height: 1.333;
   font-weight: 900;
@@ -76,6 +83,7 @@ font-family: 'Montserrat', sans-serif;
   font-size: clamp(1em, 4vw, 1.2em);
   font-weight: 500;
   /* font-style: italic; */
+  text-indent: 100px;
   text-align: justify;
   /* letter-spacing: 0.1rem; */
 }

@@ -13,10 +13,10 @@
             <div class="product-list py-3">
               <div
                 class="product-card"
-                v-for="product in getCaroselData"
-                :key="product.title"
+               
               >
-                <product-card class="service-card-product" :product="product" />
+                <product-card  v-for="product in getCaroselData"
+                :key="product.title" class="service-card-product" :product="product" />
               </div>
             </div>
           </div>
@@ -201,14 +201,21 @@ export default {
 
 @keyframes scroll {
   0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left:calc(360px*-10);
+  }
+  /* 0% {
     transform: translateX(0px);
   }
   100% {
     transform: translateX(-1000%);
-  }
+  } */
 }
-.service-card-product {
-  animation: scroll 40s linear infinite;
+.service-card-product :hover {
+  /* animation: scroll 40s linear infinite; */
+  /* transform: translate(1.1); */
 }
 /* slider finish */
 /* .service-text {
@@ -242,6 +249,13 @@ export default {
 }
 .product-card {
   /* width: 300px !important; */
+  animation: scroll 40s linear infinite;
+  display: flex;
+  gap: 20px;
+
+}
+.product-card:hover{
+  /* transform: scale(1.1);  */
 }
 @keyframes slide {
   0% {
@@ -270,11 +284,11 @@ export default {
 @media screen and (max-width: 980px) {
   @keyframes scroll {
     0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-700%));
-    }
+    margin-left: 0px;
+  }
+  100% {
+    margin-left:calc(360px*-10);
+  }
   }
 }
 

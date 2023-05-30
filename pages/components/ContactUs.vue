@@ -22,16 +22,19 @@
             <Icon name="mdi-email" class="icon text-primary-text" />
             <h3 class="subtitle-text-normal">By Gmail / Phone</h3>
             <div class="contact-text">
-            <p>Mobile : +91 9747 800 008</p>
-            <p>Phone : 0494 2496 555</p>
-            <p>Gmail : info@yemyemimpex.com</p>
-          </div>
+              <p>Mobile : +91 9747 800 008</p>
+              <p>Phone : 0494 2496 555</p>
+              <p>Gmail : info@yemyemimpex.com</p>
+            </div>
           </div>
           <div class="methods">
             <!-- mdi-phone-outgoing -->
             <Icon name="mdi-qrcode" class="icon text-primary-text" />
             <h3 class="subtitle-text-normal">By QrCode</h3>
-            <img src="/images/common/qrcode.jpeg" width="100px" alt="" />
+            <!-- <img src="/images/common/qrcode.jpeg" width="100px" alt="" /> -->
+            <div class="text-center ">
+              <div class="qr-image"></div>
+            </div>
           </div>
         </div>
       </v-sheet>
@@ -43,6 +46,14 @@
   </div>
 </template>
 <style>
+.qr-image {
+  background-image: url("/images/common/qrcode.jpeg");
+  /* background-color: red; */
+  height: 100px;
+  background-size: contain;
+  width: 100px;
+  text-align: center;
+}
 .contact {
   /* min-height: 50vh; */
   /* opacity: 0.6; */
@@ -58,7 +69,8 @@
   font-size: clamp(0.8em, 4vw, 1em);
   font-weight: 700;
   /* text-decoration: underline ; */
-  font-style: italic;
+  /* font-style: italic; */
+  text-align: center;
   color: var(--primary-text-color);
 }
 /* .contact-content {

@@ -11,8 +11,13 @@
                 <h4 class="mt-3 subtitle-text">Featured products</h4>
 
                 <h2 class="heading-text">
-                  Welcome to <span class="company">Yem Yem Impex</span>
+                  Welcome to 
+                  <!-- <span class="company">Yem Yem Impex</span> -->
                 </h2>
+                <div class="welcome-img-1">
+
+                </div>
+                <!-- <img src="/images/yem_logo.png" class="" width="270px" alt="" /> -->
                 <p class="paragraph-text mt-5">
                   Equipped with the state-of-art facilities and prerequisites,
                   the Kerala based YEM YEM IMPEX is on its way to make a mark in
@@ -92,6 +97,15 @@ export default {
   letter-spacing: 0.1rem;
   color: var(--primary-text-color);
 } */
+.welcome-img-1{
+  background-image: url('/images/yem_logo.png');
+  text-align: center;
+  margin:auto;
+  /* background-color: RED; */
+  width: 250px;
+  height: 110px;
+  background-size: contain;
+}
 .company {
   color: var(--secondary-text-color);
   font-size: clamp(1.2em, 4vw, 1em);
