@@ -72,7 +72,12 @@
             <div class="text-end mt-2">
               <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
               <Icon name="mdi-email" class="header-icon" />
-              <span class="ml-2  mail-text">inhomerehab@gmail.com</span>
+              <!-- <span class="ml-2  mail-text">inhomerehab@gmail.com</span> -->
+              <a
+                      class="ml-2 mail-text "
+                      href="mailto: inhomerehab@gmail.com"
+                      >inhomerehab@gmail.com</a
+                    >
             </div>
           </div>
         </v-col>
