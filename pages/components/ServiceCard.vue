@@ -2,12 +2,12 @@
   <v-card>
     <!-- max-width="344" -->
     <v-img
-      src="https://tse3.mm.bing.net/th?id=OIP.8VPcuDF_yp6AfNH0z2uksQHaE7&pid=Api&P=0"
+      :src="content.image"
       height="200px"
       cover
     ></v-img>
 
-    <!-- <v-card-title class="service-title"> Articulation disorders </v-card-title> -->
+    <v-card-title class="service-title"> {{ content.title }} </v-card-title>
 
     <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
 
@@ -50,6 +50,7 @@ export default {
   color: var(--secondary-text-color);
 }
 .service-text{
-  min-height: 250px;
+  min-height: 270px;
+  text-align: justify;
 }
 </style>

@@ -105,35 +105,40 @@ export default {
       },
       imageLinks: [
         {
-          src: "http://yesofcorsa.com/wp-content/uploads/2018/05/Therapist-Wallpaper-High-Definition.jpg",
+          src: "/images/banner/1.png",
+          // src: "http://yesofcorsa.com/wp-content/uploads/2018/05/Therapist-Wallpaper-High-Definition.jpg",
           title: "Accessible to individuals with disabilities",
           subtitle:
             "Home therapy can be a more accessible option for individuals with disabilities who may face challenges traveling to and from therapy appointments.",
           buttonDetail: "test",
         },
         {
-          src: "https://wallpapercave.com/wp/wp4750435.jpg",
+          src: "/images/banner/2.png",
+          // src: "https://wallpapercave.com/wp/wp4750435.jpg",
           title: "More comfortable for children",
           subtitle:
             "For children who may feel anxious about going to a new place or meeting a new person, home therapy can be a more comfortable and familiar option.",
           buttonDetail: "test",
         },
         {
-          src: "https://wallpaperaccess.com/full/970880.jpg",
+          src: "/images/banner/3.png",
+          // src: "https://wallpaperaccess.com/full/970880.jpg",
           title: "Time-saving",
           subtitle:
             "Home therapy eliminates the need to travel to appointments, saving time and energy. This can be especially important for busy individuals or those with a hectic schedule.",
           buttonDetail: "test",
         },
         {
-          src: "https://wallpaperaccess.com/full/1964833.jpg",
+          src: "/images/banner/4.png",
+          // src: "https://wallpaperaccess.com/full/1964833.jpg",
           title: "Comfort",
           subtitle:
             "Being in the comfort of your own home can be reassuring and comforting during therapy sessions. Being in a familiar environment can also help you feel more relaxed and open to discussing personal issues.",
           buttonDetail: "test",
         },
         {
-          src: "https://wallpapercave.com/wp/wp4750435.jpg",
+          src: "/images/banner/7.png",
+          // src: "https://wallpapercave.com/wp/wp4750435.jpg",
           title: "Increased access",
           subtitle:
             " For individuals who live in rural or remote areas, home therapy can be a lifeline. It can provide access to mental health services that may not be available in their area, helping to bridge the gap in mental health care.",

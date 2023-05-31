@@ -30,7 +30,7 @@
             <!-- <h4 class="paragraph-text mt-5 text-primary text-center">
               Contact Us
             </h4> -->
-            <hr />
+            <hr class="" />
             <v-row class="my-2 justify-center">
               <v-col cols="12" md="4">
                 <div>
@@ -110,5 +110,10 @@ export default {
 }
 .footer-img {
   background-blend-mode: lighten;
+}
+hr {
+  height: 2px;
+  background-color: rgba(26, 224, 238, 0.466); 
+  border: none;
 }
 </style>
