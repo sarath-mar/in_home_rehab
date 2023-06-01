@@ -16,7 +16,8 @@
               v-for="(item, i) in items"
               :key="i"
               :value="item"
-              active-color="red"
+              active-color="primary-text"
+              color="secondary-text"
               :to="item.to"
             >
               <template v-slot:prepend>
@@ -44,12 +45,13 @@
               <div class="text-end">
                 <div v-if="!mdAndUp">
                   <v-app-bar-nav-icon
+                  class="pl-16"
                     variant="text"
                     @click.stop="drawer = !drawer"
                   ></v-app-bar-nav-icon>
                 </div>
                 <div v-else>
-                  <ul class="ul-items">
+                  <ul class="ul-items ml-16">
                     <li v-for="item in items" :key="item" class="header-route">
                       <NuxtLink :to="item.to" class="link">
                         {{ item.title }}</NuxtLink
@@ -178,10 +180,11 @@ export default {
 </script>
 <style>
 .router-link-exact-active {
-  color: red;
+  color: var(--primary-text-color) !important;
 }
 .link {
   text-decoration: none;
+  /* color: red; */
 }
 .app-bar {
   height: 90px !important;
@@ -191,8 +194,8 @@ export default {
   /* align-items: center; */
   justify-content: center;
 }
-.header-route {
-  color: var(--primary-text-color);
+.header-route a {
+  color: var(--secondary-text-color);
 }
 .header-icon {
   color: var(--primary-text-color);
@@ -235,7 +238,7 @@ li:hover::after {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: red;
+  background-color: var(--primary-text-color);
   /* transform-origin: bottom right; */
   transition: transform 1s ease-out;
 }
@@ -249,7 +252,7 @@ li:hover::after {
   min-height: 55vh;
 }
 .footer-main {
-  background-color: var(--primary-text-color);
+  background-color: var(--secondary-text-color);
   color: white;
   /* height: 30vh; */
 }

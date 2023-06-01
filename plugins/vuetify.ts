@@ -9,9 +9,9 @@ const myTheme = {
     // background: '#000000',
     // surface: '#000000',
     primary: "#f2f5ec",
-    'primary-text': '#003265',//dark-blue
+    'primary-text': '#89c303',//dark-blue
     secondary: "#f0fdf4",
-    'secondary-text':"#cf1113",//red
+    'secondary-text':"#12595d",//red
     // 'secondary-darken-1': '#000000',
     // error: '#000000',
     // info: '#000000',

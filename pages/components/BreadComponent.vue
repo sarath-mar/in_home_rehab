@@ -89,12 +89,16 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-image: url("/images/products/anar_1.png");
+  background-size: contain;
+  background-blend-mode: difference; */
 }
 .bread-image {
   text-align: left;
 }
 .right-bread {
-  height: 100%;
+  /* height: 100%; */
+  /* height: 200px; */
   /* background-color: var(--primary-text-color); */
   background-color: white;
 }

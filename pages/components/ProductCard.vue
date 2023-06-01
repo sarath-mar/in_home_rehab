@@ -1,5 +1,5 @@
 <template>
-  <v-card width="350" elevation="5" >
+  <div class="product-card-div">
     <!-- max-width="344" -->
     <!-- <v-img
       :src="
@@ -19,13 +19,16 @@
           ? product.img
           : 'https://images.pexels.com/photos/15477567/pexels-photo-15477567.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
       "
-      class="align-end"
-      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-      height="400px"
-      cover
+      class="align-end product-img"
+      height="300px"
+      contain
     >
-      <v-card-title class="text-white">{{ product.name }}</v-card-title>
+      <!-- <v-card-title class="text-secondary-text">{{
+        product.name
+      }}</v-card-title> -->
+      <p class="text-secondary-text ">{{ product.name }}</p>
     </v-img>
+    <!-- <p class="text-secondary-text service-title">{{ product.name }}</p> -->
 
     <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
 
@@ -48,7 +51,7 @@
         </v-card-text>
       </div>
     </v-expand-transition>
-  </v-card>
+  </div>
 </template>
 <script>
 export default {
@@ -64,11 +67,25 @@ export default {
 };
 </script>
 <style>
+.product-card-div {
+  min-height: 300px;
+  width: 300px;
+}
 .service-btn {
   color: var(--primary-text-color);
   text-transform: capitalize;
 }
 .service-title {
   color: var(--secondary-text-color);
+  position: absolute; 
+}
+.product-img:hover {
+  transition: 0.5s;
+  cursor: pointer;
+}
+.product-img:hover {
+  transform: scale(1.2);
+  transform:  scale(1.1);
+  /* position: absolute; */
 }
 </style>

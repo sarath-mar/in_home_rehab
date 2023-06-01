@@ -1,34 +1,35 @@
 <template>
   <div class="my-10 text-center">
     <transition name="toast">
-      <div >
-      <h2 class="heading-text">Our Products</h2>
       <div>
+        <h2 class="heading-text">Our Products</h2>
         <div>
-          <!-- <h2 class="service-sub">
+          <div>
+            <!-- <h2 class="service-sub">
           <Icon name="uil:label" /> {{ service.title }}
         </h2> -->
-          <h4 class="mt-3 subtitle-text">Fresh from our farms</h4>
-          <div class="mt-3">
-            <div class="product-list py-3">
-              <div
-                class="product-card"
-               
-              >
-                <product-card  v-for="product in getCaroselData"
-                :key="product.title" class="service-card-product" :product="product" />
+            <h4 class="mt-3 subtitle-text">Fresh from our farms</h4>
+            <div class="mt-3">
+              <div class="product-list py-3">
+                <div class="product-card">
+                  <product-card
+                    v-for="product in getCaroselData"
+                    :key="product.title"
+                    class="service-card-product"
+                    :product="product"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    </transition> 
+    </transition>
   </div>
 </template>
 
 <script>
-import { ref } from "vue"; 
+import { ref } from "vue";
 import ProductCard from "./ProductCard.vue";
 export default {
   components: { ProductCard },
@@ -51,20 +52,39 @@ export default {
           name: "Pomogranate",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Pomogranate.jpg",
+          img: "/images/products/anar_1.png",
+        },
+        {
+          name: "Avocado",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "/images/products/avocado_3.png",
         },
         {
           name: "Capsicum",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Capsicum.jpg",
+          img: "/images/products/capsicum_1.png",
         },
         {
-          name: "Mango",
+          name: "Carrot",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Mango.jpg",
+          img: "/images/products/carrot_1.png",
         },
+        {
+          name: "Cherry Tomato",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "/images/products/cherry_tomato_4.png",
+        },
+        {
+          name: "Coconut",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+          img: "/images/products/coconut_2.png",
+        },
+
         {
           name: "Orange",
           description:
@@ -75,14 +95,20 @@ export default {
           name: "Banana",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Banana.jpg",
+          img: "/images/products/banan_1.png",
         },
-        {
-          name: "Apple",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Apple.jpg",
-        },
+        // {
+        //   name: "Apple",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Apple.jpg",
+        // },
+        // {
+        //   name: "Mango",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Mango.jpg",
+        // },
         {
           name: "Pineapple",
           description:
@@ -90,29 +116,23 @@ export default {
           img: "/images/products/pineapple.jpeg",
         },
         {
-          name: "Avocado",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
           name: "Pappaya",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
           img: "/images/products/papaya.jpg",
         },
-        {
-          name: "Watermelon",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "",
-        },
-        {
-          name: "Muskmelon",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
-          img: "/images/products/Muskmelon.jpg",
-        },
+        // {
+        //   name: "Watermelon",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "",
+        // },
+        // {
+        //   name: "Muskmelon",
+        //   description:
+        //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa totam quas ea, quidem dolor eaque incidunt aperiam ratione, ametvoluptatibus accusamus, iure iste praesentium cumque laboriosam hiclabore magni.",
+        //   img: "/images/products/Muskmelon.jpg",
+        // },
 
         // {
         //   name: "Pomogranate",
@@ -204,7 +224,7 @@ export default {
     margin-left: 0px;
   }
   100% {
-    margin-left:calc(360px*-10);
+    margin-left: calc(360px * -10);
   }
   /* 0% {
     transform: translateX(0px);
@@ -252,9 +272,8 @@ export default {
   animation: scroll 40s linear infinite;
   display: flex;
   gap: 20px;
-
 }
-.product-card:hover{
+.product-card:hover {
   /* transform: scale(1.1);  */
 }
 @keyframes slide {
@@ -284,11 +303,11 @@ export default {
 @media screen and (max-width: 980px) {
   @keyframes scroll {
     0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left:calc(360px*-10);
-  }
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: calc(360px * -10);
+    }
   }
 }
 
