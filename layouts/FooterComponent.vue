@@ -10,7 +10,9 @@
           variant="text"
         > -->
         <span v-for="icon in socialMedia" :key="icon" class="mx-5 footer-icon">
-          <Icon :name="icon.icon" />
+          <a class="social-icon text-primary" :href="icon.url"> 
+            <Icon :name="icon.icon" />
+          </a>
         </span>
 
         <!-- </v-btn> -->
@@ -30,7 +32,7 @@
             <!-- <h4 class="paragraph-text mt-5 text-primary text-center">
               Contact Us
             </h4> -->
-            <hr class="" />
+            <!-- <hr class="" />
             <v-row class="my-2 justify-center">
               <v-col cols="12" md="4">
                 <div>
@@ -58,14 +60,14 @@
                 </div>
               </v-col>
             </v-row>
-            <hr />
+            <hr /> -->
           </div>
         </v-col>
       </v-row>
 
       <v-divider></v-divider>
 
-      <div class="mt-5 date-footer">
+      <div class="my-2 date-footer">
         {{ new Date().getFullYear() }} — <strong>In Home Rehab</strong>
       </div>
       <div class="bg-white">
@@ -83,10 +85,22 @@
 export default {
   data: () => ({
     socialMedia: [
-      { name: "Facebook", icon: "uil:facebook" },
-      // { name: "Twitter", icon: "mdi-indeed" },
-      { name: "Instagram", icon: "uil:instagram" },
-      { name: "Linkedin", icon: "uil:linkedin" },
+    {
+          name: "Facebook",
+          icon: "uil:facebook",
+          url: "https://www.facebook.com/profile.php?id=100092701407162",
+        },
+        // { name: "Twitter", icon: "uil:twitter" },
+        {
+          name: "Instagram",
+          icon: "uil:instagram",
+          url: "https://www.instagram.com/inhomerehab01/",
+        },
+        {
+          name: "Linkedin",
+          icon: "uil:linkedin",
+          url: "https://www.linkedin.com/company/inhome-rehab/",
+        },
     ],
   }),
 };

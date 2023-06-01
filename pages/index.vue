@@ -68,8 +68,8 @@ html {
   opacity: 0;
 }
 .heading-text {
-  font-size: clamp(2.5em, 4vw, 4.5em);
-  line-height: 1.333;
+  font-size: clamp(2em, 4vw, 3em);
+  /* line-height: 1.333; */
   font-weight: 900;
   /* letter-spacing: 0.1rem; */
   /* margin-top: 20px; */

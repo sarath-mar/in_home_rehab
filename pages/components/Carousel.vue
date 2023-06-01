@@ -17,7 +17,9 @@
           >
             <v-carousel-item v-for="(slide, i) in imageLinks" :key="i" cover>
               <div class="main-conntent">
-                <h3 class="text-secondary mt-n5 mb-5">{{ mainContent.title }} ?</h3>
+                <h3 class="text-secondary mt-n5 mb-5">
+                  {{ mainContent.title }} ?
+                </h3>
                 <h2 class="banner-header">
                   {{ slide.title }}
                 </h2>
@@ -30,14 +32,14 @@
         </div>
         <div class="" v-else>
           <h1 class="heading-text">
-            Restoring your health, Right wher you are
+            Restoring your health, Right where you are
           </h1>
-          <p class="paragraph-text mt-3">
+          <!-- <p class="paragraph-text mt-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             quos vero vitae enim? Temporibus nisi nam cumque, atque quae
             eligendi ut reiciendis velit saepe esse eum molestiae libero
             expedita. Velit?
-          </p>
+          </p> -->
         </div>
       </v-col>
       <v-col cols="12" md="6">
@@ -46,7 +48,7 @@
           class="carousel"
           hide-delimiter-background
           show-arrows="hover"
-          :height="mdAndUp ? '75vh' : '35vh'"
+          :height="mdAndUp ? '75vh' : '45vh'"
         >
           <v-carousel-item
             v-for="(slide, i) in imageLinks"
@@ -63,7 +65,10 @@
         <div v-if="!mdAndUp">
           <ul class="social-media mt-3 social-media-small">
             <li v-for="media in socialMedia" :key="media.name">
-              <Icon :name="media.icon" />
+              <!-- <Icon :name="media.icon" /> -->
+              <a class="social-icon text-primary" :href="media.url">
+                <Icon :name="media.icon" />
+              </a>
             </li>
           </ul>
         </div>
@@ -72,8 +77,10 @@
     <div v-if="mdAndUp" class="mt-n10">
       <ul class="social-media">
         <li v-for="media in socialMedia" :key="media.name">
-          {{ media.name }}
-          <Icon :name="media.icon" />
+          <a class="social-icon text-primary" :href="media.url">
+            {{ media.name }}
+            <Icon :name="media.icon" />
+          </a>
         </li>
       </ul>
     </div>
@@ -93,10 +100,22 @@ export default {
   data() {
     return {
       socialMedia: [
-        { name: "Facebook", icon: "uil:facebook" },
+        {
+          name: "Facebook",
+          icon: "uil:facebook",
+          url: "https://www.facebook.com/profile.php?id=100092701407162",
+        },
         // { name: "Twitter", icon: "uil:twitter" },
-        { name: "Instagram", icon: "uil:instagram" },
-        { name: "Linkedin", icon: "uil:linkedin" },
+        {
+          name: "Instagram",
+          icon: "uil:instagram",
+          url: "https://www.instagram.com/inhomerehab01/",
+        },
+        {
+          name: "Linkedin",
+          icon: "uil:linkedin",
+          url: "https://www.linkedin.com/company/inhome-rehab/",
+        },
       ],
       mainContent: {
         title: "Why Home Theraphy",
@@ -150,6 +169,9 @@ export default {
 };
 </script>
 <style>
+.social-icon {
+  text-decoration: none;
+}
 .margin-height {
   margin-top: 130px;
 }
@@ -205,7 +227,7 @@ export default {
 }
 .banner-subtitle {
   /* font-size: 3em; */
-  font-size: clamp(.5em, 4vw, 1.5em);
+  font-size: clamp(0.5em, 4vw, 1.5em);
 
   line-height: 1.333;
   font-weight: 500;
