@@ -6,6 +6,7 @@
         class="top-selling-product"
         v-for="product in products"
         :key="product"
+        :class="`color-${product.for}`"
       >
         <v-img class="selling-img" :src="product.img"></v-img>
       </div>
@@ -31,6 +32,7 @@ export default {
           img: "/images/products/anar_1.png",
           id: "slide1",
           for: "s1",
+          color:"#126782"
         },
         {
           name: "Avocado",
@@ -72,6 +74,7 @@ export default {
           id: "slide4",
           for: "s4",
         },
+        
         // {
         //   name: "Cherry Tomato",
         //   description:
@@ -88,15 +91,41 @@ export default {
 
 <style scoped>
 .top-selling-product-main {
-  /* display: flex; */
   display: grid;
   gap: 10px;
-  /* grid-template-columns: repeat(auto-fill, minmax(200px ,1fr)); */
   grid-template-columns: repeat(6, 1fr);
 }
+.color-s1{
+    background-color: #126782 !important;
+}
+.color-s1{
+    background-color: #126782 !important;
+}
+.color-s1{
+    background-color: #126782 !important;
+}
+.color-s1{
+    background-color: #126782 !important;
+}
+.color-s1{
+    background-color: #126782 !important;
+}
+/* .top-selling-product-main {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+.top-selling-product-main::-webkit-scrollbar {
+  display: none;
+  width: 0;
+} */
 .top-selling-product {
   border-radius: 10px;
   padding: 30px 10px;
+  /* min-width: 300px; */
   background-color: #e95b5b;
   /* display: ; */
   perspective: 10000px;
@@ -110,7 +139,7 @@ export default {
   /* height: 300px; */
   /* position: absolute; */
   transform: translate3d(0%, -40%, 520px);
-  /* 
+  /*
    top: 0;
    left: 0; */
 }
