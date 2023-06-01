@@ -38,7 +38,7 @@
                 </div> -->
               </div>
               <h2 class="text-center  text-primary-text">{{ product.name }}</h2>
-              <p class="text-justify px-2  text-secondary-text">{{ product.description }}</p>
+              <!-- <p class="text-justify px-2  text-secondary-text">{{ product.description }}</p> -->
               <!-- <div class="infos"> -->
                 <!-- <span class="name">Nike SuperRep Go</span> -->
                 <!-- <span class="lorem"
@@ -263,7 +263,7 @@ input {
 }
 
 .cards {
-  position: relative;
+  /* position: relative; */
   min-height: 60vh;
   /* width: 430px; */
   padding: 20px;
@@ -275,6 +275,7 @@ input {
 .cards label {
   position: absolute;
   /* width: 730px; */
+  /* min-height: 100vh; */
   width: 40vw;
   left: 0;
   right: 0;
@@ -442,5 +443,12 @@ input {
   transform: translate3d(70%, 0, -220px);
   --current-color1: #eceaed;
   --current-color2: #404457;
+}
+@media screen and (max-width: 900px) {
+    .cards label {
+  position: absolute;
+  /* width: 730px; */
+  /* min-height: 100vh; */
+  width: 50vw;}
 }
 </style>
