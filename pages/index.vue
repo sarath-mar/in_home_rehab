@@ -11,9 +11,9 @@
           <welcome />
         </div>
       </div>
-      <div class="top-selling" :class="mdAndUp ? 'px-10' : 'px-5'">
+      <!-- <div class="top-selling" :class="mdAndUp ? 'px-10' : 'px-5'">
         <top-selling-products />
-      </div>
+      </div> -->
       <div :class="mdAndUp ? 'px-10' : 'px-5'">
         <service-provided />
       </div>
