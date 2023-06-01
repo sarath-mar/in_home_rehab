@@ -11,10 +11,11 @@
           <welcome />
         </div>
       </div>
-      <!-- <div class="top-selling" :class="mdAndUp ? 'px-10' : 'px-5'">
-        <top-selling-products />
-      </div> -->
-      <div :class="mdAndUp ? 'px-10' : 'px-5'">
+      <div class="top-selling" :class="mdAndUp ? 'px-10' : 'px-5'">
+        <our-top-selling-product/>
+        <!-- <top-selling-products /> -->
+      </div>
+      <div  :class="mdAndUp ? 'px-10' : 'px-5'">
         <service-provided />
       </div>
       <div class="bread mb-n16" :class="mdAndUp ? 'px-10' : 'px-5'">
@@ -35,6 +36,7 @@ import BreadComponent from "./components/BreadComponent.vue";
 import ServiceProvided from "./components/OurProducts.vue";
 import ContactUs from "./components/ContactUs.vue";
 import TopSellingProducts from "./components/TopSellingProducts.vue";
+import OurTopSellingProduct from './components/OurTopSellingProduct.vue';
 export default {
   components: {
     Carousel,
@@ -43,6 +45,7 @@ export default {
     ServiceProvided,
     ContactUs,
     TopSellingProducts,
+    OurTopSellingProduct,
   },
   data: () => ({ value: 0 }),
   methods: {},
