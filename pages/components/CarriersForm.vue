@@ -182,10 +182,10 @@
       <div class="mt-5" v-if="mdAndUp">
         <p class="text-center">
           Let us know more about you by contacting our talent Acquisition team
-          in 876432345/ 234567865
+          in 8891575227 / 9961132071
         </p>
         <!-- <h5 class="text-center">Or</h5> -->
-        <p class="mt-5 text-center">Emai Us on inhomerehab@gmail.com</p>
+        <p class="mt-5 text-center">Emai Us on inhomerehab01@gmail.com</p>
       </div>
       <thankyou :dialog-control="dialogControl" />
       <!-- <thankyou :dialog-control="dialogControl" /> -->

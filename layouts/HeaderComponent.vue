@@ -76,8 +76,8 @@
               <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
               <Icon name="mdi-email" class="header-icon" />
               <!-- <span class="ml-2  mail-text">inhomerehab@gmail.com</span> -->
-              <a class="ml-2 mail-text" href="mailto: inhomerehab@gmail.com"
-                >inhomerehab@gmail.com</a
+              <a class="ml-2 mail-text" href="mailto: inhomerehab01@gmail.com"
+                >inhomerehab01@gmail.com</a
               >
             </div>
           </div>
@@ -122,8 +122,8 @@
                     <Icon name="mdi-email" class="header-icon" />
                     <a
                       class="ml-2 phone-text"
-                      href="mailto: inhomerehab@gmail.com"
-                      >inhomerehab@gmail.com</a
+                      href="mailto: inhomerehab01@gmail.com"
+                      >inhomerehab01@gmail.com</a
                     >
                   </v-list-item-title>
                 </v-list-item>
