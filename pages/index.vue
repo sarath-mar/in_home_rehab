@@ -63,6 +63,7 @@ export default {
 html {
   font-family: "League Spartan", sans-serif;
   /* main-text-color:var() */
+  scroll-behavior: smooth;
 }
 .welcome-test {
   opacity: 0;

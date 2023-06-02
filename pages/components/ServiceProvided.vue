@@ -1,5 +1,5 @@
 <template>
-  <div class="my-10">
+  <div class="my-10" id="service-we-provide">
     <h2 class="heading-text">Services we provide</h2>
     <div v-for="service in servicesProvided" :key="service.title">
       <div class="mt-8">

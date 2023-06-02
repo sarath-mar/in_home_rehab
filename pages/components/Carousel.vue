@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="why-home-therapy">
     <v-row
       class=" "
       :class="!mdAndUp ? 'margin-height' : 'mt-5 align-center main-carousel'"
@@ -118,7 +118,7 @@ export default {
         },
       ],
       mainContent: {
-        title: "Why Home Theraphy",
+        title: "Why Home Therapy",
         subtitle:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ea fugiat corrupti odit,",
       },

@@ -15,14 +15,15 @@
           <!-- <template v-slot:prepend>
             <v-icon :icon="item.icon"></v-icon>
           </template> -->
-
-          <v-list-item-title
-            class="ml-5 list-item"
-            @click="onClickNav(item.value)"
-          >
-            <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon
-            >{{ item.title }}
-          </v-list-item-title>
+          <a :href="item.to" class="text-primary" style="text-decoration: none">
+            <v-list-item-title
+              class="ml-5 list-item"
+              @click="onClickNav(item.value)"
+            >
+              <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon
+              >{{ item.title }}
+            </v-list-item-title>
+          </a>
         </v-list-item>
       </div>
       <!-- <div>
@@ -31,7 +32,9 @@
       </div> -->
       <div class="drawer-btn">
         <div>
-          <v-btn class="header-btn bg-secondary"> Connect with Us</v-btn>
+          <a href="#welcom-form-id" @click="drawer = false">
+            <v-btn class="header-btn bg-secondary"> Connect with Us</v-btn>
+          </a>
         </div>
         <div class="mt-5">
           <v-btn
@@ -73,11 +76,9 @@
               <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
               <Icon name="mdi-email" class="header-icon" />
               <!-- <span class="ml-2  mail-text">inhomerehab@gmail.com</span> -->
-              <a
-                      class="ml-2 mail-text "
-                      href="mailto: inhomerehab@gmail.com"
-                      >inhomerehab@gmail.com</a
-                    >
+              <a class="ml-2 mail-text" href="mailto: inhomerehab@gmail.com"
+                >inhomerehab@gmail.com</a
+              >
             </div>
           </div>
         </v-col>
@@ -119,7 +120,7 @@
                 <v-list-item>
                   <v-list-item-title>
                     <Icon name="mdi-email" class="header-icon" />
-                   <a
+                    <a
                       class="ml-2 phone-text"
                       href="mailto: inhomerehab@gmail.com"
                       >inhomerehab@gmail.com</a
@@ -170,14 +171,17 @@ export default {
         {
           title: "InHome Rehab",
           value: "foo",
+          to: "#in-home-rehab",
         },
         {
           title: "Service We Provide",
           value: "bar",
+          to: "#service-we-provide",
         },
         {
           title: "Why Home Therapy",
           value: "fizz",
+          to: "#why-home-therapy",
         },
         // {
         //   title: "Connect With Us",
@@ -194,6 +198,11 @@ export default {
     closeIcon() {
       this.carrierPop = false;
     },
+    // connectWithUs(event) {
+    //   // this.drawer=false
+    //   let targetId = event.currentTarget;
+    //   console.log(targetId);
+    // },
     onClickNav(item) {
       console.log("clikd nav", item);
       if (!item) {

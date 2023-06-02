@@ -1,12 +1,12 @@
 <template>
-  <div class="mt-10 welcome-main">
+  <div class="mt-10 welcome-main" id="in-home-rehab">
     <v-row class="align-center">
       <v-col cols="12" md="12">
         <v-row class="align-center">
           <v-col cols="12" md="7">
             <div>
               <h4 class="welcome-who">Who We Are</h4>
-              <h2 class="heading-text">Welcome to Inhome Rehab</h2>
+              <h2 class="heading-text">Welcome to InHome Rehab</h2>
               <p class="paragraph-text mt-5">
                 As healthcare professionals, we understand the importance of
                 timely and effective rehabilitation for patients recovering from
@@ -18,8 +18,10 @@
                 qualified professionals is dedicated to delivering high-quality
                 rehab services in the comfort of your own home. With our
                 guidance and support, we aim to improve your quality of life and
-                help you achieve your recovery goals. Let's work together to
-                build a brighter future for you and your loved ones.
+                <span id="welcom-form-id">
+                  help you achieve your recovery goals. Let's work together to
+                  build a brighter future for you and your loved ones.
+                </span>
               </p>
             </div>
           </v-col>
