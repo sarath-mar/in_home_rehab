@@ -79,8 +79,8 @@ export default {
   color: var(--secondary-text-color);
   position: absolute; 
 }
-.product-img:hover {
-  transition: 0.5s;
+.product-img {
+  transition: transform 0.55s ease-in-out;
   cursor: pointer;
 }
 .product-img:hover {

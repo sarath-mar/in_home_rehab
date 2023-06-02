@@ -1,15 +1,22 @@
 <template>
   <div class="py-8">
-    <h1 class="text-center heading-text mb-5">Our Top Selling Products</h1>
-    <div class="top-selling-product-main mb-10">
+    <h1 class="text-center heading-text">Our Top Selling Products</h1>
+    <!-- <div class="px-16">
+      <hr class="">
+    </div> -->
+    
+    <div class="top-selling-product-main mt-5 mb-10">
       <div
         class="top-selling-product"
         v-for="product in products"
         :key="product"
         :class="`color-${product.for}`"
       >
-        <v-img class="selling-img" :src="product.img"></v-img>
+        <v-img class="selling-img" :src="product.img">
+        </v-img>
+        <h3 class="text-white product-text">{{ product.name }}</h3> 
       </div>
+      
       <!-- <div class="top-selling-product">
         <v-img src="/images/products/anar_1.png" ></v-img>
       </div>
@@ -94,21 +101,30 @@ export default {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(6, 1fr);
+  position: relative;
+}
+.product-text{
+  position: absolute; 
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
 }
 .color-s1{
     background-color: #126782 !important;
 }
-.color-s1{
-    background-color: #126782 !important;
+
+.color-s2{
+    background-color: #8d2042 !important;
 }
-.color-s1{
-    background-color: #126782 !important;
+.color-s3{
+    background-color: #916a5e!important;
 }
-.color-s1{
-    background-color: #126782 !important;
+.color-s4{
+    background-color: #6b705c !important;
 }
-.color-s1{
-    background-color: #126782 !important;
+.color-s5{
+    background-color: #a87b54 !important;
 }
 /* .top-selling-product-main {
   display: flex;
@@ -133,16 +149,16 @@ export default {
   cursor: pointer;
 }
 .selling-img {
-  transition: transform 0.55s ease;
+  transition: transform 0.55s ease-in-out;
 }
 .selling-img:hover {
-  /* height: 300px; */
-  /* position: absolute; */
   transform: translate3d(0%, -40%, 520px);
-  /*
-   top: 0;
-   left: 0; */
+  
 }
+/* .selling-img:hover {
+  transform: translate3d(0%, -40%, 520px);
+  
+} */
 @media screen and (max-width: 1200px) {
   .top-selling-product-main {
     grid-template-columns: repeat(3, 1fr);

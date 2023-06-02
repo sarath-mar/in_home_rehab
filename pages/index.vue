@@ -18,10 +18,13 @@
       <div  :class="mdAndUp ? 'px-10' : 'px-5'">
         <service-provided />
       </div>
+      <div class="" :class="mdAndUp ? 'px-10' : 'px-5'">
+        <our-specalities/>
+      </div>
       <div class="bread mb-n16" :class="mdAndUp ? 'px-10' : 'px-5'">
         <bread-component />
       </div>
-      <div>
+      <div :class="mdAndUp ? 'px-10' : 'px-5'">
         <contact-us />
       </div>
     </div>
@@ -37,6 +40,7 @@ import ServiceProvided from "./components/OurProducts.vue";
 import ContactUs from "./components/ContactUs.vue";
 import TopSellingProducts from "./components/TopSellingProducts.vue";
 import OurTopSellingProduct from './components/OurTopSellingProduct.vue';
+import OurSpecalities from './components/OurSpecalities.vue';
 export default {
   components: {
     Carousel,
@@ -46,6 +50,7 @@ export default {
     ContactUs,
     TopSellingProducts,
     OurTopSellingProduct,
+    OurSpecalities,
   },
   data: () => ({ value: 0 }),
   methods: {},
@@ -87,8 +92,8 @@ html {
   /* main-text-color:var() */
 }
 .heading-text {
-  /* font-size: clamp(1.3em, 4vw, 2em);
-  font-weight: 900; */
+  /* font-size: clamp(1.3em, 4vw, 2em);*/
+  /* font-weight: 900 !important;  */
   font-size: 35px;
   text-transform: capitalize;
   text-align: center;
@@ -138,6 +143,7 @@ html {
   /* background-image: url(../public/images/bg_image.png); */
 
   background-color: #f2f4f5;
+  /* background-color: var(--secondary-text-color); */
   /* min-height: 100vh; */
   /* margin-top: -160px; */
 }

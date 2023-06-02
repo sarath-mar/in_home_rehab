@@ -10,10 +10,9 @@
                 <!-- <h4 class="welcome-who">Who We Are</h4> -->
                 <h4 class="mt-3 subtitle-text">Featured products</h4>
 
-                <h2 class="heading-text">
+                <!-- <h2 class="heading-text">
                   Welcome to 
-                  <!-- <span class="company">Yem Yem Impex</span> -->
-                </h2>
+                </h2> -->
                 <div class="welcome-img-1">
 
                 </div>

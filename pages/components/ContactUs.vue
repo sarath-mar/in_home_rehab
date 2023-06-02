@@ -1,12 +1,34 @@
 <template>
   <div class="contact-main">
-    <!-- <v-parallax
-      class="contact"
-      src="https://cdn.wallpapersafari.com/37/34/t8w4sf.jpg"
-    > -->
-    <div class="pt-15">
+   
+    <div class="py-15">
       <h1 class="text-center heading-text mt-10">Contact Us</h1>
-      <v-sheet class="pa-1 mt-5">
+      <v-row class="mt-15">
+      <v-col cols="12" md="4" v-for="contact in contactBy" :key="contact">
+        <div
+          color="text-primary-text "
+          class="right-bread pa-5 contact-card"
+          elevation="10"
+          variant=""
+        >
+          <v-card-item>
+            <Icon :name="contact.icon" class="icon-contact text-primary-text" />
+            <div class="card-image-content">
+              
+              <!-- <v-img
+                :src="contact.img"
+                class="align-left"
+               
+                width="130px"
+              >
+              </v-img> -->
+              <h2 class=" mt-5 mb-1">{{ contact.name }}</h2>
+            </div>
+          </v-card-item>
+        </div>
+      </v-col>
+    </v-row>
+      <!-- <v-sheet class="pa-1 mt-5">
         <div class="contact-method">
           <div class="methods">
             <Icon name="mdi-home" class="icon text-primary-text" />
@@ -28,23 +50,30 @@
             </div>
           </div>
           <div class="methods">
-            <!-- mdi-phone-outgoing -->
             <Icon name="mdi-qrcode" class="icon text-primary-text" />
             <h3 class="subtitle-text-normal">By QrCode</h3>
-            <!-- <img src="/images/common/qrcode.jpeg" width="100px" alt="" /> -->
             <div class="text-center ">
               <div class="qr-image"></div>
             </div>
           </div>
         </div>
-      </v-sheet>
+      </v-sheet> -->
     </div>
-    <!-- </v-parallax> -->
-    <!-- <div class="text-red contact-content">
-      <h1 class="text-h4 font-weight-thin mb-4">Contact Us</h1>
-    </div> -->
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      contactBy: [
+        { id: 1, name: "By Address", img: "/images/common/fresh.png",icon:"mdi-home" },
+        { id: 2, name: "By Gmail / Phone", img: "/images/common/natural.png",icon:"mdi-email" },
+        { id: 3, name: "By QR Code", img: "/images/common/premium.png",icon:"mdi-qrcode" },
+      ],
+    };
+  },
+};
+</script>
 <style>
 .qr-image {
   background-image: url("/images/common/qrcode.jpeg");
@@ -96,6 +125,19 @@
   align-items: center;
   gap: 10px;
   flex: 1;
+}
+.icon-contact{
+  font-size: 80px;
+  position: absolute  ;
+  top: -1px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  
+}
+.contact-card{
+  position: relative;
+  /* box-shadow: 0 0 0px 2px  #999; */
 }
 @media screen and (max-width: 850px) {
   .contact-method {
