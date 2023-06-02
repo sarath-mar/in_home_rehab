@@ -44,7 +44,7 @@
             "
             class="header-btn bg-secondary"
           >
-            carriers</v-btn
+            careers</v-btn
           >
           <!-- <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
         </div>
@@ -61,7 +61,7 @@
         </v-col>
         <v-col justify-center>
           <p @click="carrierPop = true" class="text-center carrier-text">
-            Carriers
+            Careers
           </p>
           <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" />
         </v-col>
