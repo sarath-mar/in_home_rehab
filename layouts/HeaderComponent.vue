@@ -32,7 +32,7 @@
       </div> -->
       <div class="drawer-btn">
         <div>
-          <a href="#welcom-form-id" @click="drawer = false">
+          <a href="#welcom-form-id" @click="drawer = false" style="text-decoration: none">
             <v-btn class="header-btn bg-secondary"> Connect with Us</v-btn>
           </a>
         </div>
