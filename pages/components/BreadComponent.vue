@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2 class="heading-text text-center">Shop By Category</h2>
+    <h4 class="mt-3 subtitle-text text-center ">Shop By Category</h4>
 
     <v-row class="mt-5">
       <v-col cols="12" md="3" v-for="shop in shopBy" :key="shop">
@@ -168,6 +169,7 @@ export default {
   cursor: pointer;
   transition:  0.55s ease-in-out;
   color: var(--secondary-text-color);
+  /* min-height: 400px; */
 }
 .shop-card:hover{
 background-color: var(--secondary-text-color);

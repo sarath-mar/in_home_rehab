@@ -1,11 +1,13 @@
 <template>
-  <div class="py-8">
+  <div class="py-8 pb-16">
     <h1 class="text-center heading-text">Our Top Selling Products</h1>
+    <h4 class="mt-3 subtitle-text text-center ">Our Top Selling Products</h4>
+   
     <!-- <div class="px-16">
       <hr class="">
     </div> -->
     
-    <div class="top-selling-product-main mt-5 mb-10">
+    <div class="top-selling-product-main mt-10 mb-10">
       <div
         class="top-selling-product"
         v-for="product in products"

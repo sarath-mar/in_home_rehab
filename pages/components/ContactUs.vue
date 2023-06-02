@@ -1,33 +1,58 @@
 <template>
-  <div class="contact-main">
-   
+  <div class="">
     <div class="py-15">
       <h1 class="text-center heading-text mt-10">Contact Us</h1>
       <v-row class="mt-15">
-      <v-col cols="12" md="4" v-for="contact in contactBy" :key="contact">
-        <div
-          color="text-primary-text "
-          class="right-bread pa-5 contact-card"
-          elevation="10"
-          variant=""
-        >
-          <v-card-item>
-            <Icon :name="contact.icon" class="icon-contact text-primary-text" />
-            <div class="card-image-content">
-              
-              <!-- <v-img
+        <v-col cols="12" md="4" v-for="contact in contactBy" :key="contact">
+          <div
+            color="text-primary-text "
+            class="right-bread pa-5 contact-card"
+            elevation="10"
+            variant=""
+          >
+            <v-card-item>
+              <Icon
+                :name="contact.icon"
+                class="icon-contact text-secondary-text"
+              />
+              <div class="card-image-content">
+                <!-- <v-img
                 :src="contact.img"
                 class="align-left"
                
                 width="130px"
               >
               </v-img> -->
-              <h2 class=" mt-5 mb-1">{{ contact.name }}</h2>
-            </div>
-          </v-card-item>
-        </div>
-      </v-col>
-    </v-row>
+                <h5 class="subtitle-text mt-5 mb-1">{{ contact.name }}</h5>
+                <div class="mt-2">
+                  <div
+                    v-if="contact.id == 1"
+                    class="contact-text text-secondary-text mt-5"
+                  >
+                    <p>Mundassery Tower, Kozhinchena</p>
+                    <p>Valakkulam(P.O), Malappuram - Dist.</p>
+                    <p>Kerala - India Pin : 676 508</p>
+                  </div>
+                  <div
+                    class="contact-text text-secondary-text mt-5"
+                    v-if="contact.id == 2"
+                  >
+                    <p>Mobile : +91 9747 800 008</p>
+                    <p>Phone : 0494 2496 555</p>
+                    <p>Gmail : info@yemyemimpex.com</p>
+                  </div>
+
+                  <div class="methods"  v-if="contact.id == 3">
+                    <div class="text-center">
+                      <div class="qr-image"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </v-card-item>
+          </div>
+        </v-col>
+      </v-row>
       <!-- <v-sheet class="pa-1 mt-5">
         <div class="contact-method">
           <div class="methods">
@@ -66,9 +91,9 @@ export default {
   data() {
     return {
       contactBy: [
-        { id: 1, name: "By Address", img: "/images/common/fresh.png",icon:"mdi-home" },
-        { id: 2, name: "By Gmail / Phone", img: "/images/common/natural.png",icon:"mdi-email" },
-        { id: 3, name: "By QR Code", img: "/images/common/premium.png",icon:"mdi-qrcode" },
+        { id: 1, name: "By Address", data: {}, icon: "mdi-home" },
+        { id: 2, name: "By Gmail / Phone", data: {}, icon: "mdi-email" },
+        { id: 3, name: "By QR Code", data: {}, icon: "mdi-qrcode" },
       ],
     };
   },
@@ -90,10 +115,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.contact-main {
-  /* position: relative; */
-  background-color: #f2f4f5;
-}
+
 .contact-text {
   font-size: clamp(0.8em, 4vw, 1em);
   font-weight: 700;
@@ -126,17 +148,17 @@ export default {
   gap: 10px;
   flex: 1;
 }
-.icon-contact{
+.icon-contact {
   font-size: 80px;
-  position: absolute  ;
+  position: absolute;
   top: -1px;
   left: 50%;
-  transform: translate(-50%,-50%);
-
-  
+  transform: translate(-50%, -50%);
 }
-.contact-card{
+.contact-card {
   position: relative;
+  min-height: 240px;
+  cursor: pointer;
   /* box-shadow: 0 0 0px 2px  #999; */
 }
 @media screen and (max-width: 850px) {

@@ -15,16 +15,20 @@
         <our-top-selling-product/>
         <!-- <top-selling-products /> -->
       </div>
-      <div  :class="mdAndUp ? 'px-10' : 'px-5'">
-        <service-provided />
+      <div class="bread " :class="mdAndUp ? 'px-10' : 'px-5'">
+        <bread-component />
       </div>
       <div class="" :class="mdAndUp ? 'px-10' : 'px-5'">
         <our-specalities/>
       </div>
-      <div class="bread mb-n16" :class="mdAndUp ? 'px-10' : 'px-5'">
-        <bread-component />
+      <div  :class="mdAndUp ? 'px-10' : 'px-5'">
+        <service-provided />
       </div>
-      <div :class="mdAndUp ? 'px-10' : 'px-5'">
+     
+      <!-- <div class="bread mb-n16" :class="mdAndUp ? 'px-10' : 'px-5'">
+        <bread-component />
+      </div> -->
+      <div class="contact-main" :class="mdAndUp ? 'px-10' : 'px-5'">
         <contact-us />
       </div>
     </div>
@@ -97,7 +101,13 @@ html {
   font-size: 35px;
   text-transform: capitalize;
   text-align: center;
+  display: none;
   color: var(--primary-text-color);
+  /* background-color: #12595d; */
+}
+.contact-main {
+  /* position: relative; */
+  background-color: #f2f4f5;
 }
 .paragraph-text {
   font-size: clamp(1em, 4vw, 1.2em);
