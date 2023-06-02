@@ -70,7 +70,7 @@
             <!-- <p class="text-end">contact us on</p> -->
             <div class="text-end">
               <Icon class="header-icon-1" name="uil:phone" />
-              <span class="ml-2 phone-text">9876543210 / 9874561230</span>
+              <span class="ml-2 phone-text">8891575227 / 9961132071</span>
             </div>
             <div class="text-end mt-2">
               <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
