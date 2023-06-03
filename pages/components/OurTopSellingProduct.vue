@@ -1,5 +1,5 @@
 <template>
-  <div class="py-8 pb-16">
+  <div class="py-8 top-selling-comp">
     <h1 class="text-center heading-text">Our Top Selling Products</h1>
     <h4 class="mt-3 subtitle-text text-center ">Our Top Selling Products</h4>
    
@@ -99,6 +99,9 @@ export default {
 </script>
 
 <style scoped>
+.top-selling-comp{
+  padding-bottom: 100px !important;
+}
 .top-selling-product-main {
   display: grid;
   gap: 10px;

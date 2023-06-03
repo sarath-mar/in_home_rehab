@@ -15,9 +15,7 @@
         <our-top-selling-product/>
         <!-- <top-selling-products /> -->
       </div>
-      <div class="bread " :class="mdAndUp ? 'px-10' : 'px-5'">
-        <bread-component />
-      </div>
+      
       <div class="" :class="mdAndUp ? 'px-10' : 'px-5'">
         <our-specalities/>
       </div>
@@ -28,8 +26,12 @@
       <!-- <div class="bread mb-n16" :class="mdAndUp ? 'px-10' : 'px-5'">
         <bread-component />
       </div> -->
+      <!-- <div class="bread " :class="mdAndUp ? 'px-10' : 'px-5'">
+       
+      </div> -->
       <div class="contact-main" :class="mdAndUp ? 'px-10' : 'px-5'">
-        <contact-us />
+        <!-- <contact-us /> -->
+        <bread-component />
       </div>
     </div>
   </div>
@@ -110,8 +112,9 @@ html {
   background-color: #f2f4f5;
 }
 .paragraph-text {
-  font-size: clamp(1em, 4vw, 1.2em);
-  font-weight: 500;
+  /* font-size: clamp(1em, 4vw, 1.2em); */
+  font-size: 18px; 
+  /* font-weight: 500; */
   /* font-style: italic; */
   /* text-indent: 100px; */
   text-align: justify;
