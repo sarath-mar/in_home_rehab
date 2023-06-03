@@ -1,9 +1,9 @@
 <template>
   <div class="mb-5 mt-n16 ">
-    <v-sheet
+    <v-card 
       color="secondary-text"
       elevation="4"
-      class="mx-auto pa-10 specaliteis"
+      class=" pa-10 specaliteis"
     >
       <v-row class="">
       
@@ -27,7 +27,7 @@
         <!-- <div v-if="speciality.id!=1" class="col-line"></div> -->
 
       </v-row>
-    </v-sheet>
+    </v-card>
   </div>
 </template>
 

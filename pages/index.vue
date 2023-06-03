@@ -16,7 +16,7 @@
         <!-- <top-selling-products /> -->
       </div>
       
-      <div class="" :class="mdAndUp ? 'px-10' : 'px-5'">
+      <div  :class="mdAndUp ? 'px-10' : 'px-5'">
         <our-specalities/>
       </div>
       <div  :class="mdAndUp ? 'px-10' : 'px-5'">
