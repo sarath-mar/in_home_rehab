@@ -14,6 +14,7 @@
         :key="product"
         :class="`color-${product.for}`"
       >
+      <!--  :class="`color-${product.for}`" -->
         <v-img class="selling-img" :src="product.img">
         </v-img>
         <h3 class="text-white product-text">{{ product.name }}</h3> 
@@ -147,7 +148,8 @@ export default {
   border-radius: 10px;
   padding: 30px 10px;
   /* min-width: 300px; */
-  background-color: #e95b5b;
+  /* background-color: var(--primary-color); */
+  /* background-color: #e95b5b; */
   /* display: ; */
   perspective: 10000px;
   position: relative;

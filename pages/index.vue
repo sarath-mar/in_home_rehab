@@ -7,9 +7,11 @@
     <div class="mt-0">
       <div class="welcome-div" :class="mdAndUp ? 'px-10' : 'px-5'">
         <div class="welcome-component">
-          <!--  pb-5 -->
           <welcome />
         </div>
+      </div>
+      <div class="about" :class="mdAndUp ? 'px-10' : 'px-5'">
+       <about-us/>
       </div>
       <div class="top-selling" :class="mdAndUp ? 'px-10' : 'px-5'">
         <our-top-selling-product/>
@@ -44,9 +46,10 @@ import Welcome from "./components/Welcome.vue";
 import BreadComponent from "./components/BreadComponent.vue";
 import ServiceProvided from "./components/OurProducts.vue";
 import ContactUs from "./components/ContactUs.vue";
-import TopSellingProducts from "./components/TopSellingProducts.vue";
+import AboutUs from "./components/About.vue";
 import OurTopSellingProduct from './components/OurTopSellingProduct.vue';
 import OurSpecalities from './components/OurSpecalities.vue';
+// import AboutUs from './components/AboutUs.vue';
 export default {
   components: {
     Carousel,
@@ -54,7 +57,7 @@ export default {
     BreadComponent,
     ServiceProvided,
     ContactUs,
-    TopSellingProducts,
+    AboutUs,
     OurTopSellingProduct,
     OurSpecalities,
   },
@@ -75,10 +78,12 @@ export default {
   /*  #003265; blue  */
   /*  #acd525; green  */
   /* --primary-text-color: #003265; */
-  --primary-text-color: #89c303;
+  /* --primary-text-color: #89c303; */
+  --primary-text-color: #12595d;
   --primary: #f2f5ec;
   /* --secondary-text-color: #cf1113; */
-  --secondary-text-color: #12595d;
+  /* --secondary-text-color: #12595d; */
+  --secondary-text-color: #7fec7f;
   --secondary: #f0fdf4;
 
   /* 
@@ -97,6 +102,9 @@ html {
   /* font-family: 'Roboto', sans-serif; */
   /* main-text-color:var() */
 }
+.about{
+  margin-bottom: -50px;
+}
 .heading-text {
   /* font-size: clamp(1.3em, 4vw, 2em);*/
   /* font-weight: 900 !important;  */
@@ -109,7 +117,7 @@ html {
 }
 .contact-main {
   /* position: relative; */
-  background-color: #f2f4f5;
+  /* background-color: #f2f4f5; */
 }
 .paragraph-text {
   /* font-size: clamp(1em, 4vw, 1.2em); */
@@ -118,7 +126,8 @@ html {
   /* font-style: italic; */
   /* text-indent: 100px; */
   text-align: justify;
-  color: var(--secondary-text-color);
+  color:black;
+  /* color: var(--primary-text-color); */
   /* letter-spacing: 0.1rem; */
 }
 .subtitle-text {
@@ -126,7 +135,7 @@ html {
   font-weight: 500;
   /* font-style: italic; */
   font-family: "Kaushan Script", cursive;
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
   /* letter-spacing: 0.1rem; */
 }
 .normal-text {
@@ -154,6 +163,7 @@ html {
 }
 .top-selling {
   /* background-image: url(../public/images/bg_image.png); */
+  padding-top: 50px;
 
   background-color: #f2f4f5;
   /* background-color: var(--secondary-text-color); */

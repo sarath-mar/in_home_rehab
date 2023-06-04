@@ -252,7 +252,8 @@ li:hover::after {
   min-height: 55vh;
 }
 .footer-main {
-  background-color: var(--secondary-text-color);
+  background-color: var(--primary-text-color);
+  /* color: var(--secondary-text-color); */
   color: white;
   /* height: 30vh; */
 }

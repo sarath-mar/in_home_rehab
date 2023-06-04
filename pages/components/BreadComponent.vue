@@ -52,114 +52,8 @@
           </v-card-item>
         </v-card>
       </v-col>
-      <!-- <v-col cols="12" md="4">
-        <v-card
-          color="text-primary-text "
-          class="right-bread pa-5"
-          elevation="10"
-          variant=""
-        >
-          <v-card-item>
-            <div class="card-image-content">
-              <div class="subtitle-text-normal mb-1">100% Natural</div>
-              <v-img
-                src="/images/common/natural.png"
-                class="align-left"
-                height="200px"
-                width="180px"
-              >
-              </v-img>
-            </div>
-          </v-card-item>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="4">
-        <v-card
-          color="text-primary-text "
-          class="right-bread pa-5"
-          elevation="10"
-          variant=""
-        >
-          <v-card-item>
-            <div class="card-image-content">
-              <div class="subtitle-text-normal mb-1">Premium Quality</div>
-              <v-img
-                src="/images/common/premium.png"
-                class="align-left"
-                height="200px"
-                width="380px"
-              >
-              </v-img>
-            </div>
-          </v-card-item>
-        </v-card>
-      </v-col> -->
     </v-row>
-    <!-- <v-row class="mt-5">
-      <v-col cols="12" md="4">
-        <v-card
-          color="text-primary-text "
-          class="right-bread pa-5"
-          elevation="10"
-          variant=""
-        >
-          <v-card-item>
-            <div class="card-image-content">
-              <div class="subtitle-text-normal mb-1">Always Fresh</div>
-              <v-img
-                src="/images/common/fresh.png"
-                class="align-left"
-                height="200px"
-                width="380px"
-              >
-              </v-img>
-            </div>
-          </v-card-item>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="4">
-        <v-card
-          color="text-primary-text "
-          class="right-bread pa-5"
-          elevation="10"
-          variant=""
-        >
-          <v-card-item>
-            <div class="card-image-content">
-              <div class="subtitle-text-normal mb-1">100% Natural</div>
-              <v-img
-                src="/images/common/natural.png"
-                class="align-left"
-                height="200px"
-                width="180px"
-              >
-              </v-img>
-            </div>
-          </v-card-item>
-        </v-card>
-      </v-col>
-      <v-col cols="12" md="4">
-        <v-card
-          color="text-primary-text "
-          class="right-bread pa-5"
-          elevation="10"
-          variant=""
-        >
-          <v-card-item>
-            <div class="card-image-content">
-              <div class="subtitle-text-normal mb-1">Premium Quality</div>
-              <v-img
-                src="/images/common/premium.png"
-                class="align-left"
-                height="200px"
-                width="380px"
-              >
-              </v-img>
-            </div>
-          </v-card-item>
-        </v-card>
-      </v-col>
-    </v-row> -->
+   
   </div>
 </template>
 <script>
@@ -212,18 +106,28 @@ export default {
   transform: translate3d(0px, 0px, -300px);
 }
 a{
-  color: var(--secondary-text-color);
+  color: black;
+  /* color: var(--secondary-text-color); */
 }
-.shop-card:hover a{
+.shop-card:hover a,.shop-card:hover .card-image-content {
   color: white !important;
 }
 .left-bread {
   background-color: white;
 }
+.qr-image {
+  background-image: url("/images/common/qrcode.jpeg");
+  /* background-color: red; */
+  height: 100px;
+  background-size: contain;
+  width: 100px;
+  text-align: center;
+}
 .card-image-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
   /* background-image: url("/images/products/anar_1.png");
   background-size: contain;
   background-blend-mode: difference; */

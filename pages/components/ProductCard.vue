@@ -26,9 +26,9 @@
       <!-- <v-card-title class="text-secondary-text">{{
         product.name
       }}</v-card-title> -->
-      <p class="text-secondary-text ">{{ product.name }}</p>
+      <p class="text-black ">{{ product.name }}</p>
     </v-img>
-    <!-- <p class="text-secondary-text service-title">{{ product.name }}</p> -->
+    <!-- <p class="text-primary-text service-title">{{ product.name }}</p> -->
 
     <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
 
