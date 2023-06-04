@@ -55,7 +55,9 @@
           </div>
         </v-col>
         <v-col cols="12" md="6">
-          <div :class="mdAndUp ? 'speciality-content' : 'speciality-content-sm'">
+          <div
+            :class="mdAndUp ? 'speciality-content' : 'speciality-content-sm'"
+          >
             <!-- <p class="paragraph-text" :class="mdAndUp ? '' : 'mt-n5'"></p> -->
             <div v-for="specality in specialities" :key="specality">
               <p>{{ specality.name }}</p>
@@ -89,26 +91,25 @@ export default {
 </script>
 
 <style scoped>
-.speciality-content-sm{
-    margin-top: 10px;
-    font-weight: 900;
-    font-size: 20px;
+.speciality-content-sm {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 20px;
 }
-.speciality-content-sm p{
-    margin-top: 20px;
+.speciality-content-sm p {
+  margin-top: 20px;
 }
-.speciality-content{
-    /* float: right; */
+.speciality-content {
+  /* float: right; */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    /* margin-left: 170px; */
-    font-weight: 900;
-    font-size: 30px;
-    margin-top: 160px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  /* margin-left: 170px; */
+  font-weight: 900;
+  font-size: 30px;
+  margin-top: 160px;
 }
 .speciality-main-div {
   margin-top: 50px;
@@ -127,7 +128,7 @@ export default {
 }
 .speciality-us-heading-sm {
   margin-top: 100px;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 900;
   /* font-size: clamp(60px, 14vw, 140px); */
   color: white;
