@@ -111,7 +111,7 @@ export default {
 
 }
 .speciality-main-div {
-  margin-top: 100px;
+  margin-top: 50px;
   position: relative;
   min-height: 400px;
   background-color: rgb(127, 236, 127);

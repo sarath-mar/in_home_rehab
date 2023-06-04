@@ -63,7 +63,7 @@ export default {
   color: white;
 }
 .about-us-heading-sm{
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 60px;
   font-weight: 900;
   /* font-size: clamp(60px, 14vw, 140px); */
