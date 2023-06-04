@@ -34,7 +34,7 @@
         </v-col>
       </v-row>
     </v-card> -->
-    <div class="speciality-main-div pa-10">
+    <div class="speciality-main-div pa-10" :class="mdAndUp ? 'margin-cont':'margin-cont-sm'">
       <v-row>
         <v-col cols="12" md="6">
           <div>
@@ -111,8 +111,14 @@ export default {
   font-size: 30px;
   margin-top: 160px;
 }
+.margin-cont-sm{
+    margin-top: 50px;
+}
+.margin-cont{
+    margin-top: 100px;
+}
 .speciality-main-div {
-  margin-top: 50px;
+  /* margin-top: 100px; */
   position: relative;
   min-height: 400px;
   background-color: rgb(127, 236, 127);

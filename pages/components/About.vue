@@ -1,6 +1,6 @@
 <template>
   <div class="pt-15">
-    <div class="about-main-div pa-10">
+    <div class="about-main-div pa-10" :class="mdAndUp ? 'margin-cont':'margin-cont-sm'">
       <v-row>
         <v-col cols="12" md="6">
           <div>
@@ -63,14 +63,20 @@ export default {
   color: white;
 }
 .about-us-heading-sm{
-  margin-top: 50px;
+  margin-top: 100px;
   font-size: 50px;
   font-weight: 900;
   /* font-size: clamp(60px, 14vw, 140px); */
   color: white;
 }
+.margin-cont-sm{
+    margin-top: 0px;
+}
+.margin-cont{
+    margin-top: 100px;
+}
 .about-main-div {
-  margin-top: 100px;
+  // margin-top: 100px;
   position: relative;
   min-height: 400px;
   background-color: rgb(127, 236, 127);
