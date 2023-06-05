@@ -69,7 +69,8 @@ export default {
   background-color: #fff;
   padding: 10px;
   border-radius: 10px 10px 0px 0px;
-  color: rgb(127, 236, 127);
+  color: #3eb041;
+  // color: rgb(127, 236, 127);
   /* font-size: clamp(60px, 14vw, 140px); */
   // color: white;
 }
@@ -100,7 +101,8 @@ export default {
   // margin-top: 100px;
   position: relative;
   min-height: 400px;
-  background-color: rgb(127, 236, 127);
+  background-color: #3eb041;
+  // background-color: rgb(127, 236, 127);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 20px;
 }
