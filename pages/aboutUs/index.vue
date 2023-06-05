@@ -3,7 +3,7 @@
   <div :class="mdAndUp ? 'px-10' : 'px-5'">
     <about-us />
   </div>
-  <div class="welcome-div mt-5" :class="mdAndUp ? 'px-10' : 'px-5'">
+  <div class="welcome-div pt-15" :class="mdAndUp ? 'px-10' : 'px-5'">
     <mission-and-vision />
   </div>
   <div class="mt-5" :class="mdAndUp ? 'px-10' : 'px-5'">

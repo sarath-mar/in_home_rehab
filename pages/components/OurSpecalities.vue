@@ -34,9 +34,12 @@
         </v-col>
       </v-row>
     </v-card> -->
-    <div class="speciality-main-div pa-10" :class="mdAndUp ? 'margin-cont':'margin-cont-sm'">
+    <div
+      class="speciality-main-div pa-10"
+      :class="mdAndUp ? 'margin-cont' : 'margin-cont-sm'"
+    >
       <v-row>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="8">
           <div>
             <h1
               :class="
@@ -45,31 +48,31 @@
             >
               Our Speciality
             </h1>
+            <div
+              :class="mdAndUp ? 'speciality-content' : 'speciality-content-sm'"
+            >
+              <div v-for="specality in specialities" :key="specality">
+                <p>{{ specality.name }}</p>
+              </div>
+            </div>
+
             <div :class="mdAndUp ? 'speciality-img' : 'speciality-img-sm'">
               <v-img
                 :width="mdAndUp ? '400' : '250'"
-                src="/images/products/coconut_2.png"
+                src="/images/p1.png"
                 alt=""
               ></v-img>
             </div>
           </div>
         </v-col>
-        <v-col cols="12" md="6">
-          <div
-            :class="mdAndUp ? 'speciality-content' : 'speciality-content-sm'"
-          >
-            <!-- <p class="paragraph-text" :class="mdAndUp ? '' : 'mt-n5'"></p> -->
-            <div v-for="specality in specialities" :key="specality">
-              <p>{{ specality.name }}</p>
-            </div>
-          </div>
-        </v-col>
+        <v-col cols="12" md="4"> </v-col>
       </v-row>
     </div>
   </div>
 </template>
 
 <script>
+
 import { useDisplay } from "vuetify";
 export default {
   data() {
@@ -95,32 +98,53 @@ export default {
   margin-top: 10px;
   font-weight: 900;
   font-size: 20px;
+  /* color: white; */
 }
 .speciality-content-sm p {
-  margin-top: 20px;
+  margin-top: 40px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  padding: 10px;
+  /* color: rgb(127, 236, 127); */
+  border-radius: 9px;
+  /* display: flex; */
+  /* padding-bottom: 30px; */
+}
+.speciality-content p {
+  background-color: #fff;
+  display: inline;
+  padding: 10px;
+  /* color: rgb(127, 236, 127); */
+  border-radius: 9px;
 }
 .speciality-content {
   /* float: right; */
-
+  margin-top: 150px;
+  display: inline;
+  /* background-color: white; */
+  /* color: white; */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* flex-direction: column; */
+  /* align-items: center; */
   gap: 30px;
   /* margin-left: 170px; */
   font-weight: 900;
-  font-size: 30px;
-  margin-top: 160px;
+  font-size: 20px;
+  /* margin-top: 160px; */
 }
-.margin-cont-sm{
-    margin-top: 50px;
+.margin-cont-sm {
+  margin-top: 50px;
 }
-.margin-cont{
-    margin-top: 100px;
+.margin-cont {
+  margin-top: 100px;
 }
 .speciality-main-div {
   /* margin-top: 100px; */
   position: relative;
-  min-height: 400px;
+  min-height: 300px;
   background-color: rgb(127, 236, 127);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 20px;
@@ -128,13 +152,19 @@ export default {
 
 .speciality-us-heading {
   /* margin-top: 160px; */
-  font-size: 140px;
+  font-size: 50px;
   /* font-size: clamp(60px, 14vw, 140px); */
   color: white;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px;
+  color: rgb(127, 236, 127);
 }
 .speciality-us-heading-sm {
   margin-top: 100px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 900;
   /* font-size: clamp(60px, 14vw, 140px); */
   color: white;
@@ -142,7 +172,7 @@ export default {
 .speciality-img {
   position: absolute;
   top: 0;
-  right: 30%;
+  right: 10%;
   transform: translate(0%, -40%);
 }
 .speciality-img-sm {

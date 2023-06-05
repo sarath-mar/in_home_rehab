@@ -1,5 +1,5 @@
 <template>
-  <div class="py-8 top-selling-comp">
+  <div class="py-8" :class="mdAndUp ? 'top-selling-comp': 'top-selling-comp-sm'">
     <h1 class="text-center heading-text">Our Top Selling Products</h1>
     <h4 class="mt-3 subtitle-text text-center ">Our Top Selling Products</h4>
    
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { useDisplay } from "vuetify";
 export default {
   data() {
     return {
@@ -96,12 +97,21 @@ export default {
       ],
     };
   },
+  setup() {
+    // Destructure only the keys we want to use
+    const { xs, mdAndUp } = useDisplay();
+
+    return { xs, mdAndUp };
+  },
 };
 </script>
 
 <style scoped>
-.top-selling-comp{
+.top-selling-comp-sm{
   padding-bottom: 100px !important;
+}
+.top-selling-comp{
+  padding-bottom: 250px !important;
 }
 .top-selling-product-main {
   display: grid;

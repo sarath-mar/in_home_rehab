@@ -1,9 +1,8 @@
 <template>
   <div class="pt-15">
-    <!-- <v-card class="" color="green"> -->
-    <div class="about-main-div pa-10">
+    <div class="about-main-div pa-10" :class="mdAndUp ? 'margin-cont':'margin-cont-sm'">
       <v-row>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="4">
           <div>
             <h1 :class="mdAndUp ? 'about-us-heading' : 'about-us-heading-sm'">About Us</h1>
             <div class="about-img">
@@ -15,7 +14,7 @@
             </div>
           </div>
         </v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="8">
           <div>
             <p class="paragraph-text" :class="mdAndUp ? '' : 'mt-n5'">
               Equipped with the state-of-art facilities and prerequisites, the
@@ -40,47 +39,6 @@
         </v-col>
       </v-row>
     </div>
-    <!-- </v-card> -->
-    <v-sheet>
-      <h2 class="subtitle-text-normal pt-5">About Us</h2>
-      <div class="mt-5">
-        <v-row>
-          <v-col cols="12" md="7">
-            <p class="paragraph-text">
-              Equipped with the state-of-art facilities and prerequisites, the
-              Kerala based YEM YEM IMPEX is on its way to make a mark in the
-              International Fresh produce industry. Unparalleled professionalism
-              and utmost commitment have earned YEM YEM IMPEX the reputation for
-              reliability and credibility with in a short span of its launch. By
-              establishing a strong supply chain comprising numerous farm
-              producers, YEM YEM IMPEX as become one of the South East Asia’s
-              leading producers and exporters of high-quality fresh fruits,
-              vegetables, coconut and egg. YEM YEM IMPEX offers a wide array of
-              fresh produce available in South East Asia, both seasonal and
-              all-year-round types to serve market demand. The company exports
-              100 percent of its output to countries in the Middle East. YEM YEM
-              IMPEX offers excellent service at very competitive price to all
-              customers round the year and our experience team always strives
-              hard to ensure that each customer get the best of their service.
-              Our clientele include leading importers and distributors in the
-              Middle East as well as business corporations across the globe.
-            </p>
-          </v-col>
-          <v-col cols="12" md="5">
-            <div
-              class="image-animation"
-              :class="mdAndUp ? 'mt-n10' : 'mt-2 image'"
-            ></div>
-            <!-- <img
-              src="/images/common/about.png"
-              width="80%"
-              alt=""
-              :class="mdAndUp ? 'mt-n16' : ''"
-            /> -->
-          </v-col>
-        </v-row>
-      </div>
-    </v-sheet>
   </div>
 </template>
 
@@ -97,7 +55,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .about-us-heading{
   margin-top: 160px;
   font-size: 140px;
@@ -106,13 +64,19 @@ export default {
 }
 .about-us-heading-sm{
   margin-top: 100px;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 900;
   /* font-size: clamp(60px, 14vw, 140px); */
   color: white;
 }
+.margin-cont-sm{
+    margin-top: 0px;
+}
+.margin-cont{
+    margin-top: 100px;
+}
 .about-main-div {
-  margin-top: 100px;
+  // margin-top: 100px;
   position: relative;
   min-height: 400px;
   background-color: rgb(127, 236, 127);
@@ -123,7 +87,8 @@ export default {
   position: absolute;
   top: 0;
   left: 30%;
-  transform: translate(0%, -40%);
+  transform: translate(-30%, -40%);
+  /* height: 200px; */
 }
 .image-animation {
   animation: rotation 5s infinite;

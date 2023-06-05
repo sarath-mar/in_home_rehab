@@ -18,7 +18,7 @@
         <!-- <top-selling-products /> -->
       </div>
       
-      <div  :class="mdAndUp ? 'px-10' : 'px-5'">
+      <div  :class="mdAndUp ? 'px-10 margin-up' : 'px-5'">
         <our-specalities/>
       </div>
       <div  :class="mdAndUp ? 'px-10' : 'px-5'">
@@ -104,6 +104,9 @@ html {
 }
 .about{
   margin-bottom: -50px;
+}
+.margin-up{
+  margin-top: -200px !important;
 }
 .heading-text {
   /* font-size: clamp(1.3em, 4vw, 2em);*/
