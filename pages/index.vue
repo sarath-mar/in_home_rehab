@@ -98,8 +98,8 @@ html {
 
   /* font-family: 'Courier Prime', monospace; */
   /* font-family: 'Lato', sans-serif; */
-  font-family: "Montserrat", sans-serif;
-  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: 'Roboto', sans-serif;
   /* main-text-color:var() */
 }
 .about{
@@ -138,7 +138,7 @@ html {
   font-size: clamp(1em, 4vw, 1.5em);
   font-weight: 500;
   /* font-style: italic; */
-  font-family: "Kaushan Script", cursive;
+  /* font-family: "Kaushan Script", cursive; */
   color: var(--primary-text-color);
   /* letter-spacing: 0.1rem; */
 }
