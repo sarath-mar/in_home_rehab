@@ -21,7 +21,7 @@
         </v-col>
         <v-col cols="12" md="8">
           <div>
-            <p class="paragraph-text" :class="mdAndUp ? '' : 'mt-n5'">
+            <p class="paragraph-text text-white" :class="mdAndUp ? '' : 'mt-n5'">
               Equipped with the state-of-art facilities and prerequisites, the
               Kerala based YEM YEM IMPEX is on its way to make a mark in the
               International Fresh produce industry. Unparalleled professionalism
