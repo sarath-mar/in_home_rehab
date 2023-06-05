@@ -10,7 +10,7 @@
           <welcome />
         </div>
       </div>
-      <div class="about" :class="mdAndUp ? 'px-10' : 'px-5'">
+      <div class="about" :class="mdAndUp ? 'px-10 mt-n16' : 'px-5'">
        <about-us/>
       </div>
       <div class="top-selling" :class="mdAndUp ? 'px-10' : 'px-5'">
@@ -104,6 +104,7 @@ html {
 }
 .about{
   margin-bottom: -50px;
+
 }
 .margin-up{
   margin-top: -200px !important;
