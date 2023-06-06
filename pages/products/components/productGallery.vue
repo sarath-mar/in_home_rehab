@@ -146,7 +146,7 @@ export default {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(auto-fill, 300px) ;
+  grid-template-rows: 300px repeat(auto-fill, 300px) 300px;
   /* grid-template-rows: repeat(auto-fill,200px); */
   position: relative;
 }
