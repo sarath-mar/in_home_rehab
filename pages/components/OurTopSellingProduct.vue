@@ -1,12 +1,15 @@
 <template>
-  <div class="py-8" :class="mdAndUp ? 'top-selling-comp': 'top-selling-comp-sm'">
+  <div
+    class="py-8"
+    :class="mdAndUp ? 'top-selling-comp' : 'top-selling-comp-sm'"
+  >
     <h1 class="text-center heading-text">Our Top Selling Products</h1>
-    <h4 class="mt-3 subtitle-text text-center ">Our Top Selling Products</h4>
-   
+    <h4 class="mt-3 subtitle-text text-center">Our Top Selling Products</h4>
+
     <!-- <div class="px-16">
       <hr class="">
     </div> -->
-    
+
     <div class="top-selling-product-main mt-10 mb-10">
       <div
         class="top-selling-product"
@@ -14,18 +17,10 @@
         :key="product"
         :class="`color-${product.for}`"
       >
-      <!--  :class="`color-${product.for}`" -->
-        <v-img class="selling-img" :src="product.img">
-        </v-img>
-        <h3 class="text-white product-text">{{ product.name }}</h3> 
+        <!--  :class="`color-${product.for}`" -->
+        <v-img class="selling-img" :src="product.img"> </v-img>
+        <h3 class="text-white product-text">{{ product.name }}</h3>
       </div>
-      
-      <!-- <div class="top-selling-product">
-        <v-img src="/images/products/anar_1.png" ></v-img>
-      </div>
-      <div class="top-selling-product">
-        <v-img src="/images/products/anar_1.png" ></v-img>
-      </div> -->
     </div>
   </div>
 </template>
@@ -43,7 +38,7 @@ export default {
           img: "/images/products/anar_1.png",
           id: "slide1",
           for: "s1",
-          color:"#126782"
+          color: "#126782",
         },
         {
           name: "Avocado",
@@ -85,7 +80,7 @@ export default {
           id: "slide4",
           for: "s4",
         },
-        
+
         // {
         //   name: "Cherry Tomato",
         //   description:
@@ -107,10 +102,10 @@ export default {
 </script>
 
 <style scoped>
-.top-selling-comp-sm{
+.top-selling-comp-sm {
   padding-bottom: 100px !important;
 }
-.top-selling-comp{
+.top-selling-comp {
   padding-bottom: 250px !important;
 }
 .top-selling-product-main {
@@ -119,28 +114,27 @@ export default {
   grid-template-columns: repeat(6, 1fr);
   position: relative;
 }
-.product-text{
-  position: absolute; 
+.product-text {
+  position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+}
+.color-s1 {
+  background-color: #126782 !important;
+}
 
+.color-s2 {
+  background-color: #8d2042 !important;
 }
-.color-s1{
-    background-color: #126782 !important;
+.color-s3 {
+  background-color: #916a5e !important;
 }
-
-.color-s2{
-    background-color: #8d2042 !important;
+.color-s4 {
+  background-color: #6b705c !important;
 }
-.color-s3{
-    background-color: #916a5e!important;
-}
-.color-s4{
-    background-color: #6b705c !important;
-}
-.color-s5{
-    background-color: #a87b54 !important;
+.color-s5 {
+  background-color: #a87b54 !important;
 }
 /* .top-selling-product-main {
   display: flex;
@@ -170,7 +164,6 @@ export default {
 }
 .selling-img:hover {
   transform: translate3d(0%, -40%, 520px);
-  
 }
 /* .selling-img:hover {
   transform: translate3d(0%, -40%, 520px);

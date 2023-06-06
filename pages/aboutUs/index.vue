@@ -3,17 +3,21 @@
   <div :class="mdAndUp ? 'px-10' : 'px-5'">
     <about-us />
   </div>
+  <div class="mt-5" :class="mdAndUp ? 'px-10' : 'px-5'">
+    <our-products />
+  </div>
   <div class="welcome-div pt-15" :class="mdAndUp ? 'px-10' : 'px-5'">
     <mission-and-vision />
   </div>
+
   <div class="mt-5" :class="mdAndUp ? 'px-10' : 'px-5'">
     <division />
   </div>
 </template>
 
 <script>
-
 import { useDisplay } from "vuetify";
+import OurProducts from "../components/OurProducts.vue";
 
 import aboutUs from "./components/aboutUs.vue";
 import Division from "./components/division.vue";
@@ -25,7 +29,7 @@ export default {
 
     return { xs, mdAndUp };
   },
-  components: { aboutUs, MissionAndVision, Division },
+  components: { aboutUs, MissionAndVision, Division, OurProducts },
 };
 </script>
 

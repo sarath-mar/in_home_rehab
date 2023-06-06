@@ -100,7 +100,7 @@ export default {
 .about-main-div {
   // margin-top: 100px;
   position: relative;
-  min-height: 400px;
+  min-height: 300px;
   background-color: #3eb041;
   // background-color: rgb(127, 236, 127);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;

@@ -83,7 +83,8 @@ export default {
   --primary: #f2f5ec;
   /* --secondary-text-color: #cf1113; */
   /* --secondary-text-color: #12595d; */
-  --secondary-text-color: #7fec7f;
+  /* --secondary-text-color: #7fec7f; */
+  --secondary-text-color: #3eb041;
   --secondary: #f0fdf4;
 
   /* 
@@ -98,8 +99,8 @@ html {
 
   /* font-family: 'Courier Prime', monospace; */
   /* font-family: 'Lato', sans-serif; */
-  /* font-family: "Montserrat", sans-serif; */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   /* main-text-color:var() */
 }
 .about{
