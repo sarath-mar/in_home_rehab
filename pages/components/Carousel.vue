@@ -320,29 +320,67 @@ export default {
 @media (max-width: 768px) {
   .round-img {
     img {
-      height: clamp(300px,65vw,400px);
-      width: clamp(300px,65vw,400px);
+      height: clamp(280px,65vw,400px);
+      width: clamp(280px,65vw,400px);
     }
   }
 }
 @keyframes rotate-1 {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg) translateX(200px);
+    transform: translate(-50%, -50%) rotate(0deg) translateX(190px);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(360deg) translateX(200px);
+    transform: translate(-50%, -50%) rotate(360deg) translateX(190px);
   }
 }
 
 @keyframes rotate-2 {
   0% {
-    transform: translate(-50%, -50%) rotate(140deg) translateX(200px);
+    transform: translate(-50%, -50%) rotate(140deg) translateX(190px);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(500deg) translateX(200px);
+    transform: translate(-50%, -50%) rotate(500deg) translateX(190px);
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 575px) {
+  @keyframes rotate-1 {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(150px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) translateX(150px);
+    }
+  }
+
+  @keyframes rotate-2 {
+    0% {
+      transform: translate(-50%, -50%) rotate(140deg) translateX(150px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(500deg) translateX(150px);
+    }
+  }
+}
+@media (max-width: 425px) {
+  @keyframes rotate-1 {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(120px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) translateX(120px);
+    }
+  }
+
+  @keyframes rotate-2 {
+    0% {
+      transform: translate(-50%, -50%) rotate(140deg) translateX(120px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(500deg) translateX(120px);
+    }
+  }
+}
+@media (min-width: 769px) {
   @keyframes rotate-1 {
     0% {
       transform: translate(-50%, -50%) rotate(0deg) translateX(250px);
