@@ -320,8 +320,8 @@ export default {
 @media (max-width: 768px) {
   .round-img {
     img {
-      height: 400px;
-      width: 400px;
+      height: clamp(300px,65vw,400px);
+      width: clamp(300px,65vw,400px);
     }
   }
 }
