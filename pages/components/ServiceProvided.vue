@@ -1,102 +1,98 @@
 <template>
-  <div class="my-10" id="service-we-provide">
-    <h2 class="heading-text">Services we provide</h2>
-    <div v-for="service in servicesProvided" :key="service.title">
-      <div class="mt-8">
-        <h2 class="service-sub text-primary">
-          <Icon name="uil:label" /> {{ service.title }}
-        </h2>
-        <p class="mt-3 paragraph-text">{{ service.description }}</p>
-        <div class="mt-3">
-          <v-row>
-            <v-col
-              v-for="content in service.content"
-              :key="content.title"
-              cols="12"
-              md="6"
-              lg="3"
+  <div class="my-10" id="service-we-provide" :class="customClass">
+    <h2 class="heading-text">Our Services</h2>
+    <v-row class="service-main">
+<v-col cols="12" md="4" v-for="service in servicesProvided" :key="service.title" >
+        <transition-card :service="service"/>
+      </v-col>
+      <!-- <v-hover
+        v-slot="{ isHovering, props }"
+        v-for="service in servicesProvided"
+        :key="service.title"
+      >
+        <div v-bind="props" class="service-sub pa-3">
+          <v-expand-transition>
+            <div
+              v-if="isHovering"
+              class="service-transition"
+              style="height: 100%"
             >
-              <service-card :content="content" />
-            </v-col>
-          </v-row>
+              <h5>{{ service.title }}</h5>
+              <p>{{ service.description }}</p>
+              <ul v-if="service.helpWith">
+                <li v-for="help in service.helpWith" :key="help">
+                  {{ help }}
+                </li>
+              </ul>
+            </div>
+            <div
+              class="service-no-transition"
+              :style="{
+                backgroundImage: 'url(' + service.img + ')',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }"
+            >
+              <Icon>{{ service.icon }}</Icon>
+              <h1>{{ service.title }}</h1>
+            </div>
+          </v-expand-transition>
         </div>
-      </div>
-    </div>
+      </v-hover> -->
+    </v-row>
   </div>
 </template>
 
 <script>
 import ServiceCard from "./ServiceCard.vue";
+import TransitionCard from "../sub-components/TransitionCard.vue";
 export default {
-  components: { ServiceCard },
+  props: {
+    customClass: {
+      type: String,
+      required: false,
+    },
+  },
+  components: { ServiceCard,TransitionCard },
   data() {
     return {
       servicesProvided: [
         {
-          title: "Speech Therapy",
+          title: "Speech and Language Therapy",
+          isClicked: false,
+          icon: "uil:instagram",
+          img: "https://circlecare4kids.com/wp-content/uploads/2022/12/iStock-1364504091.jpg",
           description:
-            "Speech therapy is a type of therapy that helps people improve their communication skills, including speech, language, and swallowing abilities. It can benefit individuals with a wide range of conditions, such as developmental delays, stuttering, voice disorders, and brain injuries. The therapy typically involves exercises, strategies, and techniques to improve communication and promote functional independence. Speech therapists work with individuals of all ages, from children to the elderly, and tailor the therapy to meet the unique needs and goals of each person. The ultimate goal of speech therapy is to improve an individual's ability to communicate effectively and confidently in daily life.",
-          content: [
-            {
-              title: "Autism Spectrum Disorder (ASD)",
-              description:
-                "Autism Spectrum Disorder (ASD), is a neurodevelopmental disorder caused by differences in the brain. Children with ASD often have problems with social communication and interaction, and restricted or repetitive behaviors or interests. Speech therapy for ASD  addresses language and communication challenges. It helps to improve their verbal, nonverbal and social communication.",
-              image: "/images/service/1.png",
-            },
-            {
-              title: "Language Disorder",
-              description:
-                "Language Disorder is an impairment in the processing of linguistic information that affects an individual's ability to receive and/or express language.The disorder involves persistent difficulties in the comprehension or production of spoken, written, sign language, or other forms of language.Speech therapy will often start by identifying your child’s areas of strength and weakness. They will develop a tailored treatment plan to help your child master their language skills and communicate more effectively.",
-              image: "/images/service/2.png",
-            },
-            {
-              title: "Dysarthria",
-              description:
-                "Dysarthria is a motor speech disorder that results from loss of strength, slowness, or coordination of the muscles that control speech. This results in difficulty understanding the speech and can range from mild slurring to completely unintelligible speech. Speech therapy goals include adjusting speech rate, strengthening muscles, improving breath support, improving articulation, and helping family members communicate with you.",
-              image: "/images/service/3.png",
-            },
-            {
-              title: "Aphasia",
-              description:
-                "Aphasia is a disorder that results from damage to areas of the brain that are responsible for language.Occurs suddenly following a stroke or head injury or slowly,as a result of tumor or progressive neurological conditions.Speech therapists help with language therapy, teach non-verbal communication skills, and help family members adapt to new forms of communication.",
-              image: "/images/service/4.png",
-            },
-            // { title: "Test", description: "Description", image: "" },
-            // { title: "Test", description: "Description", image: "" },
+            "Speech and Language Therapy (SLT) is a specialized field that focuses on assessing, diagnosing, and treating communication disorders. At Iris CDC, we work with individuals of all age groups to address a wide range of communication difficulties, including challenges with speech, language, social skills, and literacy. We offer comprehensive services, including assessment, treatment planning, counselling, and home-based plans, all tailored to each individual’s unique needs. Our therapy programs are grounded in the latest, evidence-based strategies and techniques, ensuring that each individual benefits from the most effective and adaptive methods available.",
+          helpWith: [
+            "Receptive and Expressive Language Delay",
+            "Attention Deficit Hyperactivity Disorder (ADHD)",
+            "Autism",
+            "Down’s Syndrome",
+            "Stuttering",
+            "Speech Sound Disorder",
+            "Learning Disability",
+            "Intellectual Disability",
+            "Dysarthria",
+            "Aphasia",
+            "Social Communication Disorder",
           ],
         },
         {
-          title: "Occupational Therapy",
+          title: "Feeding Therapy",
+          isClicked: false,
+          icon: "uil:instagram",
+          img: "https://cdikids.org/wp-content/uploads/2019/04/Feeding.jpg",
           description:
-            "Occupational therapy works with people of all age groups and abilities to help them do everyday tasks that they find meaningful. These can include looking after yourself (self-care): brushing, eating, bathing, dressing, etc., work or school-related skills, engaging in social activities, hobbies or interests, and being part of your community. Occupational therapy services typically include an evaluation that tells us what values and activities are important to you, an intervention plan that is unique to you to improve your ability to perform daily activities and reach your goals, and an outcome evaluation to make sure that the goals you set with your occupational therapist are being met. The primary goal of occupational therapy is to enable people to participate in the activities of everyday life as independently as possible",
-          content: [
-            {
-              title: "Autism",
-              description:
-                "Autism, or autism spectrum disorder (ASD), refers to a broad range of conditions characterized by challenges with social skills, repetitive behaviors, speech and nonverbal communication. For children with autism, Occupational Therapists often focus on fine motor skills, play skills, learning strategies, social skills and self-care. Occupational Therapy strategies can also help to manage sensory issues.",
-              image: "/images/service/5.png",
-            },
-            {
-              title: "Stroke",
-              description:
-                "Stroke is a medical condition in which there is damage to the brain caused by an interruption in the blood supply to the brain.After stroke, Occupational Therapy can help you return to work, be independent in your own home, and do leisure activities and hobbies. Occupational Therapy can also help in learning strategies to manage the cognitive, perceptual, and behavioral changes associated with Stroke. In addition, an Occupational Therapist can fabricate splints, advise on  equipments and home modifications to make you as safe and independent as possible",
-              image: "/images/service/6.png",
-            },
-            {
-              title: "Hand injuries",
-              description:
-                "Hand injuries involve injuries to the bone or soft tissue occurring below the wrist joint with exception of tendon injuries outside of this zone. Types of hand injuries depend on tissues involved in the injury as skin, tendon, nerve, vessel, bone or combination of these injuries. Occupational therapy can help in recovery after surgery including scar management, reducing pain, regaining movements, hand function strengthening and custom splinting to facilitate healing and also prevent stiffness",
-              image: "/images/service/7.png",
-            },
-            {
-              title: "Traumatic brain injury",
-              description:
-                "Traumatic brain injury (TBI) happens when a sudden, external, physical assault damages the brain. It often occurs as a result of a severe sports injury or car accident. A TBI can affect a variety of physical, cognitive, and psychological functions such as memory, emotional regulation, movement, and sensory processing. An occupational therapist will create a personalized rehabilitation regimen to help regain or compensate for these skills. The primary goal of occupational therapy for brain injury rehabilitation is to help individuals regain functional independent living skills.",
-              image: "/images/service/8.png",
-            },
-            // { title: "Test", description: "Description", image: "" },
-            // { title: "Test", description: "Description", image: "" },
-          ],
+            "Feeding Therapy is a specialized intervention designed to help individuals overcome difficulties related to eating, drinking, and swallowing. At Iris CDC, we work with individuals who face challenges with feeding, including food refusal, texture aversions, swallowing difficulties, and mealtime behaviors. Our pediatric therapists, trained in TalkTools, USA, use specialized techniques to help children expand their diets, address feeding difficulties, and ensure safety throughout the process. After a thorough assessment, we create a personalized therapy plan based on the child’s age, abilities, and specific challenges. Our goal is to make mealtimes a more enjoyable and safe experience while addressing specific feeding challenges.",
+        },
+        {
+          title: "Oral Placement Therapy",
+          isClicked: false,
+          icon: "uil:instagram",
+          img: "https://server.imsdesk.com/ecom/clients/169/images/oral.jpg",
+          description:
+            "Oral Placement Therapy (OPT) focuses on improving oral motor skills necessary for speech clarity, feeding, and overall oral motor function. By enhancing muscle strength, coordination, and awareness, individuals can improve speech production and swallowing abilities. We start with a thorough assessment of the individual’s oral motor skills, speech patterns, and feeding abilities to identify areas of weakness. Based on this assessment, our speech-language therapists create personalized intervention plans using OPT techniques and tools, such as Z-vibes,straws, chewy tubes, and jaw graders which are carefully selected based on the individual's needs and goals.",
         },
       ],
     };
@@ -104,4 +100,57 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.heading-text {
+  color: var(--primary-text-color);
+}
+.service-main {
+  align-items: flex-start;
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 0;
+}
+
+li {
+  flex: 1; /* Adjust this to control the number of items per row */
+  box-sizing: border-box;
+  padding: 0px !important;
+}
+.service-no-transition {
+  transition: all 0.5s ease-in-out;
+  color: var(--secondary-text-color) !important;
+  text-align: center;
+  border-radius: 5px;
+  height: -webkit-fill-available;
+  z-index: 2;
+  font-size: 20px;
+  font-weight: bold;
+  h1 {
+    mix-blend-mode: multiply;
+  }
+  .service-icon {
+    font-size: 50px;
+  }
+}
+.service-transition {
+  transition: all 0.5s ease-in-out;
+  background-color: var(--primary-text-color);
+  color: var(--secondary-text-color) !important;
+  border-radius: 5px;
+  padding: 5px;
+}
+.service-sub {
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px dashed var(--primary-text-color);
+  /* padding: 10px; */
+  flex: 1;
+  min-width: 300px;
+  height: 100%;
+  min-height: 400px;
+}
+/* .se */
+</style>

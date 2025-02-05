@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-navigation-drawer v-if="!mdAndUp" v-model="drawer" location="right">
+    <v-navigation-drawer v-if="!lgAndUp" v-model="drawer" location="right">
       <div>
         <Icon
           name="mdi-close"
@@ -37,7 +37,7 @@
           </a>
         </div>
         <div class="mt-5">
-          <v-btn
+          <!-- <v-btn
             @click="
               carrierPop = !carrierPop;
               drawer = !drawer;
@@ -45,27 +45,29 @@
             class="header-btn bg-secondary"
           >
             careers</v-btn
-          >
-          <!-- <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
+          > -->
         </div>
       </div>
     </v-navigation-drawer>
     <v-app-bar
       class="app-bar"
-      :flat="false"
-      scroll-target="#scrolling-techniques-6"
+      :elevation="elevation"
+     
     >
-      <v-row class="px-10 py-5 app-bar-row align-center" v-show="mdAndUp">
-        <v-col>
+      <v-row class="px-10 py-5 app-bar-row align-center"  :class="customClass" v-show="lgAndUp">
+        <v-col cols="3">
           <img src="/images/logo.png" class="mt-2" width="160px" alt="" />
         </v-col>
-        <v-col justify-center>
-          <p @click="carrierPop = true" class="text-center carrier-text">
+        <v-col cols="6" justify-center>
+          <!-- <p @click="carrierPop = true" class="text-center carrier-text">
             Careers
           </p>
-          <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" />
+          <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
+          <ul class="header-list">
+            <li v-for="(item, i) in items" :key="i">{{ item.title }}</li>
+          </ul>
         </v-col>
-        <v-col>
+        <v-col cols="3">
           <div>
             <!-- <p class="text-end">contact us on</p> -->
             <div class="text-end">
@@ -83,7 +85,7 @@
           </div>
         </v-col>
       </v-row>
-      <v-row class="px-10 py-5 app-bar-row align-center" v-show="!mdAndUp">
+      <v-row class="px-10 py-5 app-bar-row align-center" v-show="!lgAndUp">
         <v-col>
           <img
             src="/images/logo.png"
@@ -157,44 +159,67 @@
 import { useDisplay } from "vuetify";
 import CarriersForm from "~/pages/components/CarriersForm.vue";
 export default {
+  props:{
+    customClass:{
+      type:String,
+      required:false
+    }
+  },
   setup() {
     // Destructure only the keys we want to use
-    const { xs, mdAndUp } = useDisplay();
-    return { xs, mdAndUp };
+    const { xs, lgAndUp } = useDisplay();
+    return { xs, lgAndUp };
   },
   data() {
     return {
+      elevation:0,
       scrollHeight: "",
       carrierPop: false,
       drawer: false,
       items: [
         {
-          title: "InHome Rehab",
+          title: "About US",
           value: "foo",
           to: "#in-home-rehab",
         },
         {
-          title: "Service We Provide",
+          title: "Our Services",
           value: "bar",
           to: "#service-we-provide",
         },
         {
-          title: "Why Home Therapy",
+          title: "Gallery",
           value: "fizz",
           to: "#why-home-therapy",
         },
-        // {
-        //   title: "Connect With Us",
-        //   value: "connect",
-        // },
-        // {
-        //   title: "Carriers",
-        //   value: "carrier",
-        // },
+        {
+          title: "Blog",
+          value: "fizz",
+          to: "#why-home-therapy",
+        },
+        {
+          title: "Contact Us",
+          value: "fizz",
+          to: "#why-home-therapy",
+        }
       ],
     };
   },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
   methods: {
+    handleScroll() {
+      const currentScrollPosition = window.scrollY;
+      if (currentScrollPosition > 50) {
+        this.elevation = 4; 
+      } else {
+        this.elevation = 0;
+      }
+    },
     closeIcon() {
       this.carrierPop = false;
     },
@@ -218,7 +243,7 @@ export default {
   components: { CarriersForm },
 };
 </script>
-<style>
+<style lang="scss">
 .drawer-btn {
   margin-top: 50px;
   display: flex;
@@ -262,13 +287,33 @@ export default {
 .mail-text {
   font-size: 18px;
 }
-.carrier-text {
-  text-decoration: underline;
-  color: var(--primary-text-color);
-  font-size: 22px;
-  cursor: pointer;
-}
 .header-btn {
   text-transform: capitalize;
 }
+.header-list{
+  display: flex;
+  justify-content: space-around;
+ li{
+  list-style: none;
+  color: var(--primary-text-color);
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 3px;
+ }
+ li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--secondary-text-color);
+  transition: width 0.3s ease;
+}
+li:hover::after {
+  width: 100%;
+}
+}
+
 </style>

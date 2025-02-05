@@ -1,7 +1,7 @@
 <template>
-  <v-layout>
-    <v-footer class="footer-main text-center d-flex flex-column">
-      <div class="mt-5">
+  <v-layout class="footer-layout">
+    <v-footer class="footer-main text-center d-flex flex-column" :class="customClass">
+      <div class="mt-5" >
         <!-- <v-btn
           v-for="icon in socialMedia"
           :key="icon"
@@ -29,38 +29,6 @@
         </v-col>
         <v-col cols="12">
           <div>
-            <!-- <h4 class="paragraph-text mt-5 text-primary text-center">
-              Contact Us
-            </h4> -->
-            <!-- <hr class="" />
-            <v-row class="my-2 justify-center">
-              <v-col cols="12" md="4">
-                <div>
-                  <Icon class="header-icon-1" name="uil:phone" />
-                </div>
-                <div class="mt-5">
-                  <h3 class="ml-2">+91 9876 543210</h3>
-                  <h3 class="ml-2">+91 9874 561230</h3>
-                </div>
-              </v-col>
-              <v-col cols="12" md="4">
-                <div>
-                  <Icon class="header-icon-1" name="mdi-email" />
-                </div>
-                <div class="mt-5">
-                  <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
-                </div>
-              </v-col>
-              <v-col cols="12" md="4">
-                <div>
-                  <Icon class="header-icon-1" name="mdi-location" />
-                </div>
-                <div class="mt-5">
-                  <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
-                </div>
-              </v-col>
-            </v-row>
-            <hr /> -->
           </div>
         </v-col>
       </v-row>
@@ -68,7 +36,7 @@
       <v-divider></v-divider>
 
       <div class="my-2 date-footer">
-        {{ new Date().getFullYear() }} — <strong>In Home Rehab</strong>
+        {{ new Date().getFullYear() }} - <strong>Iris child Development Center</strong>
       </div>
       <div class="bg-white">
         <img
@@ -83,6 +51,12 @@
 </template>
 <script>
 export default {
+  props:{
+    customClass:{
+      type:String,
+      required:false
+    }
+  },
   data: () => ({
     socialMedia: [
     {
@@ -107,6 +81,11 @@ export default {
 </script>
 <style>
 .footer-main {
+  background-color: var(--secondary-text-color);
+  color: white;
+  /* height: 30vh; */
+}
+.footer-layout {
   background-color: var(--secondary-text-color);
   color: white;
   /* height: 30vh; */

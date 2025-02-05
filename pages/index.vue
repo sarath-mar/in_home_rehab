@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="header-content">
-      <header-component />
+      <header-component :custom-class="customWidthClass" />
     </div>
     <div class="mt-n10 mt-md-10 px-5 px-md-10">
-      <carousel />
+      <carousel :custom-class="customWidthClass" />
     </div>
     <div class="mt-5">
       <!-- <div class="bread px-10">
@@ -12,23 +12,18 @@
       </div> -->
       <div class="welcome-div px-10 pb-15">
         <!-- <div class="welcome-component "> -->
-        <welcome />
+        <welcome :custom-class="customWidthClass" />
         <!-- </div> -->
       </div>
       <div class="px-10" id="service-provided">
-        <service-provided />
+        <service-provided :custom-class="customWidthClass"/>
       </div>
     </div>
-    <footer-component />
+    <footer-component :custom-class="customWidthClass" />
   </div>
 </template>
 
 <script>
-// import Header from "../layouts/HeaderComponent.vue"
-// export default {};
-const scrolling = (e) => {
-  console.log("hyyy");
-};
 import HeaderComponent from "../layouts/HeaderComponent.vue";
 import FooterComponent from "../layouts/FooterComponent.vue";
 import Carousel from "./components/Carousel.vue";
@@ -44,12 +39,8 @@ export default {
     BreadComponent,
     ServiceProvided,
   },
-  data: () => ({ value: 0 }),
-  methods: {
-    scrolling() {
-      console.log("hey");
-    },
-  },
+  data: () => ({ value: 0, customWidthClass: "custom-max-width" }),
+  methods: {},
 };
 </script>
 
@@ -111,5 +102,9 @@ html {
 }
 .header-content {
   /* margin-top: 100px; */
+}
+.custom-max-width {
+  max-width: 1920px;
+  margin-inline: auto;
 }
 </style>

@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "In Home Rehab",
+      title: "Iris",
       meta: [{ name: "description", content: "" }],
       link: [
         {

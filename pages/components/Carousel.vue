@@ -1,55 +1,29 @@
 <template>
-  <div id="why-home-therapy">
+  <div id="why-home-therapy" :class="customClass">
     <v-row
       class=" "
       :class="!mdAndUp ? 'margin-height' : 'mt-5 align-center main-carousel'"
     >
-      <!-- flex-column-reverse -->
-      <v-col cols="12" md="6">
-        <!-- -->
-        <div v-if="mdAndUp">
-          <v-carousel
-            cycle
-            class="carousel"
-            hide-delimiter-background
-            :show-arrows="false"
-            hide-delimiters
-          >
-            <v-carousel-item v-for="(slide, i) in imageLinks" :key="i" cover>
-              <div class="main-conntent">
-                <h3 class="text-secondary mt-n5 mb-5">
-                  {{ mainContent.title }} ?
-                </h3>
-                <h2 class="banner-header">
-                  {{ slide.title }}
-                </h2>
-                <p class="banner-subtitle mt-2 mt-md-5">
-                  {{ slide.subtitle }}
-                </p>
-              </div>
-            </v-carousel-item>
-          </v-carousel>
-        </div>
-        <div class="" v-else>
-          <h1 class="heading-text">
-            Restoring your health, Right where you are
-          </h1>
-          <!-- <p class="paragraph-text mt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            quos vero vitae enim? Temporibus nisi nam cumque, atque quae
-            eligendi ut reiciendis velit saepe esse eum molestiae libero
-            expedita. Velit?
-          </p> -->
+      <v-col cols="12" md="7">
+        <div>
+          <div class="main-conntent">
+            <h2 class="banner-header mt-5 mt-md-0">
+              {{ mainContent.title }}
+            </h2>
+            <h3 class="text-secondary mt-3">
+              {{ mainContent.subTitle }}
+            </h3>
+          </div>
         </div>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="5" class="carousel-container">
         <v-carousel
           cycle
           class="carousel"
           hide-delimiter-background
           show-arrows="hover"
-          :height="mdAndUp ? '75vh' : '45vh'"
         >
+        
           <v-carousel-item
             v-for="(slide, i) in imageLinks"
             :key="i"
@@ -57,15 +31,16 @@
             cover
             class="carousel-item"
           >
-            <div class="d-flex fill-height align-center mx-16">
-              <div class="mx-md-10"></div>
-            </div>
+            <div class="star">⭐</div>
+            <div class="star">⭐</div>
+            <div class="star">⭐</div>
+            <div class="star">⭐</div>
+            <div class="star">⭐</div>
           </v-carousel-item>
         </v-carousel>
         <div v-if="!mdAndUp">
           <ul class="social-media mt-3 social-media-small">
             <li v-for="media in socialMedia" :key="media.name">
-              <!-- <Icon :name="media.icon" /> -->
               <a class="social-icon text-primary" :href="media.url">
                 <Icon :name="media.icon" />
               </a>
@@ -91,6 +66,12 @@ import { useDisplay } from "vuetify";
 import WelcomeForm from "./WelcomeForm.vue";
 export default {
   components: { WelcomeForm },
+  props:{
+    customClass:{
+      type:String,
+      required:false
+    }
+  },
   setup() {
     // Destructure only the keys we want to use
     const { xs, mdAndUp } = useDisplay();
@@ -118,9 +99,8 @@ export default {
         },
       ],
       mainContent: {
-        title: "Why Home Therapy",
-        subtitle:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ea fugiat corrupti odit,",
+        title: "Welcome to Iris child Development Center",
+        subTitle: "Where every child's potential is recognized and nurtured!",
       },
       imageLinks: [
         {
@@ -198,6 +178,11 @@ export default {
   color: var(--primary-text-color);
 }
 .carousel {
+  height: auto !important;
+  /* max-height: 25vh; */
+margin:auto;
+  max-height: 610px !important;
+  max-width: 610px !important;
   /* height: 10vh ; */
   /* height: calc(100vh - 100px) !important ; */
 }
@@ -211,14 +196,79 @@ export default {
 .main-carousel {
   min-height: 95vh;
 }
+.carousel-container {
+  /* display: flex;
+  justify-content: center; */
+  /* position: relative;
+  overflow: hidden; */
+}
 .carousel-item {
-  /* background-color: red; */
-  border-radius: 20px;
-  /* height: 90vh;  */
+  /* width: 500px; */
+  /* height: 500px; */
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+}
+
+
+.star {
+  position: absolute;
+  font-size: 30px;
+  animation: fall 5s linear infinite;
+  opacity: 0;
+}
+
+/* Position stars at random locations and sizes */
+.star:nth-child(1) {
+  top: -10px;
+  left: 20%;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+}
+
+.star:nth-child(2) {
+  top: -10px;
+  left: 50%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.star:nth-child(3) {
+  top: -10px;
+  left: 75%;
+  animation-duration: 5.5s;
+  animation-delay: 0.5s;
+}
+
+.star:nth-child(4) {
+  top: -10px;
+  left: 10%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.star:nth-child(5) {
+  top: -10px;
+  left: 90%;
+  animation-duration: 4.5s;
+  animation-delay: 1.5s;
+}
+
+/* Keyframe animation for dropping stars */
+@keyframes fall {
+  0% {
+    top: -10px;
+    opacity: 1;
+  }
+  100% {
+    top: 100vh; /* Drops to the bottom of the viewport */
+    opacity: 0;
+  }
 }
 .banner-header {
   /* font-size: 4.5em; */
-  font-size: clamp(3.5em, 4vw, 4.5em);
+  font-size: clamp(3em, 5vw, 3.3em);
   line-height: 1.333;
   font-weight: 900;
   /* letter-spacing: 0.1rem; */
@@ -243,4 +293,16 @@ export default {
   font-size: 1.2em;
   text-transform: capitalize;
 }
+/* @media (min-width: 1440px) {
+  .carousel {
+    max-height: 660px !important;
+    max-width: 660px !important;
+  }
+} */
+/* @media (min-width: 1024px) {
+  .carousel {
+    max-height: 630px !important;
+    max-width: 630px !important;
+  }
+} */
 </style>
