@@ -4,7 +4,8 @@
       class=" "
       :class="!mdAndUp ? 'margin-height' : 'mt-5 align-center main-carousel'"
     >
-      <v-col cols="12" md="7">
+      <div v-for="i in 15" :key="i" class="star">⭐</div>
+      <v-col cols="12" md="6" lg="7">
         <div>
           <div class="main-conntent">
             <h2 class="banner-header mt-5 mt-md-0">
@@ -16,28 +17,17 @@
           </div>
         </div>
       </v-col>
-      <v-col cols="12" md="5" class="carousel-container">
-        <v-carousel
-          cycle
-          class="carousel"
-          hide-delimiter-background
-          show-arrows="hover"
-        >
-        
-          <v-carousel-item
-            v-for="(slide, i) in imageLinks"
-            :key="i"
-            :src="slide.src"
-            cover
-            class="carousel-item"
-          >
-            <div class="star">⭐</div>
-            <div class="star">⭐</div>
-            <div class="star">⭐</div>
-            <div class="star">⭐</div>
-            <div class="star">⭐</div>
-          </v-carousel-item>
-        </v-carousel>
+      <v-col
+        cols="12"
+        md="6"
+        lg="5"
+        class="carousel-container text-center mt-5 mt-md-0"
+      >
+        <div class="round-img">
+          <div class="round round-1"></div>
+          <div class="round round-2"></div>
+          <img :src="imageLinks[0].src" alt="" />
+        </div>
         <div v-if="!mdAndUp">
           <ul class="social-media mt-3 social-media-small">
             <li v-for="media in socialMedia" :key="media.name">
@@ -66,11 +56,11 @@ import { useDisplay } from "vuetify";
 import WelcomeForm from "./WelcomeForm.vue";
 export default {
   components: { WelcomeForm },
-  props:{
-    customClass:{
-      type:String,
-      required:false
-    }
+  props: {
+    customClass: {
+      type: String,
+      required: false,
+    },
   },
   setup() {
     // Destructure only the keys we want to use
@@ -148,7 +138,52 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
+.round-img {
+  position: relative;
+  display: inline-block;
+  img {
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+  }
+  .round {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Start from the center of the image */
+    transform: translate(-50%, -50%); /* Center the round div */
+    height: 100px;
+    width: 100px;
+    z-index: -1;
+    border-radius: 50%;
+  }
+}
+.round-1 {
+  animation: rotate-1 25s linear infinite;
+  background-color: var(--primary-text-color);
+}
+
+.round-2 {
+  animation: rotate-2 25s linear infinite;
+  background-color: var(--secondary-text-color);
+}
+@keyframes rotate-1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(250px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(250px);
+  }
+}
+
+@keyframes rotate-2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(140deg) translateX(250px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(500deg) translateX(250px);
+  }
+}
 .social-icon {
   text-decoration: none;
 }
@@ -179,12 +214,9 @@ export default {
 }
 .carousel {
   height: auto !important;
-  /* max-height: 25vh; */
-margin:auto;
+  margin: auto;
   max-height: 610px !important;
   max-width: 610px !important;
-  /* height: 10vh ; */
-  /* height: calc(100vh - 100px) !important ; */
 }
 .main-conntent {
   /* background-color: red ; */
@@ -196,26 +228,18 @@ margin:auto;
 .main-carousel {
   min-height: 95vh;
 }
-.carousel-container {
-  /* display: flex;
-  justify-content: center; */
-  /* position: relative;
-  overflow: hidden; */
-}
+
 .carousel-item {
-  /* width: 500px; */
-  /* height: 500px; */
   aspect-ratio: 1;
   border-radius: 50%;
-
 }
-
 
 .star {
   position: absolute;
   font-size: 30px;
   animation: fall 5s linear infinite;
   opacity: 0;
+  z-index: 5;
 }
 
 /* Position stars at random locations and sizes */
@@ -293,16 +317,48 @@ margin:auto;
   font-size: 1.2em;
   text-transform: capitalize;
 }
-/* @media (min-width: 1440px) {
-  .carousel {
-    max-height: 660px !important;
-    max-width: 660px !important;
+@media (max-width: 768px) {
+  .round-img {
+    img {
+      height: 400px;
+      width: 400px;
+    }
   }
-} */
-/* @media (min-width: 1024px) {
-  .carousel {
-    max-height: 630px !important;
-    max-width: 630px !important;
+}
+@keyframes rotate-1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(200px);
   }
-} */
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(200px);
+  }
+}
+
+@keyframes rotate-2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(140deg) translateX(200px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(500deg) translateX(200px);
+  }
+}
+@media (min-width: 768px) {
+  @keyframes rotate-1 {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(250px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) translateX(250px);
+    }
+  }
+
+  @keyframes rotate-2 {
+    0% {
+      transform: translate(-50%, -50%) rotate(140deg) translateX(250px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(500deg) translateX(250px);
+    }
+  }
+}
 </style>
