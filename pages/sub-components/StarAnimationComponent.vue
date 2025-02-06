@@ -44,8 +44,8 @@
         this.smoothMouseY += (this.mouseY - this.smoothMouseY) * this.smoothingFactor;
   
         // Calculate the effect of mouse movement on star position
-        const mouseEffectX = (this.smoothMouseX / window.innerWidth) * 20 - 10;
-        const mouseEffectY = (this.smoothMouseY / window.innerHeight) * 20 - 10;
+        // const mouseEffectX = (this.smoothMouseX / window.innerWidth) * 20 - 10;
+        // const mouseEffectY = (this.smoothMouseY / window.innerHeight) * 20 - 10;
   
         return {
           top,
