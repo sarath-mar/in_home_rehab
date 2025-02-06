@@ -48,6 +48,7 @@ export default {
 :root {
   --primary-text-color: #89c303;
   --secondary-text-color: #12595d;
+  --tertiary-text-color: #ed5e3e;
   --primary-background: #f2f4f5;
 }
 

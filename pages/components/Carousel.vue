@@ -4,17 +4,19 @@
       class=" "
       :class="!mdAndUp ? 'margin-height' : 'mt-5 align-center main-carousel'"
     >
-      <div v-for="i in 15" :key="i" class="star">⭐</div>
-      <v-col cols="12" md="6" lg="7">
+    <star-animation-component/>
+      <v-col cols="12" md="6" lg="7"> 
         <div>
           <div class="main-conntent">
             <h2 class="banner-header mt-5 mt-md-0">
               {{ mainContent.title }}
             </h2>
-            <h3 class="text-secondary mt-3">
+
+            <h3 class="text-secondary banner-sub mt-3">
               {{ mainContent.subTitle }}
             </h3>
           </div>
+          <v-btn class="mt-5 px-7 py-7 pb-9 enquiry-btn">MAKE AN ENQUIRY</v-btn>
         </div>
       </v-col>
       <v-col
@@ -23,6 +25,7 @@
         lg="5"
         class="carousel-container text-center mt-5 mt-md-0"
       >
+
         <div class="round-img">
           <div class="round round-1"></div>
           <div class="round round-2"></div>
@@ -54,8 +57,10 @@
 <script>
 import { useDisplay } from "vuetify";
 import WelcomeForm from "./WelcomeForm.vue";
+import ColorShadeOne from "../sub-components/ColorShadeOne.vue";
+import StarAnimationComponent from "../sub-components/StarAnimationComponent.vue";
 export default {
-  components: { WelcomeForm },
+  components: { WelcomeForm, ColorShadeOne ,StarAnimationComponent},
   props: {
     customClass: {
       type: String,
@@ -139,6 +144,11 @@ export default {
 };
 </script>
 <style lang="scss">
+.enquiry-btn {
+  background-color: var(--tertiary-text-color);
+  color: white;
+  font-size: large;
+}
 .round-img {
   position: relative;
   display: inline-block;
@@ -146,6 +156,7 @@ export default {
     height: 500px;
     width: 500px;
     border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
   }
   .round {
     position: absolute;
@@ -156,6 +167,7 @@ export default {
     width: 100px;
     z-index: -1;
     border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
   }
 }
 .round-1 {
@@ -217,6 +229,12 @@ export default {
   margin: auto;
   max-height: 610px !important;
   max-width: 610px !important;
+}
+.banner-sub {
+  background: url(../../public/images/h1-slider5.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
 }
 .main-conntent {
   /* background-color: red ; */
@@ -291,7 +309,6 @@ export default {
   }
 }
 .banner-header {
-  /* font-size: 4.5em; */
   font-size: clamp(3em, 5vw, 3.3em);
   line-height: 1.333;
   font-weight: 900;
@@ -320,8 +337,8 @@ export default {
 @media (max-width: 768px) {
   .round-img {
     img {
-      height: clamp(280px,65vw,400px);
-      width: clamp(280px,65vw,400px);
+      height: clamp(280px, 65vw, 400px);
+      width: clamp(280px, 65vw, 400px);
     }
   }
 }
