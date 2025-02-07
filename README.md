@@ -40,3 +40,6 @@ npm run preview
 ```
 
 ## created by netifly deployment
+
+
+## server is from firebase - febin account

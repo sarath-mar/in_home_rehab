@@ -2,43 +2,14 @@
   <div class="my-10" id="service-we-provide" :class="customClass">
     <h2 class="heading-text">Our Services</h2>
     <v-row class="service-main">
-<v-col cols="12" md="4" v-for="service in servicesProvided" :key="service.title" >
-        <transition-card :service="service"/>
-      </v-col>
-      <!-- <v-hover
-        v-slot="{ isHovering, props }"
+      <v-col
+        cols="12"
+        md="4"
         v-for="service in servicesProvided"
         :key="service.title"
       >
-        <div v-bind="props" class="service-sub pa-3">
-          <v-expand-transition>
-            <div
-              v-if="isHovering"
-              class="service-transition"
-              style="height: 100%"
-            >
-              <h5>{{ service.title }}</h5>
-              <p>{{ service.description }}</p>
-              <ul v-if="service.helpWith">
-                <li v-for="help in service.helpWith" :key="help">
-                  {{ help }}
-                </li>
-              </ul>
-            </div>
-            <div
-              class="service-no-transition"
-              :style="{
-                backgroundImage: 'url(' + service.img + ')',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }"
-            >
-              <Icon>{{ service.icon }}</Icon>
-              <h1>{{ service.title }}</h1>
-            </div>
-          </v-expand-transition>
-        </div>
-      </v-hover> -->
+        <transition-card :service="service" />
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -53,7 +24,7 @@ export default {
       required: false,
     },
   },
-  components: { ServiceCard,TransitionCard },
+  components: { ServiceCard, TransitionCard },
   data() {
     return {
       servicesProvided: [

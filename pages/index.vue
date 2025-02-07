@@ -18,6 +18,9 @@
       <div class="px-10" id="service-provided">
         <service-provided :custom-class="customWidthClass"/>
       </div>
+      <div class="px-10" id="latest-news">
+        <latest-news :custom-class="customWidthClass"/>
+      </div>
     </div>
     <footer-component :custom-class="customWidthClass" />
   </div>
@@ -26,10 +29,11 @@
 <script>
 import HeaderComponent from "../layouts/HeaderComponent.vue";
 import FooterComponent from "../layouts/FooterComponent.vue";
-import Carousel from "./components/Carousel.vue";
-import Welcome from "./components/Welcome.vue";
-import BreadComponent from "./components/BreadComponent.vue";
-import ServiceProvided from "./components/ServiceProvided.vue";
+import Carousel from "../layouts/components/Carousel.vue";
+import Welcome from "../layouts/components/Welcome.vue";
+import BreadComponent from "../layouts/components/BreadComponent.vue";
+import ServiceProvided from "../layouts/components/ServiceProvided.vue";
+import LatestNews from '../layouts/components/LatestNews.vue';
 export default {
   components: {
     HeaderComponent,
@@ -38,6 +42,7 @@ export default {
     FooterComponent,
     BreadComponent,
     ServiceProvided,
+    LatestNews,
   },
   data: () => ({ value: 0, customWidthClass: "custom-max-width" }),
   methods: {},
@@ -45,18 +50,6 @@ export default {
 </script>
 
 <style>
-:root {
-  --primary-text-color: #89c303;
-  --secondary-text-color: #12595d;
-  --tertiary-text-color: #ed5e3e;
-  --primary-background: #f2f4f5;
-}
-
-html {
-  font-family: "League Spartan", sans-serif;
-  /* main-text-color:var() */
-  scroll-behavior: smooth;
-}
 .welcome-test {
   opacity: 0;
 }

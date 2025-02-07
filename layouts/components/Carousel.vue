@@ -9,14 +9,22 @@
         <div>
           <div class="main-conntent">
             <h2 class="banner-header mt-5 mt-md-0">
-              {{ mainContent.title }}
+              <!-- {{ mainContent.title }} -->
+              Welcome to 
+              <br>
+              IRIS CHILD DEVELOPMENT CENTRE
             </h2>
 
             <h3 class="text-secondary banner-sub mt-3">
               {{ mainContent.subTitle }}
             </h3>
           </div>
-          <v-btn class="mt-5 px-7 py-7 pb-9 enquiry-btn">MAKE AN ENQUIRY</v-btn>
+          <v-btn class="mt-5 px-7 py-6 pb-9 enquiry-btn">MAKE AN ENQUIRY  <Icon
+          name="mdi-arrow-right"
+          start
+          class=" mt-n1 ml-3 right-arrow-icon"
+          color="white"
+        ></Icon></v-btn>
         </div>
       </v-col>
       <v-col
@@ -251,63 +259,22 @@ export default {
   aspect-ratio: 1;
   border-radius: 50%;
 }
-
-.star {
-  position: absolute;
-  font-size: 30px;
-  animation: fall 5s linear infinite;
-  opacity: 0;
-  z-index: 5;
+.right-arrow-icon{
+  animation: moveArrow 2s infinite ease-in-out; 
 }
-
-/* Position stars at random locations and sizes */
-.star:nth-child(1) {
-  top: -10px;
-  left: 20%;
-  animation-duration: 4s;
-  animation-delay: 0s;
-  animation-timing-function: ease-in;
-}
-
-.star:nth-child(2) {
-  top: -10px;
-  left: 50%;
-  animation-duration: 6s;
-  animation-delay: 1s;
-}
-
-.star:nth-child(3) {
-  top: -10px;
-  left: 75%;
-  animation-duration: 5.5s;
-  animation-delay: 0.5s;
-}
-
-.star:nth-child(4) {
-  top: -10px;
-  left: 10%;
-  animation-duration: 7s;
-  animation-delay: 2s;
-}
-
-.star:nth-child(5) {
-  top: -10px;
-  left: 90%;
-  animation-duration: 4.5s;
-  animation-delay: 1.5s;
-}
-
-/* Keyframe animation for dropping stars */
-@keyframes fall {
+@keyframes moveArrow {
   0% {
-    top: -10px;
-    opacity: 1;
+    transform: translateX(0); /* Start from original position */
+  }
+  50% {
+    transform: translateX(15px); /* Move right by 15px */
   }
   100% {
-    top: 100vh; /* Drops to the bottom of the viewport */
-    opacity: 0;
+    transform: translateX(0); /* Go back to original position */
   }
 }
+
+
 .banner-header {
   font-size: clamp(3em, 5vw, 3.3em);
   line-height: 1.333;

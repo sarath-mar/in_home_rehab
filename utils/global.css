@@ -1,0 +1,17 @@
+
+:root {
+    --primary-text-color: #89c303;
+    --secondary-text-color: #12595d;
+    --tertiary-text-color: #ed5e3e;
+    --primary-background: #f2f4f5;
+  }
+  
+  html {
+    font-family: "League Spartan", sans-serif;
+    scroll-behavior: smooth;
+  }
+  .c-pointer{
+    cursor: pointer;
+  }
+  
+  

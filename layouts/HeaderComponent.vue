@@ -157,7 +157,6 @@
 </template>
 <script>
 import { useDisplay } from "vuetify";
-import CarriersForm from "~/pages/components/CarriersForm.vue";
 export default {
   props:{
     customClass:{
@@ -240,7 +239,6 @@ export default {
       }
     },
   },
-  components: { CarriersForm },
 };
 </script>
 <style lang="scss">

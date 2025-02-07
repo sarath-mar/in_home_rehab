@@ -1,11 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  plugins: ["~/plugins/constants.js", "~/plugins/mixins.js"],
   telemetry: {
     enabled: true,
     consent: 1,
   },
-  modules: ['nuxt-icon'],
-  css: ["vuetify/styles/main.sass"],
+  modules: ["nuxt-icon"],
+  css: ["vuetify/styles/main.sass",'~/utils/global.css'],
   build: {
     transpile: ["vuetify"],
   },
@@ -19,8 +20,8 @@ export default defineNuxtConfig({
           rel: "stylesheet",
         },
         {
-          href:"https://fonts.googleapis.com/icon?family=Material+Icons",
-          rel:"stylesheet"
+          href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+          rel: "stylesheet",
         },
       ],
       // href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap",
