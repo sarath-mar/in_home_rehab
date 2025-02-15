@@ -72,14 +72,14 @@
             <!-- <p class="text-end">contact us on</p> -->
             <div class="text-end">
               <Icon class="header-icon-1" name="uil:phone" />
-              <span class="ml-2 phone-text">8891575227 / 9961132071</span>
+              <span class="ml-2 phone-text"> 8891575227</span>
             </div>
             <div class="text-end mt-2">
               <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
               <Icon name="mdi-email" class="header-icon" />
               <!-- <span class="ml-2  mail-text">inhomerehab@gmail.com</span> -->
               <a class="ml-2 mail-text" href="mailto: inhomerehab01@gmail.com"
-                >inhomerehab01@gmail.com</a
+                >iriscdc1@gmail.com</a
               >
             </div>
           </div>
@@ -111,21 +111,21 @@
                     >
                   </v-list-item-title>
                 </v-list-item>
-                <v-list-item>
+                <!-- <v-list-item>
                   <v-list-item-title>
                     <Icon class="header-icon-1" name="uil:phone" />
                     <a class="ml-2 phone-text" href="tel:+91-9961132071"
                       >+919961132071 (occupational therapy)</a
                     >
                   </v-list-item-title>
-                </v-list-item>
+                </v-list-item> -->
                 <v-list-item>
                   <v-list-item-title>
                     <Icon name="mdi-email" class="header-icon" />
                     <a
                       class="ml-2 phone-text"
                       href="mailto: inhomerehab01@gmail.com"
-                      >inhomerehab01@gmail.com</a
+                      >iriscdc1@gmail.com</a
                     >
                   </v-list-item-title>
                 </v-list-item>
@@ -177,7 +177,7 @@ export default {
       drawer: false,
       items: [
         {
-          title: "About US",
+          title: "About Us",
           value: "foo",
           to: "#in-home-rehab",
         },

@@ -1,8 +1,15 @@
 <template>
   <v-card class="transition-card" @click="show = !show">
     <v-img height="300px" :src="service.img" cover></v-img>
-
-    <v-card-title class="transition-card-title"> {{ service.title }}</v-card-title>
+    <div class="d-flex justify-space-between align-center">
+      <v-card-title class="transition-card-title">
+        {{ service.title }}</v-card-title
+      >
+      <Icon
+        :name="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+        class="mr-2"
+      ></Icon>
+    </div>
 
     <!-- <v-card-actions>
       <v-btn color="orange-lighten-2" text="Explore" @click="show = !show"
@@ -51,14 +58,13 @@ export default {
   width: 100%;
   cursor: pointer;
 }
-.transition-card-title{
+.transition-card-title {
   color: var(--secondary-text-color);
 }
-.transition-card-content{
+.transition-card-content {
   color: var(--primary-text-color);
- li{
-  list-style-position: inside; 
- }
+  li {
+    list-style-position: inside;
+  }
 }
-
 </style>

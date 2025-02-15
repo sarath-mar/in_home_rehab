@@ -16,7 +16,7 @@
             </h2>
 
             <h3 class="text-secondary banner-sub mt-3">
-              {{ mainContent.subTitle }}
+              Every child matters
             </h3>
           </div>
           <v-btn class="mt-5 px-7 py-6 pb-9 enquiry-btn">MAKE AN ENQUIRY  <Icon
@@ -239,7 +239,7 @@ export default {
   max-width: 610px !important;
 }
 .banner-sub {
-  background: url(../../public/images/h1-slider5.svg);
+  // background: url(/images/h1-slider5.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left;

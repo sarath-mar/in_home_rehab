@@ -7,10 +7,20 @@
         <v-list-item>
           <v-list-item-title>IRIS</v-list-item-title>
           <v-list-item @click="navigateTo(componentNames.connect)">
-            <v-list-item-title>Connect With Us</v-list-item-title>
+            <v-list-item-title
+              :class="{
+                'active-component': isActiveClass(componentNames.connect),
+              }"
+              >Connect With Us</v-list-item-title
+            >
           </v-list-item>
           <v-list-item @click="navigateTo(componentNames.gallery)">
-            <v-list-item-title>Gallery</v-list-item-title>
+            <v-list-item-title
+              :class="{
+                'active-component': isActiveClass(componentNames.gallery),
+              }"
+              >Gallery</v-list-item-title
+            >
           </v-list-item>
           <v-list-item @click="navigateTo('iris/latest-news')">
             <v-list-item-title>Latest News</v-list-item-title>
@@ -46,7 +56,7 @@
       ></Icon>
       <!-- <v-main> -->
       <!-- <keep-alive> -->
-        <component class="pa-5" :is="currentComponent" :key="currentComponent" />
+      <component class="pa-5" :is="currentComponent" :key="currentComponent" />
       <!-- </keep-alive> -->
       <!-- </v-main> -->
 
@@ -67,10 +77,10 @@ export default {
       loading: true,
       drawer: true,
       currentComponent: "Connect",
-      componentNames:{
-        connect:'Connect',
-        gallery:"Gallery"
-      }
+      componentNames: {
+        connect: "Connect",
+        gallery: "Gallery",
+      },
     };
   },
   mounted() {
@@ -78,9 +88,12 @@ export default {
     this.loading = false;
   },
   methods: {
+    isActiveClass(component) {
+      return this.currentComponent === component;
+    },
     navigateTo(component) {
-        console.log(component)
-      this.currentComponent=component
+      console.log(component);
+      this.currentComponent = component;
     },
     logout() {
       localStorage.removeItem(this.$CONSTANTS.USER_KEY);
@@ -96,3 +109,10 @@ export default {
   },
 };
 </script>
+<style>
+.active-component {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: var(--primary-text-color);
+}
+</style>

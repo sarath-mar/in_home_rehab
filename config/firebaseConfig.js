@@ -1,7 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore"
-import { getAuth,signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,6 +24,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const auth = getAuth(app)
 const newsCollection = collection(db, "latest-news")
+const galleryCollection = collection(db, "gallery")
 
 
 export {
@@ -29,6 +32,7 @@ export {
     getDocs,
     db,
     auth,
-    newsCollection,
-    signInWithEmailAndPassword
+    newsCollection,galleryCollection,
+    signInWithEmailAndPassword,
+    getDownloadURL, getStorage, ref, uploadBytes
 }

@@ -4,6 +4,9 @@
     --secondary-text-color: #12595d;
     --tertiary-text-color: #ed5e3e;
     --primary-background: #f2f4f5;
+    --quaternary-text-color: #f2f4f5;
+    font-family: "Courier Prime", serif;
+    /* font-family: "Kaushan Script", serif; */
   }
   
   html {
@@ -12,6 +15,16 @@
   }
   .c-pointer{
     cursor: pointer;
+  }
+  .text-primary{
+    color: var(--primary-text-color);
+  }
+  .text-secondary{
+    color: var(--secondary-text-color);
+  }
+  .bg-text{
+    color: var(--secondary-text-color) !important;
+    background-color: var(--primary-text-color) !important;
   }
   
   

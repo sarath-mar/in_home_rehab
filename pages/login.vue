@@ -71,6 +71,7 @@ export default {
   },
   mounted(){
     this.checkLoginStatus(true);
+    this.isLoading = false
   },
   methods: {
     validateUsername() {
@@ -109,7 +110,7 @@ export default {
           localStorage.setItem(this.$CONSTANTS.USER_KEY, JSON.stringify(user));
           localStorage.setItem(this.$CONSTANTS.LOGIN_TIME_KEY, loginTime);
           this.btn_loading = false;
-          this.$router.replace({ path: "/admin/dashboard" });
+          this.$router.replace({ path: "/admin" });
           // ...
         })
         .catch((error) => {
