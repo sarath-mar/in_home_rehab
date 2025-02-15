@@ -15,7 +15,7 @@
           <!-- <template v-slot:prepend>
             <v-icon :icon="item.icon"></v-icon>
           </template> -->
-          <a :href="item.to" class="text-primary" style="text-decoration: none">
+          <a  class="text-primary" style="text-decoration: none">
             <v-list-item-title
               class="ml-5 list-item"
               @click="onClickNav(item.value)"

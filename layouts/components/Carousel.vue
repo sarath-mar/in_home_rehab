@@ -276,7 +276,7 @@ export default {
 
 
 .banner-header {
-  font-size: clamp(3em, 5vw, 3.3em);
+  font-size: clamp(2.5em, 4.8vw, 3.3em);
   line-height: 1.333;
   font-weight: 900;
   /* letter-spacing: 0.1rem; */

@@ -31,18 +31,19 @@
       <v-card>
         <v-img
           :src="images[lightboxIndex].imgUrl"
-          height="600px"
+          max-height="600px"
+          min-height="320px"
           cover
         ></v-img>
         <v-card-title class="headline">
-          <v-btn
+          <!-- <v-btn
             icon
             @click="closeLightbox"
             class="close-btn"
             style="position: absolute; top: 16px; right: 16px; color: #fff"
-          >
-            <Icon class="close-icon" name="mdi-close"></Icon>
-          </v-btn>
+          > -->
+            <Icon  style="position: absolute; top: 16px; right: 16px; color: #fff" @click="closeLightbox" class="close-icon" name="mdi-close"></Icon>
+          <!-- </v-btn> -->
         </v-card-title>
 
         <v-card-actions class="justify-space-between">
