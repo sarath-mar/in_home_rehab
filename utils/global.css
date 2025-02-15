@@ -1,30 +1,27 @@
-
 :root {
-    --primary-text-color: #89c303;
-    --secondary-text-color: #12595d;
-    --tertiary-text-color: #ed5e3e;
-    --primary-background: #f2f4f5;
-    --quaternary-text-color: #f2f4f5;
-    font-family: "Courier Prime", serif;
-    /* font-family: "Kaushan Script", serif; */
-  }
-  
-  html {
-    font-family: "League Spartan", sans-serif;
-    scroll-behavior: smooth;
-  }
-  .c-pointer{
-    cursor: pointer;
-  }
-  .text-primary{
-    color: var(--primary-text-color);
-  }
-  .text-secondary{
-    color: var(--secondary-text-color);
-  }
-  .bg-text{
-    color: var(--secondary-text-color) !important;
-    background-color: var(--primary-text-color) !important;
-  }
-  
-  
+  --primary-text-color: #89c303;
+  --secondary-text-color: #12595d;
+  --tertiary-text-color: #ed5e3e;
+  --primary-background: #f2f4f5;
+  --quaternary-text-color: #f2f4f5;
+  font-family: "Courier Prime", serif !important;
+  /* font-family: "Kaushan Script", serif; */
+}
+
+html {
+  font-family: "League Spartan", sans-serif;
+  scroll-behavior: smooth;
+}
+.c-pointer {
+  cursor: pointer;
+}
+.text-primary {
+  color: var(--primary-text-color);
+}
+.text-secondary {
+  color: var(--secondary-text-color);
+}
+.bg-text {
+  color: var(--secondary-text-color) !important;
+  background-color: var(--primary-text-color) !important;
+}
