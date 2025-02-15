@@ -64,7 +64,7 @@
           </p>
           <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
           <ul class="header-list">
-            <li v-for="(item, i) in items" :key="i">{{ item.title }}</li>
+            <li v-for="(item, i)  in items" :key="i"  @click="onClickNav(item.value)">{{ item.title }}</li>
           </ul>
         </v-col>
         <v-col cols="3">
@@ -188,7 +188,7 @@ export default {
         },
         {
           title: "Gallery",
-          value: "fizz",
+          value: "gallery",
           to: "#why-home-therapy",
         },
         {
@@ -231,6 +231,11 @@ export default {
       console.log("clikd nav", item);
       if (!item) {
         return;
+      }
+      if(item=='gallery'){
+        console.log('gallery')
+        this.$router.push('/gallery')
+        return
       }
       this.drawer = false;
       if (item === "carrier") {

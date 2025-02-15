@@ -24,5 +24,8 @@ export const myMixin = {
         this.$router.push("/admin")
       }
     },
+    generateUniqueId() {
+      return 'id-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+    }
   }
 }

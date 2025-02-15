@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore"
+import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy,deleteDoc ,doc} from "firebase/firestore"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import { getDownloadURL, getStorage, ref, uploadBytes,deleteObject } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,11 +28,11 @@ const galleryCollection = collection(db, "gallery")
 
 
 export {
-    addDoc,
-    getDocs,
+    addDoc,getDocs,deleteDoc,doc,deleteObject,
     db,
     auth,
-    newsCollection,galleryCollection,
+    serverTimestamp,query, orderBy,
+    newsCollection, galleryCollection,
     signInWithEmailAndPassword,
     getDownloadURL, getStorage, ref, uploadBytes
 }

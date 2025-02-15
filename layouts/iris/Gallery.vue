@@ -5,9 +5,15 @@
 
       <v-btn class="bg-text" @click="openUploadDialog">Add Image</v-btn>
     </div>
-    <v-row>
+    <snackbar
+      :message="snackbarMessage"
+      :type="snackbarType"
+      :visible="snackbarVisible"
+    />
+    <loader v-if="loading" />
+    <v-row v-else>
       <v-col
-        v-for="(image, index) in images"
+        v-for="(galleryData, index) in galleryDetails"
         :key="index"
         cols="12"
         sm="6"
@@ -17,24 +23,30 @@
           <v-card
             :elevation="isHovering ? 12 : 4"
             v-bind="props"
-            @click="openDialog(image)"
+            @click="openDeleteDialog(galleryData)"
           >
             <div class="gallery-icon-container">
               <Icon name="mdi-close" class="gallery-icon"></Icon>
             </div>
-            <v-img :src="image.src" height="200px" class="white--text" />
+            <v-img
+              :src="galleryData.imgUrl"
+              height="200px"
+              class="white--text"
+            />
           </v-card>
         </v-hover>
       </v-col>
     </v-row>
 
     <!-- Dialog to confirm image delete -->
-    <v-dialog v-model="dialog" max-width="300px">
+    <v-dialog v-model="deleteDialog" max-width="300px">
       <v-card class="pa-8">
         Are you sure you want to delete this image?
         <div class="d-flex mt-4">
-          <v-btn class="mr-5" @click="dialog = false">Close</v-btn>
-          <v-btn color="red" @click="deleteImage">Confirm</v-btn>
+          <v-btn class="mr-5" @click="cancelDeleteImage">Close</v-btn>
+          <v-btn :loading="deleteLoading" color="red" @click="deleteImage"
+            >Confirm</v-btn
+          >
         </div>
       </v-card>
     </v-dialog>
@@ -58,38 +70,98 @@
 <script>
 import {
   addDoc,
+  deleteDoc,
+  deleteObject,
+  doc,
   galleryCollection,
+  getDocs,
   getDownloadURL,
   getStorage,
+  orderBy,
+  query,
   ref,
+  serverTimestamp,
   uploadBytes,
 } from "@/config/firebaseConfig";
+import Snackbar from "../globalComponent/Snackbar.vue";
+import Loader from "../sub-components/Loader.vue";
 export default {
+  components: { Snackbar, Loader },
   data() {
     return {
-      dialog: false,
+      deleteDialog: false,
+      deleteLoading: false,
       uploadLoading: false,
       uploadDialog: false, // Track the visibility of the upload dialog
-      selectedImage: {},
+      selectedGallery: {},
       file: null,
-      images: [
-        {
-          src: "https://circlecare4kids.com/wp-content/uploads/2022/12/iStock-1364504091.jpg",
-        },
-      ],
+      galleryDetails: [],
+      snackbarMessage: "",
+      snackbarType: "info",
+      snackbarVisible: false,
+      loading: false,
     };
   },
+  mounted() {
+    this.getGalleryDetails();
+  },
   methods: {
-    openDialog(image) {
-      this.selectedImage = image;
-      this.dialog = true;
+    cancelDeleteImage() {
+      this.selectedGallery = {};
+      this.deleteDialog = false;
     },
-    deleteImage() {
-      const index = this.images.indexOf(this.selectedImage);
-      if (index !== -1) {
-        this.images.splice(index, 1);
+    activeSnackbar(msg, type = "info") {
+      (this.snackbarMessage = msg), (this.type = type);
+      this.snackbarVisible = true;
+    },
+    async getGalleryDetails() {
+      this.loading = true;
+      let result = new Array();
+
+      const galleryQuery = query(
+        galleryCollection,
+        orderBy("createdAt", "desc")
+      );
+
+      let data = await getDocs(galleryQuery);
+      data.forEach((doc) => {
+        let documentData = doc.data();
+        documentData.id = doc.id;
+        result.push(documentData);
+      });
+
+      this.galleryDetails = result;
+      this.loading = false;
+    },
+    openDeleteDialog(data) {
+      this.selectedGallery = data;
+      this.deleteDialog = true;
+    },
+    async deleteImage() {
+      if (!this.selectedGallery.id) {
+        return;
       }
-      this.dialog = false;
+      try {
+        this.deleteLoading = true;
+        const docRef = doc(galleryCollection, this.selectedGallery.id);
+        await deleteDoc(docRef);
+        const storage = getStorage();
+        const galleryRef = ref(
+          storage,
+          `gallery/${this.selectedGallery.imgId}.jpg`
+        );
+        await deleteObject(galleryRef);
+        this.activeSnackbar("Successfully deleted the image", "success");
+
+        this.getGalleryDetails();
+        this.selectedGallery = {};
+      } catch (error) {
+        console.log('delete error : ',error)
+        this.activeSnackbar("Something went error", "error");
+      } finally {
+        this.deleteDialog = false;
+        this.deleteLoading = false;
+      }
     },
     openUploadDialog() {
       this.uploadDialog = true; // Show the upload dialog
@@ -105,52 +177,26 @@ export default {
         return;
       }
       this.uploadLoading = true;
-      console.log("object");
       try {
-        var storageRef = ref(getStorage(), `albums/${this.file.name}.jpg`);
+        let imgId = this.generateUniqueId();
+        var storageRef = ref(getStorage(), `gallery/${imgId}.jpg`);
         await uploadBytes(storageRef, this.file);
-        let postUrl = await getDownloadURL(storageRef);
-        let data = await addDoc(galleryCollection, {
-          postUrl,
+        let imgUrl = await getDownloadURL(storageRef);
+        await addDoc(galleryCollection, {
+          imgUrl,
+          imgId,
+          createdAt: serverTimestamp(),
         });
-        //   if (data){
-
-        //       this.uploadDialog = false;
-        //   }
+        this.activeSnackbar("Successfully created the image", "success");
+        this.getGalleryDetails();
       } catch (error) {
+        this.activeSnackbar("Something went error", "error");
+
         console.log("Upload Error : ", error);
       } finally {
         this.uploadLoading = false;
         this.uploadDialog = false;
       }
-
-      // // const uploadTask = storage.ref(`images/${this.file.name}`).put(this.file);
-
-      // // uploadTask.on(
-      // //   'state_changed',
-      // //   (snapshot) => {
-      // //     // You can track upload progress here (optional)
-      // //   },
-      // //   (error) => {
-      // //     console.error(error);
-      // //   },
-      // //   () => {
-      // //     // Once the upload is complete, get the file's download URL
-      // //     uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-      // //       // Save the URL in Firebase Realtime Database
-      // //       const imageData = {
-      // //         url: downloadURL,
-      // //         name: this.file.name,
-      // //       };
-
-      // //       // If you want to store it in the Realtime Database:
-      // //       database.ref('images').push(imageData);
-
-      // //       // If you want to store it in Firestore:
-      // //       // firestore.collection('images').add(imageData);
-      // //     });
-      //   }
-      // );
     },
   },
 };
