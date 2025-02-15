@@ -32,7 +32,7 @@
         <v-img
           :src="images[lightboxIndex].imgUrl"
           height="600px"
-          contain
+          cover
         ></v-img>
         <v-card-title class="headline">
           <v-btn
