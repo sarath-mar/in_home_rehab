@@ -1,158 +1,239 @@
 <template>
-    <v-container>
-      <v-row
-        class="masonry-grid"
-        dense
+  <div class="pa-5">
+    <h1 class="gallery-heading">Gallery</h1>
+    <!-- Masonry Gallery -->
+    <div class="masonry-gallery">
+      <div
+        v-for="(image, index) in images"
+        :key="index"
+        class="masonry-item"
+        @click="openLightbox(index)"
       >
-        <v-col
-          v-for="(image, index) in images"
-          :key="index"
-          :cols="12" sm="6" md="4"
-          class="masonry-item"
+        <!-- Image -->
+        <v-img
+          :src="image.imgUrl"
+          class="rounded-lg"
+          alt="iris"
+          @load="imageLoaded(index)"
         >
-          <v-hover v-slot:default="{ isHovering, props }">
-            <v-card
-              v-bind="props"
-              @click="openDialog(image)"
-              :style="{
-                transform: isHovering ? 'scale(1.05)' : 'scale(1)',
-                transition: 'transform 0.3s ease',
-              }"
-              class="image-card"
-            >
-              <v-img :src="image.src" class="rounded-xl" height="200px">
-                <!-- Image loading placeholder -->
-                <template v-slot:placeholder>
-                  <v-row class="fill-height ma-0" align="center" justify="center">
-                    <v-progress-circular indeterminate color="grey lighten-3"></v-progress-circular>
-                  </v-row>
-                </template>
-              </v-img>
-              <v-card-title>{{ image.title }}</v-card-title>
-              <v-card-subtitle v-if="isHovering">{{ image.description }}</v-card-subtitle>
-            </v-card>
-          </v-hover>
-        </v-col>
-      </v-row>
-  
-      <!-- Modal Dialog for image preview -->
-      <v-dialog v-model="dialog" max-width="90%">
-        <v-card>
-          <v-img :src="currentImage.src" height="600px" contain></v-img>
-          <v-card-title class="headline">
-            {{ currentImage.title }}
-            <!-- Close icon in the top-right corner -->
-            <v-btn
-              icon
-              @click="dialog = false"
-              class="close-btn"
-              style="position: absolute; top: 16px; right: 16px; color: #fff;"
-            >
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
-          </v-card-title>
-          <v-card-subtitle>{{ currentImage.description }}</v-card-subtitle>
-          <v-card-actions>
-            <v-btn text @click="dialog = false">Close</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-    </v-container>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        dialog: false,
-        currentImage: {},
-        images: [
-          {
-            src: 'https://via.placeholder.com/600x400?text=Image+1',
-            title: 'Image 1',
-            description: 'This is a stylish image.',
-          },
-          {
-            src: 'https://via.placeholder.com/400x600?text=Image+2',
-            title: 'Image 2',
-            description: 'Another beautiful image.',
-          },
-          {
-            src: 'https://via.placeholder.com/800x600?text=Image+3',
-            title: 'Image 3',
-            description: 'A modern art style.',
-          },
-          {
-            src: 'https://via.placeholder.com/500x500?text=Image+4',
-            title: 'Image 4',
-            description: 'A great nature view.',
-          },
-          {
-            src: 'https://via.placeholder.com/700x400?text=Image+5',
-            title: 'Image 5',
-            description: 'An urban landscape.',
-          },
-          {
-            src: 'https://via.placeholder.com/600x900?text=Image+6',
-            title: 'Image 6',
-            description: 'A futuristic concept.',
-          },
-        ]
-      };
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-3"
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+      </div>
+    </div>
+    <v-dialog v-model="showLightbox" max-width="90%">
+      <v-card>
+        <v-img
+          :src="images[lightboxIndex].imgUrl"
+          height="600px"
+          contain
+        ></v-img>
+        <v-card-title class="headline">
+          <v-btn
+            icon
+            @click="closeLightbox"
+            class="close-btn"
+            style="position: absolute; top: 16px; right: 16px; color: #fff"
+          >
+            <Icon class="close-icon" name="mdi-close"></Icon>
+          </v-btn>
+        </v-card-title>
+
+        <v-card-actions class="justify-space-between">
+          <v-btn icon @click="prevImage" :disabled="lightboxIndex === 0">
+            <Icon class="next-icon" name="mdi-arrow-left"></Icon>
+          </v-btn>
+          <v-btn text @click="closeLightbox">Close</v-btn>
+          <v-btn
+            icon
+            @click="nextImage"
+            :disabled="lightboxIndex === images.length - 1"
+          >
+            <Icon class="next-icon" name="mdi-arrow-right"></Icon>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
+</template>
+
+<script>
+import {
+  galleryCollection,
+  getDocs,
+  orderBy,
+  query,
+} from "@/config/firebaseConfig";
+export default {
+  name: "MasonryGallery",
+  data() {
+    return {
+      images: [],
+      showLightbox: false,
+      lightboxIndex: 0,
+    };
+  },
+  mounted() {
+    this.getGalleryDetails();
+  },
+  methods: {
+    async getGalleryDetails() {
+      this.loading = true;
+      let result = new Array();
+
+      const galleryQuery = query(
+        galleryCollection,
+        orderBy("createdAt", "desc")
+      );
+
+      let data = await getDocs(galleryQuery);
+      data.forEach((doc) => {
+        let documentData = doc.data();
+        documentData.id = doc.id;
+        result.push(documentData);
+      });
+
+      this.images = result;
+      this.loading = false;
     },
-    methods: {
-      openDialog(image) {
-        this.currentImage = image;
-        this.dialog = true;
+    imageLoaded(index) {
+      // Mark the image as loaded when it finishes loading
+      this.images[index].loaded = true;
+    },
+    openLightbox(index) {
+      this.lightboxIndex = index;
+      this.showLightbox = true;
+    },
+    closeLightbox() {
+      this.showLightbox = false;
+    },
+    prevImage() {
+      if (this.lightboxIndex > 0) {
+        this.lightboxIndex--;
       }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .masonry-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: space-between;
+    },
+    nextImage() {
+      if (this.lightboxIndex < this.images.length - 1) {
+        this.lightboxIndex++;
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+/* Masonry layout using CSS Masonry */
+.masonry-gallery {
+  column-count: 3; /* Number of columns */
+  column-gap: 10px;
+  /* padding: 10px; */
+}
+
+.masonry-item {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 100%;
+  break-inside: avoid;
+}
+
+.masonry-item img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.masonry-item img:hover {
+  transform: scale(1.05);
+}
+.close-icon {
+  color: black;
+}
+.next-icon {
+  font-size: 20px;
+}
+/* Loader Spinner */
+.image-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .masonry-item {
-    position: relative;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .image-card {
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .v-img {
-    border-radius: 8px;
-  }
-  
-  .v-card-title {
-    font-weight: bold;
-    font-size: 16px;
-    transition: opacity 0.3s ease;
-  }
-  
-  .v-card-subtitle {
-    font-style: italic;
-    color: rgba(0, 0, 0, 0.7);
-    transition: opacity 0.3s ease;
-  }
-  
-  .v-dialog {
-    max-width: 90%;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    color: #fff;
-  }
-  </style>
-  
+}
+
+/* Lightbox Styles */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.close-btn:hover {
+  background-color: #ff4e4e;
+  color: white;
+}
+.gallery-heading{
+    color: var(--primary-text-color);
+}
+</style>
