@@ -4,27 +4,26 @@
       class=" "
       :class="!mdAndUp ? 'margin-height' : 'mt-5 align-center main-carousel'"
     >
-    <star-animation-component/>
-      <v-col cols="12" md="6" lg="7"> 
+      <star-animation-component />
+      <v-col cols="12" md="6" lg="7">
         <div>
           <div class="main-conntent">
-            <h2 class="banner-header mt-5 mt-md-0">
-              <!-- {{ mainContent.title }} -->
-              Welcome to 
-              <br>
+            <h4 class="mt-5 mt-md-0 welcome">Welcome to</h4>
+            <h2 class=" banner-header mt-3">
               IRIS CHILD DEVELOPMENT CENTRE
             </h2>
 
-            <h3 class="text-secondary banner-sub mt-3">
-              Every child matters
-            </h3>
+            <h3 class="text-secondary banner-sub mt-3">Every child matters</h3>
           </div>
-          <v-btn class="mt-5 px-7 py-6 pb-9 enquiry-btn">MAKE AN ENQUIRY  <Icon
-          name="mdi-arrow-right"
-          start
-          class=" mt-n1 ml-3 right-arrow-icon"
-          color="white"
-        ></Icon></v-btn>
+          <v-btn class="mt-5 px-7 py-6 pb-9 enquiry-btn"
+            >MAKE AN ENQUIRY
+            <Icon
+              name="mdi-arrow-right"
+              start
+              class="mt-n1 ml-3 right-arrow-icon"
+              color="white"
+            ></Icon
+          ></v-btn>
         </div>
       </v-col>
       <v-col
@@ -33,7 +32,6 @@
         lg="5"
         class="carousel-container text-center mt-5 mt-md-0"
       >
-
         <div class="round-img">
           <div class="round round-1"></div>
           <div class="round round-2"></div>
@@ -68,7 +66,7 @@ import WelcomeForm from "./WelcomeForm.vue";
 import ColorShadeOne from "../sub-components/ColorShadeOne.vue";
 import StarAnimationComponent from "../sub-components/StarAnimationComponent.vue";
 export default {
-  components: { WelcomeForm, ColorShadeOne ,StarAnimationComponent},
+  components: { WelcomeForm, ColorShadeOne, StarAnimationComponent },
   props: {
     customClass: {
       type: String,
@@ -207,9 +205,9 @@ export default {
 .social-icon {
   text-decoration: none;
 }
-.margin-height {
-  margin-top: 130px;
-}
+// .margin-height {
+//   margin-top: 130px;
+// }
 .social-media {
   display: flex;
   gap: 40px;
@@ -239,6 +237,7 @@ export default {
   max-width: 610px !important;
 }
 .banner-sub {
+  font-size: clamp(1.4em, 2vw, 2em);
   // background: url(/images/h1-slider5.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -259,8 +258,8 @@ export default {
   aspect-ratio: 1;
   border-radius: 50%;
 }
-.right-arrow-icon{
-  animation: moveArrow 2s infinite ease-in-out; 
+.right-arrow-icon {
+  animation: moveArrow 2s infinite ease-in-out;
 }
 @keyframes moveArrow {
   0% {
@@ -274,13 +273,22 @@ export default {
   }
 }
 
-
 .banner-header {
-  font-size: clamp(2.5em, 4.8vw, 3.3em);
+  font-size: clamp(2.4em, 3vw, 3em);
   line-height: 1.333;
   font-weight: 900;
   /* letter-spacing: 0.1rem; */
   margin-top: 0;
+  font-style: italic ;
+  color: var(--primary-text-color);
+}
+.welcome {
+  font-size: clamp(1.2em, 2vw, 1.8em);
+  line-height: 1.333;
+  font-weight: 900;
+  /* letter-spacing: 0.1rem; */
+  margin-top: 0;
+  font-style: italic ;
   color: var(--primary-text-color);
 }
 .banner-subtitle {

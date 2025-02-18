@@ -15,10 +15,10 @@
           <!-- <template v-slot:prepend>
             <v-icon :icon="item.icon"></v-icon>
           </template> -->
-          <a  class="text-primary" style="text-decoration: none">
+          <a class="text-primary" style="text-decoration: none">
             <v-list-item-title
               class="ml-5 list-item"
-              @click="onClickNav(item.value)"
+              @click="onClickNav(item)"
             >
               <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon
               >{{ item.title }}
@@ -32,7 +32,11 @@
       </div> -->
       <div class="drawer-btn">
         <div>
-          <a href="#welcom-form-id" @click="drawer = false" style="text-decoration: none">
+          <a
+            href="#welcom-form-id"
+            @click="drawer = false"
+            style="text-decoration: none"
+          >
             <v-btn class="header-btn bg-secondary"> Connect with Us</v-btn>
           </a>
         </div>
@@ -49,12 +53,12 @@
         </div>
       </div>
     </v-navigation-drawer>
-    <v-app-bar
-      class="app-bar"
-      :elevation="elevation"
-     
-    >
-      <v-row class="px-10 py-5 app-bar-row align-center"  :class="customClass" v-show="lgAndUp">
+    <v-app-bar class="app-bar" :elevation="elevation">
+      <v-row
+        class="px-10 py-5 app-bar-row align-center"
+        :class="customClass"
+        v-show="lgAndUp"
+      >
         <v-col cols="3">
           <img src="/images/logo.png" class="mt-2" width="160px" alt="" />
         </v-col>
@@ -64,7 +68,13 @@
           </p>
           <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
           <ul class="header-list">
-            <li v-for="(item, i)  in items" :key="i"  @click="onClickNav(item.value)">{{ item.title }}</li>
+            <li
+              v-for="(item, i) in items"
+              :key="i"
+              @click="onClickNav(item)"
+            >
+              {{ item.title }}
+            </li>
           </ul>
         </v-col>
         <v-col cols="3">
@@ -158,11 +168,11 @@
 <script>
 import { useDisplay } from "vuetify";
 export default {
-  props:{
-    customClass:{
-      type:String,
-      required:false
-    }
+  props: {
+    customClass: {
+      type: String,
+      required: false,
+    },
   },
   setup() {
     // Destructure only the keys we want to use
@@ -171,7 +181,7 @@ export default {
   },
   data() {
     return {
-      elevation:0,
+      elevation: 0,
       scrollHeight: "",
       carrierPop: false,
       drawer: false,
@@ -179,42 +189,47 @@ export default {
         {
           title: "About Us",
           value: "foo",
-          to: "#in-home-rehab",
+          route: "/",
+          hash: "#in-home-rehab",
         },
         {
           title: "Our Services",
           value: "bar",
-          to: "#service-we-provide",
+          route: "/",
+          hash: "#service-we-provide",
         },
         {
           title: "Gallery",
           value: "gallery",
-          to: "#why-home-therapy",
+          route: "/gallery",
+          hash: "#why-home-therapy",
         },
         {
           title: "Blog",
           value: "fizz",
-          to: "#why-home-therapy",
+          route: "/",
+          hash: "#why-home-therapy",
         },
         {
           title: "Contact Us",
           value: "fizz",
-          to: "#why-home-therapy",
-        }
+          route: "/",
+          hash: "#why-home-therapy",
+        },
       ],
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll() {
       const currentScrollPosition = window.scrollY;
       if (currentScrollPosition > 50) {
-        this.elevation = 4; 
+        this.elevation = 4;
       } else {
         this.elevation = 0;
       }
@@ -222,26 +237,11 @@ export default {
     closeIcon() {
       this.carrierPop = false;
     },
-    // connectWithUs(event) {
-    //   // this.drawer=false
-    //   let targetId = event.currentTarget;
-    //   console.log(targetId);
-    // },
     onClickNav(item) {
-      console.log("clikd nav", item);
       if (!item) {
         return;
       }
-      if(item=='gallery'){
-        console.log('gallery')
-        this.$router.push('/gallery')
-        return
-      }
-      this.drawer = false;
-      if (item === "carrier") {
-        this.carrierPop = true;
-        return;
-      }
+      this.$router.push({ path: item.route, hash: item.hash });
     },
   },
 };
@@ -293,30 +293,29 @@ export default {
 .header-btn {
   text-transform: capitalize;
 }
-.header-list{
+.header-list {
   display: flex;
   justify-content: space-around;
- li{
-  list-style: none;
-  color: var(--primary-text-color);
-  font-size: 22px;
-  cursor: pointer;
-  position: relative;
-  padding-bottom: 3px;
- }
- li::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 4px;
-  background-color: var(--secondary-text-color);
-  transition: width 0.3s ease;
+  li {
+    list-style: none;
+    color: var(--primary-text-color);
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 3px;
+  }
+  li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--secondary-text-color);
+    transition: width 0.3s ease;
+  }
+  li:hover::after {
+    width: 100%;
+  }
 }
-li:hover::after {
-  width: 100%;
-}
-}
-
 </style>
