@@ -15,8 +15,8 @@
 
             <h3 class="text-secondary banner-sub mt-3">Every child matters</h3>
           </div>
-          <v-btn class="mt-5 px-7 py-6 pb-9 enquiry-btn"
-            >MAKE AN ENQUIRY
+          <v-btn class="mt-5 px-7 py-5 pb-9 enquiry-btn"
+            >Make any enquiry
             <Icon
               name="mdi-arrow-right"
               start
@@ -40,7 +40,7 @@
         <div v-if="!mdAndUp">
           <ul class="social-media mt-3 social-media-small">
             <li v-for="media in socialMedia" :key="media.name">
-              <a class="social-icon text-primary" :href="media.url">
+              <a class="social-icon " :href="media.url">
                 <Icon :name="media.icon" />
               </a>
             </li>
@@ -51,7 +51,7 @@
     <div v-if="mdAndUp" class="mt-n10">
       <ul class="social-media">
         <li v-for="media in socialMedia" :key="media.name">
-          <a class="social-icon text-primary" :href="media.url">
+          <a class="social-icon " :href="media.url">
             {{ media.name }}
             <Icon :name="media.icon" />
           </a>
@@ -154,6 +154,7 @@ export default {
   background-color: var(--tertiary-text-color);
   color: white;
   font-size: large;
+  text-transform: capitalize;
 }
 .round-img {
   position: relative;
@@ -204,6 +205,7 @@ export default {
 }
 .social-icon {
   text-decoration: none;
+  color: var(--primary-text-color);
 }
 // .margin-height {
 //   margin-top: 130px;

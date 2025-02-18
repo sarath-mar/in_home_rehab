@@ -10,26 +10,15 @@
       </div>
       <h2 class="text-primary ml-5 mt-5">In Home Rehab</h2>
       <div class="mt-5">
-        <!-- <v-list :items="items" @click="onClickNav"></v-list> -->
         <v-list-item v-for="(item, i) in items" :key="i">
-          <!-- <template v-slot:prepend>
-            <v-icon :icon="item.icon"></v-icon>
-          </template> -->
           <a class="text-primary" style="text-decoration: none">
-            <v-list-item-title
-              class="ml-5 list-item"
-              @click="onClickNav(item)"
-            >
+            <v-list-item-title class="ml-5 list-item" @click="onClickNav(item)">
               <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon
               >{{ item.title }}
             </v-list-item-title>
           </a>
         </v-list-item>
       </div>
-      <!-- <div>
-        <v-sheet elevation="2" class="sheet" >Connect With Us</v-sheet>
-        <v-sheet elevation="2" >Carriers</v-sheet>
-      </div> -->
       <div class="drawer-btn">
         <div>
           <a
@@ -41,15 +30,6 @@
           </a>
         </div>
         <div class="mt-5">
-          <!-- <v-btn
-            @click="
-              carrierPop = !carrierPop;
-              drawer = !drawer;
-            "
-            class="header-btn bg-secondary"
-          >
-            careers</v-btn
-          > -->
         </div>
       </div>
     </v-navigation-drawer>
@@ -60,34 +40,24 @@
         v-show="lgAndUp"
       >
         <v-col cols="3">
-          <img src="/images/logo.png" class="mt-2" width="160px" alt="" />
+
+          <img src="/images/logo.png" class="mt-2 icon-image" alt="" />
         </v-col>
         <v-col cols="6" justify-center>
-          <!-- <p @click="carrierPop = true" class="text-center carrier-text">
-            Careers
-          </p>
-          <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
-          <ul class="header-list">
-            <li
-              v-for="(item, i) in items"
-              :key="i"
-              @click="onClickNav(item)"
-            >
+         <ul class="header-list">
+            <li v-for="(item, i) in items" :key="i" @click="onClickNav(item)">
               {{ item.title }}
             </li>
           </ul>
         </v-col>
         <v-col cols="3">
           <div>
-            <!-- <p class="text-end">contact us on</p> -->
             <div class="text-end">
               <Icon class="header-icon-1" name="uil:phone" />
               <span class="ml-2 phone-text"> 8891575227</span>
             </div>
             <div class="text-end mt-2">
-              <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
               <Icon name="mdi-email" class="header-icon" />
-              <!-- <span class="ml-2  mail-text">inhomerehab@gmail.com</span> -->
               <a class="ml-2 mail-text" href="mailto: inhomerehab01@gmail.com"
                 >iriscdc1@gmail.com</a
               >
@@ -121,21 +91,14 @@
                     >
                   </v-list-item-title>
                 </v-list-item>
-                <!-- <v-list-item>
-                  <v-list-item-title>
-                    <Icon class="header-icon-1" name="uil:phone" />
-                    <a class="ml-2 phone-text" href="tel:+91-9961132071"
-                      >+919961132071 (occupational therapy)</a
-                    >
-                  </v-list-item-title>
-                </v-list-item> -->
                 <v-list-item>
                   <v-list-item-title>
-                    <Icon name="mdi-email" class="header-icon" />
                     <a
                       class="ml-2 phone-text"
                       href="mailto: inhomerehab01@gmail.com"
-                      >iriscdc1@gmail.com</a
+                    >
+                      <Icon name="mdi-email" class="header-icon" />
+                      iriscdc1@gmail.com</a
                     >
                   </v-list-item-title>
                 </v-list-item>
@@ -254,6 +217,9 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+.icon-image{
+  width: 190px;
+}
 .drawer-btn .header-btn {
   width: 140px;
   /* padding: 20px; */
@@ -283,12 +249,15 @@ export default {
   cursor: pointer;
 }
 .phone-text {
-  color: var(--secondary-text-color);
+  // color: var(--secondary-text-color);
   font-size: 17px;
   text-decoration: none;
 }
 .mail-text {
+  text-decoration: none;
   font-size: 18px;
+  color: var(--primary-text-color);
+  cursor: pointer;
 }
 .header-btn {
   text-transform: capitalize;

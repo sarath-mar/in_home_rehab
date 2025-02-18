@@ -10,7 +10,7 @@
           variant="text"
         > -->
         <span v-for="icon in socialMedia" :key="icon" class="mx-5 footer-icon">
-          <a class="social-icon text-primary" :href="icon.url"> 
+          <a class="social-icon" :href="icon.url"> 
             <Icon :name="icon.icon" />
           </a>
         </span>
