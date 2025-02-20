@@ -6,7 +6,7 @@
     >
       <!-- <v-row class="footer-row">
         <v-col cols="8"> -->
-      <v-col class="footer-form-col" cols="8">
+      <v-col class="footer-form-col" :cols="sm || xs ? 10 : 8">
         <WelcomeForm class="footer-form" />
       </v-col>
       <!-- </v-col>
@@ -60,9 +60,15 @@
   </v-layout>
 </template>
 <script>
+import { useDisplay } from "vuetify";
 import WelcomeForm from "./components/WelcomeForm.vue";
 export default {
   components: { WelcomeForm },
+  setup() {
+    const { xs, md, sm, lg } = useDisplay();
+
+    return { xs, md, sm, lg };
+  },
   props: {
     customClass: {
       type: String,

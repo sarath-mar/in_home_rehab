@@ -2,7 +2,7 @@
   <v-card elevation="10" class="blog-card-container">
     <v-img
       class="align-end text-white blog-card-img"
-      :height="sm && xs ? 300 : 350"
+      :height="350"
       :src="details.imgUrl"
       cover
     >
@@ -34,14 +34,14 @@ export default {
 <style lang="scss">
 .blog-card-container {
   height: 100%;
-  border: 2px solid var(--secondary-text-color);
+  border: 1px solid var(--secondary-text-color);
   box-shadow: none;
 }
 .blog-card-container:hover {
   transform: none !important;
 }
 .border{
-    border-top: 2px solid var(--secondary-text-color) !important;
+    // border-top: 1px solid var(--secondary-text-color) !important;
     overflow: hidden;
 }
 .subject{

@@ -9,7 +9,7 @@
   <!-- 
     progress="primary" -->
     <v-carousel-item v-for="(slides, index) in getSidesDetails" :key="index">
-      <div class="multiple-carousel-content">
+      <div class="multiple-carousel-content px-2">
         <div class="carousel-content" v-for="(slide, i) in slides" :key="i">
           <BlogCard :details="slide" />
         </div>
