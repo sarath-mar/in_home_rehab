@@ -254,6 +254,25 @@ export default {
 }
 .main-carousel {
   min-height: 95vh;
+  // background-image: url("https://files.123freevectors.com/wp-content/original/182524-plain-white-background.jpg");
+  // background-image: url("https://www.imageshine.in/uploads/gallery/White-abstract-background-design-HD.jpg");
+  // background-image: url("http://has552.com/wp-content/uploads/2023/05/Red-and-Orange-Hand-Drawn-Supplies-Back-to-School-Welcome-Banner-1.png");
+  // background-image: url("https://wallpaperaccess.com/full/10860217.jpg");
+  background-size: cover;
+  animation: moveBackground 10s ease-in-out infinite;
+  mix-blend-mode: color;
+}
+
+@keyframes moveBackground { 
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 10% 10%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 .carousel-item {

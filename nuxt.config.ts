@@ -15,8 +15,8 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Iris",
-      meta: [{ name: "description", content: "" }],
+      title: "Iris child development centre",
+      meta: [{ name: "description", content: "Everything about child development centre" }],
       link: [
         {
           href: "https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap",

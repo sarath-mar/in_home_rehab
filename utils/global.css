@@ -33,6 +33,12 @@ html {
   color: var(--secondary-text-color) !important;
   background-color: var(--primary-text-color) !important;
 }
+.ellipsis {
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide the overflowing text */
+  text-overflow: ellipsis; /* Display the ellipsis when text overflows */
+}
+
 @font-face {
   font-family: proxima-nova;
   src: url(https://use.typekit.net/af/153422/00000000000000007759c419/30/l?subset_id=2&fvd=n3&v=3)

@@ -21,8 +21,8 @@
               }"
               >Gallery</v-list-item-title
             >
-          </v-list-item>
-          <v-list-item @click="navigateTo('iris/latest-news')">
+            </v-list-item>
+          <v-list-item @click="navigateTo(componentNames.blogs)">
             <v-list-item-title>Latest News</v-list-item-title>
           </v-list-item>
         </v-list-item>
@@ -66,12 +66,13 @@
 </template>
 
 <script>
+import Blogs from '~/layouts/iris/Blogs.vue';
 import Connect from "~/layouts/iris/Connect.vue";
 import Gallery from "~/layouts/iris/Gallery.vue";
 import Loader from "~/layouts/sub-components/Loader.vue";
 
 export default {
-  components: { Loader, Connect, Gallery },
+  components: { Loader, Connect, Gallery, Blogs },
   data() {
     return {
       loading: true,
@@ -80,6 +81,7 @@ export default {
       componentNames: {
         connect: "Connect",
         gallery: "Gallery",
+        blogs: "Blogs",
       },
     };
   },

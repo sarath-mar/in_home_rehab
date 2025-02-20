@@ -1,10 +1,13 @@
 <template>
   <div>
-    <div class="header-content">
-      <header-component :custom-class="customWidthClass" />
-    </div>
-    <div class="mt-n10 mt-md-10 px-5 px-md-10">
-      <carousel :custom-class="customWidthClass" />
+    <div class="outer-layer">
+
+      <div class="header-content">
+        <header-component :custom-class="customWidthClass" />
+      </div>
+      <div class="mt-n10 mt-md-10 px-5 px-md-10">
+        <carousel :custom-class="customWidthClass" />
+      </div>
     </div>
     <div class="mt-5">
       <!-- <div class="bread px-10">
@@ -22,6 +25,7 @@
         <latest-news :custom-class="customWidthClass"/>
       </div>
     </div>
+    <!-- <WelcomeForm/> -->
     <footer-component :custom-class="customWidthClass" />
   </div>
 </template>
@@ -34,6 +38,7 @@ import Welcome from "../layouts/components/Welcome.vue";
 import BreadComponent from "../layouts/components/BreadComponent.vue";
 import ServiceProvided from "../layouts/components/ServiceProvided.vue";
 import LatestNews from '../layouts/components/LatestNews.vue';
+import WelcomeForm from "~/layouts/components/WelcomeForm.vue";
 export default {
   components: {
     HeaderComponent,
@@ -43,6 +48,7 @@ export default {
     BreadComponent,
     ServiceProvided,
     LatestNews,
+    WelcomeForm
   },
   data: () => ({ value: 0, customWidthClass: "custom-max-width" }),
   methods: {},
@@ -50,6 +56,12 @@ export default {
 </script>
 
 <style>
+.outer-layer{
+  background-size: cover;
+  /* mix-blend-mode: overlay; */
+  /* background-image: url("https://png.pngtree.com/png-vector/20240328/ourmid/pngtree-crumpled-white-paper-texture-ideal-for-transparent-background-designs-isolated-on-png-image_11991006.png"); */
+
+}
 .welcome-test {
   opacity: 0;
 }

@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy,deleteDoc ,doc} from "firebase/firestore"
+import { getFirestore, collection, addDoc, getDocs,updateDoc, serverTimestamp, query, orderBy,deleteDoc ,doc} from "firebase/firestore"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getDownloadURL, getStorage, ref, uploadBytes,deleteObject } from "firebase/storage";
 
@@ -25,14 +25,15 @@ const db = getFirestore(app)
 const auth = getAuth(app)
 const newsCollection = collection(db, "latest-news")
 const galleryCollection = collection(db, "gallery")
+const blogCollection = collection(db, "blog")
 
 
 export {
-    addDoc,getDocs,deleteDoc,doc,deleteObject,
+    addDoc,getDocs,deleteDoc,doc,deleteObject,updateDoc,
     db,
     auth,
     serverTimestamp,query, orderBy,
-    newsCollection, galleryCollection,
+    newsCollection, galleryCollection,blogCollection,
     signInWithEmailAndPassword,
     getDownloadURL, getStorage, ref, uploadBytes
 }
