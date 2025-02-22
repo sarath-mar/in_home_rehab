@@ -4,9 +4,9 @@
       <header-component custom-class="custom-max-width" />
     </div>
     <div class=" mt-md-10 px-5 px-md-10 custom-max-width margin-height">
-      <h1 class="gallery-heading">Gallery</h1>
+      <h1 class="gallery-heading text">Gallery</h1>
       <!-- Masonry Gallery -->
-      <div class="masonry-gallery">
+      <div class="masonry-gallery mt-4">
         <div
           v-for="(image, index) in images"
           :key="index"

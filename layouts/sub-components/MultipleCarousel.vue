@@ -82,7 +82,7 @@ export default {
 }
 .multiple-carousel-content {
   display: grid;
-  gap: 60px;
+  gap: 20px;
   justify-content: center;
   /* align-items: center; */
   grid-template-columns: repeat(

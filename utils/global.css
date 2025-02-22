@@ -9,6 +9,7 @@
   --primary-background: #f2f4f5;
   --quaternary-text-color: #f2f4f5;
   --underline-color: #f1a1e3;
+  /* --underline-color: #f1a1e3; */
   font-family: "adobe-garamond-pro";
   /* font-style: italic; */
   /* font-family: "Kaushan Script", serif; */
@@ -63,7 +64,7 @@
       auto calc(var(--underline-width) * 1px),
       auto calc(var(--underline-width) * 1px);
       
-    font-size: 3rem;
+    /* font-size: 3rem; */
     font-weight: bold;
     --underline-width: 20;
     --underline-offset-y: -2px;

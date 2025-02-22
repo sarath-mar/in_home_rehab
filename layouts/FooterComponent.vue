@@ -111,7 +111,7 @@ export default {
   margin-top: -230px;
 }
 .footer-main {
-  background-color: var(--secondary-text-color);
+  background-color: #1f1f1f;
   color: white;
   /* height: 30vh; */
 }
@@ -120,14 +120,14 @@ export default {
   color: white;
   position: relative;
   height: 100%;
-  margin-top: 260px;
+  margin-top: 220px;
   /* height: 30vh; */
 }
 .date-footer {
-  color: var(--primary-text-color);
+  color: var(--secondary-text-color);
 }
 .footer-icon {
-  color: var(--primary-text-color);
+  color: var(--secondary-text-color);
   font-size: 27px;
   cursor: pointer;
 }

@@ -71,7 +71,7 @@ export default {
   font-weight: 900;
   /* letter-spacing: 0.1rem; */
   /* margin-top: 20px; */
-  color: var(--secondary-text-color);
+  /* color: var(--secondary-text-color); */
 }
 .paragraph-text {
   font-size: clamp(1em, 4vw, 1.5em);

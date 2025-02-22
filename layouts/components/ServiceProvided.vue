@@ -1,7 +1,7 @@
 <template>
   <div class="my-10" id="service-we-provide" :class="customClass">
     <h2 class="heading-text text">Our Services</h2>
-    <v-row class="service-main">
+    <v-row class="service-main mt-4">
       <v-col
         cols="12"
         md="4"

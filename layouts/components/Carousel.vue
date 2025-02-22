@@ -13,9 +13,9 @@
               IRIS CHILD DEVELOPMENT CENTRE
             </h2>
 
-            <h3 class="text-secondary banner-sub mt-3">Every child matters</h3>
+            <h3 class=" banner-sub mt-3">Every child matters</h3>
           </div>
-          <v-btn class="mt-5 px-7 py-5 pb-9 enquiry-btn"
+          <v-btn class="mt-5 px-7 py-5 pb-9 enquiry-btn" href="#connect-with-us"
             >Make any enquiry
             <Icon
               name="mdi-arrow-right"
@@ -35,12 +35,12 @@
         <div class="round-img">
           <div class="round round-1"></div>
           <div class="round round-2"></div>
-          <img :src="imageLinks[0].src" alt="" />
+          <img class="round-image" :src="imageLinks[0].src" alt="" />
         </div>
         <div v-if="!mdAndUp">
           <ul class="social-media mt-3 social-media-small">
             <li v-for="media in socialMedia" :key="media.name">
-              <a class="social-icon " :href="media.url">
+              <a class="social-icon icon-small-screen" :href="media.url">
                 <Icon :name="media.icon" />
               </a>
             </li>
@@ -52,7 +52,7 @@
       <ul class="social-media">
         <li v-for="media in socialMedia" :key="media.name">
           <a class="social-icon " :href="media.url">
-            {{ media.name }}
+           <span > {{ media.name }}</span>
             <Icon :name="media.icon" />
           </a>
         </li>
@@ -179,12 +179,14 @@ export default {
 }
 .round-1 {
   animation: rotate-1 25s linear infinite;
-  background-color: var(--primary-text-color);
+  background-color: var(--underline-color);
 }
-
+.icon-small-screen{
+  color: var(--underline-color) !important;
+}
 .round-2 {
   animation: rotate-2 25s linear infinite;
-  background-color: var(--secondary-text-color);
+  background-color: var(--tertiary-text-color);
 }
 @keyframes rotate-1 {
   0% {
@@ -204,8 +206,10 @@ export default {
   }
 }
 .social-icon {
+  z-index: 100;
   text-decoration: none;
-  color: var(--primary-text-color);
+  cursor:  pointer !important;
+  color: var(--underline-color);
 }
 // .margin-height {
 //   margin-top: 130px;
@@ -214,13 +218,17 @@ export default {
   display: flex;
   gap: 40px;
   list-style: none;
+
 }
 .social-media li {
   font-size: 1.3em;
   line-height: 1.333;
   font-weight: 500;
   letter-spacing: 0.1rem;
-  color: var(--primary-text-color);
+  color: var(--tertiary-text-color) !important;
+  display: flex;
+  align-items: center;
+
   cursor: pointer;
 }
 .social-media li:hover {
@@ -244,6 +252,8 @@ export default {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left;
+  color: var(--tertiary-text-color);
+  font-style: italic;
 }
 .main-conntent {
   /* background-color: red ; */

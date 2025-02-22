@@ -5,15 +5,15 @@
         <Icon
           name="mdi-close"
           @click="drawer = !drawer"
-          class="icon-close text-primary-text float-right mr-5 mt-5"
+          class="icon-close  float-right mr-5 mt-5"
         />
       </div>
-      <h2 class="text-primary ml-5 mt-5">In Home Rehab</h2>
+      <h2 class="text-color ml-5 mt-5">Iris</h2>
       <div class="mt-5">
         <v-list-item v-for="(item, i) in items" :key="i">
-          <a class="text-primary" style="text-decoration: none">
+          <a class="text-color" style="text-decoration: none">
             <v-list-item-title class="ml-5 list-item" @click="onClickNav(item)">
-              <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon
+              <Icon name="mdi-greater-than" class="mr-2 text-color"></Icon
               >{{ item.title }}
             </v-list-item-title>
           </a>
@@ -22,11 +22,11 @@
       <div class="drawer-btn">
         <div>
           <a
-            href="#welcom-form-id"
+            href="#connect-with-us"
             @click="drawer = false"
             style="text-decoration: none"
           >
-            <v-btn class="header-btn bg-secondary"> Connect with Us</v-btn>
+            <v-btn class="header-btn connect"> Connect with Us</v-btn>
           </a>
         </div>
         <div class="mt-5">
@@ -52,11 +52,11 @@
         </v-col>
         <v-col cols="3">
           <div>
-            <div class="text-end">
+            <div class="text-end contact">
               <Icon class="header-icon-1" name="uil:phone" />
               <span class="ml-2 phone-text"> 8891575227</span>
             </div>
-            <div class="text-end mt-2">
+            <div class="text-end mt-2 contact">
               <Icon name="mdi-email" class="header-icon" />
               <a class="ml-2 mail-text" href="mailto: inhomerehab01@gmail.com"
                 >iriscdc1@gmail.com</a
@@ -69,8 +69,8 @@
         <v-col>
           <img
             src="/images/logo.png"
-            class="mt-n2 ml-n7"
-            width="160px"
+            class="mt-n2 ml-n7 icon-image"
+            
             alt=""
           />
         </v-col>
@@ -171,13 +171,13 @@ export default {
           title: "Blog",
           value: "fizz",
           route: "/",
-          hash: "#why-home-therapy",
+          hash: "#latest-news",
         },
         {
           title: "Contact Us",
           value: "fizz",
           route: "/",
-          hash: "#why-home-therapy",
+          hash: "#connect-with-us",
         },
       ],
     };
@@ -210,12 +210,22 @@ export default {
 };
 </script>
 <style lang="scss">
+.contact{
+  color:var(--tertiary-text-color)
+}
+.connect{
+  background-color: var(--primary-text-color);
+  color: var(--secondary-text-color);
+}
 .drawer-btn {
   margin-top: 50px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+.text-color,.text-color{
+  color: var(--primary-text-color);
 }
 .icon-image{
   width: 190px;
@@ -237,14 +247,15 @@ export default {
   cursor: pointer;
 }
 .bar-icon {
-  background-color: greenyellow;
+  background-color: var(--tertiary-text-color);
+  color: var(--secondary-text-color);
 }
 .header-icon {
-  color: var(--primary-text-color);
+  color: var(--tertiary-text-color);
   font-size: 26px;
 }
 .header-icon-1 {
-  color: var(--primary-text-color);
+  color: var(--tertiary-text-color);
   font-size: 23px;
   cursor: pointer;
 }
@@ -256,7 +267,7 @@ export default {
 .mail-text {
   text-decoration: none;
   font-size: 18px;
-  color: var(--primary-text-color);
+  color: var(--tertiary-text-color);
   cursor: pointer;
 }
 .header-btn {
@@ -280,7 +291,7 @@ export default {
     left: 0;
     width: 0;
     height: 4px;
-    background-color: var(--secondary-text-color);
+    background-color: var(--underline-color);
     transition: width 0.3s ease;
   }
   li:hover::after {
