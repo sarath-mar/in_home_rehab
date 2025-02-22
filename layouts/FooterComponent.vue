@@ -115,6 +115,7 @@ export default {
   color: white;
   /* height: 30vh; */
 }
+
 .footer-layout {
   background-color: var(--secondary-text-color);
   color: white;
@@ -133,6 +134,9 @@ export default {
 }
 .footer-icon :hover {
   color: white;
+}
+.footer-icon .social-icon {
+  color: var(--underline-color);
 }
 .footer-img {
   background-blend-mode: lighten;

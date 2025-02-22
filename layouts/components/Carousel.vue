@@ -211,9 +211,6 @@ export default {
   cursor:  pointer !important;
   color: var(--primary-text-color);
 }
-// .margin-height {
-//   margin-top: 130px;
-// }
 .social-media {
   display: flex;
   gap: 40px;
