@@ -1,6 +1,6 @@
 <template>
   <div class="my-10" id="service-we-provide" :class="customClass">
-    <h2 class="heading-text">Our Services</h2>
+    <h2 class="heading-text text">Our Services</h2>
     <v-row class="service-main">
       <v-col
         cols="12"
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ServiceCard from "./ServiceCard.vue";
+// import ServiceCard from "./ServiceCard.vue";
 import TransitionCard from "../sub-components/TransitionCard.vue";
 export default {
   props: {
@@ -24,7 +24,9 @@ export default {
       required: false,
     },
   },
-  components: { ServiceCard, TransitionCard },
+  components: {
+    //  ServiceCard, 
+     TransitionCard },
   data() {
     return {
       servicesProvided: [

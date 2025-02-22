@@ -26,6 +26,16 @@ export const myMixin = {
     },
     generateUniqueId() {
       return 'id-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+    },
+    formatDate (firebaseTimestamp) {
+        // Extract seconds from Firebase timestamp and convert it to milliseconds
+        const date = new Date(firebaseTimestamp.seconds * 1000);
+        
+        // Define formatting options
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        
+        // Return the formatted date
+        return date.toLocaleDateString('en-US', options);
     }
   }
 }

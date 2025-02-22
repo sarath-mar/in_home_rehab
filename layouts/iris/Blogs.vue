@@ -109,6 +109,7 @@ export default {
     cancelDeleteBlog() {
       this.selectedBlog = {};
       this.deleteDialog = false;
+      this.file=null
     },
     activeSnackbar(msg, type = "info") {
       this.snackbarMessage = msg;
@@ -159,7 +160,7 @@ export default {
       }
     },
     openUploadDialog() {
-        this.isEditMode = true;
+        this.isEditMode = false;
         this.uploadDialog = true; // Show the upload dialog
       },
     openEditDialog(blogData) {
@@ -170,12 +171,20 @@ export default {
       this.newBlogContent = blogData.content;
       this.uploadDialog = true;
     },
+    handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        this.file = file;
+      }
+    },
     async uploadBlog() {
       if (!this.newBlogTitle || !this.newBlogContent || (!this.file && !this.isEditMode)) {
         this.activeSnackbar("Please fill all fields and upload an image.", "error");
         return;
       }
       this.uploadLoading = true;
+      console.log('file',this.file)
+      console.log('this.isEditMode',this.isEditMode)
       try {
         if (this.isEditMode) {
           // If in edit mode, update the blog
@@ -222,6 +231,7 @@ export default {
       } finally {
         this.uploadLoading = false;
         this.uploadDialog = false;
+        this.file=null
       }
     },
     resetForm() {

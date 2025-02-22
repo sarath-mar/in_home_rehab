@@ -6,7 +6,7 @@
     >
       <!-- <v-row class="footer-row">
         <v-col cols="8"> -->
-      <v-col class="footer-form-col" :cols="sm || xs ? 10 : 8">
+      <v-col class="footer-form-col" :cols="sm ? 10 : xs ? 11 : 8">
         <WelcomeForm class="footer-form" />
       </v-col>
       <!-- </v-col>

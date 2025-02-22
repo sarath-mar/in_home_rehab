@@ -8,7 +8,7 @@
       <v-col cols="12" md="6" lg="7">
         <div>
           <div class="main-conntent">
-            <h4 class="mt-5 mt-md-0 welcome">Welcome to</h4>
+            <h4 class="mt-5 mt-md-0 welcome text">Welcome to</h4>
             <h2 class=" banner-header mt-3">
               IRIS CHILD DEVELOPMENT CENTRE
             </h2>
@@ -248,9 +248,9 @@ export default {
 .main-conntent {
   /* background-color: red ; */
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
 }
 .main-carousel {
   min-height: 95vh;

@@ -3,7 +3,7 @@
     show-arrows="hover"
     cycle
     hide-delimiter-background
-    :height="sm && xs ? 400 : 590"
+    :height="470"
     hide-delimiters
   >
   <!-- 

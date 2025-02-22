@@ -5,7 +5,7 @@
         <v-row class="align-center">
           <!-- <v-col cols="12" md="7"> -->
             <div>
-              <h4 class="welcome-who">Who We Are</h4>
+              <h4 class="welcome-who text">Who We Are</h4>
               <h2 class="heading-text">
                 Welcome to Iris child Development Center
               </h2>
@@ -74,6 +74,9 @@ export default {
 <style scoped>
 .welcome-li-div {
   display: flex;
+}
+.heading-text,.paragraph-text{
+  color: var(--primary-text-color);
 }
 .welcome-ul {
   list-style: none;

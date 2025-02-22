@@ -58,8 +58,14 @@ export default {
   width: 100%;
   cursor: pointer;
 }
+.v-img__img {
+  transition: transform 0.3s ease;
+}
+.v-img__img:hover {
+  transform: scale(1.2) rotate(5deg) !important;
+}
 .transition-card-title {
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
 }
 .transition-card-content {
   color: var(--primary-text-color);

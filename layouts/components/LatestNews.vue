@@ -1,7 +1,7 @@
 <template>
   <div class="my-10" id="service-we-provide" :class="customClass">
-    <h2 class="heading-text">Latest News & Blog</h2>
-    <div>
+    <h2 class="heading-text text">Latest News & Blog</h2>
+    <div class="mt-4">
       <MultipleCarousel/>  
       
     </div>
@@ -39,4 +39,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.heading-text{
+  color: var(--primary-text-color); 
+}
+</style>
