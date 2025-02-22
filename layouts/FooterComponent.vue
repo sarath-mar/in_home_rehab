@@ -120,7 +120,7 @@ export default {
   color: white;
   position: relative;
   height: 100%;
-  margin-top: 220px;
+  /* margin-top: 220px; */
   /* height: 30vh; */
 }
 .date-footer {

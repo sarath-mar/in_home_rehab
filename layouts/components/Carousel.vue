@@ -151,8 +151,8 @@ export default {
 </script>
 <style lang="scss">
 .enquiry-btn {
-  background-color: var(--tertiary-text-color);
-  color: white;
+  background-color: var(--primary-text-color);
+  color: var(--secondary-text-color);
   font-size: large;
   text-transform: capitalize;
 }
@@ -209,7 +209,7 @@ export default {
   z-index: 100;
   text-decoration: none;
   cursor:  pointer !important;
-  color: var(--underline-color);
+  color: var(--primary-text-color);
 }
 // .margin-height {
 //   margin-top: 130px;
@@ -252,7 +252,7 @@ export default {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left;
-  color: var(--tertiary-text-color);
+  color:#8e8e8e;
   font-style: italic;
 }
 .main-conntent {

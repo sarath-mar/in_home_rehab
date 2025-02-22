@@ -9,7 +9,7 @@
         <carousel :custom-class="customWidthClass" />
       </div>
     </div>
-    <div class="mt-5">
+    <div class="mt-5 inner-layer">
       <!-- <div class="bread px-10">
         <bread-component />
       </div> -->
@@ -61,6 +61,9 @@ export default {
   /* mix-blend-mode: overlay; */
   /* background-image: url("https://png.pngtree.com/png-vector/20240328/ourmid/pngtree-crumpled-white-paper-texture-ideal-for-transparent-background-designs-isolated-on-png-image_11991006.png"); */
 
+}
+.inner-layer{
+  margin-bottom: 220px;
 }
 .welcome-test {
   opacity: 0;

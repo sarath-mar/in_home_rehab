@@ -211,7 +211,7 @@ export default {
 </script>
 <style lang="scss">
 .contact{
-  color:var(--tertiary-text-color)
+  // color:var(--tertiary-text-color)
 }
 .connect{
   background-color: var(--primary-text-color);
@@ -247,15 +247,15 @@ export default {
   cursor: pointer;
 }
 .bar-icon {
-  background-color: var(--tertiary-text-color);
+  background-color: var(--primary-text-color);
   color: var(--secondary-text-color);
 }
 .header-icon {
-  color: var(--tertiary-text-color);
+  color: var(--primary-text-color);
   font-size: 26px;
 }
 .header-icon-1 {
-  color: var(--tertiary-text-color);
+  color: var(--primary-text-color);
   font-size: 23px;
   cursor: pointer;
 }
@@ -267,7 +267,7 @@ export default {
 .mail-text {
   text-decoration: none;
   font-size: 18px;
-  color: var(--tertiary-text-color);
+  color: var(--primary-text-color);
   cursor: pointer;
 }
 .header-btn {
