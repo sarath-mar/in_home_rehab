@@ -1,5 +1,8 @@
 <template>
   <div>
+    <MainLoader v-show="false"/>
+    <!--  -->
+    <div >
     <div class="outer-layer">
 
       <div class="header-content">
@@ -28,6 +31,7 @@
     <!-- <WelcomeForm/> -->
     <footer-component :custom-class="customWidthClass" />
   </div>
+</div>
 </template>
 
 <script>
@@ -39,6 +43,7 @@ import BreadComponent from "../layouts/components/BreadComponent.vue";
 import ServiceProvided from "../layouts/components/ServiceProvided.vue";
 import LatestNews from '../layouts/components/LatestNews.vue';
 import WelcomeForm from "~/layouts/components/WelcomeForm.vue";
+import MainLoader from "~/layouts/sub-components/MainLoader.vue";
 export default {
   components: {
     HeaderComponent,
@@ -48,7 +53,8 @@ export default {
     BreadComponent,
     ServiceProvided,
     LatestNews,
-    WelcomeForm
+    WelcomeForm,
+    MainLoader
   },
   data: () => ({ value: 0, customWidthClass: "custom-max-width" }),
   methods: {},
@@ -116,4 +122,129 @@ export default {
   max-width: 1920px;
   margin-inline: auto;
 }
+
+
+.splash {
+  height: 0px;
+  padding: 0px;
+  border: 130em solid #039be5;
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  display: block;
+  box-sizing: initial;
+  overflow: hidden;
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+}
+#welcome-page {
+  background: #311b92 ;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: init 1.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+}
+@keyframes init {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 0px;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #311b92;
+    top: 100%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 50%;
+    background: #039be5;
+  }
+}
+
+@keyframes materia {
+  0% {
+    background: #039be5;
+  }
+  50% {
+    background: #039be5;
+    top: 26px;
+  }
+  100% {
+    background: #311b92;
+    width: 100%;
+    height: 64px;
+    border-radius: 0px;
+    top: 26px;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+} 
 </style>

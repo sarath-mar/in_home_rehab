@@ -16,7 +16,7 @@
             <h3 class=" banner-sub mt-3">Every child matters</h3>
           </div>
           <v-btn class="mt-5 px-7 py-5 pb-9 enquiry-btn" href="#connect-with-us"
-            >Make any enquiry
+            >Make an enquiry
             <Icon
               name="mdi-arrow-right"
               start
@@ -105,7 +105,7 @@ export default {
       },
       imageLinks: [
         {
-          src: "/images/banner/1.png",
+          src: "/images/banner/roundbanner.jpeg",
           // src: "http://yesofcorsa.com/wp-content/uploads/2018/05/Therapist-Wallpaper-High-Definition.jpg",
           title: "Accessible to individuals with disabilities",
           subtitle:
@@ -151,7 +151,7 @@ export default {
 </script>
 <style lang="scss">
 .enquiry-btn {
-  background-color: var(--primary-text-color);
+  background-color: #f34c4c;
   color: var(--secondary-text-color);
   font-size: large;
   text-transform: capitalize;
@@ -249,7 +249,8 @@ export default {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left;
-  color:#8e8e8e;
+  // color:green;
+  color:#89c303;
   font-style: italic;
 }
 .main-conntent {
@@ -307,7 +308,7 @@ export default {
   font-weight: 900;
   /* letter-spacing: 0.1rem; */
   margin-top: 0;
-  font-style: italic ;
+  
   color: var(--primary-text-color);
 }
 .welcome {

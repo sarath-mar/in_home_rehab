@@ -87,7 +87,7 @@
                   <v-list-item-title>
                     <Icon class="header-icon-1" name="uil:phone" />
                     <a class="ml-2 phone-text" href="tel:+91-8891575227"
-                      >+918891575227 (speech therapy)</a
+                      >+918891575227</a
                     >
                   </v-list-item-title>
                 </v-list-item>

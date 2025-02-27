@@ -7,7 +7,7 @@
             <div>
               <h4 class="welcome-who text">Who We Are</h4>
               <h2 class="heading-text">
-                Welcome to Iris child Development Center
+                Welcome to Iris Child Development Centre  
               </h2>
               <p class="paragraph-text mt-5">
                 Based in Calicut, Iris Child Development Centre was founded in
