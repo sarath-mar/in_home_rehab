@@ -1,75 +1,78 @@
 <template>
   <div>
-    <div class="header-content" >
-      <header-component custom-class="custom-max-width" />
-    </div>
-    <div class=" mt-md-10 px-5 px-md-10 custom-max-width margin-height">
-      <h1 class="gallery-heading text">Gallery</h1>
-      <!-- Masonry Gallery -->
-      <div class="masonry-gallery mt-4">
-        <div
-          v-for="(image, index) in images"
-          :key="index"
-          class="masonry-item"
-          @click="openLightbox(index)"
-        >
-          <!-- Image -->
-          <v-img
-            :src="image.imgUrl"
-            class="rounded-lg"
-            alt="iris"
-            @load="imageLoaded(index)"
-          >
-            <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular
-                  indeterminate
-                  color="grey lighten-3"
-                ></v-progress-circular>
-              </v-row>
-            </template>
-          </v-img>
-        </div>
+    <MainLoader v-if="isLoading"/>
+    <div v-show="!isLoading">
+      <div class="header-content">
+        <header-component custom-class="custom-max-width" />
       </div>
-      <v-dialog v-model="showLightbox" max-width="90%">
-        <v-card>
-          <v-img
-            :src="images[lightboxIndex].imgUrl"
-            max-height="600px"
-            min-height="320px"
-            cover
-          ></v-img>
-          <v-card-title class="headline">
-            <!-- <v-btn
+      <div class="mt-md-10 px-5 px-md-10 custom-max-width margin-height">
+        <h1 class="gallery-heading text">Gallery</h1>
+        <!-- Masonry Gallery -->
+        <div class="masonry-gallery mt-4">
+          <div
+            v-for="(image, index) in images"
+            :key="index"
+            class="masonry-item"
+            @click="openLightbox(index)"
+          >
+            <!-- Image -->
+            <v-img
+              :src="image.imgUrl"
+              class="rounded-lg"
+              alt="iris"
+              @load="imageLoaded(index)"
+            >
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="grey lighten-3"
+                  ></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
+          </div>
+        </div>
+        <v-dialog v-model="showLightbox" max-width="90%">
+          <v-card>
+            <v-img
+              :src="images[lightboxIndex].imgUrl"
+              max-height="600px"
+              min-height="320px"
+              cover
+            ></v-img>
+            <v-card-title class="headline">
+              <!-- <v-btn
             icon
             @click="closeLightbox"
             class="close-btn"
             style="position: absolute; top: 16px; right: 16px; color: #fff"
           > -->
-            <Icon
-              style="position: absolute; top: 16px; right: 16px; color: #fff"
-              @click="closeLightbox"
-              class="close-icon"
-              name="mdi-close"
-            ></Icon>
-            <!-- </v-btn> -->
-          </v-card-title>
+              <Icon
+                style="position: absolute; top: 16px; right: 16px; color: #fff"
+                @click="closeLightbox"
+                class="close-icon"
+                name="mdi-close"
+              ></Icon>
+              <!-- </v-btn> -->
+            </v-card-title>
 
-          <v-card-actions class="justify-space-between">
-            <v-btn icon @click="prevImage" :disabled="lightboxIndex === 0">
-              <Icon class="next-icon" name="mdi-arrow-left"></Icon>
-            </v-btn>
-            <v-btn text @click="closeLightbox">Close</v-btn>
-            <v-btn
-              icon
-              @click="nextImage"
-              :disabled="lightboxIndex === images.length - 1"
-            >
-              <Icon class="next-icon" name="mdi-arrow-right"></Icon>
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
+            <v-card-actions class="justify-space-between">
+              <v-btn icon @click="prevImage" :disabled="lightboxIndex === 0">
+                <Icon class="next-icon" name="mdi-arrow-left"></Icon>
+              </v-btn>
+              <v-btn text @click="closeLightbox">Close</v-btn>
+              <v-btn
+                icon
+                @click="nextImage"
+                :disabled="lightboxIndex === images.length - 1"
+              >
+                <Icon class="next-icon" name="mdi-arrow-right"></Icon>
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </div>
     </div>
   </div>
 </template>
@@ -82,7 +85,8 @@ import {
   query,
 } from "@/config/firebaseConfig";
 import { useDisplay } from "vuetify";
-import HeaderComponent from '~/layouts/HeaderComponent.vue';
+import HeaderComponent from "~/layouts/HeaderComponent.vue";
+import MainLoader from "~/layouts/sub-components/MainLoader.vue";
 export default {
   components: { HeaderComponent },
   name: "MasonryGallery",
@@ -97,6 +101,7 @@ export default {
       images: [],
       showLightbox: false,
       lightboxIndex: 0,
+      isLoading:true
     };
   },
   mounted() {
@@ -104,7 +109,7 @@ export default {
   },
   methods: {
     async getGalleryDetails() {
-      this.loading = true;
+      this.isLoading = true;
       let result = new Array();
 
       const galleryQuery = query(
@@ -120,7 +125,7 @@ export default {
       });
 
       this.images = result;
-      this.loading = false;
+      this.isLoading = false;
     },
     imageLoaded(index) {
       // Mark the image as loaded when it finishes loading

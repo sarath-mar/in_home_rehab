@@ -29,12 +29,8 @@
       </div>
       <v-row>
         <v-col cols="12">
-          <div class="mt-5">
-            InHome Rehab offers home-based therapy programs to improve quality
-            of life for the patients recovering from the injuries or illness,
-            but often face challenges attending therapy sessions at the centre.
-            A team of well qualified, registered group of health professionals
-            will help you to restore your health, right where you are.
+          <div class="mt-5 footer-content">
+           Where Every Child Matters
           </div>
         </v-col>
         <v-col cols="12">
@@ -53,7 +49,7 @@
           src="/images/logo.png"
           class="my-2 mt-4 mx-4 footer-img"
           width="70px"
-          alt=""
+          alt="logo"
         />
       </div>
     </v-footer>
@@ -86,7 +82,7 @@ export default {
       {
         name: "Instagram",
         icon: "uil:instagram",
-        url: "https://www.instagram.com/inhomerehab01/",
+        url: "https://www.instagram.com/iris__cdc/?hl=en",
       },
       {
         name: "Linkedin",
@@ -102,6 +98,9 @@ export default {
   justify-content: center;
   margin-bottom: -30px;
   z-index: 20 !important;
+}
+.footer-content{
+  font-size: 21px;
 }
 .footer-form-col {
   /* position: absolute; */

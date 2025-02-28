@@ -1,37 +1,39 @@
 <template>
   <div>
-    <MainLoader v-show="false"/>
+    <MainLoader v-if="isLoading" />
     <!--  -->
-    <div >
-    <div class="outer-layer">
-
-      <div class="header-content">
-        <header-component :custom-class="customWidthClass" />
+    <div v-show="!isLoading">
+      <div class="outer-layer">
+        <div class="header-content">
+          <header-component :custom-class="customWidthClass" />
+        </div>
+        <div class="mt-n10 mt-md-10 px-5 px-md-10">
+          <carousel :custom-class="customWidthClass" />
+        </div>
       </div>
-      <div class="mt-n10 mt-md-10 px-5 px-md-10">
-        <carousel :custom-class="customWidthClass" />
-      </div>
-    </div>
-    <div class="mt-5 inner-layer">
-      <!-- <div class="bread px-10">
+      <div class="mt-5 inner-layer">
+        <!-- <div class="bread px-10">
         <bread-component />
       </div> -->
-      <div class="welcome-div px-10 pb-15">
-        <!-- <div class="welcome-component "> -->
-        <welcome :custom-class="customWidthClass" />
-        <!-- </div> -->
+        <div class="welcome-div px-10 pb-15">
+          <!-- <div class="welcome-component "> -->
+          <welcome :custom-class="customWidthClass" />
+          <!-- </div> -->
+        </div>
+        <div class="px-10" id="service-provided">
+          <service-provided :custom-class="customWidthClass" />
+        </div>
+        <div class="px-10" id="latest-news">
+          <latest-news
+            :custom-class="customWidthClass"
+            @apiSucceed="apiSucceed"
+          />
+        </div>
       </div>
-      <div class="px-10" id="service-provided">
-        <service-provided :custom-class="customWidthClass"/>
-      </div>
-      <div class="px-10" id="latest-news">
-        <latest-news :custom-class="customWidthClass"/>
-      </div>
+      <!-- <WelcomeForm/> -->
+      <footer-component :custom-class="customWidthClass" />
     </div>
-    <!-- <WelcomeForm/> -->
-    <footer-component :custom-class="customWidthClass" />
   </div>
-</div>
 </template>
 
 <script>
@@ -41,7 +43,7 @@ import Carousel from "../layouts/components/Carousel.vue";
 import Welcome from "../layouts/components/Welcome.vue";
 import BreadComponent from "../layouts/components/BreadComponent.vue";
 import ServiceProvided from "../layouts/components/ServiceProvided.vue";
-import LatestNews from '../layouts/components/LatestNews.vue';
+import LatestNews from "../layouts/components/LatestNews.vue";
 import WelcomeForm from "~/layouts/components/WelcomeForm.vue";
 import MainLoader from "~/layouts/sub-components/MainLoader.vue";
 export default {
@@ -54,21 +56,29 @@ export default {
     ServiceProvided,
     LatestNews,
     WelcomeForm,
-    MainLoader
+    MainLoader,
   },
-  data: () => ({ value: 0, customWidthClass: "custom-max-width" }),
-  methods: {},
+  data: () => ({
+    value: 0,
+    customWidthClass: "custom-max-width",
+    isLoading: true,
+  }),
+  methods: {
+    apiSucceed() {
+      this.isLoading = false;
+      console.log("api succeed");
+    },
+  },
 };
 </script>
 
 <style>
-.outer-layer{
+.outer-layer {
   background-size: cover;
   /* mix-blend-mode: overlay; */
   /* background-image: url("https://png.pngtree.com/png-vector/20240328/ourmid/pngtree-crumpled-white-paper-texture-ideal-for-transparent-background-designs-isolated-on-png-image_11991006.png"); */
-
 }
-.inner-layer{
+.inner-layer {
   margin-bottom: 220px;
 }
 .welcome-test {
@@ -123,7 +133,6 @@ export default {
   margin-inline: auto;
 }
 
-
 .splash {
   height: 0px;
   padding: 0px;
@@ -137,10 +146,11 @@ export default {
 
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    borderRadius 0.2s 2.3s linear forwards;
 }
 #welcome-page {
-  background: #311b92 ;
+  background: #311b92;
   width: 56px;
   height: 56px;
   position: absolute;
@@ -150,7 +160,11 @@ export default {
   opacity: 0;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  animation: init 1.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+  animation: init 1.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+    moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
+    moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards,
+    hide 2s 2.9s ease forwards;
 }
 @keyframes init {
   0% {
@@ -246,5 +260,5 @@ export default {
   100% {
     opacity: 0;
   }
-} 
+}
 </style>

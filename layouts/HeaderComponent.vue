@@ -41,7 +41,7 @@
       >
         <v-col cols="3">
 
-          <img src="/images/logo.png" class="mt-2 icon-image" alt="" />
+          <img src="/images/logo.png" class="mt-2 icon-image" alt="logo" />
         </v-col>
         <v-col cols="6" justify-center>
          <ul class="header-list">

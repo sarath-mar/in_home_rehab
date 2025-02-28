@@ -67,6 +67,30 @@ export default {
           description:
             "Oral Placement Therapy (OPT) focuses on improving oral motor skills necessary for speech clarity, feeding, and overall oral motor function. By enhancing muscle strength, coordination, and awareness, individuals can improve speech production and swallowing abilities. We start with a thorough assessment of the individual’s oral motor skills, speech patterns, and feeding abilities to identify areas of weakness. Based on this assessment, our speech-language therapists create personalized intervention plans using OPT techniques and tools, such as Z-vibes,straws, chewy tubes, and jaw graders which are carefully selected based on the individual's needs and goals.",
         },
+        {
+          title: "Oral Placement Therapy",
+          isClicked: false,
+          icon: "uil:instagram",
+          img: "https://server.imsdesk.com/ecom/clients/169/images/oral.jpg",
+          description:
+            "Oral Placement Therapy (OPT) focuses on improving oral motor skills necessary for speech clarity, feeding, and overall oral motor function. By enhancing muscle strength, coordination, and awareness, individuals can improve speech production and swallowing abilities. We start with a thorough assessment of the individual’s oral motor skills, speech patterns, and feeding abilities to identify areas of weakness. Based on this assessment, our speech-language therapists create personalized intervention plans using OPT techniques and tools, such as Z-vibes,straws, chewy tubes, and jaw graders which are carefully selected based on the individual's needs and goals.",
+        },
+        {
+          title: "Oral Placement Therapy",
+          isClicked: false,
+          icon: "uil:instagram",
+          img: "https://server.imsdesk.com/ecom/clients/169/images/oral.jpg",
+          description:
+            "Oral Placement Therapy (OPT) focuses on improving oral motor skills necessary for speech clarity, feeding, and overall oral motor function. By enhancing muscle strength, coordination, and awareness, individuals can improve speech production and swallowing abilities. We start with a thorough assessment of the individual’s oral motor skills, speech patterns, and feeding abilities to identify areas of weakness. Based on this assessment, our speech-language therapists create personalized intervention plans using OPT techniques and tools, such as Z-vibes,straws, chewy tubes, and jaw graders which are carefully selected based on the individual's needs and goals.",
+        },
+        {
+          title: "Oral Placement Therapy",
+          isClicked: false,
+          icon: "uil:instagram",
+          img: "https://server.imsdesk.com/ecom/clients/169/images/oral.jpg",
+          description:
+            "Oral Placement Therapy (OPT) focuses on improving oral motor skills necessary for speech clarity, feeding, and overall oral motor function. By enhancing muscle strength, coordination, and awareness, individuals can improve speech production and swallowing abilities. We start with a thorough assessment of the individual’s oral motor skills, speech patterns, and feeding abilities to identify areas of weakness. Based on this assessment, our speech-language therapists create personalized intervention plans using OPT techniques and tools, such as Z-vibes,straws, chewy tubes, and jaw graders which are carefully selected based on the individual's needs and goals.",
+        },
       ],
     };
   },

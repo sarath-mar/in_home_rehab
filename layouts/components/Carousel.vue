@@ -105,7 +105,7 @@ export default {
       },
       imageLinks: [
         {
-          src: "/images/banner/roundbanner.jpeg",
+          src: "/images/banner/roundbanner3.jpeg",
           // src: "http://yesofcorsa.com/wp-content/uploads/2018/05/Therapist-Wallpaper-High-Definition.jpg",
           title: "Accessible to individuals with disabilities",
           subtitle:

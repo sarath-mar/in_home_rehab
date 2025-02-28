@@ -3,7 +3,6 @@
     <h2 class="heading-text text">Latest News & Blog</h2>
     <div class="mt-4">
       <MultipleCarousel/>  
-      
     </div>
   </div>
 </template>
@@ -35,6 +34,7 @@ export default {
       postData.id = doc.id;
       console.log("data 1", postData);
     });
+    this.$emit("apiSucceed")
   },
 };
 </script>
