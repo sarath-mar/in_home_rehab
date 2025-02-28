@@ -17,7 +17,7 @@ export default {};
   position: absolute;
   width: 100px;
   height: 100px;
-  background: #263038;
+  background: rgb(181, 216, 181);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotateX(65deg) rotate(45deg);
@@ -31,7 +31,7 @@ export default {};
   position: absolute;
   inset: 0;
 
-  background: #de3500;
+  background: #626468;
   animation: layerTr 1s linear infinite alternate;
 }
 

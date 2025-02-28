@@ -308,13 +308,13 @@ export default {
 }
 
 .banner-header {
-  // font-size: clamp(2.4em, 3vw, 3em);
-  // line-height: 1.333;
+  font-size: clamp(2.4em, 3.5vw, 5em);
+  // line-height: 10px;
+
   // font-weight: 900;
   // margin-top: 0;
   // color: var(--primary-text-color);
-  font-size: 60px;
-    line-height: 1em;
+    line-height: 1.3em;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 10px;
