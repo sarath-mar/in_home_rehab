@@ -15,8 +15,17 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Iris child development centre",
-      meta: [{ name: "description", content: "Everything about child development centre" }],
+      title: "Iris Child Development Centre - Calicut, Kerala",
+      meta: [
+        { name: "description", content: "Iris Child Development Centre in Calicut, Kerala. We provide comprehensive child development services including therapy, education, and support for children and their families." },
+        { name: "keywords", content: "child development, therapy, education, Calicut, Kerala, Iris Child Development Centre" },
+        { name: "author", content: "Iris Child Development Centre" },
+        { property: "og:title", content: "Iris Child Development Centre - Calicut, Kerala" },
+        { property: "og:description", content: "Comprehensive child development services including therapy, education, and support for children and their families in Calicut, Kerala." },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://www.irischilddevelopmentcentre.com" },
+        { property: "og:image", content: "https://www.irischilddevelopmentcentre.com/logo.png" }
+      ],
       link: [
         {
           href: "https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap",
@@ -31,8 +40,35 @@ export default defineNuxtConfig({
           rel: "stylesheet",
         },
       ],
-      // href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap",
-      //     rel="stylesheet"
+      script: [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Iris Child Development Centre",
+            "url": "https://iriscdc.com/",
+            "logo": "https://iriscdc.com/images/logo.png",
+            "sameAs": [
+              "https://www.facebook.com/people/Iris-Child-Development/pfbid0Lso8438Qo2yBzzcyXx36hHMSXcWRpGJgNz9325D9LoSFeGsS51569dnyi5SYPr2El/",
+              "https://www.instagram.com/iris__cdc/"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-8891575227",
+              "contactType": "Customer Service"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 Main Street",
+              "addressLocality": "Calicut",
+              "addressRegion": "KL",
+              "postalCode": "673001",
+              "addressCountry": "IN"
+            }
+          })
+        }
+      ]
     },
   },
 });
