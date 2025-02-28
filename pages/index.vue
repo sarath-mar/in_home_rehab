@@ -3,35 +3,39 @@
     <MainLoader v-if="isLoading" />
     <!--  -->
     <div v-show="!isLoading">
-      <div class="outer-layer">
-        <div class="header-content">
-          <header-component :custom-class="customWidthClass" />
-        </div>
-        <div class="mt-n10 mt-md-10 px-5 px-md-10">
-          <carousel :custom-class="customWidthClass" />
-        </div>
-      </div>
-      <div class="mt-5 inner-layer">
-        <!-- <div class="bread px-10">
+      <transition name="fade">
+        <div class="fade-enter-active" >
+          <div class="outer-layer">
+            <div class="header-content">
+              <header-component :custom-class="customWidthClass" />
+            </div>
+            <div class="mt-n10 mt-md-10 px-5 px-md-10">
+              <carousel :custom-class="customWidthClass" />
+            </div>
+          </div>
+          <div class="mt-5 inner-layer">
+            <!-- <div class="bread px-10">
         <bread-component />
       </div> -->
-        <div class="welcome-div px-10 pb-15">
-          <!-- <div class="welcome-component "> -->
-          <welcome :custom-class="customWidthClass" />
-          <!-- </div> -->
+            <div class="welcome-div px-10 pb-15">
+              <!-- <div class="welcome-component "> -->
+              <welcome :custom-class="customWidthClass" />
+              <!-- </div> -->
+            </div>
+            <div class="px-10" id="service-provided">
+              <service-provided :custom-class="customWidthClass" />
+            </div>
+            <div class="px-10" id="latest-news">
+              <latest-news
+                :custom-class="customWidthClass"
+                @apiSucceed="apiSucceed"
+              />
+            </div>
+          </div>
+          <!-- <WelcomeForm/> -->
+          <footer-component :custom-class="customWidthClass" />
         </div>
-        <div class="px-10" id="service-provided">
-          <service-provided :custom-class="customWidthClass" />
-        </div>
-        <div class="px-10" id="latest-news">
-          <latest-news
-            :custom-class="customWidthClass"
-            @apiSucceed="apiSucceed"
-          />
-        </div>
-      </div>
-      <!-- <WelcomeForm/> -->
-      <footer-component :custom-class="customWidthClass" />
+      </transition>
     </div>
   </div>
 </template>
@@ -73,6 +77,12 @@ export default {
 </script>
 
 <style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 .outer-layer {
   background-size: cover;
   /* mix-blend-mode: overlay; */

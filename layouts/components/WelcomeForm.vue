@@ -1,7 +1,17 @@
 <template>
-  <v-sheet elevation="2" class="pa-10 bg-primary-background" rounded="xl" id="connect-with-us">
+  <v-sheet
+    elevation="2"
+    class="pa-10 bg-primary-background"
+    rounded="xl"
+    id="connect-with-us"
+  >
     <h2 class="mb-5 text-center heading-text text">Connect With Us</h2>
-    <v-form v-model="valid" class="mt-4" ref="form" @submit.prevent="formSubmit">
+    <v-form
+      v-model="valid"
+      class="mt-4"
+      ref="form"
+      @submit.prevent="formSubmit"
+    >
       <v-text-field
         v-model="name"
         label="Name"
@@ -39,6 +49,11 @@
 </template>
 <script>
 import { useDisplay } from "vuetify";
+import {
+  addDoc,
+  irisConnectWithUsCollection,
+  serverTimestamp,
+} from "@/config/firebaseConfig";
 import Thankyou from "./Thankyou.vue";
 export default {
   components: { Thankyou },
@@ -49,53 +64,26 @@ export default {
     return { xs, mdAndUp };
   },
   methods: {
-    formSubmit() {
+    async formSubmit() {
       this.btnLoading = true;
       console.log("submit");
-      const form = this.$refs.form.$el;
-      // let data = `${this.nameId}=${this.name}& ${this.phoneNoId}=${this.phoneNo}&${this.descriptionId}=${this.description}`;
-      // console.log(data);
-
-      fetch(
-        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdNRY8rdXBtA1CIdVW-pgW9zwv32smWr8S7gqyKPpz6zkfyNA/formResponse",
-        {
-          mode: "no-cors",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-
-          method: "post",
-          body: new FormData(form),
-        }
-      )
-        .then((data) => {
-          console.log("success", data);
-          this.dialogControl = true;
-          setTimeout(() => {
-            this.dialogControl = false;
-          }, 2500);
-          this.$refs.form.reset();
-          this.btnLoading = false;
-        })
-        .catch((e) => {
-          console.log("error", e);
-          this.btnLoading = false;
+      try {
+        await addDoc(irisConnectWithUsCollection, {
+          name: this.name,
+          phoneNo: this.phoneNo,
+          description: this.description,
+          createdAt: serverTimestamp(),
         });
-
-      // $.ajax({
-      //         url:"https://docs.google.com/forms/u/0/d/e/1FAIpQLSfjMwmjJMroEt0oepDlg68Wo-DjF_mzAahsQHVDqmNQLOae4A/formResponse",
-      //         data:$("#submit-form").serialize(),
-      //         method:"post",
-      //         success:function (response){
-
-      //             window.location.reload()
-      //             //window.location.href="https://google.com"
-      //         },
-      //         error:function (err){
-      //             window.location.reload()
-
-      //         }
-      //     })
+        this.dialogControl = true;
+        setTimeout(() => {
+          this.dialogControl = false;
+        }, 2500);
+        this.$refs.form.reset();
+        this.btnLoading = false;
+      } catch (error) {
+        console.log("error", error);
+        this.btnLoading = false;
+      }
     },
   },
   data: () => ({

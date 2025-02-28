@@ -26,13 +26,14 @@ const auth = getAuth(app)
 const newsCollection = collection(db, "latest-news")
 const galleryCollection = collection(db, "gallery")
 const blogCollection = collection(db, "blog")
+const irisConnectWithUsCollection = collection(db, "iris-connect-with-us")
 
 export {
     addDoc,getDocs,deleteDoc,doc,deleteObject,updateDoc,
     db,
     auth,
     serverTimestamp,query, orderBy,Timestamp,
-    newsCollection, galleryCollection,blogCollection,
+    newsCollection, galleryCollection,blogCollection,irisConnectWithUsCollection,
     signInWithEmailAndPassword,
     getDownloadURL, getStorage, ref, uploadBytes
 }
