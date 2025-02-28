@@ -263,6 +263,7 @@ export default {
   // color: var(--secondary-text-color);
   font-size: 17px;
   text-decoration: none;
+  color: black;
 }
 .mail-text {
   text-decoration: none;

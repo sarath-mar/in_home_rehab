@@ -135,7 +135,7 @@ export default {
   color: white;
 }
 .footer-icon .social-icon {
-  color: var(--underline-color);
+  color: #626468;
 }
 .footer-img {
   background-blend-mode: lighten;

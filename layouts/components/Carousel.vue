@@ -8,12 +8,12 @@
       <v-col cols="12" md="6" lg="7">
         <div>
           <div class="main-conntent">
-            <h4 class="mt-5 mt-md-0 welcome text">Welcome to</h4>
-            <h2 class=" banner-header mt-3">
+            <h4 class="mt-5 mt-md-0 welcome text ">Welcome to</h4>
+            <h2 class=" banner-header mt-3 ">
               IRIS CHILD DEVELOPMENT CENTRE
             </h2>
 
-            <h3 class=" banner-sub mt-3">Every child matters</h3>
+            <h3 class=" banner-sub mt-3 font-syne">Every child matters</h3>
           </div>
           <v-btn class="mt-5 px-7 py-5 pb-9 enquiry-btn" href="#connect-with-us"
             >Make an enquiry
@@ -159,6 +159,10 @@ export default {
 .round-img {
   position: relative;
   display: inline-block;
+  background-color: #cfd0d3;
+  padding: 20px;
+  animation:border-transform 10s linear infinite alternate forwards;
+  // animation: morph 3s linear infinite;
   img {
     height: 500px;
     width: 500px;
@@ -209,7 +213,8 @@ export default {
   z-index: 100;
   text-decoration: none;
   cursor:  pointer !important;
-  color: var(--primary-text-color);
+  color: #626468;
+  // color: var(--primary-text-color);
 }
 .social-media {
   display: flex;
@@ -250,11 +255,11 @@ export default {
   background-repeat: no-repeat;
   background-position: left;
   // color:green;
-  color:#89c303;
-  font-style: italic;
+  color:#626468;
+  // color:#89c303;
+  // font-style: italic;
 }
 .main-conntent {
-  /* background-color: red ; */
   height: 100%;
   // display: flex;
   // flex-direction: column;
@@ -303,13 +308,18 @@ export default {
 }
 
 .banner-header {
-  font-size: clamp(2.4em, 3vw, 3em);
-  line-height: 1.333;
-  font-weight: 900;
-  /* letter-spacing: 0.1rem; */
-  margin-top: 0;
-  
-  color: var(--primary-text-color);
+  // font-size: clamp(2.4em, 3vw, 3em);
+  // line-height: 1.333;
+  // font-weight: 900;
+  // margin-top: 0;
+  // color: var(--primary-text-color);
+  font-size: 60px;
+    line-height: 1em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #18191d;
+    text-shadow: 1px 1px #fff;
 }
 .welcome {
   font-size: clamp(1.2em, 2vw, 1.8em);
@@ -317,7 +327,7 @@ export default {
   font-weight: 900;
   /* letter-spacing: 0.1rem; */
   margin-top: 0;
-  font-style: italic ;
+  // font-style: italic ;
   color: var(--primary-text-color);
 }
 .banner-subtitle {
