@@ -6,7 +6,7 @@
     >
       <star-animation-component />
       <v-col cols="12" md="6" lg="7">
-        <div>
+        <div  :class="!mdAndUp ? 'text-center' : ''">
           <div class="main-conntent">
             <h4 class="mt-5 mt-md-0 welcome text ">Welcome to</h4>
             <h2 class=" banner-header mt-3 ">
