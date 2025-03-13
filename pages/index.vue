@@ -27,6 +27,7 @@
             </div>
             <div class="px-10" id="latest-news">
               <latest-news
+                v-if="showLatestNews"
                 :custom-class="customWidthClass"
                 @apiSucceed="apiSucceed"
               />
@@ -65,10 +66,12 @@ export default {
   data: () => ({
     value: 0,
     customWidthClass: "custom-max-width",
-    isLoading: true,
+    isLoading: true,  
+    showLatestNews: true,
   }),
   methods: {
-    apiSucceed() {
+    apiSucceed({ isError }) {
+      this.showLatestNews = !isError;
       this.isLoading = false;
       console.log("api succeed");
     },

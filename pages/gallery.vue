@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MainLoader v-if="isLoading"/>
+    <MainLoader v-if="isLoading" />
     <div v-show="!isLoading">
       <div class="header-content">
         <header-component custom-class="custom-max-width" />
@@ -88,7 +88,7 @@ import { useDisplay } from "vuetify";
 import HeaderComponent from "~/layouts/HeaderComponent.vue";
 import MainLoader from "~/layouts/sub-components/MainLoader.vue";
 export default {
-  components: { HeaderComponent },
+  components: { HeaderComponent,MainLoader },
   name: "MasonryGallery",
   setup() {
     // Destructure only the keys we want to use
@@ -101,7 +101,7 @@ export default {
       images: [],
       showLightbox: false,
       lightboxIndex: 0,
-      isLoading:true
+      isLoading: true,
     };
   },
   mounted() {
@@ -109,23 +109,30 @@ export default {
   },
   methods: {
     async getGalleryDetails() {
-      this.isLoading = true;
-      let result = new Array();
+      try {
+        this.isLoading = true;
+        let result = new Array();
 
-      const galleryQuery = query(
-        galleryCollection,
-        orderBy("createdAt", "desc")
-      );
+        const galleryQuery = query(
+          galleryCollection,
+          orderBy("createdAt", "desc")
+        );
 
-      let data = await getDocs(galleryQuery);
-      data.forEach((doc) => {
-        let documentData = doc.data();
-        documentData.id = doc.id;
-        result.push(documentData);
-      });
+        let data = await getDocs(galleryQuery);
+        data.forEach((doc) => {
+          let documentData = doc.data();
+          documentData.id = doc.id;
+          result.push(documentData);
+        });
 
-      this.images = result;
-      this.isLoading = false;
+        this.images = result;
+      } catch (error) {
+        console.log("error g", error);
+      } finally {
+        this.isLoading = false;
+      } 
+
+      
     },
     imageLoaded(index) {
       // Mark the image as loaded when it finishes loading

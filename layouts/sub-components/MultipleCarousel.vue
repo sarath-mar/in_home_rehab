@@ -6,7 +6,7 @@
     :height="470"
     hide-delimiters
   >
-  <!-- 
+    <!-- 
     progress="primary" -->
     <v-carousel-item v-for="(slides, index) in getSidesDetails" :key="index">
       <div class="multiple-carousel-content px-2">
@@ -48,19 +48,22 @@ export default {
     async getBlogDetails() {
       this.loading = true;
       let result = [];
+      try {
+        const blogQuery = query(blogCollection, orderBy("createdAt", "desc"));
+        let data = await getDocs(blogQuery);
+        console.log("blog", data);
+        data.forEach((doc) => {
+          let documentData = doc.data();
+          documentData.id = doc.id;
+          result.push(documentData);
+        });
 
-      const blogQuery = query(blogCollection, orderBy("createdAt", "desc"));
-
-      let data = await getDocs(blogQuery);
-      console.log("blog", data);
-      data.forEach((doc) => {
-        let documentData = doc.data();
-        documentData.id = doc.id;
-        result.push(documentData);
-      });
-
-      this.slides = result;
-      this.loading = false;
+        this.slides = result;
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        this.loading = false;
+      }
     },
   },
   computed: {

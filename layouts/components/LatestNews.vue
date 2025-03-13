@@ -2,7 +2,7 @@
   <div class="my-10" id="service-we-provide" :class="customClass">
     <h2 class="heading-text text">Latest News & Blog</h2>
     <div class="mt-4">
-      <MultipleCarousel/>  
+      <MultipleCarousel />
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ import MultipleCarousel from "../sub-components/MultipleCarousel.vue";
 export default {
   components: {
     BlogCard,
-    MultipleCarousel
+    MultipleCarousel,
   },
   props: {
     customClass: {
@@ -26,21 +26,30 @@ export default {
     return {};
   },
   async mounted() {
-    let data = await getDocs(newsCollection);
-    data.forEach((doc) => {
-      let postData = doc.data();
-      console.log("data 0", postData);
+    let isError = false;
+    try {
+      let data = await getDocs(newsCollection);
+      data.forEach((doc) => {
+        let postData = doc.data();
+        console.log("data 0", postData);
 
-      postData.id = doc.id;
-      console.log("data 1", postData);
-    });
-    this.$emit("apiSucceed")
+        postData.id = doc.id;
+        console.log("data 1", postData);
+      });
+    } catch (error) {
+      isError = true;
+      console.log("error lat", error);
+    } finally {
+      this.$emit("apiSucceed",{isError});
+    }
+
+   
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.heading-text{
-  color: var(--primary-text-color); 
+.heading-text {
+  color: var(--primary-text-color);
 }
 </style>
