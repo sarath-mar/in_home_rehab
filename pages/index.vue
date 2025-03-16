@@ -1,8 +1,8 @@
 <template>
   <div>
-    <MainLoader v-if="isLoading" />
+    <!-- <MainLoader v-if="isLoading" /> -->
     <!--  -->
-    <div v-show="!isLoading">
+    <div>
       <transition name="fade">
         <div class="fade-enter-active" >
           <div class="outer-layer">
@@ -14,9 +14,6 @@
             </div>
           </div>
           <div class="mt-5 inner-layer">
-            <!-- <div class="bread px-10">
-        <bread-component />
-      </div> -->
             <div class="welcome-div px-10 pb-15">
               <!-- <div class="welcome-component "> -->
               <welcome :custom-class="customWidthClass" />
@@ -32,6 +29,9 @@
                 @apiSucceed="apiSucceed"
               />
             </div>
+            <div class="px-10">
+              <address-component :custom-class="customWidthClass" />
+            </div>
           </div>
           <!-- <WelcomeForm/> -->
           <footer-component :custom-class="customWidthClass" />
@@ -39,29 +39,29 @@
       </transition>
     </div>
   </div>
-</template>
+</template> 
 
 <script>
 import HeaderComponent from "../layouts/HeaderComponent.vue";
 import FooterComponent from "../layouts/FooterComponent.vue";
 import Carousel from "../layouts/components/Carousel.vue";
 import Welcome from "../layouts/components/Welcome.vue";
-import BreadComponent from "../layouts/components/BreadComponent.vue";
 import ServiceProvided from "../layouts/components/ServiceProvided.vue";
 import LatestNews from "../layouts/components/LatestNews.vue";
 import WelcomeForm from "~/layouts/components/WelcomeForm.vue";
 import MainLoader from "~/layouts/sub-components/MainLoader.vue";
+import AddressComponent from '~/layouts/components/AddressComponent.vue';
 export default {
   components: {
     HeaderComponent,
     Carousel,
     Welcome,
     FooterComponent,
-    BreadComponent,
     ServiceProvided,
     LatestNews,
     WelcomeForm,
     MainLoader,
+    AddressComponent,
   },
   data: () => ({
     value: 0,

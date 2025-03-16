@@ -1,7 +1,7 @@
 <template>
   <div>
-    <MainLoader v-if="isLoading" />
-    <div v-show="!isLoading">
+    <!-- <MainLoader v-if="isLoading" /> -->
+    <div >
       <div class="header-content">
         <header-component custom-class="custom-max-width" />
       </div>

@@ -5,7 +5,7 @@
         <Icon
           name="mdi-close"
           @click="drawer = !drawer"
-          class="icon-close  float-right mr-5 mt-5"
+          class="icon-close float-right mr-5 mt-5"
         />
       </div>
       <h2 class="text-color ml-5 mt-5">Iris</h2>
@@ -29,8 +29,7 @@
             <v-btn class="header-btn connect"> Connect with Us</v-btn>
           </a>
         </div>
-        <div class="mt-5">
-        </div>
+        <div class="mt-5"></div>
       </div>
     </v-navigation-drawer>
     <v-app-bar class="app-bar" :elevation="elevation">
@@ -40,11 +39,10 @@
         v-show="lgAndUp"
       >
         <v-col cols="3">
-
-          <img src="/images/logo.png" class="mt-2 icon-image" alt="logo" />
+          <img src="/images/logo.png" class="mt-2 icon-image" alt="logo" @click="onClickNav({route:'/'})" /> 
         </v-col>
         <v-col cols="6" justify-center>
-         <ul class="header-list">
+          <ul class="header-list">
             <li v-for="(item, i) in items" :key="i" @click="onClickNav(item)">
               {{ item.title }}
             </li>
@@ -53,13 +51,14 @@
         <v-col cols="3">
           <div>
             <div class="text-end contact">
-              <Icon class="header-icon-1" name="uil:phone" />
-              <span class="ml-2 phone-text"> 8891575227</span>
+              <a class="ml-2 phone-text" href="tel:+91-8891575227">
+                <Icon class="header-icon-1" name="uil:phone" /> +918891575227</a
+              >
             </div>
             <div class="text-end mt-2 contact">
-              <Icon name="mdi-email" class="header-icon" />
               <a class="ml-2 mail-text" href="mailto: inhomerehab01@gmail.com"
-                >iriscdc1@gmail.com</a
+                ><Icon name="mdi-email" class="header-icon" />
+                iriscdc1@gmail.com</a
               >
             </div>
           </div>
@@ -67,12 +66,7 @@
       </v-row>
       <v-row class="px-10 py-5 app-bar-row align-center" v-show="!lgAndUp">
         <v-col>
-          <img
-            src="/images/logo.png"
-            class="mt-n2 ml-n7 icon-image"
-            
-            alt=""
-          />
+          <img src="/images/logo.png" class="mt-n2 ml-n7 icon-image" alt="" @click="onClickNav({route:'/'})" />
         </v-col>
         <v-col>
           <div class="float-right mt-n5 mr-n10">
@@ -210,10 +204,10 @@ export default {
 };
 </script>
 <style lang="scss">
-.contact{
+.contact {
   // color:var(--tertiary-text-color)
 }
-.connect{
+.connect {
   background-color: var(--primary-text-color);
   color: var(--secondary-text-color);
 }
@@ -224,11 +218,13 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.text-color,.text-color{
+.text-color,
+.text-color {
   color: var(--primary-text-color);
 }
-.icon-image{
+.icon-image {
   width: 190px;
+  cursor: pointer;
 }
 .drawer-btn .header-btn {
   width: 140px;
