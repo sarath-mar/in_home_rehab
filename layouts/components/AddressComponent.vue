@@ -54,12 +54,13 @@ export default {
 </script>
 <style >
 .address-component-container {
-  padding-block: 100px;
+  padding-block: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 100px;
+  gap: 80px;
   text-align: center;
+  flex-wrap: wrap-reverse;
 }
 h3,.address-component-container a{
   color: #626468 !important;
