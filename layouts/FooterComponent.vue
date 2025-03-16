@@ -4,28 +4,16 @@
       class="footer-main text-center d-flex flex-column"
       :class="customClass"
     >
-      <!-- <v-row class="footer-row">
-        <v-col cols="8"> -->
+
       <v-col class="footer-form-col" :cols="sm ? 10 : xs ? 11 : 8">
         <WelcomeForm class="footer-form" />
       </v-col>
-      <!-- </v-col>
-      </v-row> -->
       <div class="mt-5">
-        <!-- <v-btn
-          v-for="icon in socialMedia"
-          :key="icon"
-          class="mx-4 footer-icon"
-          :icon="icon"
-          variant="text"
-        > -->
         <span v-for="icon in socialMedia" :key="icon" class="mx-5 footer-icon">
           <a class="social-icon" :href="icon.url">
             <Icon :name="icon.icon" />
           </a>
         </span>
-
-        <!-- </v-btn> -->
       </div>
       <v-row>
         <v-col cols="12">

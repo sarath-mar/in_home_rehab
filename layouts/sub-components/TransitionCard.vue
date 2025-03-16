@@ -11,24 +11,12 @@
       ></Icon>
     </div>
 
-    <!-- <v-card-actions>
-      <v-btn color="orange-lighten-2" text="Explore" @click="show = !show"
-        >click</v-btn
-      >
-
-      <v-spacer></v-spacer>
-      <Icon
-        :name="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-        @click="show = !show"
-      ></Icon>
-    </v-card-actions> -->
-
     <v-expand-transition>
       <div v-show="show">
         <v-divider></v-divider>
 
         <v-card-text class="transition-card-content">
-          <p>{{ service.description }}</p>
+          <p v-html="service.description"></p>
           <ul v-if="service.helpWith">
             <li v-for="help in service.helpWith" :key="help">
               {{ help }}
