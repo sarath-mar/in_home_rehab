@@ -1,14 +1,14 @@
 <template>
-  <div class="mt-10 welcome-main" id="in-home-rehab">
+  <div class="py-10 welcome-main" id="in-home-rehab">
     <v-row class="align-center">
       <v-col cols="12" md="12">
         <v-row class="align-center">
           <v-col cols="12" md="7">
             <div>
-              <h4 class="welcome-who">Who We Are</h4>
-              <h2 class="heading-text">Welcome to InHome Rehab</h2>
+              <h4 class="welcome-who">Explore Our Cardamom Collection</h4>
+              <h2 class="heading-text">Elevate Your Culinary Journey</h2>
               <p class="paragraph-text mt-5">
-                As healthcare professionals, we understand the importance of
+                <!-- As healthcare professionals, we understand the importance of
                 timely and effective rehabilitation for patients recovering from
                 injuries or illnesses. However, we also recognize that attending
                 therapy sessions at hospitals or therapy centers can be
@@ -21,13 +21,15 @@
                 <span id="welcom-form-id">
                   help you achieve your recovery goals. Let's work together to
                   build a brighter future for you and your loved ones.
-                </span>
+                </span> -->
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores vitae officiis recusandae praesentium quisquam reprehenderit consequatur aliquid, veniam nesciunt earum architecto impedit eveniet ex soluta illo. Corrupti soluta expedita labore.
               </p>
             </div>
           </v-col>
           <v-col cols="12" md="5">
+            <v-img cover class="welcome-img" src="https://cdn-imgs.dora.run/design/JnRqMCDz82rKlvnIdC0eBQ.webp/w/4096/h/4096/format/webp?"></v-img>
             <!-- <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img> -->
-            <welcome-form />
+            <!-- <welcome-form /> -->
           </v-col>
         </v-row>
       </v-col>
@@ -90,7 +92,7 @@ export default {
   color: var(--primary-text-color);
 }
 .welcome-img {
-  height: 100%;
+  height: 90vh;
   border-radius: 20px;
 }
 

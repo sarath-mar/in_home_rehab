@@ -20,11 +20,7 @@
       <v-row>
         <v-col cols="12">
           <div class="mt-5">
-            InHome Rehab offers home-based therapy programs to improve quality
-            of life for the patients recovering from the injuries or illness,
-            but often face challenges attending therapy sessions at the center.
-            A team of well qualified, registered group of health professionals
-            will help you to restore your health, right where you are.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo commodi officia eum dolor facere recusandae hic neque distinctio nulla? Sequi odit, voluptate laboriosam cupiditate quibusdam perferendis assumenda magnam maxime commodi.
           </div>
         </v-col>
         <v-col cols="12">
@@ -68,15 +64,16 @@
       <v-divider></v-divider>
 
       <div class="my-2 date-footer">
-        {{ new Date().getFullYear() }} — <strong>In Home Rehab</strong>
+        {{ new Date().getFullYear() }} — <strong>Company Name</strong>
       </div>
-      <div class="bg-white">
-        <img
+      <div class="">
+        Logo
+        <!-- <img
           src="/images/logo.png"
           class="my-2 mt-4 mx-4 footer-img"
           width="70px"
           alt=""
-        />
+        /> -->
       </div>
     </v-footer>
   </v-layout>
@@ -88,18 +85,18 @@ export default {
     {
           name: "Facebook",
           icon: "uil:facebook",
-          url: "https://www.facebook.com/profile.php?id=100092701407162",
+          url: "https://www.facebook.com/",
         },
         // { name: "Twitter", icon: "uil:twitter" },
         {
           name: "Instagram",
           icon: "uil:instagram",
-          url: "https://www.instagram.com/inhomerehab01/",
+          url: "https://www.instagram.com/",
         },
         {
           name: "Linkedin",
           icon: "uil:linkedin",
-          url: "https://www.linkedin.com/company/inhome-rehab/",
+          url: "https://www.linkedin.com/",
         },
     ],
   }),
@@ -109,7 +106,7 @@ export default {
 .footer-main {
   background-color: var(--secondary-text-color);
   color: white;
-  /* height: 30vh; */
+  height: 300px;
 }
 .date-footer {
   color: var(--primary-text-color);

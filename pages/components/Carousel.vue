@@ -1,89 +1,21 @@
 <template>
   <div id="why-home-therapy">
-    <v-row
+     <v-row
       class=" "
-      :class="!mdAndUp ? 'margin-height' : 'mt-5 align-center main-carousel'"
+      :class="'align-center main-carousel'"
     >
-      <!-- flex-column-reverse -->
-      <v-col cols="12" md="6">
-        <!-- -->
-        <div v-if="mdAndUp">
-          <v-carousel
-            cycle
-            class="carousel"
-            hide-delimiter-background
-            :show-arrows="false"
-            hide-delimiters
-          >
-            <v-carousel-item v-for="(slide, i) in imageLinks" :key="i" cover>
-              <div class="main-conntent">
-                <h3 class="text-secondary mt-n5 mb-5">
-                  {{ mainContent.title }} ?
-                </h3>
-                <h2 class="banner-header">
-                  {{ slide.title }}
-                </h2>
-                <p class="banner-subtitle mt-2 mt-md-5">
-                  {{ slide.subtitle }}
-                </p>
-              </div>
-            </v-carousel-item>
-          </v-carousel>
+    <v-col cols="12" class="d-flex flex-column justify-center">
+      
+        <div class="d-flex flex-column justify-center fill-height px-16">
+          <h2 class="banner-header text-white ">
+            Discover the Luxury of Zaffra Spices
+          </h2>
+          <p class="banner-subtitle mt-5">
+          Zaffra Spices is a premium brand offering the finest quality cardamom</p>
         </div>
-        <div class="" v-else>
-          <h1 class="heading-text">
-            Restoring your health, Right where you are
-          </h1>
-          <!-- <p class="paragraph-text mt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            quos vero vitae enim? Temporibus nisi nam cumque, atque quae
-            eligendi ut reiciendis velit saepe esse eum molestiae libero
-            expedita. Velit?
-          </p> -->
-        </div>
-      </v-col>
-      <v-col cols="12" md="6">
-        <v-carousel
-          cycle
-          class="carousel"
-          hide-delimiter-background
-          show-arrows="hover"
-          :height="mdAndUp ? '75vh' : '45vh'"
-        >
-          <v-carousel-item
-            v-for="(slide, i) in imageLinks"
-            :key="i"
-            :src="slide.src"
-            cover
-            class="carousel-item"
-          >
-            <div class="d-flex fill-height align-center mx-16">
-              <div class="mx-md-10"></div>
-            </div>
-          </v-carousel-item>
-        </v-carousel>
-        <div v-if="!mdAndUp">
-          <ul class="social-media mt-3 social-media-small">
-            <li v-for="media in socialMedia" :key="media.name">
-              <!-- <Icon :name="media.icon" /> -->
-              <a class="social-icon text-primary" :href="media.url">
-                <Icon :name="media.icon" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </v-col>
-    </v-row>
-    <div v-if="mdAndUp" class="mt-n10">
-      <ul class="social-media">
-        <li v-for="media in socialMedia" :key="media.name">
-          <a class="social-icon text-primary" :href="media.url">
-            {{ media.name }}
-            <Icon :name="media.icon" />
-          </a>
-        </li>
-      </ul>
-    </div>
+    
+    </v-col>
+     </v-row>
   </div>
 </template>
 <script>
@@ -173,7 +105,7 @@ export default {
   text-decoration: none;
 }
 .margin-height {
-  margin-top: 130px;
+  /* margin-top: 130px; */
 }
 .social-media {
   display: flex;

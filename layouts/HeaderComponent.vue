@@ -5,23 +5,22 @@
         <Icon
           name="mdi-close"
           @click="drawer = !drawer"
-          class="icon-close text-primary-text float-right mr-5 mt-5"
+          class="icon-close  float-right mr-5 mt-5"
         />
       </div>
-      <h2 class="text-primary ml-5 mt-5">In Home Rehab</h2>
+      <h2 class=" ml-5 mt-5">Company Name</h2>
       <div class="mt-5">
         <!-- <v-list :items="items" @click="onClickNav"></v-list> -->
         <v-list-item v-for="(item, i) in items" :key="i">
           <!-- <template v-slot:prepend>
             <v-icon :icon="item.icon"></v-icon>
           </template> -->
-          <a :href="item.to" class="text-primary" style="text-decoration: none">
+          <a :href="item.to" class="text-black" style="text-decoration: none">
             <v-list-item-title
               class="ml-5 list-item"
               @click="onClickNav(item.value)"
             >
-              <Icon name="mdi-greater-than" class="mr-2 text-primary"></Icon
-              >{{ item.title }}
+              {{ item.title }}
             </v-list-item-title>
           </a>
         </v-list-item>
@@ -30,7 +29,7 @@
         <v-sheet elevation="2" class="sheet" >Connect With Us</v-sheet>
         <v-sheet elevation="2" >Carriers</v-sheet>
       </div> -->
-      <div class="drawer-btn">
+      <!-- <div class="drawer-btn">
         <div>
           <a href="#welcom-form-id" @click="drawer = false" style="text-decoration: none">
             <v-btn class="header-btn bg-secondary"> Connect with Us</v-btn>
@@ -46,51 +45,51 @@
           >
             careers</v-btn
           >
-          <!-- <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" /> -->
         </div>
-      </div>
+      </div> -->
     </v-navigation-drawer>
     <v-app-bar
       class="app-bar"
-      :flat="false"
+      :class="scrollTop ? 'active-app' : 'disable-app'"
+      :flat="!scrollTop"
       scroll-target="#scrolling-techniques-6"
     >
       <v-row class="px-10 py-5 app-bar-row align-center" v-show="mdAndUp">
         <v-col>
-          <img src="/images/logo.png" class="mt-2" width="160px" alt="" />
+          <h1>Logo</h1>
+          <!-- <img src="/images/logo.png" class="mt-2" width="160px" alt="" /> -->
         </v-col>
-        <v-col justify-center>
-          <p @click="carrierPop = true" class="text-center carrier-text">
-            Careers
-          </p>
-          <CarriersForm :carrierPop="carrierPop" @closeIcon="closeIcon" />
-        </v-col>
+       
         <v-col>
-          <div>
-            <!-- <p class="text-end">contact us on</p> -->
-            <div class="text-end">
-              <Icon class="header-icon-1" name="uil:phone" />
-              <span class="ml-2 phone-text">8891575227 / 9961132071</span>
+          <div class="text-end">
+            <!-- <div> -->
+              <ul class="content-list">
+                <li
+                  v-for="(item, i) in items"
+                  :key="i"
+                  class="list-item"
+                  @click="onClickNav(item.value)"
+                >
+          <a :href="item.to" class="text-white" style="text-decoration: none">
+
+                 {{ item.title }}
+          </a>
+                </li>
+              </ul>
             </div>
-            <div class="text-end mt-2">
-              <!-- <Icon class="header-icon" name="uil:fast-mail" /> -->
-              <Icon name="mdi-email" class="header-icon" />
-              <!-- <span class="ml-2  mail-text">inhomerehab@gmail.com</span> -->
-              <a class="ml-2 mail-text" href="mailto: inhomerehab01@gmail.com"
-                >inhomerehab01@gmail.com</a
-              >
-            </div>
-          </div>
+            
+          <!-- </div> -->
         </v-col>
       </v-row>
       <v-row class="px-10 py-5 app-bar-row align-center" v-show="!mdAndUp">
         <v-col>
-          <img
+          Logo
+          <!-- <img
             src="/images/logo.png"
             class="mt-n2 ml-n7"
             width="160px"
             alt=""
-          />
+          /> -->
         </v-col>
         <v-col>
           <div class="float-right mt-n5 mr-n10">
@@ -103,17 +102,17 @@
               <v-list elevation="3">
                 <v-list-item>
                   <v-list-item-title>
-                    <Icon class="header-icon-1" name="uil:phone" />
-                    <a class="ml-2 phone-text" href="tel:+91-8891575227"
-                      >+918891575227 (speech therapy)</a
+                    <Icon class="header-icon" name="uil:phone" />
+                    <a class="ml-2 phone-text" href="tel:+91-"
+                      >Phone No</a
                     >
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-title>
-                    <Icon class="header-icon-1" name="uil:phone" />
-                    <a class="ml-2 phone-text" href="tel:+91-9961132071"
-                      >+919961132071 (occupational therapy)</a
+                    <Icon class="header-icon" name="uil:phone" />
+                    <a class="ml-2 phone-text" href="tel:+91-9"
+                      >+91-23445666</a
                     >
                   </v-list-item-title>
                 </v-list-item>
@@ -122,8 +121,8 @@
                     <Icon name="mdi-email" class="header-icon" />
                     <a
                       class="ml-2 phone-text"
-                      href="mailto: inhomerehab01@gmail.com"
-                      >inhomerehab01@gmail.com</a
+                      href="mailto: i"
+                      >sample@gmail.com</a
                     >
                   </v-list-item-title>
                 </v-list-item>
@@ -165,28 +164,29 @@ export default {
   data() {
     return {
       scrollHeight: "",
+      scrollTop: false,
       carrierPop: false,
       drawer: false,
       items: [
         {
-          title: "InHome Rehab",
+          title: "Home",
           value: "foo",
           to: "#in-home-rehab",
         },
         {
-          title: "Service We Provide",
+          title: "About Us",
           value: "bar",
           to: "#service-we-provide",
         },
         {
-          title: "Why Home Therapy",
+          title: "Products",
           value: "fizz",
           to: "#why-home-therapy",
         },
-        // {
-        //   title: "Connect With Us",
-        //   value: "connect",
-        // },
+        {
+          title: "Connect With Us",
+          value: "connect",
+        },
         // {
         //   title: "Carriers",
         //   value: "carrier",
@@ -194,9 +194,19 @@ export default {
       ],
     };
   },
+   mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
   methods: {
     closeIcon() {
       this.carrierPop = false;
+    },
+     handleScroll() {
+      // You can adjust the scroll threshold as needed
+      this.scrollTop = window.scrollY > 10;
     },
     // connectWithUs(event) {
     //   // this.drawer=false
@@ -219,6 +229,12 @@ export default {
 };
 </script>
 <style>
+.content-list{
+  justify-content: end;
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
 .drawer-btn {
   margin-top: 50px;
   display: flex;
@@ -233,24 +249,36 @@ export default {
 }
 .app-bar {
   height: 90px !important;
-  padding: 5px !important;
+  /* padding: 5px !important; */
   /* background-color: rgb(160, 157, 154) !important; */
   /* display: flex; */
   /* align-items: center; */
   justify-content: center;
+  
+  /* position: absolute; */
+}
+.active-app{
+  color: black;
+  background-color: white !important;
+  transition: all 0.3s ease;
+}
+.disable-app{
+  color: white !important;
+  background-color: transparent !important;
+  transition: all 0.3s ease;
 }
 .list-item {
   cursor: pointer;
 }
 .bar-icon {
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
 }
 .header-icon {
   color: var(--primary-text-color);
   font-size: 26px;
 }
 .header-icon-1 {
-  color: var(--primary-text-color);
+  color: white;
   font-size: 23px;
   cursor: pointer;
 }

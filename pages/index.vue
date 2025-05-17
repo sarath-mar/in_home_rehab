@@ -1,19 +1,15 @@
 <template>
-  <div>
+  <div class="">
     <div class="header-content">
       <header-component />
     </div>
-    <div class="mt-n10 mt-md-10 px-5 px-md-10">
+    <div class=" px-5 px-md-10 home-bg" 
+      >
       <carousel />
     </div>
-    <div class="mt-5">
-      <!-- <div class="bread px-10">
-        <bread-component />
-      </div> -->
+    <div class="">
       <div class="welcome-div px-10 pb-15">
-        <!-- <div class="welcome-component "> -->
         <welcome />
-        <!-- </div> -->
       </div>
       <div class="px-10" id="service-provided">
         <service-provided />
@@ -55,8 +51,8 @@ export default {
 
 <style>
 :root {
-  --primary-text-color: #89c303;
-  --secondary-text-color: #12595d;
+  --primary-text-color: rgb(51, 49, 52);
+  --secondary-text-color: rgb(114, 108, 107);
   --primary-background: #f2f4f5;
 }
 
@@ -97,10 +93,19 @@ html {
   /* background-image: url(../public/images/bg_image.png); */
   /* padding: 60px 0px 90px 0px; */
   padding: 10px;
+  padding-top: 0px;
 
   background-color: var(--primary-background);
   /* min-height: 100vh; */
   /* margin-top: -160px; */
+}
+.home-bg{
+  
+      background-image: url('https://wallpapercrafter.com/desktop1/652587-pepper-cinnamon-spices-ginger-cardamom-paprika.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
 }
 .welcome-component {
   padding: 100px 0px;
