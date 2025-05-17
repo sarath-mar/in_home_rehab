@@ -6,7 +6,7 @@
           <v-col cols="12" md="6">
             <v-card-item>
               <div>
-                <div class="bread-text mb-1">In Home Rehab</div>
+                <div class="bread-text mb-1">Comp</div>
                 <div class="bread-caption mt-5">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
                   blanditiis voluptate, laborum mollitia, repellendus aperiam
