@@ -70,7 +70,7 @@
                   class="list-item"
                   @click="onClickNav(item.value)"
                 >
-          <a :href="item.to" class="text-white" style="text-decoration: none">
+          <a :href="item.to" :class="scrollTop ? 'text-black' : 'text-white'" style="text-decoration: none">
 
                  {{ item.title }}
           </a>
@@ -230,8 +230,8 @@ export default {
 </script>
 <style>
 .content-list{
-  justify-content: end;
   display: flex;
+  justify-content: end;
   gap: 40px;
   list-style: none;
 }
@@ -258,7 +258,7 @@ export default {
   /* position: absolute; */
 }
 .active-app{
-  color: black;
+  color: black !important;
   background-color: white !important;
   transition: all 0.3s ease;
 }

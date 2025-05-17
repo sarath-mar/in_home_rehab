@@ -7,7 +7,7 @@
           <Icon name="uil:label" /> {{ service.title }}
         </h2>
         <p class="mt-3 paragraph-text">{{ service.description }}</p>
-        <div class="mt-3">
+        <div class="my-10">
           <v-row>
             <v-col
               v-for="content in service.content"
@@ -15,7 +15,7 @@
               cols="12"
               md="6"
               lg="3"
-              class="my-10"
+              class="my-3"
             >
               <service-card :content="content" />
             </v-col>
