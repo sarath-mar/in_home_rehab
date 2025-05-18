@@ -103,16 +103,8 @@
                 <v-list-item>
                   <v-list-item-title>
                     <Icon class="header-icon" name="uil:phone" />
-                    <a class="ml-2 phone-text" href="tel:+91-"
-                      >Phone No</a
-                    >
-                  </v-list-item-title>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-title>
-                    <Icon class="header-icon" name="uil:phone" />
-                    <a class="ml-2 phone-text" href="tel:+91-9"
-                      >+91-23445666</a
+                    <a class="ml-2 phone-text" href="tel:+91-9400422107"
+                      >+91-9400422107</a
                     >
                   </v-list-item-title>
                 </v-list-item>
@@ -121,8 +113,8 @@
                     <Icon name="mdi-email" class="header-icon" />
                     <a
                       class="ml-2 phone-text"
-                      href="mailto: i"
-                      >sample@gmail.com</a
+                      href="mailto: zaffraspices@gmail.com"
+                      >zaffraspices@gmail.com</a
                     >
                   </v-list-item-title>
                 </v-list-item>
