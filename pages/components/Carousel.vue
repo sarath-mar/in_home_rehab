@@ -148,7 +148,7 @@ export default {
 }
 .banner-header {
   /* font-size: 4.5em; */
-  font-size: clamp(1.6em, 4vw, 4.5em);
+  font-size: clamp(3em, 4vw, 4.5em);
   line-height: 1.333;
   font-weight: 900;
   /* letter-spacing: 0.1rem; */
@@ -157,7 +157,7 @@ export default {
 }
 .banner-subtitle {
   /* font-size: 3em; */
-  font-size: clamp(1em, 4vw, 2em);
+  font-size: clamp(2em, 4vw, 2em);
 
   line-height: 1.333;
   font-weight: 500;
