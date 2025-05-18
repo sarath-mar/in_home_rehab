@@ -56,8 +56,7 @@
     >
       <v-row class="px-10 py-5 app-bar-row align-center" v-show="mdAndUp">
         <v-col>
-          <h1>Logo</h1>
-          <!-- <img src="/images/logo.png" class="mt-2" width="160px" alt="" /> -->
+          <img src="/images/logo.png" class="mt-2" width="160" alt="" />
         </v-col>
        
         <v-col>
@@ -83,13 +82,12 @@
       </v-row>
       <v-row class="px-10 py-5 app-bar-row align-center" v-show="!mdAndUp">
         <v-col>
-          Logo
-          <!-- <img
+          <img
             src="/images/logo.png"
             class="mt-n2 ml-n7"
-            width="160px"
+            width="160"
             alt=""
-          /> -->
+          />
         </v-col>
         <v-col>
           <div class="float-right mt-n5 mr-n10">
