@@ -163,7 +163,7 @@ export default {
   font-weight: 500;
   /* letter-spacing: 0.1rem; */
   color:rgb(237, 233, 233);
-  text-align: justify;
+  /* text-align: justify; */
   /* margin-top: 0; */
 }
 .banner-btn {
