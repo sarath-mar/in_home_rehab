@@ -34,7 +34,7 @@ export default {
       servicesProvided: [
         {
           title: "Elevate Your Culinary Journey",
-          description:'Grown in the lush highlands, our premium cardamom delivers a rich, aromatic taste that will elevate your cooking to new heights. Explore our selection and experience the Zaffra difference',
+          description:'Bold yet delicate, our premium cardamom offers a rich, floral aroma with hints of citrus and mint. Hand-selected for purity and depth, it brings a touch of elegance to both sweet and savory creations. A timeless indulgence for the refined palate.',
            content: [
         {
           image: "/images/one.jpeg",

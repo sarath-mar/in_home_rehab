@@ -11,7 +11,7 @@
             Discover the Luxury of Zaffra Spices
           </h2>
           <p class="banner-subtitle mt-5">
-          Zaffra Spices is a premium brand offering the finest quality cardamom</p>
+          The finest expression of spice</p>
         </div>
     
     </v-col>
@@ -20,9 +20,7 @@
 </template>
 <script>
 import { useDisplay } from "vuetify";
-import WelcomeForm from "./WelcomeForm.vue";
 export default {
-  components: { WelcomeForm },
   setup() {
     // Destructure only the keys we want to use
     const { xs, mdAndUp } = useDisplay();
@@ -164,7 +162,7 @@ export default {
   line-height: 1.333;
   font-weight: 500;
   /* letter-spacing: 0.1rem; */
-  color:rgb(198 198 198);
+  color:rgb(237, 233, 233);
   text-align: justify;
   /* margin-top: 0; */
 }

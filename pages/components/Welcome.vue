@@ -5,24 +5,18 @@
         <v-row class="align-center">
           <v-col cols="12" md="7">
             <div>
-              <h4 class="welcome-who">Explore Our Cardamom Collection</h4>
+              <h4 class="welcome-who">About Us</h4>
+              <!-- <h4 class="welcome-who">Explore Our Cardamom Collection</h4> -->
+              <!-- <h2 class="heading-text">Cardamom: The Queen of Spices</h2> -->
               <h2 class="heading-text">Elevate Your Culinary Journey</h2>
               <p class="paragraph-text mt-5">
-                <!-- As healthcare professionals, we understand the importance of
-                timely and effective rehabilitation for patients recovering from
-                injuries or illnesses. However, we also recognize that attending
-                therapy sessions at hospitals or therapy centers can be
-                challenging for many individuals due to personal or
-                health-related reasons. That's why we founded InHome Rehab, a
-                service that brings rehabilitation to your doorstep. Our team of
-                qualified professionals is dedicated to delivering high-quality
-                rehab services in the comfort of your own home. With our
-                guidance and support, we aim to improve your quality of life and
-                <span id="welcom-form-id">
-                  help you achieve your recovery goals. Let's work together to
-                  build a brighter future for you and your loved ones.
-                </span> -->
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores vitae officiis recusandae praesentium quisquam reprehenderit consequatur aliquid, veniam nesciunt earum architecto impedit eveniet ex soluta illo. Corrupti soluta expedita labore.
+                For over 30 years, zaffra has been dedicated to producing the
+                finest premium cardamom. Each pod is carefully handpicked to
+                ensure exceptional aroma, rich flavor, and unmatched quality.
+                Rooted in tradition and refined by expertise, we deliver a
+                luxurious spice experience that elevates every dish. Our
+                commitment to excellence and sustainable practices has made us a
+                trusted name among discerning customers worldwide
               </p>
             </div>
           </v-col>
