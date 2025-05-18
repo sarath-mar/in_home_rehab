@@ -20,16 +20,11 @@
 </template>
 
 <script>
-// import Header from "../layouts/HeaderComponent.vue"
-// export default {};
-const scrolling = (e) => {
-  console.log("hyyy");
-};
 import HeaderComponent from "../layouts/HeaderComponent.vue";
 import FooterComponent from "../layouts/FooterComponent.vue";
 import Carousel from "./components/Carousel.vue";
 import Welcome from "./components/Welcome.vue";
-import BreadComponent from "./components/BreadComponent.vue";
+// import BreadComponent from "./components/BreadComponent.vue";
 import ServiceProvided from "./components/ServiceProvided.vue";
 export default {
   components: {
@@ -37,7 +32,7 @@ export default {
     Carousel,
     Welcome,
     FooterComponent,
-    BreadComponent,
+    // BreadComponent,
     ServiceProvided,
   },
   data: () => ({ value: 0 }),

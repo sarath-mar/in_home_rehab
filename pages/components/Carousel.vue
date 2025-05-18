@@ -159,12 +159,12 @@ export default {
 }
 .banner-subtitle {
   /* font-size: 3em; */
-  font-size: clamp(0.5em, 4vw, 1.5em);
+  font-size: clamp(0.5em, 4vw, 2em);
 
   line-height: 1.333;
   font-weight: 500;
   /* letter-spacing: 0.1rem; */
-  color: var(--secondary-text-color);
+  color:rgb(198 198 198);
   text-align: justify;
   /* margin-top: 0; */
 }

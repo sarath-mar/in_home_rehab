@@ -27,7 +27,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="5">
-            <v-img cover class="welcome-img" src="https://cdn-imgs.dora.run/design/JnRqMCDz82rKlvnIdC0eBQ.webp/w/4096/h/4096/format/webp?"></v-img>
+            <v-img cover class="welcome-img" src="/images/about.webp"></v-img>
             <!-- <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img> -->
             <!-- <welcome-form /> -->
           </v-col>
@@ -38,9 +38,7 @@
 </template>
 
 <script>
-import WelcomeForm from "./WelcomeForm.vue";
 export default {
-  components: { WelcomeForm },
   data() {
     return {
       welcomeItems: [
