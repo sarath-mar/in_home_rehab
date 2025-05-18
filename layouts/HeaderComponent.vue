@@ -56,7 +56,8 @@
     >
       <v-row class="px-10 py-5 app-bar-row align-center" v-show="mdAndUp">
         <v-col>
-          <img src="/images/logo.png" class="mt-2" width="160" alt="" />
+          <!-- <img src="/images/logo.png" class="mt-2" width="160" alt="" /> -->
+           <p class="logo-font">ZAFFRA</p>
         </v-col>
        
         <v-col>
@@ -82,12 +83,13 @@
       </v-row>
       <v-row class="px-10 py-5 app-bar-row align-center" v-show="!mdAndUp">
         <v-col>
-          <img
+          <!-- <img
             src="/images/logo.png"
             class="mt-n2 ml-n7"
             width="110"
             alt=""
-          />
+          /> -->
+          <p>ZAFFRA</p>
         </v-col>
         <v-col>
           <div class="float-right mt-n5 mr-n10">
@@ -288,5 +290,10 @@ export default {
 }
 .header-btn {
   text-transform: capitalize;
+}
+.logo-font{
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: .3em;
 }
 </style>

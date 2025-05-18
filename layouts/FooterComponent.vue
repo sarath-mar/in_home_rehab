@@ -67,12 +67,13 @@
         {{ new Date().getFullYear() }} — <strong>Zaffra</strong>
       </div>
       <div class="">
-        <img
+        <!-- <img
           src="/images/logo.png"
           class="my-2 mt-4 mx-4 footer-img"
           width="150"
           alt=""
-        />
+        /> -->
+        <p>ZAFFRA</p>
       </div>
     </v-footer>
   </v-layout>
