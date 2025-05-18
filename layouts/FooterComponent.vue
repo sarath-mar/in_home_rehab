@@ -64,7 +64,7 @@
       <v-divider></v-divider>
 
       <div class="my-2 date-footer">
-        {{ new Date().getFullYear() }} — <strong>Company Name</strong>
+        {{ new Date().getFullYear() }} — <strong>Zaffra</strong>
       </div>
       <div class="">
         Logo
