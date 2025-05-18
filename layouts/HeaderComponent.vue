@@ -8,7 +8,7 @@
           class="icon-close  float-right mr-5 mt-5"
         />
       </div>
-      <h2 class=" ml-5 mt-5">Company Name</h2>
+      <h2 class=" ml-5 mt-5">Zaffra</h2>
       <div class="mt-5">
         <!-- <v-list :items="items" @click="onClickNav"></v-list> -->
         <v-list-item v-for="(item, i) in items" :key="i">
@@ -85,7 +85,7 @@
           <img
             src="/images/logo.png"
             class="mt-n2 ml-n7"
-            width="160"
+            width="110"
             alt=""
           />
         </v-col>
