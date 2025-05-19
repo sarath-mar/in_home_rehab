@@ -1,5 +1,5 @@
 <template>
-  <div class="py-10 welcome-main" id="in-home-rehab">
+  <div class="py-10 welcome-main" id="about-us">
     <v-row class="align-center">
       <v-col cols="12" md="12">
         <v-row class="align-center">

@@ -89,14 +89,14 @@
             width="110"
             alt=""
           /> -->
-          <p>ZAFFRA</p>
+          <p class="mt-n3 logo-font-mb" >ZAFFRA</p>
         </v-col>
         <v-col>
           <div class="float-right mt-n5 mr-n10">
             <v-menu>
               <template v-slot:activator="{ props }">
                 <!-- <v-btn color="primary" > Dropdown </v-btn> -->
-                <Icon v-bind="props" class="header-icon-1" name="uil:phone" />
+                <Icon v-bind="props" :class="scrollTop ? 'text-black' : 'text-white' " class="header-icon-1" name="uil:phone" />
               </template>
 
               <v-list elevation="3">
@@ -163,21 +163,22 @@ export default {
         {
           title: "Home",
           value: "foo",
-          to: "#in-home-rehab",
+          to: "#home",
         },
         {
           title: "About Us",
           value: "bar",
-          to: "#service-we-provide",
+          to: "#about-us",
         },
-        {
-          title: "Products",
-          value: "fizz",
-          to: "#why-home-therapy",
-        },
+        // {
+        //   title: "Products",
+        //   value: "fizz",
+        //   to: "#why-home-therapy",
+        // },
         {
           title: "Connect With Us",
-          value: "connect",
+          value: "",
+          to:'#footer'
         },
         // {
         //   title: "Carriers",
@@ -295,5 +296,8 @@ export default {
   font-size: 2em;
   font-weight: 700;
   letter-spacing: .3em;
+}
+.logo-font-mb{
+  font-size: 1em;
 }
 </style>

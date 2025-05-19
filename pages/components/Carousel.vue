@@ -1,5 +1,5 @@
 <template>
-  <div id="why-home-therapy">
+  <div id="home">
      <v-row
       class=" "
       :class="'align-center main-carousel'"
@@ -157,7 +157,7 @@ export default {
 }
 .banner-subtitle {
   /* font-size: 3em; */
-  font-size: clamp(2em, 4vw, 2em);
+  font-size: clamp(1.3em, 4vw, 2em);
 
   line-height: 1.333;
   font-weight: 500;

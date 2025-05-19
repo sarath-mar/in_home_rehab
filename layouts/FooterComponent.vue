@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-footer class="footer-main text-center d-flex flex-column">
+    <v-footer class="footer-main text-center d-flex flex-column" id="footer">
       <div class="mt-5">
         <!-- <v-btn
           v-for="icon in socialMedia"
@@ -10,7 +10,7 @@
           variant="text"
         > -->
         <span v-for="icon in socialMedia" :key="icon" class="mx-5 footer-icon">
-          <a class="social-icon text-primary" :href="icon.url"> 
+          <a class="social-icon text-primary" :href="icon.url">
             <Icon :name="icon.icon" />
           </a>
         </span>
@@ -20,7 +20,19 @@
       <v-row>
         <v-col cols="12">
           <div class="mt-5">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo commodi officia eum dolor facere recusandae hic neque distinctio nulla? Sequi odit, voluptate laboriosam cupiditate quibusdam perferendis assumenda magnam maxime commodi.
+            <div class="d-flex ga-4 align-center justify-center  ">
+              <!-- <Icon class="header-icon text-primary" name="uil:phone" /> -->
+              <a class="ml-2 phone-text text-primary" href="tel:+91-9400422107"
+                >Phone : +91 9400422107</a
+              >
+            </div>
+            <div class="d-flex ga-4 align-center justify-center  mt-5">
+              <!-- <Icon name="mdi-email" class="header-icon text-primary" /> -->
+              <a class="ml-2 phone-text text-primary " href="mailto: zaffraspices@gmail.com"
+                >Gmail : zaffraspices@gmail.com</a
+              >
+            </div>
+            <p></p>
           </div>
         </v-col>
         <v-col cols="12">
@@ -82,22 +94,22 @@
 export default {
   data: () => ({
     socialMedia: [
-    {
-          name: "Facebook",
-          icon: "uil:facebook",
-          url: "https://www.facebook.com/",
-        },
-        // { name: "Twitter", icon: "uil:twitter" },
-        {
-          name: "Instagram",
-          icon: "uil:instagram",
-          url: "https://www.instagram.com/",
-        },
-        {
-          name: "Linkedin",
-          icon: "uil:linkedin",
-          url: "https://www.linkedin.com/",
-        },
+      {
+        name: "Facebook",
+        icon: "uil:facebook",
+        url: "https://www.facebook.com/",
+      },
+      // { name: "Twitter", icon: "uil:twitter" },
+      {
+        name: "Instagram",
+        icon: "uil:instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        name: "Linkedin",
+        icon: "uil:linkedin",
+        url: "https://www.linkedin.com/",
+      },
     ],
   }),
 };
@@ -124,7 +136,7 @@ export default {
 }
 hr {
   height: 2px;
-  background-color: rgba(26, 224, 238, 0.466); 
+  background-color: rgba(26, 224, 238, 0.466);
   border: none;
 }
 </style>
