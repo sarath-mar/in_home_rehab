@@ -5,10 +5,11 @@
         <Icon
           name="mdi-close"
           @click="drawer = !drawer"
-          class="icon-close  float-right mr-5 mt-5"
+          class="icon-close float-right mr-5 mt-5"
         />
       </div>
-      <h2 class=" ml-5 mt-5">Zaffra</h2>
+      <!-- <h2 class=" ml-5 mt-5">Zaffra</h2> -->
+      <img src="/images/logo.png" class="mt-2 ml-5" width="120" alt="" />
       <div class="mt-5">
         <!-- <v-list :items="items" @click="onClickNav"></v-list> -->
         <v-list-item v-for="(item, i) in items" :key="i">
@@ -56,28 +57,31 @@
     >
       <v-row class="px-10 py-5 app-bar-row align-center" v-show="mdAndUp">
         <v-col>
-          <!-- <img src="/images/logo.png" class="mt-2" width="160" alt="" /> -->
-           <p class="logo-font">ZAFFRA</p>
+          <img src="/images/logo.png" class="mt-2" width="160" alt="" />
+          <!-- <p class="logo-font">ZAFFRA</p> -->
         </v-col>
-       
+
         <v-col>
           <div class="text-end">
             <!-- <div> -->
-              <ul class="content-list">
-                <li
-                  v-for="(item, i) in items"
-                  :key="i"
-                  class="list-item"
-                  @click="onClickNav(item.value)"
+            <ul class="content-list">
+              <li
+                v-for="(item, i) in items"
+                :key="i"
+                class="list-item"
+                @click="onClickNav(item.value)"
+              >
+                <a
+                  :href="item.to"
+                  :class="scrollTop ? 'text-black' : 'text-white'"
+                  style="text-decoration: none"
                 >
-          <a :href="item.to" :class="scrollTop ? 'text-black' : 'text-white'" style="text-decoration: none">
+                  {{ item.title }}
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                 {{ item.title }}
-          </a>
-                </li>
-              </ul>
-            </div>
-            
           <!-- </div> -->
         </v-col>
       </v-row>
@@ -89,14 +93,19 @@
             width="110"
             alt=""
           /> -->
-          <p class="mt-n3 logo-font-mb" >ZAFFRA</p>
+          <img src="/images/logo.png" class="mt-2" width="160" alt="" />
         </v-col>
         <v-col>
           <div class="float-right mt-n5 mr-n10">
             <v-menu>
               <template v-slot:activator="{ props }">
                 <!-- <v-btn color="primary" > Dropdown </v-btn> -->
-                <Icon v-bind="props" :class="scrollTop ? 'text-black' : 'text-white' " class="header-icon-1" name="uil:phone" />
+                <Icon
+                  v-bind="props"
+                  :class="scrollTop ? 'text-black' : 'text-white'"
+                  class="header-icon-1"
+                  name="uil:phone"
+                />
               </template>
 
               <v-list elevation="3">
@@ -178,7 +187,7 @@ export default {
         {
           title: "Connect With Us",
           value: "",
-          to:'#footer'
+          to: "#footer",
         },
         // {
         //   title: "Carriers",
@@ -187,7 +196,7 @@ export default {
       ],
     };
   },
-   mounted() {
+  mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
   beforeUnmount() {
@@ -197,7 +206,7 @@ export default {
     closeIcon() {
       this.carrierPop = false;
     },
-     handleScroll() {
+    handleScroll() {
       // You can adjust the scroll threshold as needed
       this.scrollTop = window.scrollY > 10;
     },
@@ -222,7 +231,7 @@ export default {
 };
 </script>
 <style>
-.content-list{
+.content-list {
   display: flex;
   justify-content: end;
   gap: 40px;
@@ -247,15 +256,15 @@ export default {
   /* display: flex; */
   /* align-items: center; */
   justify-content: center;
-  
+
   /* position: absolute; */
 }
-.active-app{
+.active-app {
   color: black !important;
   background-color: white !important;
   transition: all 0.3s ease;
 }
-.disable-app{
+.disable-app {
   color: white !important;
   background-color: transparent !important;
   transition: all 0.3s ease;
@@ -292,12 +301,12 @@ export default {
 .header-btn {
   text-transform: capitalize;
 }
-.logo-font{
+.logo-font {
   font-size: 2em;
   font-weight: 700;
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
 }
-.logo-font-mb{
+.logo-font-mb {
   font-size: 1em;
 }
 </style>

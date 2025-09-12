@@ -3,8 +3,9 @@
     <div class="header-content">
       <header-component />
     </div>
-    <div class=" px-5 px-md-10 home-bg" 
+    <div class="home-bg" 
       >
+    
       <carousel />
     </div>
     <div class="">
@@ -96,7 +97,7 @@ html {
 }
 .home-bg{
   
-      background-image: url('https://wallpapercrafter.com/desktop1/652587-pepper-cinnamon-spices-ginger-cardamom-paprika.jpg');
+    background-image: url('/images/video1.mp4');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;

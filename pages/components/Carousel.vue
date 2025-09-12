@@ -1,21 +1,19 @@
 <template>
   <div id="home">
-     <v-row
-      class=" "
-      :class="'align-center main-carousel'"
-    >
-    <v-col cols="12" class="d-flex flex-column justify-center">
-      
-        <div class="d-flex flex-column justify-center fill-height px-16">
-          <h2 class="banner-header text-white ">
-            Discover the Luxury of Zaffra Spices
-          </h2>
-          <p class="banner-subtitle mt-5">
-          The finest expression of spice</p>
-        </div>
-    
-    </v-col>
-     </v-row>
+    <v-row class=" " :class="' main-carousel'" no-gutters>
+      <v-col cols="6" >
+        <video autoplay muted loop playsinline class="video-banner">
+          <source src="/images/video1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </v-col>
+      <v-col cols="6" >
+        <video autoplay muted loop playsinline class="video-banner">
+          <source src="/images/video2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </v-col>
+    </v-row>
   </div>
 </template>
 <script>
@@ -99,6 +97,15 @@ export default {
 };
 </script>
 <style>
+.video-banner {
+  width:100%;
+  height: 100vh;
+  object-fit: cover;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 .social-icon {
   text-decoration: none;
 }
@@ -139,7 +146,7 @@ export default {
   justify-content: center;
 }
 .main-carousel {
-  min-height: 95vh;
+  /* height: 100vh; */
 }
 .carousel-item {
   /* background-color: red; */
@@ -162,7 +169,7 @@ export default {
   line-height: 1.333;
   font-weight: 500;
   /* letter-spacing: 0.1rem; */
-  color:rgb(237, 233, 233);
+  color: rgb(237, 233, 233);
   /* text-align: justify; */
   /* margin-top: 0; */
 }
