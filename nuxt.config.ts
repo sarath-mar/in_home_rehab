@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "zaffra",
+      title: "Kalariparambil",
       meta: [{ name: "description", content: "" }],
       link: [
         {
