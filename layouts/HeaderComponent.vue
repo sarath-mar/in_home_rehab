@@ -85,7 +85,7 @@
           <!-- </div> -->
         </v-col>
       </v-row>
-      <v-row class="px-10 py-5 app-bar-row align-center" v-show="!mdAndUp">
+      <v-row class="px-2 py-5 app-bar-row align-center" v-show="!mdAndUp">
         <v-col>
           <!-- <img
             src="/images/logo.png"
