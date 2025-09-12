@@ -85,7 +85,7 @@
           <!-- </div> -->
         </v-col>
       </v-row>
-      <v-row class="px-2 py-5 app-bar-row align-center" v-show="!mdAndUp">
+      <v-row class="pr-10 pl-2 py-5 app-bar-row align-center" v-show="!mdAndUp">
         <v-col>
           <!-- <img
             src="/images/logo.png"
@@ -93,7 +93,7 @@
             width="110"
             alt=""
           /> -->
-          <img src="/images/logo.png" class="mt-2" width="160" alt="" />
+          <img src="/images/logo.png" width="160" alt="" />
         </v-col>
         <v-col>
           <div class="float-right mt-n5 mr-n10">
