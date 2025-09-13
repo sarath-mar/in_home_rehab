@@ -1,31 +1,17 @@
 <template>
-  <div class="py-10 welcome-main" id="about-us">
-    <v-row class="align-center">
-      <v-col cols="12" md="12">
-        <v-row class="align-center">
-          <v-col cols="12" md="7">
-            <div>
-              <h4 class="welcome-who">About Us</h4>
-              <!-- <h4 class="welcome-who">Explore Our Cardamom Collection</h4> -->
-              <!-- <h2 class="heading-text">Cardamom: The Queen of Spices</h2> -->
-              <h2 class="heading-text">Elevate Your Culinary Journey</h2>
-              <p class="paragraph-text mt-5">
-                For over 30 years, zaffra has been dedicated to producing the
-                finest premium cardamom. Each pod is carefully handpicked to
-                ensure exceptional aroma, rich flavor, and unmatched quality.
-                Rooted in tradition and refined by expertise, we deliver a
-                luxurious spice experience that elevates every dish. Our
-                commitment to excellence and sustainable practices has made us a
-                trusted name among discerning customers worldwide
-              </p>
-            </div>
-          </v-col>
-          <v-col cols="12" md="5">
-            <v-img cover class="welcome-img" src="/images/about.webp"></v-img>
-            <!-- <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img> -->
-            <!-- <welcome-form /> -->
-          </v-col>
-        </v-row>
+  <div class=" welcome-main" id="about-us">
+    <v-row class="align-center" no-gutters>
+      <v-col cols="3" >
+        <img class="welcome-img" src="/images/1.png" alt="">
+      </v-col>
+      <v-col cols="3" >
+        <img class="welcome-img" src="/images/4.png" alt="">
+      </v-col>
+      <v-col cols="3" >
+        <img class="welcome-img" src="/images/3.png" alt="">
+      </v-col>
+      <v-col cols="3" >
+        <img class="welcome-img" src="/images/4.png" alt="">
       </v-col>
     </v-row>
   </div>
@@ -85,7 +71,8 @@ export default {
 }
 .welcome-img {
   height: 90vh;
-  border-radius: 20px;
+  width: 100%;
+  /* border-radius: 20px; */
 }
 
 .welcome-who {

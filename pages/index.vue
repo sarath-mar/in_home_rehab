@@ -9,7 +9,7 @@
       <carousel />
     </div>
     <div class="">
-      <div class="welcome-div px-10 pb-15">
+      <div class="welcome-div">
         <welcome />
       </div>
       <div class="px-10" id="service-provided">
@@ -88,7 +88,7 @@ html {
 .welcome-div {
   /* background-image: url(../public/images/bg_image.png); */
   /* padding: 60px 0px 90px 0px; */
-  padding: 10px;
+  /* padding: 10px; */
   padding-top: 0px;
 
   background-color: var(--primary-background);

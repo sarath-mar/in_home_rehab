@@ -1,17 +1,20 @@
 <template>
   <div id="home">
     <v-row class=" " :class="' main-carousel'" no-gutters>
-      <v-col cols="6" >
+      <!-- <v-col cols="6" >
         <video autoplay muted loop playsinline class="video-banner">
           <source src="/images/video1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </v-col>
+      </v-col> -->
       <v-col cols="6" >
         <video autoplay muted loop playsinline class="video-banner">
           <source src="/images/video2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      </v-col>
+      <v-col cols="6" >
+       <img class="video-banner" src="/images/one.jpg" alt="">
       </v-col>
     </v-row>
   </div>
@@ -105,6 +108,7 @@ export default {
   top: 0;
   left: 0;
   z-index: -1;
+  aspect-ratio: 16/9;
 }
 .social-icon {
   text-decoration: none;
