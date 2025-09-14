@@ -3,20 +3,20 @@
     <div class="header-content">
       <header-component />
     </div>
-    <div class="home-bg" 
-      >
-    
+    <div class="home-bg">
       <carousel />
     </div>
     <div class="">
       <div class="welcome-div">
         <welcome />
       </div>
-      <div class="px-10" id="service-provided">
+      <!-- <bread-component/> -->
+      <customize />
+      <!-- <div class="px-10" id="service-provided">
         <service-provided />
-      </div>
+      </div> -->
     </div>
-    <footer-component />
+    <!-- <footer-component /> -->
   </div>
 </template>
 
@@ -25,7 +25,8 @@ import HeaderComponent from "../layouts/HeaderComponent.vue";
 import FooterComponent from "../layouts/FooterComponent.vue";
 import Carousel from "./components/Carousel.vue";
 import Welcome from "./components/Welcome.vue";
-// import BreadComponent from "./components/BreadComponent.vue";
+import BreadComponent from "./components/BreadComponent.vue";
+import Customize from "./components/Customize.vue"; 
 import ServiceProvided from "./components/ServiceProvided.vue";
 export default {
   components: {
@@ -33,8 +34,9 @@ export default {
     Carousel,
     Welcome,
     FooterComponent,
-    // BreadComponent,
+    BreadComponent,
     ServiceProvided,
+    Customize,
   },
   data: () => ({ value: 0 }),
   methods: {
@@ -91,17 +93,16 @@ html {
   /* padding: 10px; */
   padding-top: 0px;
 
-  background-color: var(--primary-background);
+  background-color: black;
   /* min-height: 100vh; */
   /* margin-top: -160px; */
 }
-.home-bg{
-  
-    background-image: url('/images/video1.mp4');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
+.home-bg {
+  background-image: url("/images/video1.mp4");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 .welcome-component {
   padding: 100px 0px;

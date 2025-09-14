@@ -1,17 +1,23 @@
 <template>
   <div class=" welcome-main" id="about-us">
     <v-row class="align-center" no-gutters>
-      <v-col cols="3" >
-        <img class="welcome-img" src="/images/1.png" alt="">
+      <v-col class="d-flex align-center" cols="6" sm="4" md="2" >
+        <img class="welcome-img" src="/images/bangles/1.jpg" alt="">
       </v-col>
-      <v-col cols="3" >
-        <img class="welcome-img" src="/images/4.png" alt="">
+      <v-col class="d-flex align-center" cols="6" sm="4" md="2" >
+        <img class="welcome-img" src="/images/ear_rings/4.jpg" alt="">
       </v-col>
-      <v-col cols="3" >
-        <img class="welcome-img" src="/images/3.png" alt="">
+      <v-col class="d-flex align-center" cols="6" sm="4" md="2" >
+        <img class="welcome-img" src="/images/necklace/3.jpg" alt="">
       </v-col>
-      <v-col cols="3" >
-        <img class="welcome-img" src="/images/4.png" alt="">
+      <v-col class="d-flex align-center" cols="6" sm="4" md="2" >
+        <img class="welcome-img" src="/images/bangles/4.jpg" alt="">
+      </v-col>
+      <v-col class="d-flex align-center" cols="6" sm="4" md="2" >
+        <img class="welcome-img" src="/images/rings/4.jpg" alt="">
+      </v-col>
+       <v-col  class="d-flex align-center" cols="6" sm="4" md="2" >
+        <img class="welcome-img" src="/images/necklace/1.jpg" alt="">
       </v-col>
     </v-row>
   </div>
@@ -70,8 +76,9 @@ export default {
   color: var(--primary-text-color);
 }
 .welcome-img {
-  height: 90vh;
+  /* height: 50vh; */
   width: 100%;
+  aspect-ratio: 3/2;
   /* border-radius: 20px; */
 }
 
