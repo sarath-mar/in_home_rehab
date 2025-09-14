@@ -98,7 +98,7 @@ html {
   /* margin-top: -160px; */
 }
 .home-bg {
-  background-image: url("/images/video1.mp4");
+  /* background-image: url("/images/video1.mp4"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
