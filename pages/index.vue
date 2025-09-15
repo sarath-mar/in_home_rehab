@@ -10,13 +10,14 @@
       <div class="welcome-div">
         <welcome />
       </div>
-      <!-- <bread-component/> -->
+    
       <customize />
+      <!-- <bread-component/> -->
       <!-- <div class="px-10" id="service-provided">
         <service-provided />
       </div> -->
     </div>
-    <!-- <footer-component /> -->
+    <footer-component />
   </div>
 </template>
 

@@ -9,7 +9,7 @@
       </v-col> -->
       <v-col cols="6" >
         <video autoplay muted loop playsinline class="video-banner">
-          <source src="/images/video2.mp4" type="video/mp4" />
+          <source src="/images/v.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </v-col>

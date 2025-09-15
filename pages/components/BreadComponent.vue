@@ -2,8 +2,8 @@
   <v-row>
     <v-col cols="12" md="8">
       <v-card color="" class="left-bread pa-5" elevation="10" variant="">
-        <v-row>
-          <v-col cols="12" md="6">
+        <v-row no-gutters>
+          <v-col cols="12" md="6" class="pa-0 ma-0">
             <v-card-item>
               <div>
                 <div class="bread-text mb-1">Comp</div>
@@ -19,7 +19,7 @@
               <v-btn variant="outlined"> Button </v-btn>
             </v-card-actions> -->
           </v-col>
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="6" class="pa-0 ma-0">
             <v-card-item>
               <div>
                 <div class="bread-text mb-1">Services We Provide</div>

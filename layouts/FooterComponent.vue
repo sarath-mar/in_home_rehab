@@ -10,7 +10,7 @@
           variant="text"
         > -->
         <span v-for="icon in socialMedia" :key="icon" class="mx-5 footer-icon">
-          <a class="social-icon text-primary" :href="icon.url">
+          <a class="social-icon text-white" :href="icon.url">
             <Icon :name="icon.icon" />
           </a>
         </span>
@@ -21,15 +21,15 @@
         <v-col cols="12">
           <div class="mt-5">
             <div class="d-flex ga-4 align-center justify-center  ">
-              <!-- <Icon class="header-icon text-primary" name="uil:phone" /> -->
-              <a class="ml-2 phone-text text-primary" href="tel:+91-9400422107"
+              <!-- <Icon class="header-icon text" name="uil:phone" /> -->
+              <a class="ml-2 phone-text text" href="tel:+91-9400422107"
                 >Phone : +91 9400422107</a
               >
             </div>
             <div class="d-flex ga-4 align-center justify-center  mt-5">
-              <!-- <Icon name="mdi-email" class="header-icon text-primary" /> -->
-              <a class="ml-2 phone-text text-primary " href="mailto: zaffraspices@gmail.com"
-                >Gmail : zaffraspices@gmail.com</a
+              <!-- <Icon name="mdi-email" class="header-icon text" /> -->
+              <a class="ml-2 phone-text text " href="mailto: kalari@gmail.com"
+                >Gmail : kalari@gmail.com</a
               >
             </div>
             <p></p>
@@ -76,7 +76,7 @@
       <v-divider></v-divider>
 
       <div class="my-2 date-footer">
-        {{ new Date().getFullYear() }} — <strong>Zaffra</strong>
+        {{ new Date().getFullYear() }} — <strong>Kalariparambil</strong>
       </div>
       <div class="">
         <!-- <img
@@ -85,7 +85,7 @@
           width="150"
           alt=""
         /> -->
-        <p>ZAFFRA</p>
+        <p>Kalariparambil</p>
       </div>
     </v-footer>
   </v-layout>
@@ -116,15 +116,15 @@ export default {
 </script>
 <style>
 .footer-main {
-  background-color: var(--secondary-text-color);
+  background-color: black;
   color: white;
   height: 300px;
 }
 .date-footer {
-  color: var(--primary-text-color);
+  color: white;
 }
 .footer-icon {
-  color: var(--primary-text-color);
+  color: white; 
   font-size: 27px;
   cursor: pointer;
 }

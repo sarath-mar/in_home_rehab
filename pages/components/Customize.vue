@@ -1,18 +1,9 @@
 <template>
-  <div class="container">
-    <div class="left">
-      <img src="/images/3.png" alt="Left Image" />
-    </div>
-    <div class="right-top">
-      <img src="/images/bangles/5.jpg" alt="Top Right Image" />
-    </div>
-    <div class="right-bottom">
-      <img src="/images/bangles/8.jpg" alt="Bottom Right Image" />
-    </div>
-  </div>
+  <common-banner-with-card />
 </template>
 
 <script setup>
+import CommonBannerWithCard from '../common/banner-with-card.vue';
 // No script needed unless you're dynamically loading images
 </script>
 
