@@ -102,7 +102,7 @@ export default {
 <style>
 .video-banner {
   width:100%;
-  height: 100dvh;
+  height: 100vh;
   object-fit: cover;
   /* position: absolute; */
   top: 0;

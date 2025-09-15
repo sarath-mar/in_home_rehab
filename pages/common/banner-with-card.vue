@@ -58,6 +58,7 @@
     width:100%;
     height: 100%;
     object-fit: cover;
+    min-height: 80vh;
   }
   .social-icon {
     text-decoration: none;
