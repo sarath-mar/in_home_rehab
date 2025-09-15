@@ -122,8 +122,8 @@
                     <Icon name="mdi-email" class="header-icon" />
                     <a
                       class="ml-2 phone-text"
-                      href="mailto: zaffraspices@gmail.com"
-                      >zaffraspices@gmail.com</a
+                      href="mailto: Kalariparampiljewellers@gmail.com"
+                      >Kalariparampiljewellers@gmail.com</a
                     >
                   </v-list-item-title>
                 </v-list-item>

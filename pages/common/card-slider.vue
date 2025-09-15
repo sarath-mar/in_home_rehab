@@ -18,10 +18,10 @@
         </v-sheet>
       </v-carousel-item>
     </v-carousel>
-    <div class="card-slider-text pa-3">
+    <!-- <div class="card-slider-text pa-3">
       <p class="sub-one">Rose gold ceramic</p>
       <h4>B zero 1 Earrings</h4>
-    </div>
+    </div> -->
   </div>
 </template>
 <script setup>

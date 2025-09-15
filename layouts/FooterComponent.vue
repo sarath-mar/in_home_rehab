@@ -28,8 +28,8 @@
             </div>
             <div class="d-flex ga-4 align-center justify-center  mt-5">
               <!-- <Icon name="mdi-email" class="header-icon text" /> -->
-              <a class="ml-2 phone-text text " href="mailto: kalari@gmail.com"
-                >Gmail : kalari@gmail.com</a
+              <a class="ml-2 phone-text text " href="mailto: Kalariparampiljewellers@gmail.com"
+                >Gmail : Kalariparampiljewellers@gmail.com</a
               >
             </div>
             <p></p>
@@ -37,38 +37,6 @@
         </v-col>
         <v-col cols="12">
           <div>
-            <!-- <h4 class="paragraph-text mt-5 text-primary text-center">
-              Contact Us
-            </h4> -->
-            <!-- <hr class="" />
-            <v-row class="my-2 justify-center">
-              <v-col cols="12" md="4">
-                <div>
-                  <Icon class="header-icon-1" name="uil:phone" />
-                </div>
-                <div class="mt-5">
-                  <h3 class="ml-2">+91 9876 543210</h3>
-                  <h3 class="ml-2">+91 9874 561230</h3>
-                </div>
-              </v-col>
-              <v-col cols="12" md="4">
-                <div>
-                  <Icon class="header-icon-1" name="mdi-email" />
-                </div>
-                <div class="mt-5">
-                  <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
-                </div>
-              </v-col>
-              <v-col cols="12" md="4">
-                <div>
-                  <Icon class="header-icon-1" name="mdi-location" />
-                </div>
-                <div class="mt-5">
-                  <span class="ml-2 mail-text">inhomerehab@gmail.com</span>
-                </div>
-              </v-col>
-            </v-row>
-            <hr /> -->
           </div>
         </v-col>
       </v-row>
