@@ -36,7 +36,7 @@ const props = defineProps({
 });
 
 const height = computed(() => {
-  return mobile.value ? '300' : '500';
+  return mobile.value ? '250' : '500';
 });
 </script>
 <style scoped>
