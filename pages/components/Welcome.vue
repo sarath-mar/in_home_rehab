@@ -182,38 +182,4 @@ export default {
 .welcome-li-div {
   display: flex;
 }
-.welcome-ul {
-  list-style: none;
-  /* display: ; */
-}
-.welcome-li-div h4 {
-  font-size: clamp(1em, 4vw, 1.5em);
-  line-height: 1.333;
-  font-weight: 900;
-}
-.welcome-li-div h6 {
-  font-size: clamp(0.5em, 4vw, 1em);
-  line-height: 1.333;
-  font-weight: 900;
-}
-.welcome-ul li {
-  margin-bottom: 30px;
-}
-.icon-welcome {
-  font-size: 60px;
-  font-weight: 900;
-  color: var(--primary-text-color);
-}
-.welcome-img {
-  /* height: 50vh; */
-  height: 420px;
-  width: 100%;
-  aspect-ratio: 3/2;
-  /* border-radius: 20px; */
-}
-
-.welcome-who {
-  font-size: clamp(0.8em, 4vw, 1.5em);
-  color: var(--primary-text-color);
-}
 </style>
