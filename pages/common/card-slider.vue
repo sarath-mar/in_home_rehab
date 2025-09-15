@@ -48,7 +48,8 @@ const props = defineProps({
   opacity: 1;
 }
 .card-slider {
-  position: relative;
+  /* position: relative; */
+  width: 100%;
 }
 .card-slider-text {
   /* position: absolute; */
@@ -65,5 +66,6 @@ const props = defineProps({
 }
 .card-slider-container{
    background-color: black;
+   width: 100%;
 }
 </style>

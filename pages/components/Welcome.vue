@@ -1,30 +1,30 @@
 <template>
   <div class=" welcome-main" id="about-us">
     <v-row class="align-center" no-gutters>
-      <v-col class="d-flex align-center" cols="12" sm="6" md="3" >
+      <v-col class="d-flex align-center" cols="6"  md="3" >
          <common-card-slider :slides="slides1" />
       </v-col>
-        <v-col class="d-flex align-center" cols="12" sm="6" md="3" >
+        <v-col class="d-flex align-center" cols="6"  md="3" >
           <common-card-slider :slides="slides2" />
         </v-col>
-        <v-col class="d-flex align-center" cols="12" sm="6" md="3" >
+        <v-col class="d-flex align-center" cols="6"  md="3" >
           <common-card-slider :slides="slides3" />
         </v-col>
-        <v-col class="d-flex align-center" cols="12" sm="6" md="3" >
+        <v-col class="d-flex align-center" cols="6"  md="3" >
           <common-card-slider :slides="slides4" />
         </v-col>
     </v-row>
     <v-row class="align-center" no-gutters>
-      <v-col class="d-flex align-center" cols="12" sm="6" md="3" >
+      <v-col class="d-flex align-center" cols="6"   md="3" >
          <common-card-slider :slides="slides5" />
       </v-col>
-        <v-col class="d-flex align-center" cols="12" sm="6" md="3" >
+        <v-col class="d-flex align-center" cols="6" md="3" >
           <common-card-slider :slides="slides6" />
         </v-col>
-        <v-col class="d-flex align-center" cols="12" sm="6" md="3" >
+        <v-col class="d-flex align-center" cols="6" md="3" >
           <common-card-slider :slides="slides7" />
         </v-col>
-        <v-col class="d-flex align-center" cols="12" sm="6" md="3" >
+        <v-col class="d-flex align-center" cols="6" md="3" >
           <common-card-slider :slides="slides8" />
         </v-col>
     </v-row>
