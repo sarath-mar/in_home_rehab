@@ -1,7 +1,7 @@
 <template>
   <div class="card-slider-container">
     <v-carousel
-      height="500"
+      :height="height"
       hide-delimiters
       show-arrows="hover"
       class="card-slider"
@@ -25,11 +25,18 @@
   </div>
 </template>
 <script setup>
+import { useDisplay } from 'vuetify/lib/framework.mjs';
+
+const { mobile } = useDisplay();
 const props = defineProps({
   slides: {
     type: Array,
     required: true,
   },
+});
+
+const height = computed(() => {
+  return mobile.value ? '300' : '500';
 });
 </script>
 <style scoped>
