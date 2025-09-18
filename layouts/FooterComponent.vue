@@ -10,7 +10,7 @@
           variant="text"
         > -->
         <span v-for="icon in socialMedia" :key="icon" class="mx-5 footer-icon">
-          <a class="social-icon text-white" :href="icon.url">
+          <a target="_blank" class="social-icon text-white" :href="icon.url">
             <Icon :name="icon.icon" />
           </a>
         </span>
@@ -29,7 +29,7 @@
             <div class="d-flex ga-4 align-center justify-center  mt-5">
               <!-- <Icon name="mdi-email" class="header-icon text" /> -->
               <a class="ml-2 phone-text text " href="mailto: Kalariparampiljewellers@gmail.com"
-                >Gmail : Kalariparampiljewellers@gmail.com</a
+                >Gmail : kalariparampiljewellers@gmail.com</a
               >
             </div>
             <p></p>
@@ -44,7 +44,7 @@
       <v-divider></v-divider>
 
       <div class="my-2 date-footer">
-        {{ new Date().getFullYear() }} — <strong>Kalariparambil</strong>
+        {{ new Date().getFullYear() }} — <strong>Kalariparampil</strong>
       </div>
       <div class="">
         <!-- <img
@@ -53,7 +53,7 @@
           width="150"
           alt=""
         /> -->
-        <p>Kalariparambil</p>
+        <p>Kalariparampil</p>
       </div>
     </v-footer>
   </v-layout>
@@ -71,7 +71,7 @@ export default {
       {
         name: "Instagram",
         icon: "uil:instagram",
-        url: "https://www.instagram.com/",
+        url: "https://www.instagram.com/kalariparampiljewellers?igsh=MWtyZWc2OGdodGF2Nw%3D%3D&utm_source=qr",
       },
       {
         name: "Linkedin",
