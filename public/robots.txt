@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://iriscdc.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /login
+Disallow: /api/
+
+# Allow pages
+Allow: /gallery
