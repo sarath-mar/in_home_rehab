@@ -22,7 +22,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
-const auth = getAuth(app)
+let auth = null;
+if (process.client) {
+    auth = getAuth(app);
+}
 const newsCollection = collection(db, "latest-news")
 const galleryCollection = collection(db, "gallery")
 const blogCollection = collection(db, "blog")
