@@ -112,8 +112,8 @@
                 <v-list-item>
                   <v-list-item-title>
                     <Icon class="header-icon" name="uil:phone" />
-                    <a class="ml-2 phone-text" href="tel:+91-9400422107"
-                      >+91-9400422107</a
+                    <a class="ml-2 phone-text" href="tel:+91-04812422057"
+                      >0481 2422057</a
                     >
                   </v-list-item-title>
                 </v-list-item>

@@ -22,8 +22,8 @@
           <div class="mt-5">
             <div class="d-flex ga-4 align-center justify-center  ">
               <!-- <Icon class="header-icon text" name="uil:phone" /> -->
-              <a class="ml-2 phone-text text" href="tel:+91-9400422107"
-                >Phone : +91 9400422107</a
+              <a class="ml-2 phone-text text" href="tel:+91-04812422057"
+                >Phone : 0481 2422057</a
               >
             </div>
             <div class="d-flex ga-4 align-center justify-center  mt-5">
