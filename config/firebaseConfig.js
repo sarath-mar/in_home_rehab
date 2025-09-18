@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs,updateDoc, serverTimestamp, query,Timestamp, orderBy,deleteDoc ,doc} from "firebase/firestore"
+import { getFirestore, collection, addDoc, getDocs, updateDoc, serverTimestamp, query, Timestamp, orderBy, deleteDoc, doc } from "firebase/firestore"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { getDownloadURL, getStorage, ref, uploadBytes,deleteObject } from "firebase/storage";
+import { getDownloadURL, getStorage, ref, uploadBytes, deleteObject } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,18 +22,24 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
-const auth = getAuth(app)
+
+// Initialize auth only on client side
+let auth = null;
+if (process.client) {
+    auth = getAuth(app);
+}
+
 const newsCollection = collection(db, "latest-news")
 const galleryCollection = collection(db, "gallery")
 const blogCollection = collection(db, "blog")
 const irisConnectWithUsCollection = collection(db, "iris-connect-with-us")
 
 export {
-    addDoc,getDocs,deleteDoc,doc,deleteObject,updateDoc,
+    addDoc, getDocs, deleteDoc, doc, deleteObject, updateDoc,
     db,
     auth,
-    serverTimestamp,query, orderBy,Timestamp,
-    newsCollection, galleryCollection,blogCollection,irisConnectWithUsCollection,
+    serverTimestamp, query, orderBy, Timestamp,
+    newsCollection, galleryCollection, blogCollection, irisConnectWithUsCollection,
     signInWithEmailAndPassword,
     getDownloadURL, getStorage, ref, uploadBytes
 }
