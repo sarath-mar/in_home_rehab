@@ -17,6 +17,7 @@
        <img class="video-banner" src="/images/one.jpg" alt="">
       </v-col>
     </v-row>
+    
   </div>
 </template>
 <script>

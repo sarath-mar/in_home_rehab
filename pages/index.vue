@@ -7,14 +7,16 @@
       <carousel />
     </div>
     <div class="">
+      <service-provided />
       <div class="welcome-div">
         <welcome />
       </div>
     
       <customize />
+      
+
       <!-- <bread-component/> -->
       <!-- <div class="px-10" id="service-provided">
-        <service-provided />
       </div> -->
     </div>
     <footer-component />
@@ -64,7 +66,8 @@ html {
   opacity: 0;
 }
 .heading-text {
-  font-size: clamp(2em, 4vw, 3em);
+  font-size: 22px;
+  /* font-size: clamp(2em, 4vw, 3em); */
   /* line-height: 1.333; */
   font-weight: 900;
   /* letter-spacing: 0.1rem; */
@@ -72,7 +75,8 @@ html {
   color: var(--secondary-text-color);
 }
 .paragraph-text {
-  font-size: clamp(1em, 4vw, 1.5em);
+  font-size: 20px;
+  /* font-size: clamp(1em, 4vw, 1.5em); */
   /* font-weight: 600; */
   /* letter-spacing: 0.1rem; */
   text-align: justify;

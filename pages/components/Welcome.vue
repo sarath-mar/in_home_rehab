@@ -1,5 +1,5 @@
 <template>
-  <div class=" welcome-main" id="about-us">
+  <div class=" welcome-main">
     <v-row class="align-center" no-gutters>
       <v-col class="d-flex align-center" cols="6"  md="3" >
          <common-card-slider :slides="slides1" />
