@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
+  <!-- Homepage -->
   <url>
     <loc>https://iriscdc.com/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
@@ -14,11 +15,44 @@
     </image:image>
   </url>
   
+  <!-- Gallery Page -->
   <url>
     <loc>https://iriscdc.com/gallery</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  
+  <!-- About Us Section -->
+  <url>
+    <loc>https://iriscdc.com/#about-us</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Services Section -->
+  <url>
+    <loc>https://iriscdc.com/#service-provided</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Latest News Section -->
+  <url>
+    <loc>https://iriscdc.com/#latest-news</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Contact Section -->
+  <url>
+    <loc>https://iriscdc.com/#contact-us</loc>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
 </urlset>

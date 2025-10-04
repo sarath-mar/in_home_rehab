@@ -22,7 +22,13 @@
           </div>
         </v-col>
         <v-col cols="12">
-          <div></div>
+          <div class="footer-links mt-3">
+            <a href="/" class="footer-link">Home</a> |
+            <a href="/gallery" class="footer-link">Gallery</a> |
+            <a href="/#about-us" class="footer-link">About Us</a> |
+            <a href="/#service-provided" class="footer-link">Our Services</a> |
+            <a href="/#contact-us" class="footer-link">Contact Us</a>
+          </div>
         </v-col>
       </v-row>
 
@@ -89,6 +95,18 @@ export default {
 }
 .footer-content{
   font-size: 21px;
+}
+.footer-links {
+  font-size: 16px;
+}
+.footer-link {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: white;
 }
 .footer-form-col {
   /* position: absolute; */

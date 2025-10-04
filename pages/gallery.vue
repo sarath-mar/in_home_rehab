@@ -94,6 +94,55 @@ export default {
     // Destructure only the keys we want to use
     const { xs, mdAndUp } = useDisplay();
 
+    // SEO metadata
+    useHead({
+      title: "Gallery - Iris Child Development Centre | Calicut, Kerala",
+      meta: [
+        { 
+          name: "description", 
+          content: "View our gallery showcasing the activities, therapy sessions, and achievements at Iris Child Development Centre in Calicut, Kerala. See how we help children reach their potential." 
+        },
+        { 
+          name: "keywords", 
+          content: "child development centre gallery, occupational therapy photos, speech therapy images, special education activities, autism therapy gallery, ADHD therapy pictures, Calicut, Kerala, Kozhikode" 
+        },
+        { 
+          property: "og:title", 
+          content: "Gallery - Iris Child Development Centre | Calicut, Kerala" 
+        },
+        { 
+          property: "og:description", 
+          content: "View our gallery showcasing the activities, therapy sessions, and achievements at Iris Child Development Centre in Calicut, Kerala." 
+        },
+        { 
+          property: "og:type", 
+          content: "website" 
+        },
+        { 
+          property: "og:url", 
+          content: "https://iriscdc.com/gallery" 
+        },
+        { 
+          name: "twitter:card", 
+          content: "summary_large_image" 
+        },
+        { 
+          name: "twitter:title", 
+          content: "Gallery - Iris Child Development Centre" 
+        },
+        { 
+          name: "twitter:description", 
+          content: "View our gallery showcasing activities and achievements at Iris Child Development Centre in Calicut, Kerala." 
+        }
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: "https://iriscdc.com/gallery"
+        }
+      ]
+    });
+
     return { xs, mdAndUp };
   },
   data() {

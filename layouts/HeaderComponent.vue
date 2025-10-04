@@ -11,8 +11,13 @@
       <h2 class="text-color ml-5 mt-5">Iris</h2>
       <div class="mt-5">
         <v-list-item v-for="(item, i) in items" :key="i">
-          <a class="text-color" style="text-decoration: none">
-            <v-list-item-title class="ml-5 list-item" @click="onClickNav(item)">
+          <a 
+            :href="item.route + (item.hash || '')" 
+            class="text-color" 
+            style="text-decoration: none"
+            @click="onClickNav(item)"
+          >
+            <v-list-item-title class="ml-5 list-item">
               <Icon name="mdi-greater-than" class="mr-2 text-color"></Icon
               >{{ item.title }}
             </v-list-item-title>
@@ -43,8 +48,14 @@
         </v-col>
         <v-col cols="6" justify-center>
           <ul class="header-list">
-            <li v-for="(item, i) in items" :key="i" @click="onClickNav(item)">
-              {{ item.title }}
+            <li v-for="(item, i) in items" :key="i">
+              <a 
+                :href="item.route + (item.hash || '')" 
+                @click="onClickNav(item)"
+                class="nav-link"
+              >
+                {{ item.title }}
+              </a>
             </li>
           </ul>
         </v-col>
@@ -275,23 +286,28 @@ export default {
   justify-content: space-around;
   li {
     list-style: none;
-    color: var(--primary-text-color);
-    font-size: 22px;
-    cursor: pointer;
     position: relative;
     padding-bottom: 3px;
   }
-  li::after {
+  .nav-link {
+    color: var(--primary-text-color);
+    font-size: 22px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    position: relative;
+  }
+  .nav-link::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     width: 0;
     height: 4px;
     background-color: var(--underline-color);
     transition: width 0.3s ease;
   }
-  li:hover::after {
+  .nav-link:hover::after {
     width: 100%;
   }
 }

@@ -72,21 +72,32 @@ export default {
     MainLoader,
     AddressComponent,
   },
+  setup() {
+    // SEO metadata using Nuxt 3's useHead
+    useHead({
+      title: "Iris Child Development Centre - Calicut, Kerala | Child Therapy & Development Services",
+      meta: [
+        { 
+          name: "description", 
+          content: "Iris Child Development Centre in Calicut, Kerala provides comprehensive child development services including occupational therapy, speech therapy, special education, and behavioral support for children with developmental needs." 
+        },
+        { 
+          name: "keywords", 
+          content: "child development centre, occupational therapy, speech therapy, special education, autism therapy, ADHD therapy, developmental delay, Calicut, Kerala, Kozhikode, child therapy, behavioral therapy, early intervention, learning disability, sensory integration" 
+        },
+        {
+          rel: "canonical",
+          href: "https://iriscdc.com"
+        }
+      ]
+    });
+  },
   data: () => ({
     value: 0,
     customWidthClass: "custom-max-width",
     isLoading: true,  
     showLatestNews: true,
   }),
-  head() {
-    return {
-      title: "Iris Child Development Centre - Calicut, Kerala | Child Therapy & Development Services",
-      meta: [
-        { name: "description", content: "Iris Child Development Centre in Calicut, Kerala provides comprehensive child development services including occupational therapy, speech therapy, special education, and behavioral support for children with developmental needs." },
-        { name: "keywords", content: "child development centre, occupational therapy, speech therapy, special education, autism therapy, ADHD therapy, developmental delay, Calicut, Kerala, Kozhikode, child therapy, behavioral therapy, early intervention, learning disability, sensory integration" }
-      ]
-    }
-  },
   methods: {
     apiSucceed({ isError }) {
       this.showLatestNews = !isError;
