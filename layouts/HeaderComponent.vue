@@ -90,8 +90,8 @@
                 <v-list-item>
                   <v-list-item-title>
                     <Icon class="header-icon-1" name="uil:phone" />
-                    <a class="ml-2 phone-text" href="tel:+91-8891575227"
-                      >+918891575227</a
+                    <a class="ml-2 phone-text" href="tel:+91-9447000000"
+                      >+919447000000</a
                     >
                   </v-list-item-title>
                 </v-list-item>
@@ -102,7 +102,7 @@
                       href="mailto: inhomerehab01@gmail.com"
                     >
                       <Icon name="mdi-email" class="header-icon" />
-                      iriscdc1@gmail.com</a
+                      sample@gmail.com</a
                     >
                   </v-list-item-title>
                 </v-list-item>
