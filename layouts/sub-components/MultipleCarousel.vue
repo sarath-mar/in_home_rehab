@@ -38,11 +38,42 @@ export default {
 
   data() {
     return {
-      slides: [],
+      slides: [
+        {
+          title: "Fixed Deposits",
+          description: "Attractive interest on your investment in life security, perfect security 'transparent transaction facility, special schemes for senior citizens, home delivery interest bearing.",
+          imgUrl: "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/blog/why-fixed-deposit-is-a-smart-way-of-investment-b.webp",
+        },
+        {
+          title: "Savings Accounts",
+          description: "A savings account is a type of bank account that allows you to save money and earn interest on your balance. It is a safe and convenient way to store your money and access it when you need it.",
+          imgUrl: "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/blog/why-fixed-deposit-is-a-smart-way-of-investment-b.webp",
+        },
+        {
+          title: "Current Accounts",
+          description: "A current account is a type of bank account that allows you to deposit and withdraw money as needed. It is a convenient way to manage your daily finances.",
+          imgUrl: "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/blog/why-fixed-deposit-is-a-smart-way-of-investment-b.webp",
+          },
+          {
+            title: "Recurring Deposits",
+            description: "A recurring deposit is a type of bank account that allows you to save money and earn interest on your balance. It is a safe and convenient way to store your money and access it when you need it.",
+            imgUrl: "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/blog/why-fixed-deposit-is-a-smart-way-of-investment-b.webp",
+          },
+          {
+            title: "NRE Accounts",
+            description: "A NRE account is a type of bank account that allows you to save money and earn interest on your balance. It is a safe and convenient way to store your money and access it when you need it.",
+            imgUrl: "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/blog/why-fixed-deposit-is-a-smart-way-of-investment-b.webp",
+          },
+          {
+            title: "NRO Accounts",
+            description: "A NRO account is a type of bank account that allows you to save money and earn interest on your balance. It is a safe and convenient way to store your money and access it when you need it.",
+            imgUrl: "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/blog/why-fixed-deposit-is-a-smart-way-of-investment-b.webp",
+          },
+      ],
     };
   },
   mounted() {
-    this.getBlogDetails();
+    // this.getBlogDetails();
   },
   methods: {
     async getBlogDetails() {

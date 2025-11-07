@@ -11,7 +11,7 @@ const myTheme = {
     primary: "#89c303",
     'primary-background': '#f2f4f5',
     secondary: "#12595d",
-
+    border: "#626468",
     // 'secondary-darken-1': '#000000',
     // error: '#000000',
     // info: '#000000',

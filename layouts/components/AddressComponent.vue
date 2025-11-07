@@ -6,23 +6,23 @@
       <div>
         <h2>
           Phone :
-          <a class="ml-2 phone-text" href="tel:+91-8891575227">
-            +918891575227</a
+          <a class="ml-2 phone-text" href="tel:+91-9447000000">
+            +919447000000</a
           >
         </h2>
         <h2 class="mt-4">
           Email :
           <a class="ml-2 mail-text" href="mailto: inhomerehab01@gmail.com">
-            iriscdc1@gmail.com</a
+            komco1@gmail.com</a
           >
         </h2>
       </div>
       <div>
         <h2 class="mb-3">Address</h2>
-        <h3>Chevarambalam,</h3>
-        <h3>Iringadampalli Rd,</h3>
-        <h3>Vrindavan Colony,</h3>
-        <h3>Kozhikode, Kerala 673017</h3>
+        <h3>Abcd,</h3>
+        <h3>Defg,</h3>
+        <h3>Hijk,</h3>
+        <h3>Klmno,</h3>
       </div>
       <!-- </div> -->
     </div>

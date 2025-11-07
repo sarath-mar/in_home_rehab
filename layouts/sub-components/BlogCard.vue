@@ -2,19 +2,20 @@
   <v-card class="blog-card-container" variant="outlined">
     <v-img
       class="align-end text-white blog-card-img"
+      :class="onlyImage ? 'only-image' : ''"
       :height="200"
       :src="details.imgUrl"
       cover
     >
       <!-- <v-card-title class="title">Created At</v-card-title> -->
     </v-img>
-    <Icon name="mdi-account-circle" class="icon-admin"></Icon>
-    <div class="border pa-3 pt-8">
+    <Icon v-if="!onlyImage" name="mdi-account-circle" class="icon-admin"></Icon>
+    <div v-if="!onlyImage"  class="border pa-3 pt-8">
       <!-- mdiAccountCircle -->
       <h1 class="title">{{ details.title }}</h1>
-      <v-card-subtitle class="pt-4 created-at">{{ formatDate(details.createdAt) }} </v-card-subtitle>
+      <!-- <v-card-subtitle class="pt-4 created-at">{{ formatDate(details.createdAt) }} </v-card-subtitle> -->
 
-      <!-- <v-card-text class="subject">{{ details.content }} </v-card-text> -->
+      <v-card-text class="subject">{{ details.description }} </v-card-text>
     </div>
   </v-card>
 </template>
@@ -24,6 +25,10 @@ import { useDisplay } from "vuetify";
 export default {
   props: {
     details: {},
+    onlyImage:{
+      default:false,
+      type:Boolean,
+    }
   },
   setup() {
     const { xs, md, sm, lg } = useDisplay();
@@ -86,4 +91,7 @@ export default {
 .blog-card-img .v-img__img:hover {
   transform: scale(1.2) rotate(5deg);
 }
+// .only-image{
+//  min-width: 300px;
+// }
 </style>

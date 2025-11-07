@@ -105,7 +105,7 @@ export default {
     };
   },
   mounted() {
-    this.getGalleryDetails();
+    // this.getGalleryDetails();
   },
   methods: {
     async getGalleryDetails() {

@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Iris Child Development Centre - Calicut, Kerala",
+      title: "PADCOS",
       meta: [
         { name: "description", content: "Iris Child Development Centre in Calicut, Kerala. We provide comprehensive child development services including therapy, education, and support for children and their families." },
         { name: "keywords", content: "child development, therapy, education, Calicut, Kerala, Iris Child Development Centre" },

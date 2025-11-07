@@ -5,7 +5,7 @@
     <v-navigation-drawer v-model="drawer" app>
       <v-list dense>
         <v-list-item>
-          <v-list-item-title>IRIS</v-list-item-title>
+          <v-list-item-title>PADCOS</v-list-item-title>
           <v-list-item @click="navigateTo(componentNames.connect)">
             <v-list-item-title
               :class="{

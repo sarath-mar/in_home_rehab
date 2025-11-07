@@ -1,29 +1,16 @@
 <template>
   <div class="mt-10 welcome-main" id="in-home-rehab" :class="customClass">
     <v-row class="align-center">
-      <v-col cols="12" md="12">
-        <v-row class="align-center">
+      <v-col cols="12" md="6">
+        <!-- <v-row class="align-center"> -->
           <!-- <v-col cols="12" md="7"> -->
             <div>
-              <h4 class="welcome-who text">Who We Are</h4>
+              <h4 class="welcome-who ">About Komco</h4>
               <h2 class="heading-text">
-                Welcome to Iris Child Development Centre  
+                The Kozhikode Mercantile Co-operative Society Ltd  
               </h2>
               <p class="paragraph-text mt-5">
-                Based in Calicut, Iris Child Development Centre was founded in
-                2023 with the belief that each child is unique and deserves the
-                support needed to reach their fullest potential. We focus on
-                early identification and intervention, ensuring that children
-                get the help they need at the right time. Our goals go beyond
-                therapy – we aim to educate parents and the community, promote
-                inclusion, and foster societal acceptance. With a foundation in
-                evidence-based practices, we’re here to create a caring,
-                supportive environment where children can grow, learn, and
-                thrive!
-                <span id="welcom-form-id">
-                  Let's work together to build a brighter future for you
-                  and your loved ones.
-                </span>
+                The KOMCO was started in 17th November 1999 with the Kozhikode Revenue District limits as its area of operation. From a humble beginning the Society has made great progress with in a span of Twenty-two years and is at par with some of the major Societies in the District
               </p>
             </div>
           <!-- </v-col> -->
@@ -31,7 +18,10 @@
             <!-- <v-img cover class="welcome-img" src="/images/doc.jpg"></v-img> -->
             <!-- <welcome-form /> -->
           <!-- </v-col> -->
-        </v-row>
+        <!-- </v-row> -->
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-img  class="welcome-img" src="https://www.komco.in/img/slider/About_Plant.png"></v-img>
       </v-col>
     </v-row>
   </div>
@@ -71,7 +61,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .welcome-li-div {
   display: flex;
 }
@@ -101,8 +91,10 @@ export default {
   color: var(--primary-text-color);
 }
 .welcome-img {
-  height: 100%;
-  border-radius: 20px;
+  height: 500px;
+  img{
+    object-fit: contain !important;
+  }
 }
 
 .welcome-who {

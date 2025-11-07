@@ -1,6 +1,6 @@
 <template>
   <div class="my-10" id="service-we-provide" :class="customClass">
-    <h2 class="heading-text text">Latest News & Blog</h2>
+    <h2 class="heading-text ">Deposits</h2>
     <div class="mt-4">
       <MultipleCarousel />
     </div>

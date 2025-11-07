@@ -8,7 +8,7 @@
           class="icon-close float-right mr-5 mt-5"
         />
       </div>
-      <h2 class="text-color ml-5 mt-5">Iris</h2>
+      <h2 class="text-color ml-5 mt-5">padcos</h2>
       <div class="mt-5">
         <v-list-item v-for="(item, i) in items" :key="i">
           <a class="text-color" style="text-decoration: none">
@@ -50,17 +50,27 @@
         </v-col>
         <v-col cols="3">
           <div>
-            <div class="text-end contact">
-              <a class="ml-2 phone-text" href="tel:+91-8891575227">
-                <Icon class="header-icon-1" name="uil:phone" /> +918891575227</a
+            <div class="text-end contact ">
+              <div>Branch Contact Info:</div>
+              <hr class="hr-contact">
+              <a class="ml-2 mail-text" href="mailto: sample@gmail.com"
+                ><Icon name="mdi-email" class="header-icon" />
+                sample@gmail.com</a
               >
+              <div>
+              <a class="ml-2 phone-text" href="tel:+91-0123456789">
+                <Icon class="header-icon-1" name="uil:phone" /> +910123456789</a>
+              <!-- <a class="ml-2 phone-text" href="tel:+91-8891575227">
+                <Icon class="header-icon-1" name="uil:phone" /> +918891575227</a
+              > -->
             </div>
-            <div class="text-end mt-2 contact">
+            </div>
+            <!-- <div class="text-end mt-2 contact">
               <a class="ml-2 mail-text" href="mailto: inhomerehab01@gmail.com"
                 ><Icon name="mdi-email" class="header-icon" />
                 iriscdc1@gmail.com</a
               >
-            </div>
+            </div> -->
           </div>
         </v-col>
       </v-row>
@@ -143,6 +153,13 @@ export default {
       carrierPop: false,
       drawer: false,
       items: [
+
+      {
+          title: "Home",
+          value: "fizz",
+          route: "/",
+          hash: "#latest-news",
+        },
         {
           title: "About Us",
           value: "foo",
@@ -160,12 +177,6 @@ export default {
           value: "gallery",
           route: "/gallery",
           hash: "#why-home-therapy",
-        },
-        {
-          title: "Blog",
-          value: "fizz",
-          route: "/",
-          hash: "#latest-news",
         },
         {
           title: "Contact Us",
@@ -223,7 +234,7 @@ export default {
   color: var(--primary-text-color);
 }
 .icon-image {
-  width: 190px;
+  width: 110px;
   cursor: pointer;
 }
 .drawer-btn .header-btn {
@@ -294,5 +305,10 @@ export default {
   li:hover::after {
     width: 100%;
   }
+}
+.hr-contact{
+  width:138px;
+  margin-left:auto;
+  background-color: var(--border);
 }
 </style>

@@ -28,6 +28,9 @@ export const myMixin = {
       return 'id-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
     },
     formatDate (firebaseTimestamp) {
+      if(!firebaseTimestamp){
+        return '';
+      }
         // Extract seconds from Firebase timestamp and convert it to milliseconds
         const date = new Date(firebaseTimestamp.seconds * 1000);
         

@@ -18,7 +18,7 @@
       <v-row>
         <v-col cols="12">
           <div class="mt-5 footer-content">
-           Where Every Child Matters
+           The Kozhikode Mercantile Co-operative Society Ltd
           </div>
         </v-col>
         <v-col cols="12">
@@ -30,7 +30,7 @@
 
       <div class="my-2 date-footer">
         {{ new Date().getFullYear() }} -
-        <strong>Iris child Development Centre</strong>
+        <strong>Kozhikode Mercantile Co-operative Society Ltd</strong>
       </div>
       <div class="bg-white">
         <img
@@ -64,18 +64,18 @@ export default {
       {
         name: "Facebook",
         icon: "uil:facebook",
-        url: "https://www.facebook.com/profile.php?id=100092701407162",
+        url: "",
       },
       // { name: "Twitter", icon: "uil:twitter" },
       {
         name: "Instagram",
         icon: "uil:instagram",
-        url: "https://www.instagram.com/iris__cdc/?hl=en",
+        url: "",
       },
       {
         name: "Linkedin",
         icon: "uil:linkedin",
-        url: "https://www.linkedin.com/company/inhome-rehab/",
+        url: "",
       },
     ],
   }),
