@@ -20,8 +20,8 @@ export default defineNuxtConfig({
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "description", content: "v1Soultions in Pune, Maharashtra provides comprehensive child development services including occupational therapy, speech therapy, special education, and behavioral support for children with developmental needs." },
-        { name: "keywords", content: "child development centre, occupational therapy, speech therapy, special education, autism therapy, ADHD therapy, developmental delay, Pune, Maharashtra, Baner, child therapy, behavioral therapy, early intervention, learning disability, sensory integration" },
+        { name: "description", content: "v1Soultions in Pune, Maharashtra" },
+        { name: "keywords", content: "v1Soultions, Pune, Maharashtra, Baner" },
         { name: "author", content: "v1Soultions" },
         { name: "robots", content: "index, follow" },
         { name: "googlebot", content: "index, follow" },
@@ -35,8 +35,8 @@ export default defineNuxtConfig({
         { name: "ICBM", content: "18.5204, 73.8567" },
         
         // Open Graph tags
-        { property: "og:title", content: "v1Soultions - Pune, Maharashtra | Child Therapy & Development Services" },
-        { property: "og:description", content: "Comprehensive child development services including occupational therapy, speech therapy, special education, and behavioral support for children with developmental needs in Pune, Maharashtra." },
+        { property: "og:title", content: "v1Soultions - Pune, Maharashtra" },
+        { property: "og:description", content: "v1Soultions in Pune, Maharashtra" },
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://v1soultions.in" },
         { property: "og:image", content: "https://v1soultions.in/images/logo.png" },
@@ -48,7 +48,7 @@ export default defineNuxtConfig({
         // Twitter Card tags
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "v1Soultions - Pune, Maharashtra" },
-        { name: "twitter:description", content: "Comprehensive child development services including therapy, education, and support for children and their families in Pune, Maharashtra." },
+        { name: "twitter:description", content: "v1Soultions in Pune, Maharashtra" },
         { name: "twitter:image", content: "https://v1soultions.in/images/logo.png" },
         
         // Additional SEO meta tags
@@ -100,20 +100,12 @@ export default defineNuxtConfig({
           type: "application/ld+json",
           innerHTML: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "MedicalOrganization",
+            "@type": "Organization",
             "name": "v1Soultions",
             "alternateName": "v1Soultions",
             "url": "https://v1soultions.in/",
             "logo": "https://v1soultions.in/images/logo.png",
-            "description": "Comprehensive child development services including occupational therapy, speech therapy, special education, and behavioral support for children with developmental needs in Pune, Maharashtra.",
-            "foundingDate": "2020",
-            "founder": {
-              "@type": "Person",
-              "name": "v1Soultions Team"
-            },
-            "sameAs": [
-             
-            ],
+            "description": "v1Soultions in Pune, Maharashtra",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+91-8891575227",
@@ -133,55 +125,7 @@ export default defineNuxtConfig({
               "@type": "GeoCoordinates",
               "latitude": "18.5204",
               "longitude": "73.8567"
-            },
-            "areaServed": {
-              "@type": "City",
-              "name": "Pune",
-              "containedInPlace": {
-                "@type": "State",
-                "name": "Maharashtra"
-              }
-            },
-            "medicalSpecialty": [
-              "Occupational Therapy",
-              "Speech Therapy", 
-              "Special Education",
-              "Behavioral Therapy",
-              "Early Intervention",
-              "Sensory Integration"
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Child Development Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Occupational Therapy",
-                    "description": "Therapy to help children develop fine motor skills, sensory processing, and daily living skills"
-                  }
-                },
-                {
-                  "@type": "Offer", 
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Speech Therapy",
-                    "description": "Therapy to help children develop communication and language skills"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service", 
-                    "name": "Special Education",
-                    "description": "Educational support for children with learning disabilities and developmental delays"
-                  }
-                }
-              ]
-            },
-            "openingHours": "Mo-Fr 09:00-18:00",
-            "priceRange": "$$"
+            }
           })
         }
       ]
