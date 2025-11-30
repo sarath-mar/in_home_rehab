@@ -1,156 +1,348 @@
 <template>
-  <div>
-    <main>
-      <div>
-        <transition name="fade">
-          <div class="fade-enter-active">
-            <div class="outer-layer">
-              <div class="header-content">
-                <header-component :custom-class="customWidthClass" />
-              </div>
-              <div class="mt-n10 mt-md-10 px-5 px-md-10">
-                <carousel :custom-class="customWidthClass" />
-              </div>
-            </div>
-            <div class="mt-5 inner-layer">
-              <!-- About Us Section -->
-              <section class="welcome-div px-10 pb-15" id="about-us" aria-label="About Us">
-                <h1 class="sr-only">Iris Child Development Centre - Comprehensive Child Development Services in Calicut, Kerala</h1>
-                <welcome :custom-class="customWidthClass" />
-              </section>
-              
-              <!-- Services Section -->
-              <section class="px-10" id="service-provided" aria-label="Our Services">
-                <h2 class="sr-only">Our Child Development Services</h2>
-                <service-provided :custom-class="customWidthClass" />
-              </section>
-              
-              <!-- Latest News Section -->
-              <section class="px-10" id="latest-news" aria-label="Latest News">
-                <h2 class="sr-only">Latest News and Updates</h2>
-                <latest-news
-                  v-if="showLatestNews"
-                  :custom-class="customWidthClass"
-                  @apiSucceed="apiSucceed"
-                />
-              </section>
-              
-              <!-- Contact Section -->
-              <section class="px-10" id="contact-us" aria-label="Contact Information">
-                <h2 class="sr-only">Contact Us</h2>
-                <address-component :custom-class="customWidthClass" />
-              </section>
-            </div>
-            <footer-component :custom-class="customWidthClass" />
+  <v-container fluid class="construction-container">
+    <v-row justify="center" align="center" class="min-height-screen">
+      <v-col cols="12" md="10" lg="8" class="text-center">
+        <!-- Animated Construction Icon -->
+        <div class="construction-icon-wrapper mb-8">
+          <div class="construction-icon">
+            <Icon name="mdi:hammer-wrench" size="120" class="animated-icon" />
           </div>
-        </transition>
-      </div>
-    </main>
-  </div>
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring delay-1"></div>
+          <div class="pulse-ring delay-2"></div>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="main-heading mb-4">
+          <span class="gradient-text">We're Under Construction</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="subheading mb-8">
+          Something amazing is coming soon! We're working hard to bring you an exceptional experience.
+        </p>
+
+        <!-- Contact Information Card -->
+        <v-card class="contact-card mx-auto" elevation="8">
+          <v-card-text class="pa-6">
+            <h2 class="contact-heading mb-6">Get In Touch</h2>
+            
+            <v-row class="contact-info">
+              <!-- Phone -->
+              <v-col cols="12" md="6" class="contact-item">
+                <div class="contact-icon-wrapper mb-3">
+                  <Icon name="mdi:phone" size="32" class="contact-icon" />
+                </div>
+                <h3 class="contact-label mb-2">Phone</h3>
+                <a href="tel:+919021039208" class="contact-value">
+                  +91-9021039208
+                </a>
+                <br>
+                <a href="tel:+918660463130" class="contact-value">
+                  +91-8660463130
+                </a>
+              </v-col>
+
+              <!-- Address -->
+              <v-col cols="12" md="6" class="contact-item">
+                <div class="contact-icon-wrapper mb-3">
+                  <Icon name="mdi:map-marker" size="32" class="contact-icon" />
+                </div>
+                <h3 class="contact-label mb-2">Address</h3>
+                <p class="contact-value">
+                  5/1/2, Haridwar Park, Baner<br>
+                  Pune, Maharashtra 411045<br>
+                  India
+                </p>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+
+        <!-- Animated Dots -->
+        <div class="loading-dots mt-8">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
-<script>
-import HeaderComponent from "../layouts/HeaderComponent.vue";
-import FooterComponent from "../layouts/FooterComponent.vue";
-import Carousel from "../layouts/components/Carousel.vue";
-import Welcome from "../layouts/components/Welcome.vue";
-import ServiceProvided from "../layouts/components/ServiceProvided.vue";
-import LatestNews from "../layouts/components/LatestNews.vue";
-import WelcomeForm from "~/layouts/components/WelcomeForm.vue";
-import MainLoader from "~/layouts/sub-components/MainLoader.vue";
-import AddressComponent from '~/layouts/components/AddressComponent.vue';
-
-export default {
-  components: {
-    HeaderComponent,
-    Carousel,
-    Welcome,
-    FooterComponent,
-    ServiceProvided,
-    LatestNews,
-    WelcomeForm,
-    MainLoader,
-    AddressComponent,
-  },
-  setup() {
-    // SEO metadata using Nuxt 3's useHead
-    useHead({
-      title: "Iris Child Development Centre - Calicut, Kerala | Child Therapy & Development Services",
-      meta: [
-        { 
-          name: "description", 
-          content: "Iris Child Development Centre in Calicut, Kerala provides comprehensive child development services including occupational therapy, speech therapy, special education, and behavioral support for children with developmental needs." 
-        },
-        { 
-          name: "keywords", 
-          content: "child development centre, occupational therapy, speech therapy, special education, autism therapy, ADHD therapy, developmental delay, Calicut, Kerala, Kozhikode, child therapy, behavioral therapy, early intervention, learning disability, sensory integration" 
-        },
-        {
-          rel: "canonical",
-          href: "https://iriscdc.com"
-        }
-      ]
-    });
-  },
-  data: () => ({
-    value: 0,
-    customWidthClass: "custom-max-width",
-    isLoading: true,  
-    showLatestNews: true,
-  }),
-  methods: {
-    apiSucceed({ isError }) {
-      this.showLatestNews = !isError;
-      this.isLoading = false;
-      console.log("api succeed");
-    },
-  },
-};
+<script setup>
+useHead({
+  title: 'Under Construction - Coming Soon',
+  meta: [
+    { name: 'description', content: 'We are currently under construction. Please contact us for more information.' }
+  ]
+})
 </script>
 
-<style>
-/* Screen reader only class for accessibility */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
+<style lang="scss" scoped>
+.construction-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: backgroundShift 15s ease-in-out infinite;
+  }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s;
+@keyframes backgroundShift {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
-.fade-enter, .fade-leave-to {
-  opacity: 0;
+
+.min-height-screen {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
-.outer-layer {
-  background-size: cover;
+
+.construction-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
 }
-.inner-layer {
-  margin-bottom: 220px;
+
+.construction-icon {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
-.welcome-test {
-  opacity: 0;
+
+.animated-icon {
+  animation: bounce 2s ease-in-out infinite;
 }
-.heading-text {
-  font-size: clamp(2em, 4vw, 3em);
-  font-weight: 900;
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(5deg);
+  }
 }
-.paragraph-text {
-  font-size: clamp(1em, 4vw, 1.5em);
-  text-align: justify;
-  color: var(--secondary-text-color);
+
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: pulse 2s ease-out infinite;
 }
-.welcome-div {
-  padding: 10px;
-  background-color: var(--primary-background);
+
+.pulse-ring.delay-1 {
+  animation-delay: 0.5s;
 }
-.welcome-component {
-  padding: 100px 0px;
+
+.pulse-ring.delay-2 {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.main-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-out;
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.subheading {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  animation: fadeInUp 1s ease-out 0.2s both;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 20px !important;
+  animation: fadeInUp 1s ease-out 0.4s both;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.contact-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-info {
+  margin-top: 1rem;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.contact-icon-wrapper {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.contact-icon {
+  color: #fff;
+}
+
+.contact-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-value {
+  font-size: 1.1rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: inline-block;
+  
+  &:hover {
+    color: #667eea;
+  }
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: dotBounce 1.4s ease-in-out infinite;
+  
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
 </style>

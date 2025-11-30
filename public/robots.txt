@@ -2,15 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://iriscdc.com/sitemap.xml
+Sitemap: https://v1soultions.in/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
-
-# Disallow admin areas
-Disallow: /admin/
-Disallow: /login
-Disallow: /api/
-
-# Allow pages
-Allow: /gallery

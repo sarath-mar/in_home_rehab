@@ -4,55 +4,15 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://iriscdc.com/</loc>
+    <loc>https://v1soultions.in/</loc>
     <lastmod>2024-12-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://iriscdc.com/images/logo.png</image:loc>
-      <image:title>Iris Child Development Centre Logo</image:title>
-      <image:caption>Iris Child Development Centre - Calicut, Kerala</image:caption>
+      <image:loc>https://v1soultions.in/images/logo.png</image:loc>
+      <image:title>v1Soultions Logo</image:title>
+      <image:caption>v1Soultions - Pune, Maharashtra</image:caption>
     </image:image>
-  </url>
-  
-  <!-- Gallery Page -->
-  <url>
-    <loc>https://iriscdc.com/gallery</loc>
-    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- About Us Section -->
-  <url>
-    <loc>https://iriscdc.com/#about-us</loc>
-    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Services Section -->
-  <url>
-    <loc>https://iriscdc.com/#service-provided</loc>
-    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Latest News Section -->
-  <url>
-    <loc>https://iriscdc.com/#latest-news</loc>
-    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Contact Section -->
-  <url>
-    <loc>https://iriscdc.com/#contact-us</loc>
-    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   
 </urlset>
