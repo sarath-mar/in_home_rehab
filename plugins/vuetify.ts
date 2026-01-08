@@ -6,17 +6,14 @@ import { aliases, mdi } from "vuetify/lib/iconsets/mdi-svg";
 const myTheme = {
   dark: false,
   colors: {
-    // background: '#000000',
-    // surface: '#000000',
-    primary: "#89c303",
-    'primary-background': '#f2f4f5',
-    secondary: "#12595d",
-
-    // 'secondary-darken-1': '#000000',
-    // error: '#000000',
-    // info: '#000000',
-    // success: '#000000',
-    // warning: '#000000',
+    primary: "#000000", // Black
+    secondary: "#ffffff", // White
+    accent: "#333333", // Dark gray
+    'primary-background': '#ffffff',
+    error: "#000000",
+    info: "#000000",
+    success: "#000000",
+    warning: "#000000",
   },
 };
 export default defineNuxtPlugin((nuxt) => {
