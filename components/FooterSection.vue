@@ -8,10 +8,11 @@
           <v-col cols="12" md="3">
             <div class="footer-logo-section">
               <div class="footer-logo">
-                <div class="logo-icon">
+                <!-- <div class="logo-icon">
                   <Icon name="mdi:cube-outline" size="32" />
                 </div>
-                <h2 class="logo-text">V1 Solutions</h2>
+                <h2 class="logo-text">V1 Solutions</h2> -->
+                <img src="/images/logo.webp" alt="V1 Solutions" width="100" height="100" class="logo-image">
               </div>
               <p class="footer-tagline">Printing Machines Manufacturer</p>
               <p class="footer-description">

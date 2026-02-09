@@ -136,10 +136,11 @@ let imageInterval = null
 
 // Hero images - printing machines
 const heroImages = [
-  'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=800&fit=crop',
-  'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=800&fit=crop',
-  'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=800&fit=crop',
-  'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=800&fit=crop'
+  'images/machine/IMG_3_1.png',
+  'images/machine/IMG_3_2.png',
+  'images/machine/IMG_3_3.png',
+  'images/machine/IMG_3_4.png',
+  'images/machine/IMG_3_5.png',
 ]
 
 const rotateImage = () => {
@@ -286,10 +287,10 @@ onUnmounted(() => {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  background: #f5f5f5;
+  background: transparent;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .hero-image {
@@ -307,6 +308,9 @@ onUnmounted(() => {
   display: flex;
   gap: 8px;
   z-index: 10;
+  display: none;
+  // background: #f5f5f5;
+  // padding: 4px 10px;
 }
 
 .indicator {

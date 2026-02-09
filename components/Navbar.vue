@@ -9,13 +9,14 @@
         <!-- Logo -->
         <v-col cols="auto">
           <div class="logo">
-            <div class="logo-icon">
+            <!-- <div class="logo-icon">
               <Icon name="mdi:cube-outline" size="32" />
             </div>
             <div class="logo-text-wrapper">
               <h2 class="logo-text">V1 Solutions</h2>
               <p class="logo-subtitle">Printing Machines Manufacturer</p>
-            </div>
+            </div> -->
+            <img src="/images/logo.webp" alt="V1 Solutions" width="100" height="100" class="logo-image">
           </div>
         </v-col>
         
@@ -96,10 +97,10 @@ const scrollY = ref(0)
 
 const navItems = [
   { label: 'Home', href: '#home', hasDropdown: false },
-  { label: 'About Us', href: '#about', hasDropdown: true },
-  { label: 'Services', href: '#services', hasDropdown: true },
-  { label: 'Projects', href: '#projects', hasDropdown: true },
-  { label: 'Pages', href: '#pages', hasDropdown: true },
+  { label: 'About Us', href: '#about', hasDropdown: false },
+//   { label: 'Services', href: '#services', hasDropdown: false },
+  { label: 'Products', href: '#products', hasDropdown: false },
+  { label: 'Brochures', href: '#brochures', hasDropdown: false },
   { label: 'Contact', href: '#contact', hasDropdown: false }
 ]
 
