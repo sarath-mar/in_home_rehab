@@ -6,12 +6,12 @@ import { aliases, mdi } from "vuetify/lib/iconsets/mdi-svg";
 const myTheme = {
   dark: false,
   colors: {
-    primary: "#000000", // Black
+    primary: "#1976D2", // Blue
     secondary: "#ffffff", // White
-    accent: "#333333", // Dark gray
+    accent: "#1565C0", // Darker blue
     'primary-background': '#ffffff',
     error: "#000000",
-    info: "#000000",
+    info: "#1976D2",
     success: "#000000",
     warning: "#000000",
   },
