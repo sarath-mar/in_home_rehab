@@ -107,33 +107,33 @@ const selectedBrochure = ref(null)
 
 const brochures = [
   {
-    title: 'Ferrule Printing Machine',
-    description: 'Complete specifications and features of our advanced Ferrule Printing Machines for industrial applications.',
-    pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-    thumbnail: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=500&fit=crop',
-    size: '2.5 MB',
-    pages: '12'
+    title: 'The reliable tubing & label printer',
+    description: 'The reliable tubing & label printer - Convenient and practical',
+    pdfUrl: 'pdf/LK-1.pdf',
+    thumbnail: 'images/machine/IMG_2_7.jpg',
+    size: '673 KB',
+    pages: '2'
   },
   {
-    title: 'Wristband Printer 660',
-    description: 'Detailed information about the Wristband Printer 660 model, specifications, and usage guidelines.',
-    pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-    thumbnail: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=500&fit=crop',
-    size: '3.1 MB',
-    pages: '15'
+    title: 'Cable ID Printer',
+    description: 'Reliable mobile marking just got a whole lot easier',
+    pdfUrl: 'pdf/LK-2.pdf',
+    thumbnail: 'images/machine/IMG_2_10.jpg',
+    size: '1.8 MB',
+    pages: '2'
   },
   {
-    title: 'Complete Product Catalog',
-    description: 'Comprehensive catalog featuring all our printing machine models, specifications, and applications.',
-    pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-    thumbnail: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=500&fit=crop',
-    size: '8.5 MB',
-    pages: '45'
+    title: 'LK-360 Cable ID Printer',
+    description: 'Characterized development - Specialized technology',
+    pdfUrl: 'pdf/LK-3.pdf',
+    thumbnail: 'images/machine/IMG_2_13.jpg',
+    size: '2.3 MB',
+    pages: '2'
   },
   {
     title: 'Industrial Printing Solutions',
     description: 'Overview of our industrial printing solutions and custom machine configurations.',
-    pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+    pdfUrl: 'pdf/LK-4.pdf',
     thumbnail: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=400&h=500&fit=crop',
     size: '4.2 MB',
     pages: '20'
