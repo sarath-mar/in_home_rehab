@@ -1,8 +1,3 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://v1soultions.in/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
+Sitemap: https://ashvarimportexport.com/sitemap.xml

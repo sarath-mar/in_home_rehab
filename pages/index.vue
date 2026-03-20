@@ -1,437 +1,305 @@
 <template>
-  <v-app>
-    <div class="home-page">
-      <!-- Navigation Bar -->
-      <Navbar />
+  <main class="coming-soon">
+    <div class="ambient ambient-a" aria-hidden="true"></div>
+    <div class="ambient ambient-b" aria-hidden="true"></div>
+    <div class="ambient ambient-c" aria-hidden="true"></div>
 
-      <!-- Hero Section -->
-      <section class="hero-section">
-        <div class="hero-container">
-          <v-row align="center" class="hero-content">
-            <v-col cols="12" lg="6" class="hero-text-col">
-              <p class="welcome-text">Welcome to V1 Solutions</p>
-              <h1 class="hero-title">
-                Precision Printing Machines<br>For Every Industry
-              </h1>
-              <p class="hero-description">
-                Leading manufacturer and supplier of high-quality printing machines including Ferrule Printing Machines, Wristband Printers, and specialized printing solutions for diverse industrial applications.
-              </p>
-              <div class="hero-buttons">
-                <v-btn
-                  color="primary"
-                  size="large"
-                  variant="flat"
-                  class="quote-btn"
-                >
-                  Get A Free Quote
-                </v-btn>
-                <v-btn
-                  color="primary"
-                  size="large"
-                  variant="flat"
-                  class="play-btn"
-                  icon
-                >
-                  <Icon name="mdi:arrow-top-right" size="24" />
-                </v-btn>
-              </div>
-            </v-col>
-            
-            <v-col cols="12" lg="6" class="hero-image-col">
-              <div class="hero-image-wrapper">
-                <transition name="fade" mode="out-in">
-                  <img
-                    :key="currentImageIndex"
-                    :src="heroImages[currentImageIndex]"
-                    alt="Printing machine"
-                    class="hero-image"
-                    @error="handleImageError"
-                  />
-                </transition>
-                <div class="image-indicators">
-                  <div
-                    v-for="(img, index) in heroImages"
-                    :key="index"
-                    :class="['indicator', { active: currentImageIndex === index }]"
-                    @click="currentImageIndex = index"
-                  ></div>
-                </div>
-              </div>
-            </v-col>
-          </v-row>
-        </div>
-      </section>
+    <section class="card" aria-label="Coming soon information">
+      <p class="eyebrow">Ashvar Import and Export</p>
+      <h1>
+        Global Trade Excellence,
+        <span>Arriving Soon</span>
+      </h1>
+      <p class="description">
+        We are crafting a refined digital experience for import and export
+        services with dependable execution and international reach.
+      </p>
 
-      <!-- Statistics Section -->
-      <section class="statistics-section">
-        <div class="statistics-container">
-          <v-row>
-            <v-col cols="12" md="6">
-              <v-card class="stat-card">
-                <div class="stat-content">
-                  <div class="stat-bullet"></div>
-                  <div class="stat-info">
-                    <h3 class="stat-label">Machine Models</h3>
-                    <p class="stat-number">50+</p>
-                  </div>
-                  <div class="stat-icon">
-                    <Icon name="mdi:printer" size="48" />
-                    <Icon name="mdi:cog" size="32" class="icon-overlay" />
-                  </div>
-                </div>
-              </v-card>
-            </v-col>
-            
-            <v-col cols="12" md="6">
-              <v-card class="stat-card">
-                <div class="stat-content">
-                  <div class="stat-bullet"></div>
-                  <div class="stat-info">
-                    <h3 class="stat-label">Machines Sold</h3>
-                    <p class="stat-number">5000+</p>
-                  </div>
-                  <div class="stat-icon">
-                    <Icon name="mdi:printer" size="48" />
-                  </div>
-                </div>
-              </v-card>
-            </v-col>
-          </v-row>
-        </div>
-      </section>
+      <div class="metrics">
+        <p>Trusted Sourcing</p>
+        <p>Smart Logistics</p>
+        <p>Quality Assured</p>
+      </div>
 
-      <!-- Features Section -->
-      <FeaturesSection />
-
-      <!-- About Section -->
-      <AboutSection />
-
-      <!-- Services Section -->
-      <ServicesSection />
-
-      <!-- Brochure Download Section -->
-      <BrochureSection />
-
-      <!-- Contact Section -->
-      <ContactSection />
-
-      <!-- Footer Section -->
-      <FooterSection />
-    </div>
-  </v-app>
+      <p class="status">Launching Soon</p>
+    </section>
+  </main>
 </template>
 
-<script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-
-useHead({
-  title: 'V1 Solutions - Printing Machines Manufacturer',
-  meta: [
-    { name: 'description', content: 'V1 Solutions - Leading manufacturer of Ferrule Printing Machines, Wristband Printers, and specialized printing solutions for industrial applications.' }
-  ]
-})
-
-const currentImageIndex = ref(0)
-let imageInterval = null
-
-// Hero images - printing machines
-const heroImages = [
-  'images/machine/IMG_3_1.png',
-  'images/machine/IMG_3_2.png',
-  'images/machine/IMG_3_3.png',
-  'images/machine/IMG_3_4.png',
-  'images/machine/IMG_3_5.png',
-]
-
-const rotateImage = () => {
-  currentImageIndex.value = (currentImageIndex.value + 1) % heroImages.length
-}
-
-const handleImageError = (event) => {
-  // Fallback to a placeholder or default image
-  event.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2Y1ZjVmNSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj4zRCBNb2RlbDwvdGV4dD48L3N2Zz4='
-}
-
-onMounted(() => {
-  // Rotate image every 10 seconds
-  imageInterval = setInterval(rotateImage, 10000)
-})
-
-onUnmounted(() => {
-  if (imageInterval) {
-    clearInterval(imageInterval)
-  }
-})
+<script setup lang="ts">
+useSeoMeta({
+  title: "Ashvar Import and Export | Coming Soon",
+  description:
+    "Ashvar Import and Export is launching soon. We provide trusted global import and export services.",
+  ogTitle: "Ashvar Import and Export | Coming Soon",
+  ogDescription:
+    "Ashvar Import and Export is launching soon. We provide trusted global import and export services.",
+  ogType: "website",
+  ogUrl: "https://ashvarimportexport.com",
+  twitterCard: "summary_large_image",
+  twitterTitle: "Ashvar Import and Export | Coming Soon",
+  twitterDescription:
+    "Ashvar Import and Export is launching soon. We provide trusted global import and export services.",
+});
 </script>
 
-<style lang="scss" scoped>
-.home-page {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  background: #ffffff;
-  
-  // Ensure all sections respect max-width
-  section {
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  // Ensure containers respect max-width
-  :deep(.v-row) {
-    max-width: 100%;
-  }
-}
-
-.hero-section {
-  min-height: 90vh;
-  background: #ffffff;
+<style scoped>
+.coming-soon {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding-top: 120px;
-  padding-bottom: 80px;
-  width: 100%;
-}
-
-.hero-container {
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 40px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  
-  @media (max-width: 960px) {
-    padding: 0 24px;
-  }
-  
-  @media (max-width: 600px) {
-    padding: 0 16px;
-  }
-}
-
-.hero-content {
-  min-height: 70vh;
-}
-
-.hero-text-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.welcome-text {
-  font-size: 0.95rem;
-  color: #1976D2;
-  font-weight: 500;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #000000;
-  line-height: 1.2;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
-  
-  @media (max-width: 960px) {
-    font-size: 2.5rem;
-  }
-  
-  @media (max-width: 600px) {
-    font-size: 2rem;
-  }
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  color: #666666;
-  line-height: 1.8;
-  margin-bottom: 32px;
-  
-  @media (max-width: 960px) {
-    font-size: 1rem;
-  }
-}
-
-.hero-buttons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.quote-btn {
-  text-transform: none;
-  font-weight: 500;
-  padding: 14px 32px !important;
-  border-radius: 4px;
-}
-
-.play-btn {
-  width: 56px !important;
-  height: 56px !important;
-  border-radius: 50% !important;
-}
-
-.hero-image-col {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-image-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1;
-  background: transparent;
-  border-radius: 8px;
   overflow: hidden;
-  // box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.image-indicators {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 10;
-  display: none;
-  // background: #f5f5f5;
-  // padding: 4px 10px;
-}
-
-.indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &.active {
-    background: #1976D2;
-    width: 24px;
-    border-radius: 5px;
-  }
-  
-  &:hover {
-    background: rgba(255, 255, 255, 0.8);
-  }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.statistics-section {
-  padding: 80px 0;
-  background: #ffffff;
-  width: 100%;
-}
-
-.statistics-container {
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 40px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  
-  @media (max-width: 960px) {
-    padding: 0 24px;
-  }
-  
-  @media (max-width: 600px) {
-    padding: 0 16px;
-  }
-}
-
-.stat-card {
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  }
-}
-
-.stat-content {
-  display: flex;
-  align-items: center;
-  padding: 32px;
-  gap: 24px;
-  
-  @media (max-width: 600px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-.stat-bullet {
-  width: 12px;
-  height: 12px;
-  background: #1976D2;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.stat-info {
-  flex: 1;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 0 0 8px 0;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1976D2;
+  min-height: 100vh;
   margin: 0;
-  line-height: 1;
-  
-  @media (max-width: 600px) {
-    font-size: 2rem;
-  }
-}
-
-.stat-icon {
-  color: #1976D2;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  .icon-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.6;
+  padding: 28px;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(59, 130, 246, 0.12), transparent),
+    radial-gradient(1000px 500px at 90% 90%, rgba(168, 85, 247, 0.1), transparent),
+    linear-gradient(120deg, #020617 0%, #0f172a 48%, #111827 100%);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.ambient {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(10px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.ambient-a {
+  width: 320px;
+  height: 320px;
+  top: -90px;
+  left: -70px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.45), rgba(56, 189, 248, 0));
+  animation: drift 6s ease-in-out infinite;
+}
+
+.ambient-b {
+  width: 360px;
+  height: 360px;
+  right: -110px;
+  bottom: -120px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.35), rgba(147, 51, 234, 0));
+  animation: drift 7s ease-in-out infinite reverse;
+}
+
+.ambient-c {
+  width: 200px;
+  height: 200px;
+  right: 20%;
+  top: 12%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.2), rgba(14, 165, 233, 0));
+  animation: pulse 3.5s ease-in-out infinite;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 820px;
+  border-radius: 20px;
+  padding: 52px 38px;
+  text-align: center;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: linear-gradient(
+    160deg,
+    rgba(15, 23, 42, 0.76),
+    rgba(15, 23, 42, 0.52) 35%,
+    rgba(30, 41, 59, 0.66)
+  );
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 24px 60px rgba(2, 6, 23, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  animation: cardFloat 4s ease-in-out infinite;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(
+    120deg,
+    rgba(56, 189, 248, 0.5),
+    rgba(255, 255, 255, 0.1),
+    rgba(168, 85, 247, 0.45)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: borderShift 5s linear infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: -140%;
+  left: -40%;
+  width: 60%;
+  height: 380%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(18deg);
+  animation: shimmer 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 14px;
+  color: #f8fafc;
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 span {
+  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 45%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.description {
+  margin: 0;
+  max-width: 64ch;
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.metrics {
+  margin: 28px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.metrics p {
+  margin: 0;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.status {
+  margin: 28px 0 0;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #075985, #3730a3);
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: 0 10px 22px rgba(59, 130, 246, 0.35);
+  animation: badgePulse 2.2s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -16px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-160%) rotate(18deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(280%) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes borderShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(35deg);
+  }
+}
+
+@keyframes badgePulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 22px rgba(59, 130, 246, 0.35);
+  }
+  50% {
+    box-shadow: 0 14px 30px rgba(99, 102, 241, 0.52);
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 36px 20px;
   }
 }
 </style>

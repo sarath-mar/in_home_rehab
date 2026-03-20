@@ -1,45 +1,24 @@
-# Nuxt 3 Minimal Starter
+# Ashvar Import and Export
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+SEO-friendly Nuxt 3 coming soon website for Ashvar Import and Export.
 
-## Setup
+## Scripts
 
-Make sure to install the dependencies:
+- `npm run dev` - Start local development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+
+## Local Development
 
 ```bash
-# yarn
-yarn install
-
-# npm
 npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`
-
-```bash
 npm run dev
 ```
 
-## Production
+## SEO Notes
 
-Build the application for production:
+- Primary metadata is configured in `nuxt.config.ts`
+- Page-level SEO tags are configured in `pages/index.vue`
+- Crawling files are in `public/robots.txt` and `public/sitemap.xml`
 
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-## created by netifly deployment
-
-
-## server is from firebase - febin account
+Update the production domain (`ashvarimportexport.com`) in those files when your final domain is confirmed.

@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://v1soultions.in/</loc>
-    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <loc>https://ashvarimportexport.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://v1soultions.in/images/logo.png</image:loc>
-      <image:title>v1Soultions Logo</image:title>
-      <image:caption>v1Soultions - Pune, Maharashtra</image:caption>
-    </image:image>
   </url>
-  
 </urlset>
