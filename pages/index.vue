@@ -44,6 +44,10 @@ useSeoMeta({
 </script>
 
 <style scoped>
+:global(body) {
+  margin: 0;
+  padding: 0;
+}
 .coming-soon {
   position: relative;
   overflow: hidden;
@@ -52,7 +56,6 @@ useSeoMeta({
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 28px;
   background:
     radial-gradient(1200px 600px at 10% 10%, rgba(59, 130, 246, 0.12), transparent),
     radial-gradient(1000px 500px at 90% 90%, rgba(168, 85, 247, 0.1), transparent),
