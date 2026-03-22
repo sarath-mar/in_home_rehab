@@ -1,309 +1,382 @@
 <template>
-  <main class="coming-soon">
-    <div class="ambient ambient-a" aria-hidden="true"></div>
-    <div class="ambient ambient-b" aria-hidden="true"></div>
-    <div class="ambient ambient-c" aria-hidden="true"></div>
-
-    <section class="card" aria-label="Coming soon information">
-      <p class="eyebrow">Ashvar Import and Export</p>
-      <h1>
-        Global Trade Excellence,
-        <span>Arriving Soon</span>
-      </h1>
-      <p class="description">
-        We are crafting a refined digital experience for import and export
-        services with dependable execution and international reach.
-      </p>
-
-      <div class="metrics">
-        <p>Trusted Sourcing</p>
-        <p>Smart Logistics</p>
-        <p>Quality Assured</p>
+  <div class="page-home">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__ambient" aria-hidden="true">
+        <span class="hero__orb hero__orb--1" />
+        <span class="hero__orb hero__orb--2" />
       </div>
-
-      <p class="status">Launching Soon</p>
+      <div class="hero__layout container">
+        <div class="hero__copy">
+          <ScrollReveal>
+            <p class="hero__eyebrow">Industrial supply · Worldwide</p>
+            <h1 id="hero-heading" class="hero__title">
+              Global Export-Import Partner for Industrial Solutions
+            </h1>
+            <p class="hero__sub">
+              High-performance spare parts and power solutions for critical
+              industries
+            </p>
+            <div class="hero__actions">
+              <NuxtLink to="/contact#get-quote" class="hero__cta"
+                >Get Quote</NuxtLink
+              >
+              <NuxtLink to="/solutions" class="hero__cta hero__cta--ghost"
+                >Explore solutions</NuxtLink
+              >
+            </div>
+          </ScrollReveal>
+        </div>
+        <ScrollReveal>
+          <HomeHeroShowcase class="hero__showcase" />
+        </ScrollReveal>
+      </div>
     </section>
-  </main>
+
+    <HomeImageMarquee />
+
+    <section
+      class="section section--dark"
+      aria-labelledby="services-heading"
+    >
+      <div class="container">
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="Capabilities"
+            title="Services preview"
+            description="End-to-end sourcing and logistics for plants that cannot afford downtime."
+          >
+            <template #icon>
+              <IconCog />
+            </template>
+          </SectionHeading>
+        </ScrollReveal>
+        <div class="grid-3">
+          <ScrollReveal v-for="card in serviceCards" :key="card.title">
+            <ServiceCard
+              :title="card.title"
+              :description="card.description"
+              :image-src="card.imageSrc"
+            >
+              <template #icon>
+                <component :is="card.icon" />
+              </template>
+            </ServiceCard>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section section--light"
+      aria-labelledby="why-heading"
+    >
+      <div class="container">
+        <ScrollReveal>
+          <SectionHeading
+            variant="light"
+            eyebrow="Why Ashvar"
+            title="Built for reliability at scale"
+            heading-id="why-heading"
+          >
+            <template #icon>
+              <IconAward />
+            </template>
+          </SectionHeading>
+        </ScrollReveal>
+        <div class="grid-why">
+          <ScrollReveal v-for="item in whyItems" :key="item.title">
+            <WhyChooseItem :title="item.title" :text="item.text">
+              <template #icon>
+                <component :is="item.icon" />
+              </template>
+            </WhyChooseItem>
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" aria-labelledby="brands-heading">
+      <div class="container">
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="Gallery"
+            title="Product showcase"
+            description="Representative equipment and components from our industrial supply portfolio."
+          >
+            <template #icon>
+              <IconShield />
+            </template>
+          </SectionHeading>
+        </ScrollReveal>
+        <ScrollReveal>
+          <BrandGrid />
+        </ScrollReveal>
+      </div>
+    </section>
+
+    <CTABanner
+      title="Looking for reliable industrial supply?"
+      button-text="Contact Us"
+      to="/contact"
+    />
+  </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import IconCog from "~/components/icons/IconCog.vue";
+import IconFlame from "~/components/icons/IconFlame.vue";
+import IconBolt from "~/components/icons/IconBolt.vue";
+import IconGlobe from "~/components/icons/IconGlobe.vue";
+import IconShield from "~/components/icons/IconShield.vue";
+import IconAward from "~/components/icons/IconAward.vue";
+
 useSeoMeta({
-  title: "Ashvar Import and Export | Coming Soon",
+  title: "Home | Ashvar — Industrial Export & Import",
   description:
-    "Ashvar Import and Export is launching soon. We provide trusted global import and export services.",
-  ogTitle: "Ashvar Import and Export | Coming Soon",
+    "Global export-import partner for industrial solutions. Spare parts, thermal systems, and electrical infrastructure for critical industries.",
+  ogTitle: "Ashvar | Global Export-Import Partner for Industrial Solutions",
   ogDescription:
-    "Ashvar Import and Export is launching soon. We provide trusted global import and export services.",
-  ogType: "website",
-  ogUrl: "https://ashvarimportexport.com",
+    "High-performance spare parts and power solutions for critical industries.",
+  ogUrl: "https://ashvarimportexport.com/",
   twitterCard: "summary_large_image",
-  twitterTitle: "Ashvar Import and Export | Coming Soon",
-  twitterDescription:
-    "Ashvar Import and Export is launching soon. We provide trusted global import and export services.",
 });
+
+useHead({
+  link: [{ rel: "canonical", href: "https://ashvarimportexport.com/" }],
+});
+
+const serviceCards = [
+  {
+    title: "Process Industry Solutions",
+    description:
+      "Equipment and spares for food, FMCG, extraction, and mechanical processing lines.",
+    icon: IconCog,
+    imageSrc: "/images/products/1.jpeg",
+  },
+  {
+    title: "Thermal & Infrastructure Engineering",
+    description:
+      "Steam systems, piping, valves, and safety-critical infrastructure components.",
+    icon: IconFlame,
+    imageSrc: "/images/products/2.jpeg",
+  },
+  {
+    title: "Electrical & Power Infrastructure",
+    description:
+      "Panels, distribution, generators, and cabling for stable plant power.",
+    icon: IconBolt,
+    imageSrc: "/images/products/3.jpeg",
+  },
+];
+
+const whyItems = [
+  {
+    title: "Niche Expertise",
+    text: "Deep knowledge across process plants, thermal systems, and electrical distribution.",
+    icon: IconAward,
+  },
+  {
+    title: "Global Logistics",
+    text: "Coordinated import-export lanes and documentation for time-sensitive projects.",
+    icon: IconGlobe,
+  },
+  {
+    title: "Quality Commitment",
+    text: "Verified sourcing, traceability, and alignment with industry standards.",
+    icon: IconShield,
+  },
+];
 </script>
 
-<style scoped>
-:global(body) {
-  margin: 0;
-  padding: 0;
+<style scoped lang="scss">
+.page-home {
+  background: var(--color-bg-deep);
 }
-.coming-soon {
+
+.hero {
   position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  margin: 0;
+  min-height: min(90vh, 820px);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 28px;
-  background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(59, 130, 246, 0.12), transparent),
-    radial-gradient(1000px 500px at 90% 90%, rgba(168, 85, 247, 0.1), transparent),
-    linear-gradient(120deg, #020617 0%, #0f172a 48%, #111827 100%);
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+  padding: 3.5rem 0 2.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.ambient {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(10px);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-.ambient-a {
-  width: 320px;
-  height: 320px;
-  top: -90px;
-  left: -70px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.45), rgba(56, 189, 248, 0));
-  animation: drift 6s ease-in-out infinite;
-}
-
-.ambient-b {
-  width: 360px;
-  height: 360px;
-  right: -110px;
-  bottom: -120px;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.35), rgba(147, 51, 234, 0));
-  animation: drift 7s ease-in-out infinite reverse;
-}
-
-.ambient-c {
-  width: 200px;
-  height: 200px;
-  right: 20%;
-  top: 12%;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.2), rgba(14, 165, 233, 0));
-  animation: pulse 3.5s ease-in-out infinite;
-}
-
-.card {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 820px;
-  border-radius: 20px;
-  padding: 52px 38px;
-  text-align: center;
-  border: 1px solid rgba(148, 163, 184, 0.28);
-  background: linear-gradient(
-    160deg,
-    rgba(15, 23, 42, 0.76),
-    rgba(15, 23, 42, 0.52) 35%,
-    rgba(30, 41, 59, 0.66)
-  );
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 24px 60px rgba(2, 6, 23, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  animation: cardFloat 4s ease-in-out infinite;
-}
-
-.card::before {
-  content: "";
+.hero__ambient {
   position: absolute;
   inset: 0;
-  border-radius: 20px;
-  padding: 1px;
-  background: linear-gradient(
-    120deg,
-    rgba(56, 189, 248, 0.5),
-    rgba(255, 255, 255, 0.1),
-    rgba(168, 85, 247, 0.45)
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  background:
+    radial-gradient(900px 420px at 15% 20%, rgba(56, 189, 248, 0.14), transparent),
+    radial-gradient(700px 380px at 85% 70%, rgba(37, 99, 235, 0.12), transparent),
+    linear-gradient(165deg, #020617 0%, #0b1220 45%, #030712 100%);
   pointer-events: none;
-  animation: borderShift 5s linear infinite;
 }
 
-.card::after {
-  content: "";
+.hero__orb {
   position: absolute;
-  top: -140%;
-  left: -40%;
-  width: 60%;
-  height: 380%;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(18deg);
-  animation: shimmer 4.5s ease-in-out infinite;
-  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(52px);
+  opacity: 0.42;
+  animation: orbDrift 22s ease-in-out infinite;
 }
 
-.eyebrow {
-  margin: 0 0 12px;
-  color: #cbd5e1;
-  font-size: 0.8rem;
+.hero__orb--1 {
+  width: min(380px, 50vw);
+  height: min(380px, 50vw);
+  top: -8%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.4), transparent 68%);
+}
+
+.hero__orb--2 {
+  width: min(300px, 42vw);
+  height: min(300px, 42vw);
+  bottom: 0;
+  left: -8%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3), transparent 68%);
+  animation-delay: -8s;
+}
+
+@keyframes orbDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-16px, 12px) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__orb {
+    animation: none;
+  }
+}
+
+.hero__layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem 3rem;
+  }
+}
+
+.hero__copy {
+  max-width: 38rem;
+}
+
+.hero__showcase {
+  width: 100%;
+}
+
+.hero__eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: var(--color-accent);
 }
 
-h1 {
-  margin: 0 0 14px;
+.hero__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-weight: 700;
   color: #f8fafc;
-  font-size: clamp(2rem, 4.6vw, 3rem);
-  line-height: 1.2;
-  font-weight: 700;
+  line-height: 1.12;
 }
 
-h1 span {
-  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 45%, #c084fc 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.hero__sub {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 38ch;
 }
 
-.description {
-  margin: 0;
-  max-width: 64ch;
-  color: #cbd5e1;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.metrics {
-  margin: 28px auto 0;
+.hero__actions {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.75rem;
+  align-items: center;
 }
 
-.metrics p {
-  margin: 0;
-  border: 1px solid rgba(148, 163, 184, 0.3);
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
   border-radius: 999px;
-  padding: 8px 14px;
-  color: #e2e8f0;
-  font-size: 0.85rem;
-  background: rgba(15, 23, 42, 0.45);
-}
-
-.status {
-  margin: 28px 0 0;
-  display: inline-block;
-  color: #ffffff;
-  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #075985, #3730a3);
-  border-radius: 999px;
-  padding: 8px 14px;
-  box-shadow: 0 10px 22px rgba(59, 130, 246, 0.35);
-  animation: badgePulse 2.2s ease-in-out infinite;
+  font-size: 0.98rem;
+  color: #0f172a;
+  background: linear-gradient(135deg, #e0f2fe 0%, #fff 100%);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 14px 40px rgba(56, 189, 248, 0.22);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-@keyframes drift {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, -16px);
-  }
+.hero__cta:hover {
+  color: #0f172a;
+  box-shadow: 0 18px 48px rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
+.hero__cta--ghost {
+  color: #e2e8f0;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: none;
+  backdrop-filter: blur(10px);
 }
 
-@keyframes cardFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+.hero__cta--ghost:hover {
+  color: #fff;
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 12px 32px rgba(2, 6, 23, 0.45);
 }
 
-@keyframes shimmer {
-  0% {
-    transform: translateX(-160%) rotate(18deg);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  55% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(280%) rotate(18deg);
-    opacity: 0;
+.section {
+  padding: 4rem 0;
+}
+
+.section--dark {
+  background: var(--color-bg-dark);
+}
+
+.section--light {
+  background: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.grid-3 {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@keyframes borderShift {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(35deg);
-  }
+.grid-why {
+  display: grid;
+  gap: 1rem;
 }
 
-@keyframes badgePulse {
-  0%,
-  100% {
-    box-shadow: 0 10px 22px rgba(59, 130, 246, 0.35);
-  }
-  50% {
-    box-shadow: 0 14px 30px rgba(99, 102, 241, 0.52);
-  }
-}
-
-@media (max-width: 640px) {
-  .card {
-    padding: 36px 20px;
+@media (min-width: 768px) {
+  .grid-why {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 </style>
