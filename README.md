@@ -21,4 +21,4 @@ npm run dev
 - Page-level SEO tags are configured in `pages/index.vue`
 - Crawling files are in `public/robots.txt` and `public/sitemap.xml`
 
-Update the production domain (`ashvarimportexport.com`) in those files when your final domain is confirmed.
+Update the production domain (`ashvarexport.com`) in those files when your final domain is confirmed.

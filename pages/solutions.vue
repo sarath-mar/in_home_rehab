@@ -171,13 +171,13 @@ useSeoMeta({
   ogTitle: "Ashvar Solutions",
   ogDescription:
     "Detailed industrial capabilities: process plants, thermal systems, electrical infrastructure.",
-  ogUrl: "https://ashvarimportexport.com/solutions",
+  ogUrl: "https://ashvarexport.com/solutions",
   twitterCard: "summary_large_image",
 });
 
 useHead({
   link: [
-    { rel: "canonical", href: "https://ashvarimportexport.com/solutions" },
+    { rel: "canonical", href: "https://ashvarexport.com/solutions" },
   ],
 });
 

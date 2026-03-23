@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:url",
-          content: "https://ashvarimportexport.com",
+          content: "https://ashvarexport.com",
         },
         { name: "twitter:card", content: "summary_large_image" },
         {
@@ -53,7 +53,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "canonical",
-          href: "https://ashvarimportexport.com",
+          href: "https://ashvarexport.com",
         },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {

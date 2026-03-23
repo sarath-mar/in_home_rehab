@@ -112,13 +112,13 @@ useSeoMeta({
   ogTitle: "Contact Ashvar",
   ogDescription:
     "Reach Ashvar for industrial spare parts and power solutions.",
-  ogUrl: "https://ashvarimportexport.com/contact",
+  ogUrl: "https://ashvarexport.com/contact",
   twitterCard: "summary_large_image",
 });
 
 useHead({
   link: [
-    { rel: "canonical", href: "https://ashvarimportexport.com/contact" },
+    { rel: "canonical", href: "https://ashvarexport.com/contact" },
   ],
 });
 </script>

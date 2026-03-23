@@ -137,12 +137,12 @@ useSeoMeta({
   ogTitle: "Ashvar | Global Export-Import Partner for Industrial Solutions",
   ogDescription:
     "High-performance spare parts and power solutions for critical industries.",
-  ogUrl: "https://ashvarimportexport.com/",
+  ogUrl: "https://ashvarexport.com/",
   twitterCard: "summary_large_image",
 });
 
 useHead({
-  link: [{ rel: "canonical", href: "https://ashvarimportexport.com/" }],
+  link: [{ rel: "canonical", href: "https://ashvarexport.com/" }],
 });
 
 const serviceCards = [
