@@ -102,7 +102,7 @@ watch(
   gap: 1rem;
 }
 .navbar__brand img {
-  width: 130px;
+  width: 60px;
   height: 100%;
   object-fit: contain;
 }

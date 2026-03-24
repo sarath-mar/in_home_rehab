@@ -55,6 +55,9 @@ export default defineNuxtConfig({
           rel: "canonical",
           href: "https://ashvarexport.com",
         },
+        { rel: "icon", type: "image/png", href: "/images/logo.png" },
+        { rel: "shortcut icon", type: "image/png", href: "/images/logo.png" },
+        { rel: "apple-touch-icon", href: "/images/logo.png" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
           rel: "preconnect",
