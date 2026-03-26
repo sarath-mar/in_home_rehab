@@ -42,17 +42,17 @@
 
 <script setup>
 const images = [
-  "/images/products/1.jpeg",
-  "/images/products/2.jpeg",
-  "/images/products/3.jpeg",
-  "/images/products/4.jpeg",
-  "/images/products/5.jpeg",
-  "/images/products/6.jpeg",
-  "/images/products/7.jpeg",
-  "/images/products/8.jpeg",
-  "/images/products/9.jpeg",
-  "/images/products/10.jpeg",
-  "/images/products/11.jpeg",
+  "/images/products/12.jpeg",
+  "/images/products/13.jpeg",
+  "/images/products/14.jpeg",
+  "/images/products/15.jpeg",
+  "/images/products/16.jpeg",
+  "/images/products/17.jpeg",
+  "/images/products/edible_oil_refinery.jpeg",
+  "/images/products/ept_under.jpeg",
+  "/images/products/high_effect_vaccum.jpeg",
+  "/images/products/refinery_oil_seperator.jpeg",
+  "/images/products/product_2/1.jpeg",
 ];
 </script>
 

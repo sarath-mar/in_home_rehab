@@ -172,7 +172,7 @@ useHead({
 
 .split__form {
   padding: 2.5rem 0 3rem;
-  background: var(--color-bg-dark);
+  background: var(--color-bg-dark) !important;
   color: var(--color-text);
 }
 

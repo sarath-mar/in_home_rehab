@@ -2,7 +2,7 @@
   <div class="showcase" aria-hidden="true">
     <figure class="showcase__cell showcase__cell--hero">
       <img
-        src="/images/products/4.jpeg"
+        src="/images/products/15.jpeg"
         width="640"
         height="480"
         alt=""
@@ -12,7 +12,7 @@
     </figure>
     <figure class="showcase__cell showcase__cell--top">
       <img
-        src="/images/products/5.jpeg"
+        src="/images/products/16.jpeg"
         width="400"
         height="250"
         alt=""
@@ -22,7 +22,7 @@
     </figure>
     <figure class="showcase__cell showcase__cell--bottom">
       <img
-        src="/images/products/6.jpeg"
+        src="/images/products/17.jpeg"
         width="400"
         height="250"
         alt=""

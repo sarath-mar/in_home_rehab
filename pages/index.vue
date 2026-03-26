@@ -151,21 +151,21 @@ const serviceCards = [
     description:
       "Equipment and spares for food, FMCG, extraction, and mechanical processing lines.",
     icon: IconCog,
-    imageSrc: "/images/products/1.jpeg",
+    imageSrc: "/images/products/product_2/9.jpeg",
   },
   {
     title: "Thermal & Infrastructure Engineering",
     description:
       "Steam systems, piping, valves, and safety-critical infrastructure components.",
     icon: IconFlame,
-    imageSrc: "/images/products/2.jpeg",
+    imageSrc: "/images/products/13.jpeg",
   },
   {
     title: "Electrical & Power Infrastructure",
     description:
       "Panels, distribution, generators, and cabling for stable plant power.",
     icon: IconBolt,
-    imageSrc: "/images/products/3.jpeg",
+    imageSrc: "/images/products/12.jpeg",
   },
 ];
 

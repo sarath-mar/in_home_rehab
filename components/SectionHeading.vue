@@ -91,4 +91,10 @@ defineProps({
   background: #fff;
   color: var(--color-accent-deep);
 }
+
+:global(html[data-theme="light"]) .section-heading__icon {
+  border-color: rgba(15, 23, 42, 0.12);
+  background: #fff;
+  color: var(--color-accent-deep);
+}
 </style>

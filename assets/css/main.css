@@ -217,6 +217,17 @@ html[data-theme="light"] .section--light .section-heading__icon {
   color: var(--color-accent-deep);
 }
 
+html[data-theme="light"] .about-card {
+  background: #fff;
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+html[data-theme="light"] .section-heading__icon {
+  border-color: rgba(15, 23, 42, 0.12);
+  background: #fff;
+  color: var(--color-accent-deep);
+}
+
 html[data-theme="light"] .section--light .why-item {
   background: #fff;
   border-color: rgba(15, 23, 42, 0.12);

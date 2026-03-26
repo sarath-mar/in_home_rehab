@@ -264,6 +264,11 @@ const industryItems = [
   box-shadow: var(--shadow-soft);
 }
 
+:global(html[data-theme="light"]) .about-card {
+  border-color: rgba(15, 23, 42, 0.1);
+  background: #ffffff ;
+}
+
 .about-card__icon {
   flex-shrink: 0;
   width: 3rem;
