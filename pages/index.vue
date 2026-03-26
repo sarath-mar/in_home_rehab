@@ -131,12 +131,12 @@ import IconShield from "~/components/icons/IconShield.vue";
 import IconAward from "~/components/icons/IconAward.vue";
 
 useSeoMeta({
-  title: "Home | Ashvar — Industrial Export & Import",
+  title: "Ashvar | Industrial Export & Import Solutions Worldwide",
   description:
-    "Global export-import partner for industrial solutions. Spare parts, thermal systems, and electrical infrastructure for critical industries.",
-  ogTitle: "Ashvar | Global Export-Import Partner for Industrial Solutions",
+    "Reliable industrial export-import partner for process plants, thermal systems, and electrical infrastructure. Source high-performance equipment and spares with confidence.",
+  ogTitle: "Ashvar | Industrial Export & Import Solutions Worldwide",
   ogDescription:
-    "High-performance spare parts and power solutions for critical industries.",
+    "Trusted global sourcing for industrial equipment, spare parts, thermal systems, and power infrastructure.",
   ogUrl: "https://ashvarexport.com/",
   twitterCard: "summary_large_image",
 });
